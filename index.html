@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <div id="seting">
+        
+        <!-- speed control -->
+        <input onclick="setTime()" type="submit" id="time" value="Старт">
+        <input type="number" name="number" class="form" id="speed" value="1600" step="100">
+        <label for="time"></label>
+
+        <input onclick="startApp()" type="submit" value="Экстро!" id="On">
+        
+        <!-- font sise control  -->
+        <input type="number" name="letters" class="form" id="fill" value="60" step="10">
+        <label for="sise"></label>
+        <input onclick="setSise()" type="submit" id="sise" value="Шрифт">
+    </div>
+    <div id="window">
+        <div id="block">
+            <p id="alfavit"></p>
+            <p id="hand"></p>
+        </div>
+        <!-- <input type="submit" onclick="setPosition()"> -->
+    </div>
+
+</body>
+
+</html>
