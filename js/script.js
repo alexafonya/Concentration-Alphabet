@@ -19,11 +19,11 @@ function setPosition() {
     ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'К',
       'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф',
       'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я'];
-  const SETA = Math.floor(Math.random() * 30) + 1;
+  const SETA = Math.floor(Math.random() * 30);
   document.getElementById("alfavit").innerText = ALF[SETA];
 
   const HAND = ['Л', 'П', 'О'];
-  const SETH = Math.floor(Math.random() * 3) + 1;
+  const SETH = Math.floor(Math.random() * 3);
   document.getElementById("hand").innerText = HAND[SETH];
 
 
