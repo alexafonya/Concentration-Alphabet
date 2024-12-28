@@ -33,8 +33,20 @@
                 <div id="timer2">
                     <input type="range" id="start" min="60" max="1200" step="60" value="600" onchange="setTimer();stopAudio()">
                     <span id="line">
-                        <pre id="shpic">|     ||      |      ||      |</pre>
-                        <pre id="numb">1мин  5мин   10мин  15мин   20мин</pre>
+                        <div id="shpic">
+                             <div> | </div> 
+                             <div> | </div>  
+                             <div> | </div>    
+                             <div> | </div>      
+                             <div> | </div>
+                        </div>
+                        <div id="numb">
+                            <div>1мин</div>
+                            <div>5мин </div> 
+                            <div>10мин</div>  
+                            <div>15мин</div>  
+                            <div>20мин</div>
+                        </div>
                     </span>
                 </div>
             </div>
@@ -59,7 +71,7 @@
             <!-- Extro -->
             <div id="f3">
                 
-                <input onclick="startApp(); setTimer()" type="submit" value="Экстро!" id="On">
+                <input onclick="startApp(); setTimer()" type="submit" value="Экстра!" id="On">
             </div>
 
 
