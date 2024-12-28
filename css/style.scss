@@ -218,6 +218,7 @@ body {
 
     #clean:hover {
         p{
+            pointer-events: none;
             position: absolute;
             left: 135px;
             top: 175px;
