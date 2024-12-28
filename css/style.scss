@@ -86,25 +86,70 @@ body {
                        display: grid;
                         width: 200px;
                         height: 5px;
-                        justify-self: center;
-                        left: 400px;
-                        top: 25px;
+                       justify-self: center;
+                        
+                      
 
-                        pre {
-                            margin: 0;
-                            pointer-events: none;
-                            width: 100%;
-                            
-                        }
+                 
 
                         #numb {
+
+                            :nth-of-type(1){
+                                position: relative;
+                                right: 5px;
+                            }
+                            :nth-of-type(2){
+                                position: relative;
+                                right: 5px;
+                            }
+                            :nth-of-type(3){
+                                position: relative;
+                                right: 5px;
+                            }
+                            :nth-of-type(4){
+                                position: relative;
+                                left: 5px;
+                            }
+                            :nth-of-type(5){
+                                position: relative;
+                                left: 15px;
+                            }
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                             font-size: 12px;
                             color: rgb(255, 255, 255);
-
+                            pointer-events: none;
                             
                         }
 
                         #shpic {
+                            :nth-last-of-type(1){
+                                justify-self: end;
+                                position: relative;
+                                right: 4px;
+                            }
+                            :nth-last-of-type(2){
+                                justify-self: center;
+                                position: relative;
+                                left: 5px;
+                            }
+                            :nth-last-of-type(3){
+                                justify-self: center;
+                                position: relative;
+                                right: 5px;
+                            }
+                            :nth-last-of-type(4){
+                                
+                                position: relative;
+                                left: 4px;
+                            }
+                            :nth-last-of-type(5){
+                               
+                                position: relative;
+                                left: 3px 
+                            }
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                             font-size: 12px;
                             color: rgb(255, 255, 255);
                           
