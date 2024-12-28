@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Супер Алфавит</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+
+</head>
+
+<body>
+    <div id="top">
+        <!-- full screen  -->
+        <div id="screen">
+            <label for="fullScr"></label>
+            <input id="fullScr" type="submit" class="scr" value="полный экран" onclick="openFullscreen()">
+            <!-- <input type="submit" onclick="getWidth()"> -->
+        </div>
+
+
+        <!-- speed control -->
+
+        <div id="seting">
+
+            <!-- Timer  -->
+
+            <div id="f1">
+                <p id="countdown"></p>
+                <input class="form" type="text" id="dublicate">
+                <div id="timer2">
+                    <input type="range" id="start" min="60" max="1200" step="60" value="600" onchange="setTimer();stopAudio()">
+                    <span id="line">
+                        <pre id="shpic">|     ||      |      ||      |</pre>
+                        <pre id="numb">1мин  5мин   10мин  15мин   20мин</pre>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Start -->
+            <div id="f2">
+                <div id="skorost">
+                    <label for="time"></label>
+                    <input onclick="setTime(); newLetters (); setTimer(); stopAudio()" type="submit" id="time" value="Скорость">
+                    <input type="number" name="number" class="form" id="speed" value="1600" step="100">
+                </div>
+               
+                <!-- font sise control  -->
+                <div id="shrift">
+                    <input type="number" name="letters" class="form" id="fill" value="60" step="10">
+                    <label for="sise"></label>
+                    <input onclick="setSise()" type="submit" id="sise" value="Шрифт">
+                </div>
+            </div>
+
+            <!-- Extro -->
+            <div id="f3">
+                
+                <input onclick="startApp(); setTimer()" type="submit" value="Экстро!" id="On">
+            </div>
+
+
+        </div>
+
+        
+        <div id="bot">
+            <label for="closeScr"></label>
+            <input id="closeScr" type="submit" class="scr" value="обычный экран" onclick="closeFullscreen()">
+        </div>
+    </div>
+
+    <input type="submit" class="butt" id="clean" value="скрыть панель">
+
+    <!-- <input type="submit" class="butt" id="show" value="показать " onclick=""> -->
+
+    <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"  ></audio>
+    <audio id="final2" src="audio/Exaile.mp3" controls style="display: none;"></audio>
+
+
+    <!-- буквы -->
+
+    <div id="window">
+        <div id="block">
+            <p id="alfavit"></p>
+            <p id="hand"></p>
+        </div>
+        <!-- <input type="submit" onclick="setPosition()"> -->
+    </div>
+
+</body>
+
+</html>
