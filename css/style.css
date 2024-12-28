@@ -127,27 +127,29 @@ body #top #seting #f3 #On {
   width: 80px;
 }
 body #clean {
-  height: 500px;
-  width: 500px;
-  border: none;
-  background-color: transparent;
   position: absolute;
   border-radius: 100%;
   left: 33%;
-  z-index: 5;
-  color: transparent;
+  z-index: 1;
+  height: 500px;
+  width: 500px;
   top: 20%;
+  color: transparent;
+}
+body #clean input {
+  border: transparent;
+  background: none;
+  color: transparent;
 }
 body #clean:hover {
   background: radial-gradient(rgba(0, 0, 0, 0.11), rgba(151, 150, 150, 0.384));
   color: rgba(108, 107, 107, 0.579);
   font-size: 36px;
 }
-body #show:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgba(129, 42, 196, 0.949);
-  font-size: 28px;
-  letter-spacing: 3px;
+body #clean:hover p {
+  position: absolute;
+  left: 135px;
+  top: 175px;
 }
 body #window {
   width: 100%;
