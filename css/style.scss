@@ -14,13 +14,13 @@ body {
             width: 70px;
         }
 
-        #f1 {
+        #f2 {
 
-            justify-self: center;
+            justify-self: end;
 
             #fullScr {
 
-                width: 95%;
+                width: 100%;
                 height: 50px;
                 background-color: hsl(0, 0%, 48%);
                 border: none;
@@ -41,13 +41,15 @@ body {
 
 
 
-        #f2 {
+        #f1 {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-           
-           
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
 
-            #timeCount{
+            gap: 30px;
+
+
+            #timeCount {
                 justify-self: center;
             }
 
@@ -65,7 +67,77 @@ body {
 
             }
 
+            #mus {
+                justify-self: end;
+                #music {
+                    position: relative;
+                    display: inline-block;
+                    width: 30px;
+                    height: 15px;
+                    justify-self: end;
+                    align-self: baseline;
+                }
+
+            }
+
+
+
+            //   .switch input {display:none;}
+
+            // .slider {
+
+            //     position: absolute;
+            //     cursor: pointer;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0;
+            //     bottom: 0;
+            //     background-color: #fffcfc;
+            //     -webkit-transition: .4s;
+            //     transition: .4s;
+            //   }
+
+            //   .slider:before {
+            //     position: absolute;
+            //     content: "play";
+            //     color: white;
+            //     height: 15px;
+            //     width: 15px;
+            //     border: 1px solid rgb(255, 255, 255);
+            //     // left: px;
+            //     // bottom: px;
+            //     background-color: rgb(169, 169, 169);
+            //     -webkit-transition: .4s;
+            //     transition: .4s;
+            //   }
+
+            //   input:checked + .slider {
+            //     background-color: #9d9fa1;
+            //   }
+
+            //   input:focus + .slider {
+            //     box-shadow: 0 0 1px #2196F3;
+            //   }
+
+            //   input:checked + .slider:before {
+            //     -webkit-transform: translateX(15px);
+            //     -ms-transform: translateX(15px);
+            //     transform: translateX(15px);
+            //   }
+
+            //   /* Rounded sliders */
+            //   .slider.round {
+            //     border-radius: 34px;
+            //   }
+
+            //   .slider.round:before {
+            //     border-radius: 50%;
+            //   }
+
             #f2_2 {
+
+
+
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 justify-self: end;
@@ -143,6 +215,7 @@ body {
 
                     #shpic {
                         pointer-events: none;
+
                         :nth-last-of-type(1) {
                             justify-self: end;
                             position: relative;
@@ -226,10 +299,7 @@ body {
                 align-items: center;
                 justify-items: start;
 
-                #f3_2_1{
-
-
-                }
+                #f3_2_1 {}
 
                 #f3_2_2 {
 
@@ -243,24 +313,28 @@ body {
 
             }
 
-        .form {
-            height: 35px;
-            width: 100px;
-            text-align: center;
-            font-size: 18px;
+            .form {
+                height: 35px;
+                width: 100px;
+                text-align: center;
+                font-size: 18px;
 
-        }
-
-
-        #f3_3 {
-
-            justify-self: center;
-            #On {
-                height: 25px;
-                width: 80px;
             }
 
-        }
+
+            #f3_3 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-self: start;
+                gap: 10px;
+
+                #On {
+                    height: 25px;
+                    width: 80px;
+                }
+
+            }
 
         }
 
