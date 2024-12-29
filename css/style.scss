@@ -106,26 +106,31 @@ body {
                         :nth-of-type(1) {
                             position: relative;
                             right: 5px;
+                            bottom: 10px;
                         }
 
                         :nth-of-type(2) {
                             position: relative;
                             right: 5px;
+                            bottom: 6px;
                         }
 
                         :nth-of-type(3) {
                             position: relative;
                             right: 5px;
+                            bottom: 2px;
                         }
 
                         :nth-of-type(4) {
                             position: relative;
                             left: 5px;
+                            bottom: 6px;
                         }
 
                         :nth-of-type(5) {
                             position: relative;
                             left: 15px;
+                            bottom: 10px;
                         }
 
                         display: grid;
@@ -279,7 +284,7 @@ body {
             width: 100%;
             background: none;
             color: transparent;
-            border: none;
+            border: transparent;
 
         }
 
