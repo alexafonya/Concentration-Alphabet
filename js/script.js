@@ -45,7 +45,14 @@ Audio.play()
 } if (TIME == -1) {
    stopAudio()
    Audio = document.getElementById("final2")
-   setTimeout(function() { Audio.play()},1500)
+   if(mus.value != "0"){  
+      setTimeout(function() { Audio.play()},1500)
+   }else{
+    
+    Audio.stop() 
+   }
+   
+   
 
     clearInterval(INTERVAL1) 
     INTERVAL1 = setInterval(function() {newCountDown()},1000)
@@ -55,6 +62,23 @@ break
 
     }
 
+}
+
+var mus = document.getElementById("music");
+
+mus.addEventListener("change", function (){
+     Audio = document.getElementById("final2")
+    if(mus.value != "0"){     
+        Audio.play()
+       
+    } else {       
+        Audio.stop()
+    }
+})
+
+function withoutMusic(){
+
+    
 }
 
 HTMLAudioElement.prototype.stop = function() {
@@ -76,11 +100,11 @@ console.log(TIME)
 
 // Интервалы 
 
-Times_Alf = setInterval(function () { newLetters() }, set3)
+var Times_Alf = setInterval(function () { newLetters() }, set3)
 
-Times_1 = setInterval(function () { newHands() }, set2)
+var Times_1 = setInterval(function () { newHands() }, set2)
 
-Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
 
 // Перемешивание
 
@@ -150,16 +174,44 @@ function setSise() {
 
 // Экстро
 
+// var  JUST = document.getElementById("jt").value;
+// var  SUPER = document.getElementById("sr").value; 
+
+SUPER = document.getElementById("On")
+
+SUPER.addEventListener("dblclick", function(){
+    
+    clearInterval(Times_3);
+    const HOLD = document.getElementById("speed").value;
+    document.querySelector("#time").innerText = HOLD;
+    if (HOLD == Times_3) {
+        clearInterval(Times_3);
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(),superExtraHan() }, set);
+        } else {
+        clearInterval(Times_3); 
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+        clearInterval(Times_1)
+        NewHOLD = HOLD * 3;
+        Times_1 = setInterval(function () { newHands() }, NewHOLD);
+        clearInterval(Times_Alf)
+        NewAlfHOLD = HOLD * 27;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+
+}
+
+})
+
 
 
 function startApp() {
     clearInterval(Times_3);
     const HOLD = document.getElementById("speed").value;
     document.querySelector("#time").innerText = HOLD;
-    if (HOLD == Times_3) {
+    
+        if (HOLD == Times_3) {
         clearInterval(Times_3);
         setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-    } else {
+        } else {
         clearInterval(Times_3);
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
         clearInterval(Times_1)
@@ -168,12 +220,47 @@ function startApp() {
         clearInterval(Times_Alf)
         NewAlfHOLD = HOLD * 27;
         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    }
+    };
+    
+}
+
+// function superExtra(){
+
+//     if(SUPER = true){
+//         if (HOLD == Times_3) {
+//             clearInterval(Times_3);
+//             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(),  superExtraHan() }, set);
+//             } else {
+//             clearInterval(Times_3);
+//             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(),  superExtraHan() }, HOLD);
+//             clearInterval(Times_1)
+//             NewHOLD = HOLD * 3;
+//             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+//             clearInterval(Times_Alf)
+//             NewAlfHOLD = HOLD * 27;
+//             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    
+//         }
+
+//     }
+      
+// }
+
+
+
+function superExtraLet(){
+    const SISE = Math.floor((Math.random() * 86) + 36);
+    document.getElementById("alfavit").style.fontSize = SISE + 'px';
 
 }
 
+function superExtraHan(){
+    const SISE = Math.floor((Math.random() * 86) + 36);
+    document.getElementById("hand").style.fontSize = SISE + 'px';
+}
+
 function extra() {
-    const FONT = document.getElementById("fill").value;
+    // const FONT = document.getElementById("fill").value;
     const SISE = Math.floor((Math.random() * 86) + 36);
     document.getElementById("alfavit").style.fontSize = SISE + 'px';
     document.getElementById("hand").style.fontSize = SISE + 'px';
