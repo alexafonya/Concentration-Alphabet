@@ -135,7 +135,7 @@ function setFont() {
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
-    // console.log("set");
+  
 }
 
 //  Размер Шрифта
@@ -215,8 +215,10 @@ function openFullscreen() {
     }
 }
 
-function closeFullscreen() {
-    if (document.exitFullscreen) {
+var back = document.getElementById("fullScr");
+
+back.addEventListener("dblclick", function (){
+ if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
@@ -225,6 +227,11 @@ function closeFullscreen() {
     } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
     }
+
+})
+
+function closeFullscreen() {
+   
 }
 
 
