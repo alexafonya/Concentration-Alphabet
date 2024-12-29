@@ -14,18 +14,27 @@
 <body>
     <div id="top">
         <!-- full screen  -->
-       
+
 
         <!-- speed control -->
 
         <!-- Timer  -->
 
-        <div id="f2"> <!--f1-->
-           
+        <div id="f1"> <!--f1-->
+            
+                <div id="mus">
+                    <label><input type="range" min="0" max="1"  id="music"></label>
+                </div>
+                
+                <!-- <span class="slider round"></span> -->
+          
 
             <div id="f2_2"> <!--timer2-->
-                <div><input type="range" id="start" min="60" max="1200" step="60" value="600"
-                        onchange="setTimer();stopAudio()"></div>
+
+                <div>
+                    <input type="range" id="start" min="60" max="1200" step="60" value="600"
+                        onchange="setTimer();stopAudio()">
+                </div>
                 <span id="line">
                     <div id="shpic">
                         <div> | </div>
@@ -49,9 +58,11 @@
             </div>
         </div>
         <!-- Start -->
-        <div id="f1"> <!--screen-->
+        <div id="f2"> <!--screen-->
+
             <label for="fullScr"></label>
-            <input id="fullScr" type="submit" class="scr" value="&#8593;вверх|вниз&#8595;&#8595;" onclick="openFullscreen()">
+            <input id="fullScr" type="submit" class="scr" value="&#8593;вверх|вниз&#8595;&#8595;"
+                onclick="openFullscreen()">
             <!-- <input type="submit" onclick="getWidth()"> -->
         </div>
 
@@ -80,8 +91,17 @@
             </div>
             <!-- Extro -->
             <div id="f3_3"> <!--f3-->
-                <input onclick="startApp(); setTimer()" type="submit" value="Экстра!" id="On">
+                <div>
+                    <input onclick="startApp(); setTimer()" type="submit" value="Экстра!" id="On">
+                </div>
+                <!-- <div>
+                    <input type="radio" onclick="" id="jt" name="fav_language" value="just">
+                    <label for="jt">just</label><br>
+                    <input type="radio" id="sr" name="fav_language" value="super">
+                    <label for="st">super</label>
+                </div> -->
             </div>
+
         </div>
 
 
@@ -99,7 +119,7 @@
     <audio id="final2" src="audio/Exaile.mp3" controls style="display: none;"></audio>
 
 
-    <!-- буквы -->
+    <!-- буквы -->  
 
     <div id="window">
         <input id="clean" type="submit" class="butt" value="скрыть панель">
