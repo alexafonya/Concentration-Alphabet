@@ -39,11 +39,11 @@ let DUBLE = countDownEl.innerHTML = `${minutes} : ${seconds}`;
 document.getElementById("dublicate").value = DUBLE;
 TIME--;
 
-if(TIME < 10){ 
+if(TIME == 10){ 
     var Audio = document.getElementById("final")
 Audio.play()
 } if (TIME == -1) {
-    
+   stopAudio()
    Audio = document.getElementById("final2")
    setTimeout(function() { Audio.play()},1500)
 
@@ -230,9 +230,9 @@ back.addEventListener("dblclick", function (){
 
 })
 
-function closeFullscreen() {
+// function closeFullscreen() {
    
-}
+// }
 
 
 var menuItem = document.querySelector("#clean");
