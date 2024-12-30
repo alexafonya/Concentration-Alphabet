@@ -5,7 +5,7 @@ body {
 body #top {
   display: grid;
   background-color: gray;
-  grid-template-columns: 2fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 2fr 2fr;
   height: 80px;
   align-items: center;
 }
@@ -33,7 +33,7 @@ body #top #f1 {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 body #top #f1 #timeCount {
   justify-self: center;
@@ -57,6 +57,8 @@ body #top #f1 #mus #music {
   height: 15px;
   justify-self: end;
   align-self: baseline;
+  bottom: 25px;
+  left: 25px;
 }
 body #top #f1 #f2_2 {
   display: grid;
@@ -132,7 +134,7 @@ body #top #f1 #f2_2 #line #shpic :nth-last-of-type(1) {
   justify-self: end;
   position: relative;
   right: 4px;
-  bottom: 10px;
+  bottom: 9px;
 }
 body #top #f1 #f2_2 #line #shpic :nth-last-of-type(2) {
   justify-self: center;
@@ -154,18 +156,23 @@ body #top #f1 #f2_2 #line #shpic :nth-last-of-type(4) {
 body #top #f1 #f2_2 #line #shpic :nth-last-of-type(5) {
   position: relative;
   left: 3px;
-  bottom: 10px;
+  bottom: 9px;
 }
 body #top #f3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-items: center;
+  gap: 5px;
 }
 body #top #f3 #f3_1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: end;
+  gap: 10px;
+}
+body #top #f3 #f3_1 #f3_1_1 {
+  justify-self: end;
 }
 body #top #f3 #f3_1 #f3_1_1 #time {
   height: 25px;
@@ -175,7 +182,10 @@ body #top #f3 #f3_2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: start;
+  gap: 10px;
+}
+body #top #f3 #f3_2 #f3_2_2 {
+  justify-self: start;
 }
 body #top #f3 #f3_2 #f3_2_2 #sise {
   height: 25px;
@@ -187,14 +197,21 @@ body #top #f3 .form {
   text-align: center;
   font-size: 18px;
 }
-body #top #f3 #f3_3 {
+body #top #f4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-self: start;
-  gap: 10px;
+  gap: 20px;
 }
-body #top #f3 #f3_3 #On {
+body #top #f4 .input {
+  color: rgb(236, 233, 233);
+}
+body #top #f4 #f4_1 {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  gap: 5px;
+}
+body #top #f4 #On {
   height: 25px;
   width: 80px;
 }

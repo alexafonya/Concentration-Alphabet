@@ -6,9 +6,10 @@ body {
     #top {
         display: grid;
         background-color: gray;
-        grid-template-columns: 2fr 1fr 3fr;
+        grid-template-columns: 2fr 1fr 2fr 2fr;
         height: 80px;
         align-items: center;
+    
 
         #timer {
             width: 70px;
@@ -46,7 +47,7 @@ body {
             grid-template-columns: 2fr 1fr 1fr;
             align-items: center;
 
-            gap: 30px;
+            gap: 20px;
 
 
             #timeCount {
@@ -69,6 +70,7 @@ body {
 
             #mus {
                 justify-self: end;
+
                 #music {
                     position: relative;
                     display: inline-block;
@@ -76,6 +78,8 @@ body {
                     height: 15px;
                     justify-self: end;
                     align-self: baseline;
+                    bottom: 25px;
+                    left: 25px
                 }
 
             }
@@ -220,7 +224,7 @@ body {
                             justify-self: end;
                             position: relative;
                             right: 4px;
-                            bottom: 10px;
+                            bottom: 9px;
                         }
 
                         :nth-last-of-type(2) {
@@ -246,7 +250,7 @@ body {
                         :nth-last-of-type(5) {
                             position: relative;
                             left: 3px;
-                            bottom: 10px;
+                            bottom: 9px;
                         }
 
                         display: grid;
@@ -272,18 +276,20 @@ body {
 
         #f3 {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
+            justify-items: center;
+            gap: 5px;
 
             #f3_1 {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 align-items: center;
-                justify-items: end;
+               gap: 10px;
 
                 #f3_1_1 {
 
-
+                    justify-self: end;
                     #time {
                         height: 25px;
                         width: 80px;
@@ -297,12 +303,12 @@ body {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 align-items: center;
-                justify-items: start;
+                gap: 10px;
 
                 #f3_2_1 {}
 
                 #f3_2_2 {
-
+                    justify-self: start;
 
                     #sise {
                         height: 25px;
@@ -322,22 +328,39 @@ body {
             }
 
 
-            #f3_3 {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-                justify-self: start;
-                gap: 10px;
 
-                #On {
-                    height: 25px;
-                    width: 80px;
-                }
-
-            }
 
         }
 
+        #f4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            gap: 20px;
+
+            .input{
+                color: rgb(236, 233, 233);
+            
+            }
+
+            #f4_1{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                justify-items: center;
+                gap: 5px;
+              &>div{
+
+           
+              }  
+              
+            }
+
+
+            #On {
+                height: 25px;
+                width: 80px;
+            }
+
+        }
 
 
 
