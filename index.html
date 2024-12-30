@@ -21,13 +21,13 @@
         <!-- Timer  -->
 
         <div id="f1"> <!--f1-->
-            
-                <div id="mus">
-                    <label><input type="range" min="0" max="1"  id="music"></label>
-                </div>
-                
-                <!-- <span class="slider round"></span> -->
-          
+
+            <div id="mus">
+                <label><input type="range" min="0" max="1" id="music"></label>
+            </div>
+
+            <!-- <span class="slider round"></span> -->
+
 
             <div id="f2_2"> <!--timer2-->
 
@@ -72,8 +72,9 @@
             <div id="f3_1">
                 <div id="f3_1_1">
                     <label for="time"></label>
-                    <input onclick="setTime(); newLetters (); setTimer(); stopAudio()" type="submit" id="time"
-                        value="Скорость">
+                    <input onclick="setTime(); newLetters (); setTimer(); stopAudio();resetSuperExtr(); 
+                    resetColor();resetExtColor()"
+                        type="submit" id="time" value="Скорость">
                 </div>
                 <div id="f3_1_2"> <!--f2-->
                     <input type="number" name="number" class="form" id="speed" value="1600" step="100">
@@ -90,18 +91,29 @@
                 </div>
             </div>
             <!-- Extro -->
-            <div id="f3_3"> <!--f3-->
-                <div>
-                    <input onclick="startApp(); setTimer()" type="submit" value="Экстра!" id="On">
-                </div>
-                <!-- <div>
-                    <input type="radio" onclick="" id="jt" name="fav_language" value="just">
-                    <label for="jt">just</label><br>
-                    <input type="radio" id="sr" name="fav_language" value="super">
-                    <label for="st">super</label>
-                </div> -->
-            </div>
 
+        </div>
+        <div id="f4"> <!--f3-->
+            <div id="f4_1">
+                <div >
+                    <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor()
+                    }else{setTime();resetColor();resetExtColor()};" name="fav_language" value="super">
+                    <label class="input"  for="super">SuperExtr</label>
+                </div>
+                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor()" type="submit" value="Экстра!"
+                    id="On">
+
+            </div>
+            <div id="f4_2">
+                <form>
+                    <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
+                    <label class="input"  for="color">Color</label><br>
+                    <input type="checkbox" onclick="" id="ColorExt" name="ChangeColor" value="Ext">
+                    <label class="input" for="ColorExt">Color Extra</label><br>
+                    <input type="checkbox" onclick=" " id="theme" name="ChangeColor" value="just">
+                    <label class="input"  for="theme">Dark theme</label>
+                </form>
+            </div>
         </div>
 
 
@@ -119,7 +131,7 @@
     <audio id="final2" src="audio/Exaile.mp3" controls style="display: none;"></audio>
 
 
-    <!-- буквы -->  
+    <!-- буквы -->
 
     <div id="window">
         <input id="clean" type="submit" class="butt" value="скрыть панель">
