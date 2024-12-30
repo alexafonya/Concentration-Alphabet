@@ -29,10 +29,27 @@ let set3 = set * 27;
 let TIME = document.getElementById("start").value;
 let INTERVAL1;
 
+
+var RED = document.getElementById("alfavit").style.color = "red";
+var ORANGE = document.getElementById("alfavit").style.color = "orange";
+var YELLOW = document.getElementById("alfavit").style.color = "yellow";
+var GREEN = document.getElementById("alfavit").style.color = "green";
+var BLUE = document.getElementById("alfavit").style.color = "blue";
+var INDIGO = document.getElementById("alfavit").style.color = "indigo";
+var VIOLET = document.getElementById("alfavit").style.color = "violet";
+var GRAY = document.getElementById("alfavit").style.color = "gray";
+var BLACK = document.getElementById("alfavit").style.color = "black";
+
+var colorNow = document.getElementById("color").value;
+
+var menuItem = document.querySelector("#clean");
+var dropDownMenu = document.querySelector("#top");
+var menuItem2 = document.querySelector("#clean");
+var dropDownMenu2 = document.querySelector("#top");
+
 INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
 
 function newCountDown() {
-
     while (TIME != -1) {
         let countDownEl = document.getElementById("countdown")
         let minutes = Math.floor(TIME / 60);
@@ -41,7 +58,6 @@ function newCountDown() {
         let DUBLE = countDownEl.innerHTML = `${minutes} : ${seconds}`;
         document.getElementById("dublicate").value = DUBLE;
         TIME--;
-
         if (TIME == 10) {
             var Audio = document.getElementById("final")
             Audio.play()
@@ -51,18 +67,13 @@ function newCountDown() {
             if (mus.value != "0") {
                 setTimeout(function () { Audio.play() }, 1500)
             } else {
-
                 Audio.stop()
             }
-
             clearInterval(INTERVAL1)
             INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
         }
-
         break
-
     }
-
 }
 
 var mus = document.getElementById("music");
@@ -71,16 +82,11 @@ mus.addEventListener("change", function () {
     Audio = document.getElementById("final2")
     if (mus.value != "0") {
         Audio.play()
-
     } else {
         Audio.stop()
     }
 })
 
-function withoutMusic() {
-
-
-}
 
 HTMLAudioElement.prototype.stop = function () {
     this.pause();
@@ -91,8 +97,6 @@ function stopAudio() {
     Audio = document.getElementById("final2")
     Audio.stop()
 }
-
-
 
 function setTimer() {
     TIME = document.getElementById("start").value
@@ -109,6 +113,8 @@ var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(
 
 colorSimle.addEventListener("click", function () {
     resetExtColor();
+    clearInterval(TimesExtColor);
+    clearInterval(TimesColor);
     clearInterval(Times_3);
     if (this.checked) {
         TimesColor = setInterval(function () {
@@ -116,21 +122,21 @@ colorSimle.addEventListener("click", function () {
             randomLetters()
         }, set);
     } else {
-        resetColor(); clearInterval(TimesColor);
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
     }
 })
 
 colorExtra.addEventListener("click", function () {
-    clearInterval(Times_3);
     resetColor();
+    clearInterval(TimesExtColor);
+    clearInterval(TimesColor);
+    clearInterval(Times_3);
     if (this.checked) {
         TimesExtColor = setInterval(function () {
             randomHands(), setFont(),
             randomLetters(), setColorAlf(), setColorHand()
         }, set);
     } else {
-        resetExtColor(); clearInterval(TimesExtColor);
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
     }
 })
@@ -208,30 +214,30 @@ function setSise() {
 
 }
 
+function clear(){
+    clearInterval(TimesColor);
+    clearInterval(TimesExtColor);
+    clearInterval(Times_3);
+}
+
 // Экстро
 
 // var  JUST = document.getElementById("just").value;
 
 function startApp() {
-    clearInterval(TimesColor);
-    clearInterval(TimesExtColor);
-    clearInterval(Times_3);
+    clear();
     const HOLD = document.getElementById("speed").value;
     document.querySelector("#time").innerText = HOLD;
     colorExtra.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () {
                     randomHands(), setFont(), randomLetters(),
                     extra(), setColorAlf(), setColorHand()
                 }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () {
                     randomHands(), setFont(), randomLetters(),
                     extra(), setColorAlf(), setColorHand()
@@ -245,14 +251,10 @@ function startApp() {
             };
         } else {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
             } else {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -261,20 +263,15 @@ function startApp() {
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
             };
-
         }
     })
     TimesColor = colorSimle.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, set);
             } else {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -286,14 +283,10 @@ function startApp() {
 
         } else {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
             } else {
-                clearInterval(TimesExtColor); 
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -306,14 +299,10 @@ function startApp() {
 
     })
     if (HOLD == Times_3) {
-        clearInterval(TimesExtColor); 
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
     } else {
-        clearInterval(TimesExtColor); 
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
@@ -322,40 +311,27 @@ function startApp() {
         NewAlfHOLD = HOLD * 27;
         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
     };
-
-
 }
-
-
-
-
 
 var SUPER = document.getElementById("super").value;
 
 
 function resetSuperExtr() {
     document.getElementById("super").checked = false;
-
 }
 
 function superExtra() {
-    clearInterval(TimesExtColor);
-    clearInterval(TimesColor);
-    clearInterval(Times_3);
+    clear();
     const HOLD = document.getElementById("speed").value;
     document.querySelector("#time").innerText = HOLD;
     colorExtra.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), 
                     superExtraHan(),setColorAlf(), setColorHand() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), 
                     superExtraHan(), setColorAlf(), setColorHand() }, HOLD);
                 clearInterval(Times_1)
@@ -368,14 +344,10 @@ function superExtra() {
             }
         } else {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -383,22 +355,16 @@ function superExtra() {
                 clearInterval(Times_Alf)
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
-            }
-    
+            }  
         }
     })
     TimesColor = colorSimle.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -411,14 +377,10 @@ function superExtra() {
         } else {
 
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -426,20 +388,14 @@ function superExtra() {
                 clearInterval(Times_Alf)
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
             }
         }
-
     })
     if (HOLD == Times_3) {
-        clearInterval(TimesExtColor);
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
     } else {
-        clearInterval(TimesExtColor);
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
@@ -447,10 +403,7 @@ function superExtra() {
         clearInterval(Times_Alf)
         NewAlfHOLD = HOLD * 27;
         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
     }
-
-
 }
 
 
@@ -466,32 +419,24 @@ function superExtraHan() {
 }
 
 function extra() {
-    // const FONT = document.getElementById("fill").value;
     const SISE = Math.floor((Math.random() * 70) + 36);
     document.getElementById("alfavit").style.fontSize = SISE + 'px';
     document.getElementById("hand").style.fontSize = SISE + 'px';
     console.log(SISE)
-
 }
 
 function setTime() {
-    clearInterval(TimesExtColor);
-    clearInterval(TimesColor);
-    clearInterval(Times_3);
+    clear();
     setSise();
     const HOLD = document.getElementById("speed").value;
     document.querySelector("#time").innerText = HOLD;
     colorExtra.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -503,14 +448,10 @@ function setTime() {
     
         } else {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -525,14 +466,10 @@ function setTime() {
     TimesColor = colorSimle.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -544,14 +481,10 @@ function setTime() {
 
         } else {
             if (HOLD == Times_3) {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
             } else {
-                clearInterval(TimesExtColor);
-                clearInterval(TimesColor);
-                clearInterval(Times_3);
+                clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -561,17 +494,12 @@ function setTime() {
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
             }
         }
-
     })
     if (HOLD == Times_3) {
-        clearInterval(TimesExtColor);
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
     } else {
-        clearInterval(TimesExtColor);
-        clearInterval(TimesColor);
-        clearInterval(Times_3);
+        clear();
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
@@ -615,15 +543,6 @@ back.addEventListener("dblclick", function () {
 
 })
 
-// function closeFullscreen() {
-
-// }
-
-
-var menuItem = document.querySelector("#clean");
-var dropDownMenu = document.querySelector("#top");
-var menuItem2 = document.querySelector("#clean");
-var dropDownMenu2 = document.querySelector("#top");
 
 
 menuItem.addEventListener("click", function () {
@@ -634,22 +553,6 @@ menuItem.addEventListener("click", function () {
 menuItem2.addEventListener("dblclick", function () {
     dropDownMenu2.style.display = "grid";
 });
-
-
-
-
-var RED = document.getElementById("alfavit").style.color = "red";
-var ORANGE = document.getElementById("alfavit").style.color = "orange";
-var YELLOW = document.getElementById("alfavit").style.color = "yellow";
-var GREEN = document.getElementById("alfavit").style.color = "green";
-var BLUE = document.getElementById("alfavit").style.color = "blue";
-var INDIGO = document.getElementById("alfavit").style.color = "indigo";
-var VIOLET = document.getElementById("alfavit").style.color = "violet";
-var GRAY = document.getElementById("alfavit").style.color = "gray";
-var BLACK = document.getElementById("alfavit").style.color = "black";
-
-var colorNow = document.getElementById("color").value;
-
 
 
 function resetColor() {
