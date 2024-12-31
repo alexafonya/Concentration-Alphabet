@@ -8,6 +8,8 @@ body #top {
   grid-template-columns: 2fr 1fr 2fr 2fr;
   height: 80px;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 body #top #timer {
   width: 70px;
@@ -227,7 +229,9 @@ body #window #clean {
   width: 100%;
   background: none;
   color: transparent;
-  border: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 body #window > div {
   position: absolute;

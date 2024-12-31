@@ -9,7 +9,8 @@ body {
         grid-template-columns: 2fr 1fr 2fr 2fr;
         height: 80px;
         align-items: center;
-    
+        width: 100%;
+        margin: 0 auto;
 
         #timer {
             width: 70px;
@@ -20,7 +21,6 @@ body {
             justify-self: end;
 
             #fullScr {
-
                 width: 100%;
                 height: 50px;
                 background-color: hsl(0, 0%, 48%);
@@ -37,23 +37,17 @@ body {
                 color: rgba(0, 0, 0, 0.671);
             }
 
-
         }
-
-
 
         #f1 {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             align-items: center;
-
             gap: 20px;
-
 
             #timeCount {
                 justify-self: center;
             }
-
 
             #countdown {
                 display: none;
@@ -84,64 +78,7 @@ body {
 
             }
 
-
-
-            //   .switch input {display:none;}
-
-            // .slider {
-
-            //     position: absolute;
-            //     cursor: pointer;
-            //     top: 0;
-            //     left: 0;
-            //     right: 0;
-            //     bottom: 0;
-            //     background-color: #fffcfc;
-            //     -webkit-transition: .4s;
-            //     transition: .4s;
-            //   }
-
-            //   .slider:before {
-            //     position: absolute;
-            //     content: "play";
-            //     color: white;
-            //     height: 15px;
-            //     width: 15px;
-            //     border: 1px solid rgb(255, 255, 255);
-            //     // left: px;
-            //     // bottom: px;
-            //     background-color: rgb(169, 169, 169);
-            //     -webkit-transition: .4s;
-            //     transition: .4s;
-            //   }
-
-            //   input:checked + .slider {
-            //     background-color: #9d9fa1;
-            //   }
-
-            //   input:focus + .slider {
-            //     box-shadow: 0 0 1px #2196F3;
-            //   }
-
-            //   input:checked + .slider:before {
-            //     -webkit-transform: translateX(15px);
-            //     -ms-transform: translateX(15px);
-            //     transform: translateX(15px);
-            //   }
-
-            //   /* Rounded sliders */
-            //   .slider.round {
-            //     border-radius: 34px;
-            //   }
-
-            //   .slider.round:before {
-            //     border-radius: 50%;
-            //   }
-
             #f2_2 {
-
-
-
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 justify-self: end;
@@ -262,17 +199,9 @@ body {
 
                 }
 
-
-
-
             }
 
-
-
         }
-
-
-
 
         #f3 {
             display: grid;
@@ -288,15 +217,12 @@ body {
                gap: 10px;
 
                 #f3_1_1 {
-
                     justify-self: end;
                     #time {
                         height: 25px;
                         width: 80px;
                     }
-
                 }
-
             }
 
             #f3_2 {
@@ -305,18 +231,13 @@ body {
                 align-items: center;
                 gap: 10px;
 
-                #f3_2_1 {}
-
                 #f3_2_2 {
                     justify-self: start;
-
                     #sise {
                         height: 25px;
                         width: 80px;
                     }
-
                 }
-
             }
 
             .form {
@@ -327,9 +248,6 @@ body {
 
             }
 
-
-
-
         }
 
         #f4 {
@@ -338,8 +256,7 @@ body {
             gap: 20px;
 
             .input{
-                color: rgb(236, 233, 233);
-            
+                color: rgb(236, 233, 233);          
             }
 
             #f4_1{
@@ -347,13 +264,8 @@ body {
                 grid-template-rows: 1fr 1fr;
                 justify-items: center;
                 gap: 5px;
-              &>div{
-
-           
-              }  
               
             }
-
 
             #On {
                 height: 25px;
@@ -361,8 +273,6 @@ body {
             }
 
         }
-
-
 
     }
 
@@ -375,16 +285,21 @@ body {
         margin: auto;
         position: absolute;
 
-        #clean {
+     
+             #clean {
             z-index: 1;
             height: 100%;
             width: 100%;
             background: none;
             color: transparent;
-            border: transparent;
+            border: none;
+            margin: 0;
+            padding: 0;
 
         }
+        
 
+       
 
         &>div {
             position: absolute;
