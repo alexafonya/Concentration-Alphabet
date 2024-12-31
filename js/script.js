@@ -145,6 +145,7 @@ colorExtra.addEventListener("click", function () {
 
 window.addEventListener("load", () => { newLetters() });
 
+
 function newLetters() {
     NEWLETT = ALF.sort(function () { return 0.5 - Math.random() })
     console.log(`NEWAlfavit : ${ALF}`)
@@ -172,6 +173,24 @@ const randomHands = () => {
     console.log(currentIndex)
     console.log(`HAND = ${HAND} + ${HAND}`)
 }
+
+var MUSIC = document.getElementById("music");
+
+
+MUSIC.addEventListener("change", function(){
+    var mus1 = document.getElementById("music").value
+    if(mus1 == 1){
+         document.getElementById("music").style.backgroundColor = "rgb(206, 205, 205)";
+        
+         console.log(mus1)
+    } else {
+        document.getElementById("music").style.backgroundColor = "rgb(255, 255, 255)";
+        
+
+    }
+
+// webkit-slider-thumb.backgroundColor = "white"    
+})
 
 colorExtra.addEventListener("click", function () {
 
