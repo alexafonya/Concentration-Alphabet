@@ -22,6 +22,7 @@ var TimesColor;
 var TimesExtColor;
 var colorSimle = document.getElementById("color");
 var colorExtra = document.getElementById("ColorExt");
+var Theme = document.getElementById("theme");
 
 let set2 = (set * 3) + 100;
 let set3 = set * 27;
@@ -87,7 +88,6 @@ mus.addEventListener("change", function () {
     }
 })
 
-
 HTMLAudioElement.prototype.stop = function () {
     this.pause();
     this.currentTime = 0.0;
@@ -119,7 +119,7 @@ colorSimle.addEventListener("click", function () {
     if (this.checked) {
         TimesColor = setInterval(function () {
             randomHands(), setFont(), setColor(),
-            randomLetters()
+                randomLetters()
         }, set);
     } else {
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
@@ -134,7 +134,7 @@ colorExtra.addEventListener("click", function () {
     if (this.checked) {
         TimesExtColor = setInterval(function () {
             randomHands(), setFont(),
-            randomLetters(), setColorAlf(), setColorHand()
+                randomLetters(), setColorAlf(), setColorHand()
         }, set);
     } else {
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
@@ -150,7 +150,6 @@ function newLetters() {
     console.log(`NEWAlfavit : ${ALF}`)
 }
 
-
 function newHands() {
     for (let i = HAND.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -159,7 +158,6 @@ function newHands() {
 
     }
 }
-
 
 function randomLetters() {
     document.getElementById("alfavit").innerText = ALF[alfIndex];
@@ -184,9 +182,7 @@ colorExtra.addEventListener("click", function () {
     }
 })
 
-
 // Расположение Букв
-
 
 function setFont() {
     SISE_1 = document.getElementById("alfavit").style.fontSize;
@@ -214,15 +210,13 @@ function setSise() {
 
 }
 
-function clear(){
+function clear() {
     clearInterval(TimesColor);
     clearInterval(TimesExtColor);
     clearInterval(Times_3);
 }
 
 // Экстро
-
-// var  JUST = document.getElementById("just").value;
 
 function startApp() {
     clear();
@@ -234,13 +228,13 @@ function startApp() {
                 clear();
                 setInterval(function () {
                     randomHands(), setFont(), randomLetters(),
-                    extra(), setColorAlf(), setColorHand()
+                        extra(), setColorAlf(), setColorHand()
                 }, set);
             } else {
                 clear();
                 Times_3 = setInterval(function () {
                     randomHands(), setFont(), randomLetters(),
-                    extra(), setColorAlf(), setColorHand()
+                        extra(), setColorAlf(), setColorHand()
                 }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
@@ -315,7 +309,6 @@ function startApp() {
 
 var SUPER = document.getElementById("super").value;
 
-
 function resetSuperExtr() {
     document.getElementById("super").checked = false;
 }
@@ -328,12 +321,16 @@ function superExtra() {
         if (this.checked) {
             if (HOLD == Times_3) {
                 clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), 
-                    superExtraHan(),setColorAlf(), setColorHand() }, set);
+                Times_3 = setInterval(function () {
+                    randomHands(), setFont(), randomLetters(), superExtraLet(),
+                    superExtraHan(), setColorAlf(), setColorHand()
+                }, set);
             } else {
                 clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), 
-                    superExtraHan(), setColorAlf(), setColorHand() }, HOLD);
+                Times_3 = setInterval(function () {
+                    randomHands(), setFont(), randomLetters(), superExtraLet(),
+                    superExtraHan(), setColorAlf(), setColorHand()
+                }, HOLD);
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
@@ -355,7 +352,7 @@ function superExtra() {
                 clearInterval(Times_Alf)
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }  
+            }
         }
     })
     TimesColor = colorSimle.addEventListener("click", function () {
@@ -406,7 +403,6 @@ function superExtra() {
     }
 }
 
-
 function superExtraLet() {
     const SISE = Math.floor((Math.random() * 70) + 36);
     document.getElementById("alfavit").style.fontSize = SISE + 'px';
@@ -445,22 +441,9 @@ function setTime() {
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
             }
-    
+
         } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
-    
+            resetExtColor();
         }
     })
     TimesColor = colorSimle.addEventListener("click", function () {
@@ -480,21 +463,10 @@ function setTime() {
             }
 
         } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
+            resetColor();
         }
     })
+   
     if (HOLD == Times_3) {
         clear();
         setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
@@ -512,19 +484,22 @@ function setTime() {
 
 }
 
-
 // Полный экран
 
 var elem = document.documentElement;
 function openFullscreen() {
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
+        document.getElementById("window").style.height = "90.7vh";
     } else if (elem.mozRequestFullScreen) { /* Firefox */
         elem.mozRequestFullScreen();
+        document.getElementById("window").style.height = "90.7vh";
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
         elem.webkitRequestFullscreen();
+        document.getElementById("window").style.height = "90.7vh";
     } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
+        document.getElementById("window").style.height = "90.7vh";
     }
 }
 
@@ -533,25 +508,28 @@ var back = document.getElementById("fullScr");
 back.addEventListener("dblclick", function () {
     if (document.exitFullscreen) {
         document.exitFullscreen();
+        document.getElementById("window").style.height = "89vh";
     } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
+        document.getElementById("window").style.height = "89vh";
     } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
+        document.getElementById("window").style.height = "89vh";
     } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
+        document.getElementById("window").style.height = "89vh";
     }
 
 })
 
-
-
 menuItem.addEventListener("click", function () {
     dropDownMenu.style.display = "none";
+    document.getElementById("window").style.height = "100vh";
 });
-
 
 menuItem2.addEventListener("dblclick", function () {
     dropDownMenu2.style.display = "grid";
+    document.getElementById("window").style.height = "90.7vh";
 });
 
 
@@ -561,43 +539,70 @@ function resetColor() {
     document.getElementById("hand").style.color = "black";
 }
 
-
 function setColor() {
-    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'BLACK', 'GRAY'];
-    var color = Math.floor(Math.random() * 9);
+    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'GRAY'];
+    var color = Math.floor(Math.random() * 8);
     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
     newColor2 = document.getElementById("hand").style.color = COLORS[color];
 
 }
 
 function setColorAlf() {
-    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'BLACK', 'GRAY'];
-    var color = Math.floor(Math.random() * 9);
+    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'GRAY'];
+    var color = Math.floor(Math.random() * 8);
     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
 }
 
 function setColorHand() {
-    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'BLACK', 'GRAY'];
-    var color = Math.floor(Math.random() * 9);
+    const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'GRAY'];
+    var color = Math.floor(Math.random() * 8);
     newColor2 = document.getElementById("hand").style.color = COLORS[color];
 }
 
 function resetExtColor() {
     document.getElementById("ColorExt").checked = false;
-      
     document.getElementById("alfavit").style.color = "black";
     document.getElementById("hand").style.color = "black";
 }
 
+function closeTheme() {
+    Theme.checked = false;
+    document.getElementById("window").style.backgroundColor = "white";
+    document.getElementById("alfavit").style.color = "black"
+    document.getElementById("hand").style.color = "black"
+}
 
+function setTheme() {
+    document.getElementById("window").style.backgroundColor = "black";
+    document.getElementById("alfavit").style.color = "white"
+    document.getElementById("hand").style.color = "white"
+}
 
-// function setExtColor() {
+Theme.addEventListener("click", function () {
+    if (this.checked) {
+        setTheme()
+    } else {
+        closeTheme();
+    }
 
+})
+
+// function setThemeColor() {
+//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
+//     var color = Math.floor(Math.random() * 9);
+//     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
+//     newColor2 = document.getElementById("hand").style.color = COLORS[color];
+    
 // }
 
+// function setThemeColorHand() {
+//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
+//     var color = Math.floor(Math.random() * 9);
+//     newColor2 = document.getElementById("hand").style.color = COLORS[color];
+// }
 
-
-
-
-
-
+// function setThemeColorAlf() {
+//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
+//     var color = Math.floor(Math.random() * 9);
+//     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
+// }
