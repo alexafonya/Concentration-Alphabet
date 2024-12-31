@@ -66,6 +66,7 @@ body {
                 justify-self: end;
 
                 #music {
+                    -webkit-appearance: none;
                     position: relative;
                     display: inline-block;
                     width: 30px;
@@ -73,8 +74,23 @@ body {
                     justify-self: end;
                     align-self: baseline;
                     bottom: 25px;
-                    left: 25px
+                    left: 25px;
+                    border-radius: 50%;
+                    height: 7px;
+                    background:  rgb(206, 205, 205);
+            
                 }
+
+               
+                #music::-webkit-slider-thumb {
+                    
+                    -webkit-appearance: none;
+                    height: 12px;
+                    width: 7px;
+                    border-radius: 50%;
+                    background-color: rgb(206, 205, 205);
+                }
+
 
             }
 

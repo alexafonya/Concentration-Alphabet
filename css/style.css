@@ -53,6 +53,7 @@ body #top #f1 #mus {
   justify-self: end;
 }
 body #top #f1 #mus #music {
+  -webkit-appearance: none;
   position: relative;
   display: inline-block;
   width: 30px;
@@ -61,6 +62,16 @@ body #top #f1 #mus #music {
   align-self: baseline;
   bottom: 25px;
   left: 25px;
+  border-radius: 50%;
+  height: 7px;
+  background: rgb(206, 205, 205);
+}
+body #top #f1 #mus #music::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: rgb(206, 205, 205);
 }
 body #top #f1 #f2_2 {
   display: grid;
