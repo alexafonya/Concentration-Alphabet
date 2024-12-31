@@ -71,13 +71,13 @@
                         type="submit" id="time" value="Скорость">
                 </div>
                 <div id="f3_1_2"> <!--f2-->
-                    <input type="number" name="number" class="form" id="speed" min="100" value="1600" step="100">
+                    <input type="number" name="number" class="form" id="speed" min="100" max="5000" value="1600" step="100">
                 </div>
             </div>
             <!-- font sise control  -->
             <div id="f3_2"> <!--shrift-->
                 <div id="f3_2_1">
-                    <input type="number" name="letters" class="form" id="fill" min="10" value="60" step="10">
+                    <input type="number" name="letters" class="form" id="fill" min="10" max="150" value="60" step="10">
                 </div>
                 <div id="f3_2_2">
                     <label for="sise"></label>
@@ -92,7 +92,7 @@
                 <div >
                     <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor();closeTheme()
                     }else{setTime();resetColor();resetExtColor();};" name="fav_language" value="super">
-                    <label class="input"  for="super">SuperExtr</label>
+                    <label class="input"  for="super">Супер Экстра</label>
                 </div>
                 <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor();closeTheme()" type="submit" value="Экстра!"
                     id="On">
@@ -101,11 +101,11 @@
             <div id="f4_2">
                 <form>
                     <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
-                    <label class="input"  for="color">Color</label><br>
+                    <label class="input"  for="color">Цвет</label><br>
                     <input type="checkbox" onclick="" id="ColorExt" name="ChangeColor" value="Ext">
-                    <label class="input" for="ColorExt">Color Extra</label><br>
+                    <label class="input" for="ColorExt">Цвет Экстра</label><br>
                     <input type="checkbox" onclick=" " id="theme" name="ChangeColor" value="just">
-                    <label class="input"  for="theme">Dark theme</label>
+                    <label class="input"  for="theme">Темная Тема</label>
                 </form>
             </div>
         </div>
