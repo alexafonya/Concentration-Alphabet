@@ -13,17 +13,13 @@
 
 <body>
     <div id="top">
-        <!-- full screen  -->
-
-
-        <!-- speed control -->
 
         <!-- Timer  -->
 
         <div id="f1"> <!--f1-->
 
             <div id="mus">
-                <label><input type="range" min="0" max="1" id="music"></label>
+                <label for="music"><input type="range" min="0" max="1" id="music"></label>
             </div>
 
             <!-- <span class="slider round"></span> -->
@@ -66,14 +62,12 @@
             <!-- <input type="submit" onclick="getWidth()"> -->
         </div>
 
-
-
         <div id="f3">
             <div id="f3_1">
                 <div id="f3_1_1">
                     <label for="time"></label>
                     <input onclick="setTime(); newLetters (); setTimer(); stopAudio();resetSuperExtr(); 
-                    resetColor();resetExtColor()"
+                    resetColor();resetExtColor();closeTheme()"
                         type="submit" id="time" value="Скорость">
                 </div>
                 <div id="f3_1_2"> <!--f2-->
@@ -96,11 +90,11 @@
         <div id="f4"> <!--f3-->
             <div id="f4_1">
                 <div >
-                    <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor()
-                    }else{setTime();resetColor();resetExtColor()};" name="fav_language" value="super">
+                    <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor();closeTheme()
+                    }else{setTime();resetColor();resetExtColor();};" name="fav_language" value="super">
                     <label class="input"  for="super">SuperExtr</label>
                 </div>
-                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor()" type="submit" value="Экстра!"
+                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor();closeTheme()" type="submit" value="Экстра!"
                     id="On">
 
             </div>
@@ -116,14 +110,6 @@
             </div>
         </div>
 
-
-
-
-
-        <!-- <div id="bot">
-            <label for="closeScr"></label>
-            <input id="closeScr" type="submit" class="scr" value="обычный экран" onclick="closeFullscreen()">
-        </div> -->
     </div>
 
 
