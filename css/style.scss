@@ -70,25 +70,25 @@ body {
                     position: relative;
                     display: inline-block;
                     width: 30px;
-                    height: 15px;
+                    height: 20px;
                     justify-self: end;
                     align-self: baseline;
                     bottom: 25px;
                     left: 25px;
-                    border-radius: 50%;
+                    border-radius: 40%;
                     height: 7px;
                     background:  rgb(206, 205, 205);
-            
+                    transition: 5ms;
                 }
 
                
                 #music::-webkit-slider-thumb {
-                    
+                    transition: 10ms;
                     -webkit-appearance: none;
                     height: 12px;
-                    width: 7px;
+                    width: 10px;
                     border-radius: 50%;
-                    background-color: rgb(206, 205, 205);
+                    background-color: white;
                 }
 
 
