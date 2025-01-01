@@ -179,11 +179,13 @@ var MUSIC = document.getElementById("music");
 
 MUSIC.addEventListener("change", function(){
     var mus1 = document.getElementById("music").value
+   
     if(mus1 == 1){
-         document.getElementById("music").style.backgroundColor = "rgb(206, 205, 205)";
-        
+    document.getElementById("music").style.backgroundColor = "rgb(206, 205, 205)";
+    
          console.log(mus1)
     } else {
+        
         document.getElementById("music").style.backgroundColor = "rgb(255, 255, 255)";
         
 
