@@ -1,5 +1,5 @@
 
-var ALF = [
+var ALFru = [
     'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И',
     'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т',
     'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Ю', 'Я'
@@ -11,8 +11,10 @@ var RIGHT = 'П';
 
 var FIRST_TIME;
 
-HAND = ['Л', 'П', 'О'];
+var HANDru = ['Л', 'П', 'О'];
 
+var HAND;
+var ALF;
 let set = 1600;
 let currentIndex = 0;
 let alfIndex = 0;
@@ -49,6 +51,44 @@ var menuItem2 = document.querySelector("#clean");
 var dropDownMenu2 = document.querySelector("#top");
 
 INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
+
+// inglish
+
+var ALFeng = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+    "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+ ];
+ 
+ var LEFTeng = 'L';
+ var BOTHeng = 'B';
+ var RIGHTeng = 'R';
+ 
+ HANDeng = ['L', 'R', 'B'];
+
+ addEventListener("DOMContentLoaded", function() {
+    ALF = ALFeng;
+    HAND = HANDeng;
+    lang.addEventListener("change", function () {
+
+    if (lang.value != "0") {
+        ALF = ALFeng;
+        HAND = HANDeng;
+        document.getElementById("en").style.color = "rgb(218, 3, 3)"
+        document.getElementById("en").style.fontSize = "24px"
+         document.getElementById("ru").style.color = "rgb(255, 255, 255)"
+        document.getElementById("ru").style.fontSize = "14px"
+    } else {
+        ALF =  ALFru;
+        HAND = HANDru; 
+          document.getElementById("ru").style.color = "rgb(4, 0, 218)"
+        document.getElementById("ru").style.fontSize = "24px"
+         document.getElementById("en").style.color = "rgb(255, 255, 255)"
+        document.getElementById("en").style.fontSize = "14px"
+    } return ALF, HAND;
+})
+ })
+
+
 
 function newCountDown() {
     while (TIME != -1) {
