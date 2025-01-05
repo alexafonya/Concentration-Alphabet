@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Супер Алфавит</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="js/scriptEng.js" defer></script> -->
     <script src="js/script.js" defer></script>
 
 
@@ -19,7 +21,7 @@
         <div id="f1"> <!--f1-->
 
             <div id="mus">
-                <label for="music"><input type="range" min="0" max="1" id="music"></label>
+                <label  for="music"><input type="range" min="0" max="1" id="music"></label>
             </div>
 
             <!-- <span class="slider round"></span> -->
@@ -40,11 +42,11 @@
                         <div> | </div>
                     </div>
                     <div id="numb">
-                        <div>1мин</div>
-                        <div>5мин </div>
-                        <div>10мин</div>
-                        <div>15мин</div>
-                        <div>20мин</div>
+                        <div>1min.</div>
+                        <div>5min.</div>
+                        <div>10min.</div>
+                        <div>15min.</div>
+                        <div>20min.</div>
                     </div>
                 </span>
             </div>
@@ -57,7 +59,7 @@
         <div id="f2"> <!--screen-->
 
             <label for="fullScr"></label>
-            <input id="fullScr" type="submit" class="scr" value="&#8593;вверх|вниз&#8595;&#8595;"
+            <input id="fullScr" type="submit" class="scr" value="&#8593;Up | Down&#8595;&#8595;"
                 onclick="openFullscreen()">
             <!-- <input type="submit" onclick="getWidth()"> -->
         </div>
@@ -68,20 +70,20 @@
                     <label for="time"></label>
                     <input onclick="setTime(); newLetters (); setTimer(); stopAudio();resetSuperExtr(); 
                     resetColor();resetExtColor();closeTheme()"
-                        type="submit" id="time" value="Скорость">
+                        type="submit" id="time" value="Speed">
                 </div>
                 <div id="f3_1_2"> <!--f2-->
-                    <input type="number" name="number" class="form" id="speed" min="100" max="5000" value="1600" step="100">
+                    <input type="number" name="number" class="form"  id="speed" min="100" max="5000" value="1600" step="100">
                 </div>
             </div>
             <!-- font sise control  -->
             <div id="f3_2"> <!--shrift-->
                 <div id="f3_2_1">
-                    <input type="number" name="letters" class="form" id="fill" min="10" max="150" value="60" step="10">
+                    <input type="number" name="letters" class="form" id="fill" min="10"  value="60" step="10">
                 </div>
                 <div id="f3_2_2">
                     <label for="sise"></label>
-                    <input onclick="setSise()" type="submit" id="sise" value="Шрифт">
+                    <input onclick="setSise()" type="submit" id="sise" value="Sise">
                 </div>
             </div>
             <!-- Extro -->
@@ -92,21 +94,27 @@
                 <div >
                     <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor();closeTheme()
                     }else{setTime();resetColor();resetExtColor();};" name="fav_language" value="super">
-                    <label class="input"  for="super">Супер Экстра</label>
+                    <label class="input"  for="super">Super Extra</label>
                 </div>
-                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor();closeTheme()" type="submit" value="Экстра!"
+                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor();closeTheme()" type="submit" value="Extra"
                     id="On">
 
             </div>
             <div id="f4_2">
                 <form>
                     <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
-                    <label class="input"  for="color">Цвет</label><br>
+                    <label class="input"  for="color">Color</label><br>
                     <input type="checkbox" onclick="" id="ColorExt" name="ChangeColor" value="Ext">
-                    <label class="input" for="ColorExt">Цвет Экстра</label><br>
+                    <label class="input" for="ColorExt">Extra Color</label><br>
                     <input type="checkbox" onclick=" " id="theme" name="ChangeColor" value="just">
-                    <label class="input"  for="theme">Темная Тема</label>
+                    <label class="input"  for="theme">Dark Theme</label>
                 </form>
+            </div>
+            <div id="language">
+                <span id="ru">Ru</span>
+                <label for="lang"><input type="range" id="lang" min="0" max="1" ></label>
+                <span id="en">En</span>
+              
             </div>
         </div>
 
