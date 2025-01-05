@@ -131,53 +131,66 @@ body {
                     justify-self: center;
 
                     #numb {
+    
+                        &>div{
+                            translate: none;
+                        }
 
                         :nth-of-type(1) {
                             position: relative;
                             right: 5px;
                             bottom: 10px;
+                  
                         }
 
                         :nth-of-type(2) {
                             position: relative;
                             right: 5px;
                             bottom: 6px;
+                   
                         }
 
                         :nth-of-type(3) {
                             position: relative;
                             right: 5px;
                             bottom: 2px;
+                  
                         }
 
                         :nth-of-type(4) {
                             position: relative;
                             left: 5px;
                             bottom: 6px;
+                
                         }
 
                         :nth-of-type(5) {
                             position: relative;
                             left: 15px;
                             bottom: 10px;
+          
                         }
 
+                        translate: none;
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                         font-size: 12px;
                         color: rgb(255, 255, 255);
-                        pointer-events: none;
+                        // pointer-events: none;
 
                     }
 
                     #shpic {
                         pointer-events: none;
+                        appearance: none;
+                        
 
                         :nth-last-of-type(1) {
                             justify-self: end;
                             position: relative;
                             right: 4px;
                             bottom: 9px;
+                            translate: "no";
                         }
 
                         :nth-last-of-type(2) {
@@ -185,6 +198,7 @@ body {
                             position: relative;
                             left: 5px;
                             bottom: 6px;
+                            translate: "no";
                         }
 
                         :nth-last-of-type(3) {
@@ -192,6 +206,7 @@ body {
                             position: relative;
                             right: 5px;
                             bottom: 2px;
+                            appearance: none;
                         }
 
                         :nth-last-of-type(4) {
@@ -268,8 +283,15 @@ body {
 
         #f4 {
             display: grid;
-            grid-template-columns: 1fr 1fr ;
+            grid-template-columns: 1fr 1fr 1fr ;
             gap: 20px;
+
+            #f4_2{
+                justify-items: center;
+                form{
+                    width: 100%;
+                }
+            }
 
             .input{
                 color: rgb(236, 233, 233);     
@@ -277,11 +299,12 @@ body {
             }
 
             .input:hover{
-                font-size: 18px;
+                font-size: 17px;
                 cursor: pointer;
                 text-decoration: underline  solid rgb(236, 233, 233); 
                 transition: 0.7s;
                 color: white;
+                box-sizing: content-box;
             }
 
             #f4_1{
@@ -295,6 +318,45 @@ body {
             #On {
                 height: 25px;
                 width: 80px;
+            }
+            #language{
+               
+                #ru{
+                    font-size: 14px;
+                    color: rgb(255, 255, 255);
+                    pointer-events: none;
+                   
+                }
+
+                #en{
+                    font-size: 24px;
+                    color: rgb(218, 3, 3);
+                    pointer-events: none;
+                }
+
+                #lang{
+                    -webkit-appearance: none;
+                    
+                    // display: inline-block;
+                    width: 50px;
+                    height: 20px;
+                    align-self: center;
+                    border-radius: 40%;
+                    height: 7px;
+                    background:  rgb(206, 205, 205);
+                    transition: 5ms;
+                }
+
+                #lang::-webkit-slider-thumb {
+                    transition: 10ms;
+                    -webkit-appearance: none;
+                    height: 12px;
+                    width: 10px;
+                    border-radius: 50%;
+                    background-color: white;
+                
+                }
+
             }
 
         }

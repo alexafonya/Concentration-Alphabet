@@ -108,11 +108,14 @@ body #top #f1 #f2_2 #line {
   justify-self: center;
 }
 body #top #f1 #f2_2 #line #numb {
+  translate: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-size: 12px;
   color: rgb(255, 255, 255);
-  pointer-events: none;
+}
+body #top #f1 #f2_2 #line #numb > div {
+  translate: none;
 }
 body #top #f1 #f2_2 #line #numb :nth-of-type(1) {
   position: relative;
@@ -141,6 +144,9 @@ body #top #f1 #f2_2 #line #numb :nth-of-type(5) {
 }
 body #top #f1 #f2_2 #line #shpic {
   pointer-events: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-size: 16px;
@@ -151,18 +157,23 @@ body #top #f1 #f2_2 #line #shpic :nth-last-of-type(1) {
   position: relative;
   right: 4px;
   bottom: 9px;
+  translate: "no";
 }
 body #top #f1 #f2_2 #line #shpic :nth-last-of-type(2) {
   justify-self: center;
   position: relative;
   left: 5px;
   bottom: 6px;
+  translate: "no";
 }
 body #top #f1 #f2_2 #line #shpic :nth-last-of-type(3) {
   justify-self: center;
   position: relative;
   right: 5px;
   bottom: 2px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 body #top #f1 #f2_2 #line #shpic :nth-last-of-type(4) {
   position: relative;
@@ -215,19 +226,26 @@ body #top #f3 .form {
 }
 body #top #f4 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+}
+body #top #f4 #f4_2 {
+  justify-items: center;
+}
+body #top #f4 #f4_2 form {
+  width: 100%;
 }
 body #top #f4 .input {
   color: rgb(236, 233, 233);
 }
 body #top #f4 .input:hover {
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(236, 233, 233);
           text-decoration: underline solid rgb(236, 233, 233);
   transition: 0.7s;
   color: white;
+  box-sizing: content-box;
 }
 body #top #f4 #f4_1 {
   display: grid;
@@ -238,6 +256,35 @@ body #top #f4 #f4_1 {
 body #top #f4 #On {
   height: 25px;
   width: 80px;
+}
+body #top #f4 #language #ru {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  pointer-events: none;
+}
+body #top #f4 #language #en {
+  font-size: 24px;
+  color: rgb(218, 3, 3);
+  pointer-events: none;
+}
+body #top #f4 #language #lang {
+  -webkit-appearance: none;
+  width: 50px;
+  height: 20px;
+  align-self: center;
+  border-radius: 40%;
+  height: 7px;
+  background: rgb(206, 205, 205);
+  transition: 5ms;
+}
+body #top #f4 #language #lang::-webkit-slider-thumb {
+  -webkit-transition: 10ms;
+  transition: 10ms;
+  -webkit-appearance: none;
+  height: 12px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
 }
 body #window {
   width: 100%;
