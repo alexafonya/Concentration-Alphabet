@@ -74,14 +74,18 @@ var ALFeng = [
         ALF = ALFeng;
         HAND = HANDeng;
         document.getElementById("en").style.fontSize = "24px"
+        document.getElementById("en").style.transition = "0.7s";
         document.getElementById("ru").style.fontSize = "16px"
+        document.getElementById("ru").style.transition = "0.7s";
     
      })
     ru.addEventListener("click", function () {
         ALF =  ALFru;
         HAND = HANDru; 
         document.getElementById("ru").style.fontSize = "24px"
+        document.getElementById("ru").style.transition = "0.7s";
         document.getElementById("en").style.fontSize = "16px"
+        document.getElementById("en").style.transition = "0.7s";
 
      })
 
