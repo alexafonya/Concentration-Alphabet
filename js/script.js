@@ -65,27 +65,27 @@ var ALFeng = [
  
  HANDeng = ['L', 'R', 'B'];
 
+
  addEventListener("DOMContentLoaded", function() {
     ALF = ALFeng;
     HAND = HANDeng;
-    lang.addEventListener("change", function () {
 
-    if (lang.value != "0") {
+    en.addEventListener("click", function () {
         ALF = ALFeng;
         HAND = HANDeng;
-        document.getElementById("en").style.color = "rgb(218, 3, 3)"
         document.getElementById("en").style.fontSize = "24px"
-         document.getElementById("ru").style.color = "rgb(255, 255, 255)"
-        document.getElementById("ru").style.fontSize = "14px"
-    } else {
+        document.getElementById("ru").style.fontSize = "16px"
+    
+     })
+    ru.addEventListener("click", function () {
         ALF =  ALFru;
         HAND = HANDru; 
-          document.getElementById("ru").style.color = "rgb(4, 0, 218)"
         document.getElementById("ru").style.fontSize = "24px"
-         document.getElementById("en").style.color = "rgb(255, 255, 255)"
-        document.getElementById("en").style.fontSize = "14px"
-    } return ALF, HAND;
-})
+        document.getElementById("en").style.fontSize = "16px"
+
+     })
+
+
  })
 
 
