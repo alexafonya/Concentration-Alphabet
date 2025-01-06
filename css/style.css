@@ -257,19 +257,36 @@ body #top #f4 #On {
   height: 25px;
   width: 80px;
 }
+body #top #f4 #language span {
+  font-size: 24px;
+}
 body #top #f4 #language #ru {
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-  pointer-events: none;
+  font-size: 16px;
+  color: rgb(4, 0, 218);
+  border: none;
+  background-color: transparent;
+}
+body #top #f4 #language #ru:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  -webkit-text-decoration: underline solid rgb(4, 0, 218);
+          text-decoration: underline solid rgb(4, 0, 218);
 }
 body #top #f4 #language #en {
   font-size: 24px;
   color: rgb(218, 3, 3);
-  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+body #top #f4 #language #en:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  -webkit-text-decoration: underline solid rgb(218, 3, 3);
+          text-decoration: underline solid rgb(218, 3, 3);
 }
 body #top #f4 #language #lang {
   -webkit-appearance: none;
-  width: 50px;
+  width: 15px;
   height: 20px;
   align-self: center;
   border-radius: 40%;
