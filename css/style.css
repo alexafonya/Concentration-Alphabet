@@ -267,7 +267,6 @@ body #top #f4 #language #ru {
   background-color: transparent;
 }
 body #top #f4 #language #ru:hover {
-  transition: 0.4s;
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(4, 0, 218);
           text-decoration: underline solid rgb(4, 0, 218);
@@ -279,7 +278,6 @@ body #top #f4 #language #en {
   background-color: transparent;
 }
 body #top #f4 #language #en:hover {
-  transition: 0.4s;
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(218, 3, 3);
           text-decoration: underline solid rgb(218, 3, 3);
