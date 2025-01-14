@@ -7,7 +7,7 @@ body {
         display: grid;
         background-color: gray;
         grid-template-columns: 2fr 1fr 2fr 2fr;
-        height: 80px;
+        height: 100px;
         align-items: center;
         width: 100%;
         margin: 0 auto;
@@ -62,7 +62,7 @@ body {
 
             }
 
-            #mus {
+            #TimeOnOf {
                 justify-self: end;
 
                 #music {
@@ -290,20 +290,27 @@ body {
                 justify-items: center;
                 form{
                     width: 100%;
+
+                    input{
+                        margin: 5px auto;
+                        
+                    }
                 }
             }
 
             .input{
-                color: rgb(236, 233, 233);     
+                color: rgb(236, 233, 233);   
+                margin: 0 auto;
+
                     
             }
 
             .input:hover{
-                font-size: 17px;
+                font-size: 18px;
                 cursor: pointer;
-                text-decoration: underline  solid rgb(236, 233, 233); 
+                text-decoration: underline  solid rgb(255, 255, 255); 
                 transition: 0.7s;
-                color: white;
+                color: rgb(255, 255, 255);
                 box-sizing: content-box;
             }
 
