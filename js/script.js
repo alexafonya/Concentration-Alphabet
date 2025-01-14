@@ -29,7 +29,7 @@ var Theme = document.getElementById("theme");
 let set2 = (set * 3) + 100;
 let set3 = set * 27;
 
-let TIME = document.getElementById("start").value;
+let TIME = document.getElementById("start").value = "0";
 let INTERVAL1;
 
 
@@ -94,13 +94,9 @@ var ALFeng = [
 
 
 
-    
-
-var mus = document.getElementById("music");
-
-mus.addEventListener("change", function () {
     const newCountDown = () => {
-    while (TIME != -1) {
+        if (mus.value != "0") {
+                while (TIME != -1) {
         let countDownEl = document.getElementById("countdown")
         let minutes = Math.floor(TIME / 60);
         let seconds = TIME % 60;
@@ -115,27 +111,30 @@ mus.addEventListener("change", function () {
             stopAudio()
             
             clearInterval(INTERVAL1)
-            INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
         }
         break
     }
-}
-    if (mus.value != "0") {
-        newCountDown()
-    } else {
-        TIME == "0";
-    }
-})
+        } else {
+            TIME == 0;
+        }
 
-HTMLAudioElement.prototype.stop = function () {
-    this.pause();
-    this.currentTime = 0.0;
 }
 
-function stopAudio() {
-    Audio = document.getElementById("final2")
-    Audio.stop()
-}
+var mus = document.getElementById("music");
+
+// mus.addEventListener("change", function () {
+    
+//     if (mus.value != "0") {
+//         setTimer()
+//     } else {
+//         TIME == 0;
+//     }
+// })
+
+// HTMLAudioElement.prototype.stop = function () {
+//     this.pause();
+//     this.currentTime = 0.0;
+// }
 
 function setTimer() {
     TIME = document.getElementById("start").value
