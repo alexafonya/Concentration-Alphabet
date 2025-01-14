@@ -94,7 +94,12 @@ var ALFeng = [
 
 
 
-function newCountDown() {
+    
+
+var mus = document.getElementById("music");
+
+mus.addEventListener("change", function () {
+    const newCountDown = () => {
     while (TIME != -1) {
         let countDownEl = document.getElementById("countdown")
         let minutes = Math.floor(TIME / 60);
@@ -108,27 +113,17 @@ function newCountDown() {
             Audio.play()
         } if (TIME == 0) {
             stopAudio()
-            Audio = document.getElementById("final2")
-            if (mus.value != "0") {
-                setTimeout(function () { Audio.play() }, 1500)
-            } else {
-                Audio.stop()
-            }
+            
             clearInterval(INTERVAL1)
             INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
         }
         break
     }
 }
-
-var mus = document.getElementById("music");
-
-mus.addEventListener("change", function () {
-    Audio = document.getElementById("final2")
     if (mus.value != "0") {
-        Audio.play()
+        newCountDown()
     } else {
-        Audio.stop()
+        TIME == "0";
     }
 })
 
