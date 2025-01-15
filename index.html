@@ -69,8 +69,8 @@
             <div id="f3_1">
                 <div id="f3_1_1">
                     <label for="time"></label>
-                    <input onclick="setTime(); newLetters (); setTimer(); stopAudio();resetSuperExtr(); 
-                    resetColor();resetExtColor();closeTheme()"
+                    <input onclick="setTime(); newLetters (); setTimer();resetSuperExtr(); 
+                    resetColor();resetExtColor();closeTheme();resetExtra()"
                         type="submit" id="time" value="Speed">
                 </div>
                 <div id="f3_1_2"> <!--f2-->
@@ -93,12 +93,15 @@
         <div id="f4"> <!--f3-->
             <div id="f4_1">
                 <div >
-                    <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor();closeTheme()
-                    }else{setTime();resetColor();resetExtColor();};" name="fav_language" value="super">
+                    <input type="radio" id="super" onclick="if(this.checked){superExtra();resetColor();resetExtColor();resetExtra();closeTheme()
+                    }else{setTime();resetColor();resetExtColor();resetExtra()};" name="fav_language" value="super">
                     <label class="input"  for="super">Super Extra</label>
                 </div>
-                <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();resetExtColor();closeTheme()" type="submit" value="Extra"
-                    id="On">
+                <div>
+                    <input onclick="startApp(); setTimer();resetSuperExtr(); resetColor();
+                    resetExtColor();closeTheme()" type="radio" id="On">
+                    <label class="input"  for="On">Extra</label>
+                </div>
 
             </div>
             <div id="f4_2">
@@ -111,11 +114,59 @@
                     <label class="input"  for="theme">Dark Theme</label>
                 </form>
             </div>
-            <div id="language">
-                <button id="ru" c="">Ru</button>
-                <span>/</span>
-                <button id="en">En</button>
-              
+            <div  id="help">
+                <div id="language">
+                    <button id="ru">Ru</button>
+                    <span>/</span>
+                    <button id="en">En</button>
+                    <span>/</span>
+                    <button id="he">He</button>
+                </div>
+                <div>
+                    <button id="openModal">Help!!!</button>
+
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                          <button class="close">close</button>
+                          <h2>Приложение "Алфавит с руками"</h2> 
+
+                           <p> Цель этого приложения развивать скорость и гибкость мышления!</p>
+                            <p>
+                                Всего 5 - 10 минут в день, в разы увеличат мозговую активность,
+                                а КПД вашего мозга повысится на 15% - 30%.
+                            </p>
+                            <p>Как это работает:</p>
+                            <p>
+                                Перед вами на пустом экране, в хаотичном порядке
+                                появляются две буквы.Верхняя буква, это любая буква алфавита от "А" до "Я".
+                                 Нижняя буква одна из трех букв:
+                            </p>
+                             <p> 
+                                 "Л" - левая рука. <br>
+                                 "П" - правая рука. <br>
+                                 "О" - обе руки.
+                             </p>
+                             <p>
+                                 Ваша задача назвать верхнюю букву (любая буква алфавита) вслух!
+                                 И одновременно поднять вверх руку. (Левую, правую или обе руки.)
+                                 Ту, которую показывает нижняя буква.
+                             </p>
+                            
+                            <p>
+                                В верней части экрана, ты найдешь меню настроек.
+                                Где можно увеличить или уменьшить скорость появления букв,
+                                а так же их величину.
+                                
+                                В левой части меню находится таймер. В правой части есть разные способы
+                                изменения сложности, где ты можешь менять цвета букв, хаотичный размер
+                                шрифта, а так же поменять фон с белого на черный. И возможность выбора
+                                языка: Рус/Анг/Ивр.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
