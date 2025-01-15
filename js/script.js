@@ -765,8 +765,15 @@ menuItem2.addEventListener("dblclick", function () {
 
 function resetColor() {
     document.getElementById("color").checked = false;
-    document.getElementById("alfavit").style.color = "black";
-    document.getElementById("hand").style.color = "black";
+    let black = document.getElementById("window").style.backgroundColor
+    if (black == "black" ){
+            document.getElementById("alfavit").style.color = "white";
+            document.getElementById("hand").style.color = "white";
+    } else {
+        document.getElementById("alfavit").style.color = "black";
+        document.getElementById("hand").style.color = "black";
+    }   
+
 }
 
 function setColor() {
