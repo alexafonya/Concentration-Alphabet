@@ -7,7 +7,7 @@ body {
         display: grid;
         background-color: gray;
         grid-template-columns: 2fr 1fr 2fr 2fr;
-        height: 100px;
+        height: 92px;
         align-items: center;
         width: 100%;
         margin: 0 auto;
@@ -65,9 +65,9 @@ body {
             #TimeOnOff {
                 justify-self: end;
 
-                #playTime{
+                #playTime {
                     border-radius: 20%;
-                    padding:  2px 2px 0px 2px;
+                    padding: 2px 2px 0px 2px;
                     margin: 0;
                     height: 35px;
                     border: none;
@@ -75,9 +75,9 @@ body {
                     width: 35px;
                 }
 
-                #stopTime{
+                #stopTime {
                     border-radius: 20%;
-                    padding:  2px 2px 0px 2px;
+                    padding: 2px 2px 0px 2px;
                     margin: 0;
                     height: 35px;
                     width: 35px;
@@ -102,7 +102,7 @@ body {
                 //     transition: 5ms;
                 // }
 
-               
+
                 // #offOnTime::-webkit-slider-thumb {
                 //     transition: 10ms;
                 //     -webkit-appearance: none;
@@ -152,8 +152,8 @@ body {
                     justify-self: center;
 
                     #numb {
-    
-                        &>div{
+
+                        &>div {
                             translate: none;
                         }
 
@@ -161,35 +161,35 @@ body {
                             position: relative;
                             right: 5px;
                             bottom: 10px;
-                  
+
                         }
 
                         :nth-of-type(2) {
                             position: relative;
                             right: 5px;
                             bottom: 6px;
-                   
+
                         }
 
                         :nth-of-type(3) {
                             position: relative;
                             right: 5px;
                             bottom: 2px;
-                  
+
                         }
 
                         :nth-of-type(4) {
                             position: relative;
                             left: 5px;
                             bottom: 6px;
-                
+
                         }
 
                         :nth-of-type(5) {
                             position: relative;
                             left: 15px;
                             bottom: 10px;
-          
+
                         }
 
                         translate: none;
@@ -204,7 +204,7 @@ body {
                     #shpic {
                         pointer-events: none;
                         appearance: none;
-                        
+
 
                         :nth-last-of-type(1) {
                             justify-self: end;
@@ -266,10 +266,11 @@ body {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 align-items: center;
-               gap: 10px;
+                gap: 10px;
 
                 #f3_1_1 {
                     justify-self: end;
+
                     #time {
                         height: 25px;
                         width: 80px;
@@ -285,6 +286,7 @@ body {
 
                 #f3_2_2 {
                     justify-self: start;
+
                     #sise {
                         height: 25px;
                         width: 80px;
@@ -304,112 +306,176 @@ body {
 
         #f4 {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr ;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr 1.2fr;
+            // gap: 7px;
 
-            #f4_2{
-                justify-items: center;
-                form{
+            #f4_2 {
+                justify-self: start;
+
+                form {
                     width: 100%;
 
-                    input{
+                    input {
                         margin: 5px auto;
-                        
+
                     }
                 }
             }
 
-            .input{
-                color: rgb(236, 233, 233);   
+            .input {
+                color: rgb(236, 233, 233);
                 margin: 0 auto;
 
-                    
+
             }
 
-            .input:hover{
+            .input:hover {
                 font-size: 17px;
                 cursor: pointer;
-                text-decoration: underline  solid rgb(255, 255, 255); 
+                text-decoration: underline solid rgb(255, 255, 255);
                 transition: 0.7s;
                 color: white;
                 box-sizing: content-box;
             }
 
-            #f4_1{
+            #f4_1 {
                 display: grid;
                 grid-template-rows: 1fr 1fr;
-                justify-items: center;
+                
                 gap: 5px;
-              
-            }
+                align-items: center;
+                justify-items: baseline;
+                padding-left: 20px;
 
-            #On {
-                height: 25px;
-                width: 80px;
-            }
-            #language{
-                span{
-                    font-size: 24px;
+                div>input {
+                    margin: 0;
                 }
 
-                // button{
-                //     border: none;
-                //     background-color: transparent;
-                    
-                // }
-          
-                   
-                
-               
-                #ru{
-                    font-size: 16px;
-                    color:  rgb(4, 0, 218);
+            }
+
+            #help {
+
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                gap: 7px;
+
+                #language {
+                    span {
+                        font-size: 24px;
+                    }
+
+                    // button{
+                    //     border: none;
+                    //     background-color: transparent;
+
+                    // }
+
+                    #he {
+                        font-size: 16px;
+                        color: rgb(0, 234, 0);
+                        border: none;
+                        background-color: transparent;
+
+                    }
+
+                    #he:hover {
+                        cursor: pointer;
+                        text-decoration: underline solid rgb(0, 234, 0);
+                    }
+
+
+                    #ru {
+                        font-size: 16px;
+                        color: rgb(4, 0, 218);
+                        border: none;
+                        background-color: transparent;
+
+                    }
+
+                    #ru:hover {
+                        cursor: pointer;
+                        text-decoration: underline solid rgb(4, 0, 218);
+                    }
+
+                    #en {
+                        font-size: 24px;
+                        color: rgb(218, 3, 3);
+                        border: none;
+                        background-color: transparent;
+
+                    }
+
+                    #en:hover {
+                        cursor: pointer;
+                        text-decoration: underline solid rgb(218, 3, 3);
+                    }
+
+                    #lang {
+                        -webkit-appearance: none;
+
+                        // display: inline-block;
+                        width: 15px;
+                        height: 20px;
+                        align-self: center;
+                        border-radius: 40%;
+                        height: 7px;
+                        background: rgb(206, 205, 205);
+                        transition: 5ms;
+                    }
+
+                    #lang::-webkit-slider-thumb {
+                        transition: 10ms;
+                        -webkit-appearance: none;
+                        height: 12px;
+                        width: 10px;
+                        border-radius: 50%;
+                        background-color: white;
+
+                    }
+
+                }
+
+                #openModal {
+                    display: grid;
                     border: none;
-                    background-color: transparent;
- 
-                }
-                #ru:hover{
-                    cursor: pointer;
-                    text-decoration: underline  solid  rgb(4, 0, 218);
-                }
-
-                #en{
+                    background: none;
                     font-size: 24px;
-                    color: rgb(218, 3, 3);
-                    border: none;
-                    background-color: transparent;
-              
-                }
-
-                #en:hover{
+                    letter-spacing: 2px;
+                    text-decoration: underline;
                     cursor: pointer;
-                    text-decoration: underline  solid rgb(218, 3, 3);
-                }
-
-                #lang{
-                    -webkit-appearance: none;
+                    color: rgb(236, 233, 233);
+                    justify-self: start;
                     
-                    // display: inline-block;
-                    width: 15px;
-                    height: 20px;
-                    align-self: center;
-                    border-radius: 40%;
-                    height: 7px;
-                    background:  rgb(206, 205, 205);
-                    transition: 5ms;
                 }
 
-                #lang::-webkit-slider-thumb {
-                    transition: 10ms;
-                    -webkit-appearance: none;
-                    height: 12px;
-                    width: 10px;
-                    border-radius: 50%;
-                    background-color: white;
-                
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    width: 80%;
+                    height: 80%;
+                    overflow: auto;
+                    background-color: rgba(0, 0, 0, 0.4);
                 }
+
+                .modal-content {
+                    color: rgb(0, 0, 0);
+                    font-size: 24px;
+                    padding: 50px 70px;
+                    pointer-events: none;
+                }
+
+                .close {
+                    /* some rules */
+                }
+
 
             }
+
+
+
 
         }
 
@@ -420,13 +486,12 @@ body {
 
     #window {
         width: 100%;
-        height: 89vh;
+        height: 85vh;
         margin: auto;
         position: absolute;
 
-     
-             #clean {
-            z-index: 1;
+
+        #clean {
             height: 100%;
             width: 100%;
             background: none;
@@ -436,9 +501,9 @@ body {
             padding: 0;
 
         }
-        
 
-       
+
+
 
         &>div {
             position: absolute;
