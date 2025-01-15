@@ -29,7 +29,7 @@ var Theme = document.getElementById("theme");
 let set2 = (set * 3) + 100;
 let set3 = set * 27;
 
-let TIME = document.getElementById("start").value = "0";
+let TIME = document.getElementById("start").value;
 let INTERVAL1;
 
 
@@ -50,7 +50,7 @@ var dropDownMenu = document.querySelector("#top");
 var menuItem2 = document.querySelector("#clean");
 var dropDownMenu2 = document.querySelector("#top");
 
-INTERVAL1 = setInterval(function () { newCountDown() }, 1000)
+
 
 // inglish
 
@@ -67,6 +67,7 @@ var ALFeng = [
 
 
  addEventListener("DOMContentLoaded", function() {
+    setTimer();
     ALF = ALFeng;
     HAND = HANDeng;
 
@@ -93,48 +94,67 @@ var ALFeng = [
  })
 
 
+ var Play = document.getElementById("playTime");
+ var Stop = document.getElementById("stopTime");
 
-    const newCountDown = () => {
-        if (mus.value != "0") {
-                while (TIME != -1) {
-        let countDownEl = document.getElementById("countdown")
-        let minutes = Math.floor(TIME / 60);
-        let seconds = TIME % 60;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        let DUBLE = countDownEl.innerHTML = `${minutes} : ${seconds}`;
-        document.getElementById("dublicate").value = DUBLE;
-        TIME--;
-        if (TIME == 10) {
-            var Audio = document.getElementById("final")
-            Audio.play()
-        } if (TIME == 0) {
-            stopAudio()
-            
-            clearInterval(INTERVAL1)
-        }
-        break
+
+Play.addEventListener("click", function() {
+    clearInterval(INTERVAL1); 
+    INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
+ })
+
+ Stop.addEventListener("click", function(){
+    clearInterval(INTERVAL1);
+    this.removeEventListener;
+})
+
+let setTimes = document.getElementById("start");
+
+setTimes.addEventListener("click", function() {
+    clearInterval(INTERVAL1);
+    setTimer();
+    newCountDown();
+
+//    let time = document.getElementById("start").value;
+//    document.getElementById("countdown").value = time;
+})
+
+
+
+ 
+
+ const newCountDown = () => {
+    
+     while (TIME != -1) {
+
+    let countDownEl = document.getElementById("countdown")
+    let minutes = Math.floor(TIME / 60);
+    let seconds = TIME % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    let DUBLE = countDownEl.innerHTML = `${minutes} : ${seconds}`;
+    document.getElementById("dublicate").value = DUBLE;
+    TIME--;
+    if (TIME == 10) {
+        var Audio = document.getElementById("final")
+        Audio.play()
+    } if (TIME == 0) {
+        stopAudio()
+        
+        clearInterval(INTERVAL1)
     }
-        } else {
-            TIME == 0;
-        }
+    break
+}
+   
 
 }
 
-var mus = document.getElementById("music");
+document.addEventListener('DOMContentLoaded', () => {
+    setTimer();
+    document.getElementById("countdown").value = TIME.value;
+  });
 
-// mus.addEventListener("change", function () {
-    
-//     if (mus.value != "0") {
-//         setTimer()
-//     } else {
-//         TIME == 0;
-//     }
-// })
 
-// HTMLAudioElement.prototype.stop = function () {
-//     this.pause();
-//     this.currentTime = 0.0;
-// }
 
 function setTimer() {
     TIME = document.getElementById("start").value
@@ -212,25 +232,10 @@ const randomHands = () => {
     console.log(`HAND = ${HAND} + ${HAND}`)
 }
 
-var MUSIC = document.getElementById("music");
 
 
-MUSIC.addEventListener("change", function(){
-    var mus1 = document.getElementById("music").value
-   
-    if(mus1 == 1){
-    document.getElementById("music").style.backgroundColor = "rgb(206, 205, 205)";
-    
-         console.log(mus1)
-    } else {
-        
-        document.getElementById("music").style.backgroundColor = "rgb(255, 255, 255)";
-        
 
-    }
 
-// webkit-slider-thumb.backgroundColor = "white"    
-})
 
 colorExtra.addEventListener("click", function () {
 
