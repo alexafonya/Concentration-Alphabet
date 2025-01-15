@@ -764,7 +764,7 @@ menuItem2.addEventListener("dblclick", function () {
 
 
 function resetColor() {
-    document.getElementById("color").checked = false;
+    document.getElementById("color").checked = false;   
     let black = document.getElementById("window").style.backgroundColor
     if (black == "black" ){
             document.getElementById("alfavit").style.color = "white";
@@ -773,7 +773,6 @@ function resetColor() {
         document.getElementById("alfavit").style.color = "black";
         document.getElementById("hand").style.color = "black";
     }   
-
 }
 
 function setColor() {
@@ -798,8 +797,14 @@ function setColorHand() {
 
 function resetExtColor() {
     document.getElementById("ColorExt").checked = false;
-    document.getElementById("alfavit").style.color = "black";
-    document.getElementById("hand").style.color = "black";
+    let black = document.getElementById("window").style.backgroundColor
+    if (black == "black" ){
+            document.getElementById("alfavit").style.color = "white";
+            document.getElementById("hand").style.color = "white";
+    } else {
+        document.getElementById("alfavit").style.color = "black";
+        document.getElementById("hand").style.color = "black";
+    }  
 }
 
 function closeTheme() {
