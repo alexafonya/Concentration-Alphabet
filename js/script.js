@@ -81,12 +81,12 @@ var ALFeng = [
     HAND = HANDeng;
 
     he.addEventListener("click", function () {
-        clearInterval(Times_Alf);
-        
-        Times_Alf = setInterval(function () { newLetters() }, set5)
-        randomLetters();
         ALF = ALFheb;
         HAND = HANDheb;
+        newLetters();
+        newHands();
+        randomLetters();
+        randomHands();
         document.getElementById("he").style.fontSize = "24px"
         document.getElementById("he").style.transition = "0.7s";
         document.getElementById("en").style.fontSize = "16px"
@@ -97,12 +97,12 @@ var ALFeng = [
      })
 
     en.addEventListener("click", function () {
-        clearInterval(Times_Alf);
-       
-        Times_Alf = setInterval(function () { newLetters() }, set4)
-        randomLetters();
         ALF = ALFeng;
         HAND = HANDeng;
+        newLetters();
+        newHands();
+        randomLetters();
+        randomHands();
         document.getElementById("en").style.fontSize = "24px"
         document.getElementById("en").style.transition = "0.7s";
         document.getElementById("ru").style.fontSize = "16px"
@@ -112,12 +112,12 @@ var ALFeng = [
     
      })
     ru.addEventListener("click", function () {
-        clearInterval(Times_Alf);
-       
-        Times_Alf = setInterval(function () { newLetters() }, set3)
+        ALF = ALFru;
+        HAND = HANDru;
+        newLetters();
+        newHands();
         randomLetters();
-        ALF =  ALFru;
-        HAND = HANDru; 
+        randomHands();
         document.getElementById("ru").style.fontSize = "24px"
         document.getElementById("ru").style.transition = "0.7s";
         document.getElementById("en").style.fontSize = "16px"
