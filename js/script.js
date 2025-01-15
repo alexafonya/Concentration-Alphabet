@@ -28,6 +28,8 @@ var Theme = document.getElementById("theme");
 
 let set2 = (set * 3) + 100;
 let set3 = set * 27;
+let set4 = set * 26;
+let set5 = set * 22;
 
 let TIME = document.getElementById("start").value;
 let INTERVAL1;
@@ -50,7 +52,14 @@ var dropDownMenu = document.querySelector("#top");
 var menuItem2 = document.querySelector("#clean");
 var dropDownMenu2 = document.querySelector("#top");
 
+// Иврит
 
+var ALFheb = [
+   'א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ז', 'ח', 'ט', 'י', 'כ', 
+   'ל', 'מ', 'נ', 'ס', 'ע', 'פ', 'צ', 'ק', 'ר', 'ש', 'ת'
+]
+
+HANDheb = ['ים', 'שם', 'יח'];
 
 // inglish
 
@@ -71,22 +80,50 @@ var ALFeng = [
     ALF = ALFeng;
     HAND = HANDeng;
 
+    he.addEventListener("click", function () {
+        clearInterval(Times_Alf);
+        
+        Times_Alf = setInterval(function () { newLetters() }, set5)
+        randomLetters();
+        ALF = ALFheb;
+        HAND = HANDheb;
+        document.getElementById("he").style.fontSize = "24px"
+        document.getElementById("he").style.transition = "0.7s";
+        document.getElementById("en").style.fontSize = "16px"
+        document.getElementById("en").style.transition = "0.7s";
+        document.getElementById("ru").style.fontSize = "16px"
+        document.getElementById("ru").style.transition = "0.7s";
+    
+     })
+
     en.addEventListener("click", function () {
+        clearInterval(Times_Alf);
+       
+        Times_Alf = setInterval(function () { newLetters() }, set4)
+        randomLetters();
         ALF = ALFeng;
         HAND = HANDeng;
         document.getElementById("en").style.fontSize = "24px"
         document.getElementById("en").style.transition = "0.7s";
         document.getElementById("ru").style.fontSize = "16px"
         document.getElementById("ru").style.transition = "0.7s";
+        document.getElementById("he").style.fontSize = "16px"
+        document.getElementById("he").style.transition = "0.7s";
     
      })
     ru.addEventListener("click", function () {
+        clearInterval(Times_Alf);
+       
+        Times_Alf = setInterval(function () { newLetters() }, set3)
+        randomLetters();
         ALF =  ALFru;
         HAND = HANDru; 
         document.getElementById("ru").style.fontSize = "24px"
         document.getElementById("ru").style.transition = "0.7s";
         document.getElementById("en").style.fontSize = "16px"
         document.getElementById("en").style.transition = "0.7s";
+        document.getElementById("he").style.fontSize = "16px"
+        document.getElementById("he").style.transition = "0.7s";
 
      })
 
@@ -97,13 +134,12 @@ var ALFeng = [
  var Play = document.getElementById("playTime");
  var Stop = document.getElementById("stopTime");
 
-
 Play.addEventListener("click", function() {
     clearInterval(INTERVAL1); 
     INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
  })
 
- Stop.addEventListener("click", function(){
+Stop.addEventListener("click", function(){
     clearInterval(INTERVAL1);
     this.removeEventListener;
 })
@@ -114,19 +150,11 @@ setTimes.addEventListener("click", function() {
     clearInterval(INTERVAL1);
     setTimer();
     newCountDown();
-
-//    let time = document.getElementById("start").value;
-//    document.getElementById("countdown").value = time;
 })
 
 
-
- 
-
- const newCountDown = () => {
-    
+ const newCountDown = () => {   
      while (TIME != -1) {
-
     let countDownEl = document.getElementById("countdown")
     let minutes = Math.floor(TIME / 60);
     let seconds = TIME % 60;
@@ -144,15 +172,14 @@ setTimes.addEventListener("click", function() {
         clearInterval(INTERVAL1)
     }
     break
-}
-   
+}  
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setTimer();
-    document.getElementById("countdown").value = TIME.value;
-  });
+// document.addEventListener('DOMContentLoaded', () => {
+//     setTimer();
+//     document.getElementById("countdown").value = TIME.value;
+//   });
 
 
 
@@ -303,9 +330,20 @@ function startApp() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
+                
             };
         } else {
             if (HOLD == Times_3) {
@@ -317,9 +355,20 @@ function startApp() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
+                
             };
         }
     })
@@ -334,9 +383,20 @@ function startApp() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
+                
             };
 
         } else {
@@ -349,9 +409,20 @@ function startApp() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
+                
             };
         }
 
@@ -365,9 +436,20 @@ function startApp() {
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
         Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        if(ALF == ALFheb) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 22;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } if (ALF == ALFeng) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 26;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } else {
+            clearInterval(Times_Alf)
+            NewAlfHOLD = HOLD * 27;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        }return Times_Alf
+        
     };
 }
 
@@ -398,10 +480,19 @@ function superExtra() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
             }
         } else {
             if (HOLD == Times_3) {
@@ -413,9 +504,19 @@ function superExtra() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }  return Times_Alf
             }
         }
     })
@@ -430,13 +531,21 @@ function superExtra() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }           return Times_Alf    
             }
         } else {
-
             if (HOLD == Times_3) {
                 clear();
                 Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
@@ -446,9 +555,19 @@ function superExtra() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }         return Times_Alf     
             }
         }
     })
@@ -461,9 +580,20 @@ function superExtra() {
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
         Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        if(ALF == ALFheb) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 22;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } if (ALF == ALFeng) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 26;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } else{
+            clearInterval(Times_Alf)
+            NewAlfHOLD = HOLD * 27;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        }return Times_Alf
+        
     }
 }
 
@@ -485,6 +615,10 @@ function extra() {
     console.log(SISE)
 }
 
+function resetExtra() {
+    document.getElementById("On").checked = false;
+}
+
 function setTime() {
     clear();
     setSise();
@@ -501,9 +635,19 @@ function setTime() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                      clearInterval(Times_Alf)
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
             }
 
         } else {
@@ -521,9 +665,20 @@ function setTime() {
                 clearInterval(Times_1)
                 NewHOLD = HOLD * 3;
                 Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                if(ALF == ALFheb) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 22;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } if (ALF == ALFeng) {
+                    clearInterval(Times_Alf);
+                    NewAlfHOLD = HOLD * 26;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                } else {
+                    clearInterval(Times_Alf)
+                    NewAlfHOLD = HOLD * 27;
+                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+                }return Times_Alf
+               
             }
 
         } else {
@@ -540,9 +695,20 @@ function setTime() {
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
         Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        if(ALF == ALFheb) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 22;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } if (ALF == ALFeng) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 26;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } else {
+             clearInterval(Times_Alf)
+             NewAlfHOLD = HOLD * 27;
+             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        }return Times_Alf
+       
     }
 
 
@@ -554,16 +720,16 @@ var elem = document.documentElement;
 function openFullscreen() {
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
-        document.getElementById("window").style.height = "90.7vh";
+        document.getElementById("window").style.height = "85vh";
     } else if (elem.mozRequestFullScreen) { /* Firefox */
         elem.mozRequestFullScreen();
-        document.getElementById("window").style.height = "90.7vh";
+        document.getElementById("window").style.height = "85vh";
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
         elem.webkitRequestFullscreen();
-        document.getElementById("window").style.height = "90.7vh";
+        document.getElementById("window").style.height = "85vh";
     } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
-        document.getElementById("window").style.height = "90.7vh";
+        document.getElementById("window").style.height = "85vh";
     }
 }
 
@@ -593,7 +759,7 @@ menuItem.addEventListener("click", function () {
 
 menuItem2.addEventListener("dblclick", function () {
     dropDownMenu2.style.display = "grid";
-    document.getElementById("window").style.height = "90.7vh";
+    document.getElementById("window").style.height = "85vh";
 });
 
 
@@ -650,6 +816,30 @@ Theme.addEventListener("click", function () {
     }
 
 })
+
+// Инструкйия
+
+const modal = document.querySelector('#modal');
+const btn = document.querySelector('#openModal');
+const close = document.querySelector('.close');
+
+btn.onclick = function () {
+  modal.style.display = 'block';
+  modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
+  modal.style.top = '17%';
+  modal.style.left = '10%';
+
+};
+
+close.onclick = function () {
+  modal.style.display = 'none';
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
 
 // function setThemeColor() {
 //     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
