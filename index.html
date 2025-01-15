@@ -20,8 +20,9 @@
 
         <div id="f1"> <!--f1-->
 
-            <div id="TimeOnOf">
-                <label  for="music"><input type="range" min="0" max="1" id="music" value="0"></label>
+            <div id="TimeOnOff">
+                <button id="playTime"><img src="img/Play_B.png"></button><br>
+                <button id="stopTime"><img src="img/Pause_B.png"></button>    
             </div>
 
             <!-- <span class="slider round"></span> -->
@@ -30,9 +31,9 @@
             <div id="f2_2"> <!--timer2-->
 
                 <div>
-                    <input type="range" id="start" min="60" max="1200" step="60" value="600"
-                        onchange="setTimer();stopAudio()">
+                    <input type="range" id="start" min="60" max="1200" step="60" value="60">
                 </div>
+
                 <span id="line">
                     <div id="shpic">
                         <div> | </div>
@@ -52,7 +53,7 @@
             </div>
             <div id="timeCount">
                 <p id="countdown"></p>
-                <input class="form" type="text" id="dublicate">
+                <input class="form" type="text" id="dublicate" value="01 : 00">
             </div>
         </div>
         <!-- Start -->
@@ -122,7 +123,7 @@
 
 
     <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio>
-    <audio id="final2" src="audio/Exaile.mp3" controls style="display: none;"></audio>
+    
 
 
     <!-- буквы -->
