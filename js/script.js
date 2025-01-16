@@ -854,7 +854,7 @@ function resetExtColor() {
 
 function closeTheme() {
     Theme.checked = false;
-    document.getElementById("window").style.backgroundColor = "white";
+    document.querySelector("body").style.backgroundColor = "white";
     document.getElementById("alfavit").style.color = "black"
     document.getElementById("hand").style.color = "black"
 }
