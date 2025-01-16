@@ -76,13 +76,14 @@ var ALFeng = [
 
 
  addEventListener("DOMContentLoaded", function() {
-    setTimer();
     ALF = ALFeng;
     HAND = HANDeng;
-
     he.addEventListener("click", function () {
+        if (alfIndex > 21){
+            alfIndex -= 5;
+        } 
         ALF = ALFheb;
-        HAND = HANDheb;
+        HAND = HANDheb;       
         newLetters();
         newHands();
         randomLetters();
@@ -97,8 +98,11 @@ var ALFeng = [
      })
 
     en.addEventListener("click", function () {
+        if (alfIndex > 25){
+            alfIndex -= 1;
+        } 
         ALF = ALFeng;
-        HAND = HANDeng;
+        HAND = HANDeng;        
         newLetters();
         newHands();
         randomLetters();
@@ -113,7 +117,7 @@ var ALFeng = [
      })
     ru.addEventListener("click", function () {
         ALF = ALFru;
-        HAND = HANDru;
+        HAND = HANDru;       
         newLetters();
         newHands();
         randomLetters();
@@ -133,13 +137,42 @@ var ALFeng = [
 
  var Play = document.getElementById("playTime");
  var Stop = document.getElementById("stopTime");
+ var resTim = document.getElementById("start");
 
-Play.addEventListener("click", function() {
+ resTim.addEventListener("click", function () {
+    Stop.style.backgroundColor = "rgb(232, 232, 232)"
+    Stop.style.width = "30px";
+    Stop.style.height = "30px";
+    Play.style.backgroundColor = "rgb(232, 232, 232)"
+    Play.style.width = "30px";
+    Play.style.height = "30px";
+
+ })
+
+
+Play.addEventListener("click", function() {  
+    Play.style.backgroundColor = " rgb(255, 255, 255)"
+    Play.style.width = "40px";
+    Play.style.height = "40px";
+    Play.style.transition = "0.7s"
+    Stop.style.backgroundColor = "rgb(196, 196, 196)"
+    Stop.style.transition = "0.7s"
+    Stop.style.width = "30px";
+    Stop.style.height = "30px";    
     clearInterval(INTERVAL1); 
     INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
+    
  })
 
 Stop.addEventListener("click", function(){
+    Stop.style.backgroundColor = "  rgb(255, 255, 255)"
+    Stop.style.width = "40px";
+    Stop.style.height = "40px";
+    Stop.style.transition = "0.7s"
+    Play.style.backgroundColor = "rgb(196, 196, 196)"
+    Play.style.transition = "0.7s"
+    Play.style.width = "30px";
+    Play.style.height = "30px";
     clearInterval(INTERVAL1);
     this.removeEventListener;
 })
@@ -190,7 +223,8 @@ function setTimer() {
 
 // Интервалы 
 
-var Times_Alf = setInterval(function () { newLetters() }, set3)
+
+var Times_Alf = setInterval(function () { newLetters() }, set4)
 
 var Times_1 = setInterval(function () { newHands() }, set2)
 
@@ -231,10 +265,21 @@ colorExtra.addEventListener("click", function () {
 window.addEventListener("load", () => { newLetters() });
 
 
+// function newLetters() {
+//     NEWLETT = ALF.sort(function () { return 0.5 - Math.random() })
+//     console.log(`NEWAlfavit : ${ALF}`);
+// }
+
 function newLetters() {
-    NEWLETT = ALF.sort(function () { return 0.5 - Math.random() })
-    console.log(`NEWAlfavit : ${ALF}`)
+    for (let i = ALF.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [ALF[i], ALF[j]] = [ALF[j], ALF[i]];
+        console.log(`NEWALF = ${ALF}`)
+
+    }
 }
+
+
 
 function newHands() {
     for (let i = HAND.length - 1; i > 0; i--) {
@@ -720,16 +765,16 @@ var elem = document.documentElement;
 function openFullscreen() {
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
-        document.getElementById("window").style.height = "85vh";
+        document.getElementById("window").style.height = "88.9vh";
     } else if (elem.mozRequestFullScreen) { /* Firefox */
         elem.mozRequestFullScreen();
-        document.getElementById("window").style.height = "85vh";
+        document.getElementById("window").style.height = "88.9vh";
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
         elem.webkitRequestFullscreen();
-        document.getElementById("window").style.height = "85vh";
+        document.getElementById("window").style.height = "88.9vh";
     } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
-        document.getElementById("window").style.height = "85vh";
+        document.getElementById("window").style.height = "88.9vh";
     }
 }
 
@@ -738,16 +783,16 @@ var back = document.getElementById("fullScr");
 back.addEventListener("dblclick", function () {
     if (document.exitFullscreen) {
         document.exitFullscreen();
-        document.getElementById("window").style.height = "89vh";
+        document.getElementById("window").style.height = "87vh";
     } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
-        document.getElementById("window").style.height = "89vh";
+        document.getElementById("window").style.height = "87vh";
     } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-        document.getElementById("window").style.height = "89vh";
+        document.getElementById("window").style.height = "87vh";
     } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
-        document.getElementById("window").style.height = "89vh";
+        document.getElementById("window").style.height = "87vh";
     }
 
 })
@@ -759,13 +804,13 @@ menuItem.addEventListener("click", function () {
 
 menuItem2.addEventListener("dblclick", function () {
     dropDownMenu2.style.display = "grid";
-    document.getElementById("window").style.height = "85vh";
+    document.getElementById("window").style.height = "87vh";
 });
 
 
 function resetColor() {
     document.getElementById("color").checked = false;   
-    let black = document.getElementById("window").style.backgroundColor
+    let black = document.querySelector("body").style.backgroundColor
     if (black == "black" ){
             document.getElementById("alfavit").style.color = "white";
             document.getElementById("hand").style.color = "white";
@@ -797,7 +842,7 @@ function setColorHand() {
 
 function resetExtColor() {
     document.getElementById("ColorExt").checked = false;
-    let black = document.getElementById("window").style.backgroundColor
+    let black = document.querySelector("body").style.backgroundColor
     if (black == "black" ){
             document.getElementById("alfavit").style.color = "white";
             document.getElementById("hand").style.color = "white";
@@ -815,7 +860,7 @@ function closeTheme() {
 }
 
 function setTheme() {
-    document.getElementById("window").style.backgroundColor = "black";
+    document.querySelector("body").style.backgroundColor = "black";
     document.getElementById("alfavit").style.color = "white"
     document.getElementById("hand").style.color = "white"
 }
@@ -829,7 +874,7 @@ Theme.addEventListener("click", function () {
 
 })
 
-// Инструкйия
+// Инструкция
 
 const modal = document.querySelector('#modal');
 const btn = document.querySelector('#openModal');
