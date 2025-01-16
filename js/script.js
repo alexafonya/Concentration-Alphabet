@@ -762,25 +762,39 @@ function setTime() {
 // Полный экран
 
 var elem = document.documentElement;
-function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-        document.getElementById("window").style.height = "88.9vh";
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-        document.getElementById("window").style.height = "88.9vh";
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        elem.webkitRequestFullscreen();
-        document.getElementById("window").style.height = "88.9vh";
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
-        document.getElementById("window").style.height = "88.9vh";
-    }
-}
+// function openFullscreen() {
+//     if (elem.requestFullscreen) {
+//         elem.requestFullscreen();
+//         document.getElementById("window").style.height = "88.9vh";
+//     } else if (elem.mozRequestFullScreen) { /* Firefox */
+//         elem.mozRequestFullScreen();
+//         document.getElementById("window").style.height = "88.9vh";
+//     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+//         elem.webkitRequestFullscreen();
+//         document.getElementById("window").style.height = "88.9vh";
+//     } else if (elem.msRequestFullscreen) { /* IE/Edge */
+//         elem.msRequestFullscreen();
+//         document.getElementById("window").style.height = "88.9vh";
+//     }
+// }
 
-var back = document.getElementById("fullScr");
+// var elem = document.getElementById("fullScr");                     
 
-back.addEventListener("dblclick", function () {
+elem.addEventListener("click", function () {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+            document.getElementById("window").style.height = "88.9vh";
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+            document.getElementById("window").style.height = "88.9vh";
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+            document.getElementById("window").style.height = "88.9vh";
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+            document.getElementById("window").style.height = "88.9vh";
+        }
+    this.removeEventListener("click",function(){})
     if (document.exitFullscreen) {
         document.exitFullscreen();
         document.getElementById("window").style.height = "87vh";
@@ -800,12 +814,14 @@ back.addEventListener("dblclick", function () {
 menuItem.addEventListener("click", function () {
     dropDownMenu.style.display = "none";
     document.getElementById("window").style.height = "100vh";
-});
-
-menuItem2.addEventListener("dblclick", function () {
-    dropDownMenu2.style.display = "grid";
+    this.removeEventListener("click", function(){})
+     dropDownMenu2.style.display = "grid";
     document.getElementById("window").style.height = "87vh";
 });
+
+// menuItem2.addEventListener("dblclick", function () {
+   
+// });
 
 
 function resetColor() {
