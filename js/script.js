@@ -140,10 +140,29 @@ var ALFeng = [
  var resTim = document.getElementById("start");
 
  resTim.addEventListener("click", function () {
-    Stop.style.backgroundColor = "rgb(232, 232, 232)"
+    Play.addEventListener("mousemove",function(){
+        Play.style.backgroundColor = "rgb(255, 121, 121)"  
+         Play.style.transition = "0.5s"
+    })
+    Play.addEventListener("mouseleave",function(){
+        Play.style.backgroundColor = "rgb(230, 230, 230)"
+         Play.style.transition = "0.5s"
+    })
+    
+    Stop.addEventListener("mousemove",function(){
+        Stop.style.backgroundColor = "rgb(100, 121, 255)"
+        Stop.style.transition = "0.5s"
+    })
+    
+    Stop.addEventListener("mouseleave",function(){
+        Stop.style.backgroundColor = "rgb(230, 230, 230)"
+        Stop.style.transition = "0.5s"
+    })  
+    
+    Stop.style.backgroundColor = "rgb(230, 230, 230)"
     Stop.style.width = "30px";
     Stop.style.height = "30px";
-    Play.style.backgroundColor = "rgb(232, 232, 232)"
+    Play.style.backgroundColor = "rgb(230, 230, 230)"
     Play.style.width = "30px";
     Play.style.height = "30px";
 
@@ -151,53 +170,70 @@ var ALFeng = [
 
 
 Play.addEventListener("click", function() {  
-   
+    Stop.removeEventListener("click",function(){});
     Stop.addEventListener("mousemove",function(){
-        Stop.style.backgroundColor = " rgb(255, 255, 255)"
+        Stop.style.backgroundColor = "rgb(100, 121, 255)"
     })
     
-    Play.addEventListener("mouseleave",function(){
-        Play.style.backgroundColor = " rgb(255, 255, 255)"
-        this.removeEventListener("mouseleave",function(){})
-    })
     Stop.addEventListener("mouseleave",function(){
-        Stop.style.backgroundColor = " rgb(196, 196, 196)"
+        Stop.style.backgroundColor = " rgb(158, 158, 158)"
+    })
+
+    Play.addEventListener("mouseleave",function(){
+        Play.style.backgroundColor = " rgb(227, 0, 0)"
     })
     
-    Play.style.backgroundColor = " rgb(255, 255, 255)"
+    Play.style.backgroundColor = " rgb(227, 0, 0)"
+    Play.style.transition = "0.5s"
     Play.style.width = "40px";
     Play.style.height = "40px";
-    Play.style.transition = "0.7s"
-    Stop.style.backgroundColor = "rgb(196, 196, 196)"
-    Stop.style.transition = "0.7s"
+    Stop.style.backgroundColor = "rgb(158, 158, 158)"
+    Stop.style.transition = "0.5s"
     Stop.style.width = "30px";
     Stop.style.height = "30px";    
     clearInterval(INTERVAL1); 
     INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
-    this.removeEventListener("mouseleave",function(){})
+    // this.removeEventListener("mouseleave",function(){})
  })
+
+ Play.addEventListener("mousemove",function(){
+    Play.style.backgroundColor = "rgb(255, 121, 121)"  
+     Play.style.transition = "0.5s"
+})
+Play.addEventListener("mouseleave",function(){
+    Play.style.backgroundColor = "rgb(230, 230, 230)"
+     Play.style.transition = "0.5s"
+})
+
+Stop.addEventListener("mousemove",function(){
+    Stop.style.backgroundColor = "rgb(100, 121, 255)"
+    Stop.style.transition = "0.5s"
+})
+
+Stop.addEventListener("mouseleave",function(){
+    Stop.style.backgroundColor = "rgb(230, 230, 230)"
+    Stop.style.transition = "0.5s"
+})
  
 
 Stop.addEventListener("click", function(){
+    Play.removeEventListener("click",function(){});
     Play.addEventListener("mousemove",function(){
-        Play.style.backgroundColor = " rgb(255, 255, 255)"  
+        Play.style.backgroundColor = " rgb(255, 121, 121)"  
     })
     Play.addEventListener("mouseleave",function(){
-        Play.style.backgroundColor = " rgb(196, 196, 196)"
+        Play.style.backgroundColor = " rgb(158, 158, 158)"
     })
   
-    Stop.addEventListener("mousemove",function(){
-        Stop.style.backgroundColor = " rgb(255, 255, 255)"
-    })
     Stop.addEventListener("mouseleave",function(){
-        Stop.style.backgroundColor = " rgb(255, 255, 255)"
+        Stop.style.backgroundColor = " rgb(0, 4, 213)"
     })
-    Stop.style.backgroundColor = "  rgb(255, 255, 255)"
+    Stop.style.backgroundColor = "rgb(0, 4, 213)"
     Stop.style.width = "40px";
     Stop.style.height = "40px";
-    Stop.style.transition = "0.7s"
-    Play.style.backgroundColor = "rgb(196, 196, 196)"
-    Play.style.transition = "0.7s"
+    Stop.style.transition = "0.5s"
+    Play.style.backgroundColor = "rgb(158, 158, 158)"
+    Play.style.transition = "0.5s"
     Play.style.width = "30px";
     Play.style.height = "30px";
     clearInterval(INTERVAL1);
