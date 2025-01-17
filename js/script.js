@@ -74,10 +74,18 @@ var ALFeng = [
  
  HANDeng = ['L', 'R', 'B'];
 
+ let modal;
+ let modal2 = document.querySelector('#modal');
+ 
+ const changeLeng = () =>{
+
+ }
 
  addEventListener("DOMContentLoaded", function() {
+    modal = modal1;
     ALF = ALFeng;
     HAND = HANDeng;
+    let Screen =  modal.style.display;
     he.addEventListener("click", function () {
         if (alfIndex > 21){
             alfIndex -= 5;
@@ -97,7 +105,11 @@ var ALFeng = [
     
      })
 
-    en.addEventListener("click", function () {
+    en.addEventListener("click", function () {  
+        // close.onclick() 
+        modal = modal1;      
+        // btn.onclick(); 
+        console.log("hello")       
         if (alfIndex > 25){
             alfIndex -= 1;
         } 
@@ -115,7 +127,11 @@ var ALFeng = [
         document.getElementById("he").style.transition = "0.7s";
     
      })
-    ru.addEventListener("click", function () {
+    ru.addEventListener("click", function () { 
+        // close.onclick();
+        modal = modal2;            
+        // btn.onclick();
+        console.log("hello")             
         ALF = ALFru;
         HAND = HANDru;       
         newLetters();
@@ -342,8 +358,6 @@ function newLetters() {
     }
 }
 
-
-
 function newHands() {
     for (let i = HAND.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -366,11 +380,6 @@ const randomHands = () => {
     console.log(currentIndex)
     console.log(`HAND = ${HAND} + ${HAND}`)
 }
-
-
-
-
-
 
 colorExtra.addEventListener("click", function () {
 
@@ -829,42 +838,40 @@ var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
 
 fullSreen.addEventListener("click", function () {
-        dropDownMenu.style.display = "none";
+        dropDownMenu.style.display = "none";       
         document.getElementById("window").style.height = "100vh"; 
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-            document.getElementById("window").style.height = "88.9vh";
+            document.getElementById("window").style.height = "100vh";
         } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();
-            document.getElementById("window").style.height = "88.9vh";
+            elem.mozRequestFullScreen();  
+            document.getElementById("window").style.height = "100vh";
         } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();
-            document.getElementById("window").style.height = "88.9vh";
+            elem.webkitRequestFullscreen();        
+            document.getElementById("window").style.height = "100vh";
         } else if (elem.msRequestFullscreen) { /* IE/Edge */
             elem.msRequestFullscreen();
-            document.getElementById("window").style.height = "88.9vh";
-        }
-        
+            document.getElementById("window").style.height = "100vh";
+        }    
     this.removeEventListener("click",function(){})
-
 })
 
 
  menuItem.addEventListener("click", function () {
        dropDownMenu.style.display = "grid";
-        document.getElementById("window").style.height = "87vh";  
+        document.getElementById("window").style.height = "83vh";  
         if (document.exitFullscreen) {
             document.exitFullscreen();
-            document.getElementById("window").style.height = "87vh";
+            document.getElementById("window").style.height = "83vh";
         } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
-            document.getElementById("window").style.height = "87vh";
+            document.getElementById("window").style.height = "83vh";
         } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
-            document.getElementById("window").style.height = "87vh";
+            document.getElementById("window").style.height = "83vh";
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
-            document.getElementById("window").style.height = "87vh";
+            document.getElementById("window").style.height = "83vh";
         }
         this.removeEventListener("click",function(){})
 });
@@ -938,15 +945,36 @@ Theme.addEventListener("click", function () {
 
 // Инструкция
 
-const modal = document.querySelector('#modal');
+let modal1 = document.querySelector('#modalEn');
 const btn = document.querySelector('#openModal');
 const close = document.querySelector('.close');
 
+// const close1 = document.querySelector('.close1');
+// const modal1 = document.querySelector("#modalEn");
+// const leng1 = document.querySelector("#ru");
+// const leng2 = document.querySelector("#en");
+// const leng3 = document.querySelector("#he");
+
+btn.addEventListener("click", function(){
+    ru.addEventListener("click",function(){
+        modal = modal2
+      
+     })
+    en.addEventListener("click",function(){
+        
+        modal = modal1
+   
+     })
+})
+
 btn.onclick = function () {
-  modal.style.display = 'block';
-  modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
-  modal.style.top = '17%';
-  modal.style.left = '10%';
+ 
+
+    modal.style.display = 'block';
+    modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
+    modal.style.top = '17%';
+    modal.style.left = '10%';
+    
 
 };
 
@@ -954,11 +982,19 @@ close.onclick = function () {
   modal.style.display = 'none';
 };
 
+
+
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = 'none';
-  }
+  } 
 };
+// window.onclick = function (event) {
+//     if (event.target == modal1){
+//         modal1.style.display = 'none';
+//       }
+// };
+
 
 // function setThemeColor() {
 //     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
