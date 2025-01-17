@@ -91,13 +91,14 @@ body {
                         background-image: url(../img/Play_B.png);
                         background-repeat: no-repeat;
                         background-size: cover;
-                        
-                        margin: 0;                       
+
+                        margin: 0;
                         height: 30px;
                         border: none;
                         align-self: center;
                         width: 30px;
                     }
+
                     // #playTime:hover{
                     //     background-color: white;
                     // }
@@ -109,7 +110,7 @@ body {
                         background-image: url(../img/Pause_B.png);
                         background-repeat: no-repeat;
                         background-size: cover;
-                       
+
                         margin: 0;
                         height: 30px;
                         width: 30px;
@@ -117,7 +118,7 @@ body {
                         align-self: center;
                     }
 
-                   
+
 
 
 
@@ -129,6 +130,7 @@ body {
                     grid-template-rows: 1fr 1fr;
                     justify-self: end;
                     cursor: pointer;
+
                     &>div {
 
                         justify-self: center;
@@ -160,7 +162,7 @@ body {
                         width: 200px;
                         height: 5px;
                         justify-self: center;
-                        
+
                         #numb {
 
                             &>div {
@@ -342,7 +344,7 @@ body {
 
                         #sise:active {
                             background-color: white;
-                          
+
                         }
                     }
                 }
@@ -367,50 +369,52 @@ body {
                 .input {
                     color: rgb(236, 233, 233);
                     margin: 0 auto;
-
-
+                
                 }
 
                 .input:hover {
-                    font-size: 17px;
+                    font-size: 18px;
                     cursor: pointer;
                     text-decoration: underline solid rgb(255, 255, 255);
-                    transition: 0.7s;
+                    transition: 0.5s;
                     color: white;
                     box-sizing: content-box;
                 }
 
                 #f4_1 {
                     display: grid;
-                    grid-template-rows: 1fr 1fr ;
-                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-columns: 3fr 2fr;
                     width: 100%;
                     height: 100%;
-                   
 
-                    
+
+
                     align-items: center;
                     justify-items: baseline;
                     padding-left: 20px;
 
                     #su {
-                        grid-column: 1/1;
-                        justify-self: center;
+                        grid-column: 1;
+                        accent-color: rgb(120, 255, 120);
+                        
                     }
 
                     #O {
                         grid-column: 2;
+                        accent-color: rgb(116, 255, 116);
                     }
 
                     #co {
                         grid-row: 2;
                         grid-column: 2;
+                        accent-color: rgb(105, 115, 255);
                     }
 
                     #CoEx {
                         grid-row: 2;
                         grid-column: 1;
-                        justify-self: center;
+                       accent-color: rgb(105, 115, 255);
                     }
 
 
@@ -426,18 +430,13 @@ body {
                     display: grid;
                     grid-template-rows: 1fr 1fr;
                     gap: 7px;
-                    justify-items: center;
+                    justify-items: end;
 
                     #language {
+                        justify-self: center;
                         span {
                             font-size: 24px;
                         }
-
-                        // button{
-                        //     border: none;
-                        //     background-color: transparent;
-
-                        // }
 
                         #he {
                             font-size: 14px;
@@ -503,19 +502,49 @@ body {
                         }
 
                     }
-                   
+
                     #btnHelp {
                         display: grid;
-                       width: 100%;
+                        width: 80%;
                         grid-template-columns: 1fr 1fr;
-                       justify-items: center;
-                       align-items: end;
-                         #the{
-                            justify-self: end;
-                    }
+                        justify-items: end;
+                        align-items: end;
+                        margin: 0;
+
+                        #the {
+                            justify-self: start;
+                            align-self: center;
+
+                            input{
+                                background-color: black;
+                                accent-color: #000000;
+                                content: "rgb(0, 0, 0)";
+                            }
+
+                            #theme{
+                                margin: 0;
+                                color: black;
+                            }
+
+                            #theme:hover {
+                                font-size: 18px;
+                                cursor: pointer;
+                                text-decoration: underline solid rgb(0, 0, 0);
+                                transition: 0.5s;
+                                color:black;
+                            }
+                        }
                     }
 
-                    #openModal {
+                    #open{
+                        position: relative;
+                        top: 24px;
+                        justify-self: start;
+                        width: 100%;
+                        text-align: center;
+
+                        #openModal {
+                        
                         border: none;
                         background: none;
                         font-family: math;
@@ -524,15 +553,14 @@ body {
                         text-decoration: underline;
                         cursor: pointer;
                         color: rgb(251, 251, 251);
-                        justify-self: end;
-                        align-self: end;
                         transition: 0.5s;
+                        padding: 0;
+                       
                     }
 
                     #openModal:hover {
                         font-size: 18px;
-                        top: 10px;
-                        right: 10px;
+                        
                         background-color: gray;
                         text-decoration: none;
                         color: white;
@@ -541,7 +569,8 @@ body {
                         box-shadow: 0 0 0 5px rgb(200, 200, 200);
                         letter-spacing: 3px;
                         transition: 0.5s;
-                        padding: 3px;
+                        padding: 3px 5px;
+                    }
                     }
 
 
@@ -568,28 +597,16 @@ body {
                     .close {
                         /* some rules */
                     }
-
-
                 }
-
-
-
-
             }
-
-
         }
-
-
-
     }
-
 
     // Буквы
 
     #window {
         width: 100%;
-        height: 87vh;
+        height: 83vh;
         margin: auto;
         position: absolute;
 
