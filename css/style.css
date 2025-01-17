@@ -72,15 +72,11 @@ body #top #top2 #f1 #TimeOnOff #playTime {
   background-image: url(../img/Play_B.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(232, 232, 232);
   margin: 0;
   height: 30px;
   border: none;
   align-self: center;
   width: 30px;
-}
-body #top #top2 #f1 #TimeOnOff #playTime:hover {
-  background-color: white;
 }
 body #top #top2 #f1 #TimeOnOff #stopTime {
   cursor: pointer;
@@ -88,15 +84,11 @@ body #top #top2 #f1 #TimeOnOff #stopTime {
   background-image: url(../img/Pause_B.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(232, 232, 232);
   margin: 0;
   height: 30px;
   width: 30px;
   border: none;
   align-self: center;
-}
-body #top #top2 #f1 #TimeOnOff #stopTime:hover {
-  background-color: white;
 }
 body #top #top2 #f1 #f2_2 {
   display: grid;
@@ -307,6 +299,7 @@ body #top #top2 #f4 #f4_1 {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
   width: 100%;
+  height: 100%;
   align-items: center;
   justify-items: baseline;
   padding-left: 20px;
@@ -412,9 +405,10 @@ body #top #top2 #f4 #help #openModal {
   color: rgb(251, 251, 251);
   justify-self: end;
   align-self: end;
+  transition: 0.5s;
 }
 body #top #top2 #f4 #help #openModal:hover {
-  font-size: 20px;
+  font-size: 18px;
   top: 10px;
   right: 10px;
   background-color: gray;
@@ -422,8 +416,10 @@ body #top #top2 #f4 #help #openModal:hover {
   color: white;
   transition: 0.2s;
   position: relative;
-  box-shadow: 0 0 0 5px rgb(255, 255, 255);
+  box-shadow: 0 0 0 5px rgb(200, 200, 200);
   letter-spacing: 3px;
+  transition: 0.5s;
+  padding: 3px;
 }
 body #top #top2 #f4 #help .modal {
   display: none;
