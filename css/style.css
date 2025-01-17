@@ -10,7 +10,7 @@ body #top #top2 {
   display: grid;
   background-color: gray;
   grid-template-columns: 2fr 0.6fr 2fr 2fr;
-  height: 96px;
+  height: 120px;
   align-items: center;
   width: 85%;
   margin: 0 auto;
@@ -277,8 +277,7 @@ body #top #top2 #f3 #f3_2 #f3_2_2 #sise:hover {
   transition: 0.5s;
 }
 body #top #top2 #f3 #f3_2 #f3_2_2 #sise:active {
-  background-color: rgb(255, 255, 255);
-  transition: 0.5s;
+  background-color: white;
 }
 body #top #top2 #f3 .form {
   height: 45px;
@@ -307,6 +306,7 @@ body #top #top2 #f4 #f4_1 {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
+  width: 100%;
   align-items: center;
   justify-items: baseline;
   padding-left: 20px;
@@ -340,7 +340,7 @@ body #top #top2 #f4 #help #language span {
   font-size: 24px;
 }
 body #top #top2 #f4 #help #language #he {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(0, 234, 0);
   border: none;
   background-color: transparent;
@@ -351,7 +351,7 @@ body #top #top2 #f4 #help #language #he:hover {
           text-decoration: underline solid rgb(0, 234, 0);
 }
 body #top #top2 #f4 #help #language #ru {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(4, 0, 218);
   border: none;
   background-color: transparent;
@@ -362,7 +362,7 @@ body #top #top2 #f4 #help #language #ru:hover {
           text-decoration: underline solid rgb(4, 0, 218);
 }
 body #top #top2 #f4 #help #language #en {
-  font-size: 24px;
+  font-size: 20px;
   color: rgb(218, 3, 3);
   border: none;
   background-color: transparent;
@@ -398,6 +398,9 @@ body #top #top2 #f4 #help #btnHelp {
   justify-items: center;
   align-items: end;
 }
+body #top #top2 #f4 #help #btnHelp #the {
+  justify-self: end;
+}
 body #top #top2 #f4 #help #openModal {
   border: none;
   background: none;
@@ -411,14 +414,15 @@ body #top #top2 #f4 #help #openModal {
   align-self: end;
 }
 body #top #top2 #f4 #help #openModal:hover {
-  font-size: 18px;
-  top: 5px;
+  font-size: 20px;
+  top: 10px;
   right: 10px;
+  background-color: gray;
   text-decoration: none;
   color: white;
   transition: 0.2s;
   position: relative;
-  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.297);
+  box-shadow: 0 0 0 5px rgb(255, 255, 255);
   letter-spacing: 3px;
 }
 body #top #top2 #f4 #help .modal {

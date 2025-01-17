@@ -15,7 +15,7 @@ body {
             display: grid;
             background-color: gray;
             grid-template-columns: 2fr 0.6fr 2fr 2fr;
-            height: 96px;
+            height: 120px;
             align-items: center;
             width: 85%;
             margin: 0 auto;
@@ -344,7 +344,8 @@ body {
                         }
 
                         #sise:active {
-                            background-color: white);
+                            background-color: white;
+                          
                         }
                     }
                 }
@@ -386,6 +387,7 @@ body {
                     display: grid;
                     grid-template-rows: 1fr 1fr ;
                     grid-template-columns: 2fr 1fr;
+                    width: 100%;
                    
 
                     
@@ -440,7 +442,7 @@ body {
                         // }
 
                         #he {
-                            font-size: 16px;
+                            font-size: 14px;
                             color: rgb(0, 234, 0);
                             border: none;
                             background-color: transparent;
@@ -454,7 +456,7 @@ body {
 
 
                         #ru {
-                            font-size: 16px;
+                            font-size: 14px;
                             color: rgb(4, 0, 218);
                             border: none;
                             background-color: transparent;
@@ -467,7 +469,7 @@ body {
                         }
 
                         #en {
-                            font-size: 24px;
+                            font-size: 20px;
                             color: rgb(218, 3, 3);
                             border: none;
                             background-color: transparent;
@@ -511,7 +513,7 @@ body {
                        justify-items: center;
                        align-items: end;
                          #the{
-
+                            justify-self: end;
                     }
                     }
 
@@ -529,14 +531,15 @@ body {
                     }
 
                     #openModal:hover {
-                        font-size: 18px;
-                        top: 5px;
+                        font-size: 20px;
+                        top: 10px;
                         right: 10px;
+                        background-color: gray;
                         text-decoration: none;
                         color: white;
                         transition: 0.2s;
                         position: relative;
-                        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.297);
+                        box-shadow: 0 0 0 5px rgb(255, 255, 255);
                         letter-spacing: 3px;
                     }
 
