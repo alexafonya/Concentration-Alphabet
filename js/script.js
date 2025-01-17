@@ -47,10 +47,10 @@ var BLACK = document.getElementById("alfavit").style.color = "black";
 
 var colorNow = document.getElementById("color").value;
 
-var menuItem = document.querySelector("#clean");
+var menuItem = document.querySelector("#window>input");
 var dropDownMenu = document.querySelector("#top");
-var menuItem2 = document.querySelector("#clean");
-var dropDownMenu2 = document.querySelector("#top");
+// var menuItem2 = document.querySelector("#clean");
+// var dropDownMenu2 = document.querySelector("#top");
 
 // Иврит
 
@@ -88,11 +88,11 @@ var ALFeng = [
         newHands();
         randomLetters();
         randomHands();
-        document.getElementById("he").style.fontSize = "24px"
+        document.getElementById("he").style.fontSize = "20px"
         document.getElementById("he").style.transition = "0.7s";
-        document.getElementById("en").style.fontSize = "16px"
+        document.getElementById("en").style.fontSize = "14px"
         document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("ru").style.fontSize = "16px"
+        document.getElementById("ru").style.fontSize = "14px"
         document.getElementById("ru").style.transition = "0.7s";
     
      })
@@ -107,11 +107,11 @@ var ALFeng = [
         newHands();
         randomLetters();
         randomHands();
-        document.getElementById("en").style.fontSize = "24px"
+        document.getElementById("en").style.fontSize = "20px"
         document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("ru").style.fontSize = "16px"
+        document.getElementById("ru").style.fontSize = "14px"
         document.getElementById("ru").style.transition = "0.7s";
-        document.getElementById("he").style.fontSize = "16px"
+        document.getElementById("he").style.fontSize = "14px"
         document.getElementById("he").style.transition = "0.7s";
     
      })
@@ -122,11 +122,11 @@ var ALFeng = [
         newHands();
         randomLetters();
         randomHands();
-        document.getElementById("ru").style.fontSize = "24px"
+        document.getElementById("ru").style.fontSize = "20px"
         document.getElementById("ru").style.transition = "0.7s";
-        document.getElementById("en").style.fontSize = "16px"
+        document.getElementById("en").style.fontSize = "14px"
         document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("he").style.fontSize = "16px"
+        document.getElementById("he").style.fontSize = "14px"
         document.getElementById("he").style.transition = "0.7s";
 
      })
@@ -151,6 +151,19 @@ var ALFeng = [
 
 
 Play.addEventListener("click", function() {  
+   
+    Stop.addEventListener("mousemove",function(){
+        Stop.style.backgroundColor = " rgb(255, 255, 255)"
+    })
+    
+    Play.addEventListener("mouseleave",function(){
+        Play.style.backgroundColor = " rgb(255, 255, 255)"
+        this.removeEventListener("mouseleave",function(){})
+    })
+    Stop.addEventListener("mouseleave",function(){
+        Stop.style.backgroundColor = " rgb(196, 196, 196)"
+    })
+    
     Play.style.backgroundColor = " rgb(255, 255, 255)"
     Play.style.width = "40px";
     Play.style.height = "40px";
@@ -161,10 +174,24 @@ Play.addEventListener("click", function() {
     Stop.style.height = "30px";    
     clearInterval(INTERVAL1); 
     INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
-    
+    this.removeEventListener("mouseleave",function(){})
  })
+ 
 
 Stop.addEventListener("click", function(){
+    Play.addEventListener("mousemove",function(){
+        Play.style.backgroundColor = " rgb(255, 255, 255)"  
+    })
+    Play.addEventListener("mouseleave",function(){
+        Play.style.backgroundColor = " rgb(196, 196, 196)"
+    })
+  
+    Stop.addEventListener("mousemove",function(){
+        Stop.style.backgroundColor = " rgb(255, 255, 255)"
+    })
+    Stop.addEventListener("mouseleave",function(){
+        Stop.style.backgroundColor = " rgb(255, 255, 255)"
+    })
     Stop.style.backgroundColor = "  rgb(255, 255, 255)"
     Stop.style.width = "40px";
     Stop.style.height = "40px";
@@ -174,7 +201,7 @@ Stop.addEventListener("click", function(){
     Play.style.width = "30px";
     Play.style.height = "30px";
     clearInterval(INTERVAL1);
-    this.removeEventListener;
+    // this.removeEventListener;
 })
 
 let setTimes = document.getElementById("start");
@@ -761,26 +788,13 @@ function setTime() {
 
 // Полный экран
 
+
+var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
-// function openFullscreen() {
-//     if (elem.requestFullscreen) {
-//         elem.requestFullscreen();
-//         document.getElementById("window").style.height = "88.9vh";
-//     } else if (elem.mozRequestFullScreen) { /* Firefox */
-//         elem.mozRequestFullScreen();
-//         document.getElementById("window").style.height = "88.9vh";
-//     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-//         elem.webkitRequestFullscreen();
-//         document.getElementById("window").style.height = "88.9vh";
-//     } else if (elem.msRequestFullscreen) { /* IE/Edge */
-//         elem.msRequestFullscreen();
-//         document.getElementById("window").style.height = "88.9vh";
-//     }
-// }
 
-// var elem = document.getElementById("fullScr");                     
-
-elem.addEventListener("click", function () {
+fullSreen.addEventListener("click", function () {
+        dropDownMenu.style.display = "none";
+        document.getElementById("window").style.height = "100vh"; 
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
             document.getElementById("window").style.height = "88.9vh";
@@ -794,34 +808,30 @@ elem.addEventListener("click", function () {
             elem.msRequestFullscreen();
             document.getElementById("window").style.height = "88.9vh";
         }
+        
     this.removeEventListener("click",function(){})
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-        document.getElementById("window").style.height = "87vh";
-    } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-        document.getElementById("window").style.height = "87vh";
-    } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-        document.getElementById("window").style.height = "87vh";
-    } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-        document.getElementById("window").style.height = "87vh";
-    }
 
 })
 
-menuItem.addEventListener("click", function () {
-    dropDownMenu.style.display = "none";
-    document.getElementById("window").style.height = "100vh";
-    this.removeEventListener("click", function(){})
-     dropDownMenu2.style.display = "grid";
-    document.getElementById("window").style.height = "87vh";
-});
 
-// menuItem2.addEventListener("dblclick", function () {
-   
-// });
+ menuItem.addEventListener("click", function () {
+       dropDownMenu.style.display = "grid";
+        document.getElementById("window").style.height = "87vh";  
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+            document.getElementById("window").style.height = "87vh";
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+            document.getElementById("window").style.height = "87vh";
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+            document.getElementById("window").style.height = "87vh";
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+            document.getElementById("window").style.height = "87vh";
+        }
+        this.removeEventListener("click",function(){})
+});
 
 
 function resetColor() {
