@@ -106,7 +106,7 @@ var ALFeng = [
      })
 
     en.addEventListener("click", function () {  
-        // close.onclick() 
+        close.onclick() 
         modal = modal1;      
         // btn.onclick(); 
         console.log("hello")       
@@ -128,7 +128,7 @@ var ALFeng = [
     
      })
     ru.addEventListener("click", function () { 
-        // close.onclick();
+        close.onclick();
         modal = modal2;            
         // btn.onclick();
         console.log("hello")             
@@ -957,25 +957,18 @@ const close = document.querySelector('.close');
 
 btn.addEventListener("click", function(){
     ru.addEventListener("click",function(){
-        modal = modal2
-      
+        modal = modal2     
      })
-    en.addEventListener("click",function(){
-        
+    en.addEventListener("click",function(){ 
         modal = modal1
-   
      })
 })
 
 btn.onclick = function () {
- 
-
     modal.style.display = 'block';
     modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
     modal.style.top = '17%';
     modal.style.left = '10%';
-    
-
 };
 
 close.onclick = function () {
