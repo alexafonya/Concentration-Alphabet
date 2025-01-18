@@ -77,16 +77,22 @@ var ALFeng = [
  let modal;
  let modal2 = document.querySelector('#modal');
  
- const changeLeng = () =>{
-
- }
+const changeLeng = () =>{
+    document.getElementById("fullScr").value = "Весь экран"
+    document.getElementById("time").value = " Скор./Масш. "
+    document.getElementById("fullScr").value = "Весь экран"
+    document.getElementById("fullScr").value = "Весь экран"
+    document.getElementById("fullScr").value = "Весь экран"
+}
 
  addEventListener("DOMContentLoaded", function() {
     modal = modal1;
     ALF = ALFeng;
     HAND = HANDeng;
-    let Screen =  modal.style.display;
+    
     he.addEventListener("click", function () {
+        close.onclick() 
+        modal = modal3;
         if (alfIndex > 21){
             alfIndex -= 5;
         } 
@@ -107,14 +113,12 @@ var ALFeng = [
 
     en.addEventListener("click", function () {  
         close.onclick() 
-        modal = modal1;      
-        // btn.onclick(); 
-        console.log("hello")       
+        modal = modal1;   
         if (alfIndex > 25){
             alfIndex -= 1;
         } 
         ALF = ALFeng;
-        HAND = HANDeng;        
+        HAND = HANDeng;     
         newLetters();
         newHands();
         randomLetters();
@@ -127,13 +131,12 @@ var ALFeng = [
         document.getElementById("he").style.transition = "0.7s";
     
      })
-    ru.addEventListener("click", function () { 
-        close.onclick();
+    ru.addEventListener("click", function () {
+        changeLeng();
+        close.onclick() 
         modal = modal2;            
-        // btn.onclick();
-        console.log("hello")             
         ALF = ALFru;
-        HAND = HANDru;       
+        HAND = HANDru;            
         newLetters();
         newHands();
         randomLetters();
@@ -155,7 +158,7 @@ var ALFeng = [
  var Stop = document.getElementById("stopTime");
  var resTim = document.getElementById("start");
 
- resTim.addEventListener("click", function () {
+  resTim.addEventListener("click", function () {
     Play.addEventListener("mousemove",function(){
         Play.style.backgroundColor = "rgb(255, 121, 121)"  
          Play.style.transition = "0.5s"
@@ -416,6 +419,34 @@ function setSise() {
     document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
     document.getElementById('hand').style.fontSize = SHRIFT + 'px';
 
+}
+function reset() {
+    const SHRIFT = document.getElementById("fill").value = "60";
+    const Speed = document.getElementById("speed").value = "1600";
+    console.log(SHRIFT)
+    // setTimes();
+    setTimer();
+    resetSuperExtr();
+    resetExtra();
+    resetExtColor();
+    resetColor();
+    setTheme();
+    closeTheme();
+    clear();
+    document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
+    document.getElementById('hand').style.fontSize = SHRIFT + 'px';
+    document.getElementById('alfavit').style.fontSize = Speed;
+    document.getElementById('hand').style.fontSize = Speed;
+    document.getElementById("dublicate").value = "01 : 00";
+    document.getElementById("start").value = "60";
+    clearInterval(INTERVAL1);
+    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+    Play.style.backgroundColor = "rgb(230, 230, 230)"
+    Stop.style.backgroundColor = "rgb(230, 230, 230)"
+    Play.style.width = "30px";
+    Play.style.height = "30px";
+    Stop.style.width = "30px";
+    Stop.style.height = "30px";
 }
 
 function clear() {
@@ -946,8 +977,10 @@ Theme.addEventListener("click", function () {
 // Инструкция
 
 let modal1 = document.querySelector('#modalEn');
+let modal3 = document.querySelector('#modalHe');
 const btn = document.querySelector('#openModal');
 const close = document.querySelector('.close');
+
 
 // const close1 = document.querySelector('.close1');
 // const modal1 = document.querySelector("#modalEn");
@@ -955,20 +988,14 @@ const close = document.querySelector('.close');
 // const leng2 = document.querySelector("#en");
 // const leng3 = document.querySelector("#he");
 
-btn.addEventListener("click", function(){
-    ru.addEventListener("click",function(){
-        modal = modal2     
-     })
-    en.addEventListener("click",function(){ 
-        modal = modal1
-     })
-})
+
 
 btn.onclick = function () {
     modal.style.display = 'block';
     modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
     modal.style.top = '17%';
     modal.style.left = '10%';
+   
 };
 
 close.onclick = function () {
