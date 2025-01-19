@@ -12,7 +12,7 @@ var RIGHT = 'П';
 var FIRST_TIME;
 
 var HANDru = ['Л', 'П', 'О'];
-
+let ERROR;
 var HAND;
 var ALF;
 let set = 1600;
@@ -77,12 +77,20 @@ var ALFeng = [
  let modal;
  let modal2 = document.querySelector('#modal');
  
-const changeLeng = () =>{
+const changeLengRus = () =>{
     document.getElementById("fullScr").value = "Весь экран"
     document.getElementById("time").value = " Скор./Масш. "
-    document.getElementById("fullScr").value = "Весь экран"
-    document.getElementById("fullScr").value = "Весь экран"
-    document.getElementById("fullScr").value = "Весь экран"
+    document.getElementById("sise").value = "    Сброс    "
+    document.querySelector("#O>label").textContent =  "Супер"
+    document.querySelector("#su>label").textContent = "С.Микс"
+    document.querySelector("#co>label").textContent = "Цвет"
+    document.querySelector("#CoEx>label").textContent = "Ц.Микс"
+    document.getElementById("ru").textContent = "Рус"
+    document.getElementById("en").textContent = "Анг"
+    document.getElementById("he").textContent = "Ивр"
+    document.querySelector("#the>label").textContent = "ЧерныйЭкран"
+
+
 }
 
  addEventListener("DOMContentLoaded", function() {
@@ -112,6 +120,27 @@ const changeLeng = () =>{
      })
 
     en.addEventListener("click", function () {  
+        // setTime();      
+        error = document.getElementById('time');
+        error.addEventListener("click", function(){
+            if (document.getElementById("speed").value < 500){
+                document.querySelector("#Error").innerHTML =  `Too fast!  The interval should not be less than "500"!`;
+                document.querySelector("#Error").style.left = "20%";
+                document.querySelector("#Error").style.top = "15%";
+            } if (document.getElementById("speed").value > 5000){
+                document.querySelector("#Error").innerHTML =  `Too slow!  The interval should not be greater than "5000"!`;
+                document.querySelector("#Error").style.left = "16%";
+                document.querySelector("#Error").style.top = "15%";
+            }
+            if ( document.getElementById("fill").value > 150){
+                document.querySelector("#Error2").innerHTML =  `The  size  of  letters  should  not  exceed   '150' !`;
+            } if(document.getElementById("fill").value < 20){
+                document.querySelector("#Error2").innerHTML =  `The size of the letters should not be less than "20"!`;
+                document.querySelector("#Error2").style.left = "20%";
+        document.querySelector("#Error2").style.top = "25%";
+            } 
+        
+        })
         close.onclick() 
         modal = modal1;   
         if (alfIndex > 25){
@@ -132,7 +161,25 @@ const changeLeng = () =>{
     
      })
     ru.addEventListener("click", function () {
-        changeLeng();
+        error = document.getElementById('time');
+        error.addEventListener("click", function(){
+            if (document.getElementById("speed").value < 500){
+                document.querySelector("#Error").innerHTML =  `Слишком быстро!  Интервал не должен быть меньше "500" !`;
+                document.querySelector("#Error").style.left ="13%"
+            } if (document.getElementById("speed").value > 5000){
+                document.querySelector("#Error").innerHTML =  `Слишком медленно!  Интервал не должен быть больше "5000" !`;
+                 document.querySelector("#Error").style.left ="10%"
+            }
+            if ( document.getElementById("fill").value > 150){
+                document.querySelector("#Error2").innerHTML =  `Размер букв не должен превышать "150" !`;
+               
+            } if(document.getElementById("fill").value < 20){
+                document.querySelector("#Error2").innerHTML =  `Размер букв не должен быть меньше "20" !`;
+                 document.querySelector("#Error2").style.left = "25% "
+            } 
+        
+        })
+        changeLengRus();
         close.onclick() 
         modal = modal2;            
         ALF = ALFru;
@@ -160,7 +207,7 @@ const changeLeng = () =>{
 
   resTim.addEventListener("click", function () {
     Play.addEventListener("mousemove",function(){
-        Play.style.backgroundColor = "rgb(255, 121, 121)"  
+        Play.style.backgroundColor = " rgb(100, 121, 255)"  
          Play.style.transition = "0.5s"
     })
     Play.addEventListener("mouseleave",function(){
@@ -169,7 +216,7 @@ const changeLeng = () =>{
     })
     
     Stop.addEventListener("mousemove",function(){
-        Stop.style.backgroundColor = "rgb(100, 121, 255)"
+        Stop.style.backgroundColor = "rgb(255, 121, 121)"
         Stop.style.transition = "0.5s"
     })
     
@@ -191,7 +238,7 @@ const changeLeng = () =>{
 Play.addEventListener("click", function() {  
     Stop.removeEventListener("click",function(){});
     Stop.addEventListener("mousemove",function(){
-        Stop.style.backgroundColor = "rgb(100, 121, 255)"
+        Stop.style.backgroundColor = "rgb(255, 121, 121)"
     })
     
     Stop.addEventListener("mouseleave",function(){
@@ -199,10 +246,10 @@ Play.addEventListener("click", function() {
     })
 
     Play.addEventListener("mouseleave",function(){
-        Play.style.backgroundColor = " rgb(227, 0, 0)"
+        Play.style.backgroundColor = "rgb(0, 4, 213)"
     })
     
-    Play.style.backgroundColor = " rgb(227, 0, 0)"
+    Play.style.backgroundColor = " rgb(0, 4, 213)"
     Play.style.transition = "0.5s"
     Play.style.width = "40px";
     Play.style.height = "40px";
@@ -216,7 +263,7 @@ Play.addEventListener("click", function() {
  })
 
  Play.addEventListener("mousemove",function(){
-    Play.style.backgroundColor = "rgb(255, 121, 121)"  
+    Play.style.backgroundColor = "rgb(100, 121, 255)"  
      Play.style.transition = "0.5s"
 })
 Play.addEventListener("mouseleave",function(){
@@ -225,7 +272,7 @@ Play.addEventListener("mouseleave",function(){
 })
 
 Stop.addEventListener("mousemove",function(){
-    Stop.style.backgroundColor = "rgb(100, 121, 255)"
+    Stop.style.backgroundColor = "rgb(255, 121, 121)"
     Stop.style.transition = "0.5s"
 })
 
@@ -238,16 +285,16 @@ Stop.addEventListener("mouseleave",function(){
 Stop.addEventListener("click", function(){
     Play.removeEventListener("click",function(){});
     Play.addEventListener("mousemove",function(){
-        Play.style.backgroundColor = " rgb(255, 121, 121)"  
+        Play.style.backgroundColor = " rgb(100, 121, 255)"  
     })
     Play.addEventListener("mouseleave",function(){
         Play.style.backgroundColor = " rgb(158, 158, 158)"
     })
   
     Stop.addEventListener("mouseleave",function(){
-        Stop.style.backgroundColor = " rgb(0, 4, 213)"
+        Stop.style.backgroundColor = "rgb(227, 0, 0)"
     })
-    Stop.style.backgroundColor = "rgb(0, 4, 213)"
+    Stop.style.backgroundColor = "rgb(227, 0, 0)"
     Stop.style.width = "40px";
     Stop.style.height = "40px";
     Stop.style.transition = "0.5s"
@@ -416,15 +463,42 @@ function setFont() {
 function setSise() {
     const SHRIFT = document.getElementById("fill").value;
     console.log(SHRIFT)
+    ERROR = document.querySelector("#Error2").style.display =  "none";
+    if ( SHRIFT > 150){
+        ERROR = document.querySelector("#Error2").style.display =  "block";
+        document.querySelector("#Error2").innerHTML =  `The  size  of  letters  should  not  exceed   '150' !`;
+        document.querySelector("#Error2").style.position = "reletive";
+        document.querySelector("#Error2").style.left = "25%";
+        document.querySelector("#Error2").style.top = "45%";
+        document.querySelector("#Error2").style.fontSize = "45px";   
+        document.querySelector("#Error2").style.color = "red";
+        document.querySelector("#block").style.display = "none";
+        
+    } if(SHRIFT < 20){
+        ERROR = document.querySelector("#Error2").style.display =  "block";
+        document.querySelector("#Error2").innerHTML =  `The size of the letters should not be less than "20"!`;
+        document.querySelector("#Error2").style.position = "reletive";
+        document.querySelector("#Error2").style.left = "20%";
+        document.querySelector("#Error2").style.top = "45%";
+        document.querySelector("#Error2").style.fontSize = "45px";   
+        document.querySelector("#Error2").style.color = "red";
+        document.querySelector("#block").style.display = "none";
+    } else{
+        
     document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
     document.getElementById('hand').style.fontSize = SHRIFT + 'px';
+    }
+   
+  
 
 }
 function reset() {
     const SHRIFT = document.getElementById("fill").value = "60";
     const Speed = document.getElementById("speed").value = "1600";
     console.log(SHRIFT)
-    // setTimes();
+    ERROR = document.querySelector("#Error").style.display =  "none";
+    ERROR = document.querySelector("#Error2").style.display =  "none";
+    document.querySelector("#block").style.display = "block";
     setTimer();
     resetSuperExtr();
     resetExtra();
@@ -770,8 +844,35 @@ function resetExtra() {
 function setTime() {
     clear();
     setSise();
+    setFont()
     const HOLD = document.getElementById("speed").value;
     document.querySelector("#time").innerText = HOLD;
+    document.querySelector("#Error").style.display =  "none";
+    document.querySelector("#block").style.display = "block";
+    if (HOLD < 500){
+        document.querySelector("#Error").style.display =  "block";
+        document.querySelector("#Error").innerHTML =  `Too fast!  The interval should not be less than "500"!`;
+        document.querySelector("#Error").style.position = "reletive";
+        console.log("lskdjfhv")
+        document.querySelector("#Error").style.left = "20%";
+        document.querySelector("#Error").style.top = "15%";
+        document.querySelector("#Error").style.fontSize = "45px";
+        document.querySelector("#Error").style.color = "red";
+        document.querySelector("#block").style.display = "none";
+    } if (HOLD > 5000){
+        document.querySelector("#Error").style.display =  "block";
+        document.querySelector("#Error").innerHTML =  `Too slow!  The interval should not be greater than "5000"!`;
+        document.querySelector("#Error").style.position = "reletive";
+        console.log("lskdjfhv")
+        document.querySelector("#Error").style.left = "16%";
+        document.querySelector("#Error").style.top = "15%";
+        document.querySelector("#Error").style.fontSize = "45px";
+        document.querySelector("#Error").style.color = "red";
+        document.querySelector("#block").style.display = "none";
+    }else{
+        
+        document.querySelector("#time").innerText = HOLD;
+    }
     colorExtra.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
@@ -858,7 +959,7 @@ function setTime() {
         }return Times_Alf
        
     }
-
+    
 
 }
 
