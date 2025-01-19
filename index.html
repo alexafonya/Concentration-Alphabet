@@ -48,7 +48,7 @@
                 </div>
                 <div id="timeCount">
                     <p id="countdown"></p>
-                    <input class="form" type="text" id="dublicate" value="01 : 00">
+                    <input class="form" type="text" id="dublicate" value="01 : 00" readonly>
                 </div>
             </div>
             <!-- Start -->
@@ -59,26 +59,31 @@
             </div>
             <div id="f3">
                 <div id="f3_1">
-                    
+
                     <div id="f3_1_2"> <!--f2-->
-                        <input type="number" name="number" class="form" id="speed" min="100" max="5000" value="1600"
+                        <input type="number" name="number" class="form" id="speed" min="500" max="5000" value="1600"
                             step="100">
                     </div>
+
+                </div>
+                <div id="startReset">
                     <div id="f3_1_1">
                         <label for="time"></label>
-                        <input onclick="setTime(); newLetters (); setTimer();resetSuperExtr(); resetExtra()"
+                        <input onclick="setTime();setSise(); newLetters (); setTimer();resetSuperExtr(); resetExtra()"
                             type="submit" id="time" value=" Speed / Sise ">
-                    </div>
-                </div>
-                <!-- font sise control  -->
-                <div id="f3_2"> <!--shrift-->
-                    <div id="f3_2_1">
-                        <input type="number" name="letters" class="form" id="fill" min="10" value="60" step="10">
                     </div>
                     <div id="f3_2_2">
                         <label for="sise"></label>
                         <input onclick="reset()" type="submit" id="sise" value="    Reset    ">
                     </div>
+                </div>
+                <!-- font sise control  -->
+                <div id="f3_2"> <!--shrift-->
+                    <div id="f3_2_1">
+                        <input type="number" name="letters" class="form" id="fill" min="10" max="150" value="60"
+                            step="10">
+                    </div>
+
                 </div>
                 <!-- Extro -->
             </div>
@@ -87,12 +92,12 @@
                     <div id="su">
                         <input type="checkbox" id="super" onclick="if(this.checked){superExtra();resetExtra()
                         }else{setTime()};" name="fav_language" value="super">
-                        <label class="input" for="super">Super Extra</label>
+                        <label class="input" for="super">ExtraMix</label>
                     </div>
                     <div id="O">
                         <input onclick="if(this.checked){startApp(); setTimer();resetSuperExtr()
                         }else{setTime()};" type="checkbox" id="On">
-                        <label class="input" for="On">Extra</label>
+                        <label id="On1" class="input" for="On">Extra</label>
                     </div>
                     <div id="co">
                         <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
@@ -100,12 +105,12 @@
                     </div>
                     <div id="CoEx">
                         <input type="checkbox" onclick="" id="ColorExt" name="ChangeColor" value="Ext">
-                        <label class="input" for="ColorExt">Extra Color</label>
+                        <label class="input" for="ColorExt">ColorMix</label>
                     </div>
-                   
+
                 </div>
-                
-            
+
+
                 <div id="help">
                     <div id="language">
                         <button id="ru">Ru</button>
@@ -114,13 +119,15 @@
                         <span>/</span>
                         <button id="he">He</button>
                     </div>
-                    
+                    <div id="open">
+                        <button id="openModal">Help!</button>
+                    </div>
                     <div id="btnHelp">
                         <div id="the">
-                            <input type="checkbox"   id="theme" name="ChangeColor" value="just">
+                            <input type="checkbox" id="theme" name="ChangeColor" value="just">
                             <label id="theme" for="theme">Dark</label>
                         </div>
-                        <div id="open"><button id="openModal">Help!</button></div>
+
                         <div id="modal" class="modal">
                             <div class="modal-content">
                                 <button class="close">close</button>
@@ -163,95 +170,97 @@
                             <div class="modal-content">
                                 <button class="close">close</button>
                                 <h2>Application "Alphabet with hands"</h2>
-                                <p>  
-                                   The purpose of this application is to develop speed and flexibility of thinking!
+                                <p>
+                                    The purpose of this application is to develop speed and flexibility of thinking!
                                 </p>
 
-                                    <p>
-                                        Just 5 - 10 minutes a day will significantly increase brain activity,
-                                        and the efficiency of your brain will increase by 15% - 30%.
-                                    </p>
-                                    
-                                    <p>How does this work:</p>
-                                    <p>
-                                        In front of you on a blank screen, in a chaotic order
-                                        two letters appear.
-                                         The top letter is any letter of the alphabet from “A” to “Z”.
-                                         The lower letter is one of three letters:
-                                    </p>
-                                     <p>
-                                         "L" - left hand. <br>
-                                         "R" - right hand. <br>
-                                         "B" - both hands.
-                                     </p>
-                                     <p>
-                                         Your task is to name the top letter (any letter of the alphabet) out loud!
-                                         And at the same time raise your hand up. (Left, right or both hands.)
-                                         The one shown by the lower letter.
-                                     </p>
-                                    
-                                    <p>
-                                        At the top of the screen, you will find the settings menu.
-                                        Where you can increase or decrease the speed at which letters appear,
-                                        as well as their size.
-                                    </p>
-                                    
-                                    <p>
-                                        There is a timer on the right side of the menu. There are different ways
-                                        difficulty changes on the left side, where you can change letter colors, chaotic size
-                                        font, and also change the background from white to black. And the opportunity to choose
-                                        Languages: Russian/English/Hebrew.
-                                    </p>
-                                    
-                               
+                                <p>
+                                    Just 5 - 10 minutes a day will significantly increase brain activity,
+                                    and the efficiency of your brain will increase by 15% - 30%.
+                                </p>
+
+                                <p>How does this work:</p>
+                                <p>
+                                    In front of you on a blank screen, in a chaotic order
+                                    two letters appear.
+                                    The top letter is any letter of the alphabet from “A” to “Z”.
+                                    The lower letter is one of three letters:
+                                </p>
+                                <p>
+                                    "L" - left hand. <br>
+                                    "R" - right hand. <br>
+                                    "B" - both hands.
+                                </p>
+                                <p>
+                                    Your task is to name the top letter (any letter of the alphabet) out loud!
+                                    And at the same time raise your hand up. (Left, right or both hands.)
+                                    The one shown by the lower letter.
+                                </p>
+
+                                <p>
+                                    At the top of the screen, you will find the settings menu.
+                                    Where you can increase or decrease the speed at which letters appear,
+                                    as well as their size.
+                                </p>
+
+                                <p>
+                                    There is a timer on the right side of the menu. There are different ways
+                                    difficulty changes on the left side, where you can change letter colors, chaotic
+                                    size
+                                    font, and also change the background from white to black. And the opportunity to
+                                    choose
+                                    Languages: Russian/English/Hebrew.
+                                </p>
+
+
                             </div>
                         </div>
                         <div id="modalHe" class="modal">
                             <div class="modal-content">
                                 <button class="close">close</button>
                                 <h2>"יישום "אלפבית עם ידיים</h2>
-                                 
 
-<p>!מטרת אפליקציה זו היא לפתח מהירות וגמישות חשיבה</p>
 
-<p>
-    רק 5 - 10 דקות ביום יגדילו משמעותית את פעילות המוח,
-    והיעילות של המוח שלך תגדל ב-15% - 30%.
-</p>
+                                <p>!מטרת אפליקציה זו היא לפתח מהירות וגמישות חשיבה</p>
 
-<p>איך זה עובד:</p>
-<p>
-    מולך על מסך ריק, בסדר כאוטי
-    מופיעות שתי אותיות.
-     האות העליונה היא כל אות באלפבית מ-"א" עד 
-     "ב"
-     האות התחתונה היא אחת משלוש אותיות:
-</p>
- <p>
-    שמ" - יד שמאל" <br>
-    ימ" - יד ימין" <br>
-    יח" - שתי הידיים"
- </p>
- <p>
-     המשימה שלך היא לתת שם לאות העליונה (כל אות באלפבית) בקול רם!
-     ובאותו הזמן להרים את היד למעלה. (שמאל, ימין או שתי הידיים.)
-     זה שמוצג באות התחתונה.
- </p>
+                                <p>
+                                    רק 5 - 10 דקות ביום יגדילו משמעותית את פעילות המוח,
+                                    והיעילות של המוח שלך תגדל ב-15% - 30%.
+                                </p>
 
-<p>
-    בחלק העליון של המסך, תמצאו את תפריט ההגדרות.
-    איפה אתה יכול להגדיל או להקטין את המהירות שבה מופיעות אותיות,
-    כמו גם הגודל שלהם.
-</p>
+                                <p>איך זה עובד:</p>
+                                <p>
+                                    מולך על מסך ריק, בסדר כאוטי
+                                    מופיעות שתי אותיות.
+                                    האות העליונה היא כל אות באלפבית מ-"א" עד
+                                    "ב"
+                                    האות התחתונה היא אחת משלוש אותיות:
+                                </p>
+                                <p>
+                                    שמ" - יד שמאל" <br>
+                                    ימ" - יד ימין" <br>
+                                    יח" - שתי הידיים"
+                                </p>
+                                <p>
+                                    המשימה שלך היא לתת שם לאות העליונה (כל אות באלפבית) בקול רם!
+                                    ובאותו הזמן להרים את היד למעלה. (שמאל, ימין או שתי הידיים.)
+                                    זה שמוצג באות התחתונה.
+                                </p>
 
-<p>
-    יש טיימר בצד ימין של התפריט. יש דרכים שונות
-    קושי משתנה בצד שמאל, שבו אתה יכול לשנות צבעי אותיות, גודל כאוטי
-    גופן, וגם לשנות את הרקע מלבן לשחור. וההזדמנות לבחור
-    שפות: רוסית/אנגלית/עברית.
-    
-</p>                                
-                               
+                                <p>
+                                    בחלק העליון של המסך, תמצאו את תפריט ההגדרות.
+                                    איפה אתה יכול להגדיל או להקטין את המהירות שבה מופיעות אותיות,
+                                    כמו גם הגודל שלהם.
+                                </p>
+
+                                <p>
+                                    יש טיימר בצד ימין של התפריט. יש דרכים שונות
+                                    קושי משתנה בצד שמאל, שבו אתה יכול לשנות צבעי אותיות, גודל כאוטי
+                                    גופן, וגם לשנות את הרקע מלבן לשחור. וההזדמנות לבחור
+                                    שפות: רוסית/אנגלית/עברית.
+
+                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -269,6 +278,8 @@
     <!-- буквы -->
 
     <div id="window">
+        <div id="Error"></div>
+        <div id="Error2"></div>
         <input id="clean" type="submit" class="butt" value="скрыть панель">
         <div id="block">
             <p id="alfavit"></p>
