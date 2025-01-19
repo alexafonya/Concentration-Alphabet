@@ -462,6 +462,8 @@ body {
                         height: 30px;
                         width: 50px;
                         #he {
+                            height: 100%;
+                            width: 100%;
                             font-size: 14px;
                             color: rgb(0, 234, 0);
                             border: none;
@@ -486,6 +488,8 @@ body {
                         color: rgb(4, 0, 218);
                         border: none;
                         background-color: transparent;
+                        height: 100%;
+                        width: 100%;
 
                     }
 
@@ -508,7 +512,8 @@ body {
                         color: rgb(218, 3, 3);
                         border: none;
                         background-color: transparent;
-
+                        height: 100%;
+                        width: 100%;
                     }
 
                     #en:hover {
