@@ -284,7 +284,7 @@ body #top #top2 #f3 .form {
 body #top #top2 #f4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 3fr 1fr;
 }
 body #top #top2 #f4 .input {
   color: rgb(236, 233, 233);
@@ -303,30 +303,36 @@ body #top #top2 #f4 #f4_1 {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 100%;
   align-items: center;
-  justify-items: baseline;
+  justify-items: end;
 }
 body #top #top2 #f4 #f4_1 #su {
   grid-column: 1;
   grid-row: 2;
   accent-color: rgb(120, 255, 120);
+  justify-self: center;
 }
 body #top #top2 #f4 #f4_1 #O {
   grid-column: 1;
   grid-row: 1;
   accent-color: rgb(116, 255, 116);
+  justify-self: center;
+  padding-right: 10%;
+  align-self: end;
 }
 body #top #top2 #f4 #f4_1 #co {
   grid-row: 1;
   grid-column: 2;
   accent-color: rgb(105, 115, 255);
+  justify-self: start;
+  align-self: end;
+  padding-right: 20%;
 }
 body #top #top2 #f4 #f4_1 #CoEx {
   grid-row: 2;
   grid-column: 2;
   accent-color: rgb(105, 115, 255);
+  justify-self: start;
 }
 body #top #top2 #f4 #f4_1 div > input {
   margin: 0;
@@ -339,35 +345,47 @@ body #top #top2 #f4 #language {
 body #top #top2 #f4 #language span {
   font-size: 24px;
 }
-body #top #top2 #f4 #language #he {
+body #top #top2 #f4 #language #H {
+  height: 30px;
+  width: 50px;
+}
+body #top #top2 #f4 #language #H #he {
   font-size: 14px;
   color: rgb(0, 234, 0);
   border: none;
   background-color: transparent;
 }
-body #top #top2 #f4 #language #he:hover {
+body #top #top2 #f4 #language #H #he:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(0, 234, 0);
           text-decoration: underline solid rgb(0, 234, 0);
 }
-body #top #top2 #f4 #language #ru {
+body #top #top2 #f4 #language #R {
+  height: 30px;
+  width: 50px;
+}
+body #top #top2 #f4 #language #R #ru {
   font-size: 14px;
   color: rgb(4, 0, 218);
   border: none;
   background-color: transparent;
 }
-body #top #top2 #f4 #language #ru:hover {
+body #top #top2 #f4 #language #R #ru:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(4, 0, 218);
           text-decoration: underline solid rgb(4, 0, 218);
 }
-body #top #top2 #f4 #language #en {
+body #top #top2 #f4 #language #E {
+  height: 30px;
+  width: 50px;
+}
+body #top #top2 #f4 #language #E #en {
   font-size: 20px;
   color: rgb(218, 3, 3);
   border: none;
   background-color: transparent;
 }
-body #top #top2 #f4 #language #en:hover {
+body #top #top2 #f4 #language #E #en:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(218, 3, 3);
           text-decoration: underline solid rgb(218, 3, 3);
@@ -392,10 +410,8 @@ body #top #top2 #f4 #language #lang::-webkit-slider-thumb {
   background-color: white;
 }
 body #top #top2 #f4 #the {
-  justify-self: start;
+  justify-self: center;
   align-self: end;
-  grid-column: 2;
-  grid-row: 2;
 }
 body #top #top2 #f4 #the input {
   background-color: black;
