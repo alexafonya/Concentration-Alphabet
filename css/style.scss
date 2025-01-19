@@ -374,6 +374,7 @@ body {
             #f4 {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                grid-template-rows: 2fr 1fr;
                 // gap: 7px;
 
 
@@ -511,9 +512,10 @@ body {
                 }
 
                 #the {
-                    //    position: relative;
-                    //    right: 80px;
-                    //    top: 20px;
+                    justify-self: start;
+                    align-self: end;
+                    grid-column: 2;
+                    grid-row: 2;
 
                     input {
                         background-color: black;
@@ -537,10 +539,10 @@ body {
             }
 
             #open {
-                // position: relative;
-                // top: 35px;
-                // left: 120px;
-             
+                justify-self: end;
+                align-self: end;
+                grid-column: 2;
+                grid-row: 2;
 
                 #openModal {
                     border: none;

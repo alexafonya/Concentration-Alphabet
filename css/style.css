@@ -284,6 +284,7 @@ body #top #top2 #f3 .form {
 body #top #top2 #f4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
 }
 body #top #top2 #f4 .input {
   color: rgb(236, 233, 233);
@@ -390,6 +391,12 @@ body #top #top2 #f4 #language #lang::-webkit-slider-thumb {
   border-radius: 50%;
   background-color: white;
 }
+body #top #top2 #f4 #the {
+  justify-self: start;
+  align-self: end;
+  grid-column: 2;
+  grid-row: 2;
+}
 body #top #top2 #f4 #the input {
   background-color: black;
   accent-color: #000000;
@@ -406,6 +413,12 @@ body #top #top2 #f4 #the #theme:hover {
           text-decoration: underline solid rgb(0, 0, 0);
   transition: 0.5s;
   color: black;
+}
+body #top #top2 #open {
+  justify-self: end;
+  align-self: end;
+  grid-column: 2;
+  grid-row: 2;
 }
 body #top #top2 #open #openModal {
   border: none;
