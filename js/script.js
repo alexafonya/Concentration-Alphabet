@@ -33,7 +33,11 @@ let set5 = set * 22;
 
 let TIME = document.getElementById("start").value;
 let INTERVAL1;
-
+let interTime;
+let HOLD = document.getElementById("speed").value;
+let SHRIFT;
+let SISE;
+let SISE_1;
 
 var RED = document.getElementById("alfavit").style.color = "red";
 var ORANGE = document.getElementById("alfavit").style.color = "orange";
@@ -78,17 +82,17 @@ var ALFeng = [
  let modal2 = document.querySelector('#modal');
  
 const changeLengRus = () =>{
-    document.getElementById("fullScr").value = "Весь экран"
+    document.getElementById("fullScr").value = "Весь экран "
     document.getElementById("time").value = " Скор./Масш. "
     document.getElementById("sise").value = "    Сброс    "
-    document.querySelector("#O>label").textContent =  "Супер"
-    document.querySelector("#su>label").textContent = "С.Микс"
+    document.getElementById("On").value =  "Супер"
+    document.getElementById("super").value = "С.Микс"
     document.querySelector("#co>label").textContent = "Цвет"
     document.querySelector("#CoEx>label").textContent = "Ц.Микс"
     document.getElementById("ru").textContent = "Рус"
     document.getElementById("en").textContent = "Анг"
     document.getElementById("he").textContent = "Ивр"
-    document.querySelector("#the>label").textContent = "ЧерныйЭкран"
+    document.getElementById("theme1").textContent = "ЧерныйЭкран"
 
 
 }
@@ -359,18 +363,27 @@ var Times_1 = setInterval(function () { newHands() }, set2)
 
 var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
 
+// Ex = document.getElementById("super");
+// ExMix = document.getElementById("On");
+
 colorSimle.addEventListener("click", function () {
     resetExtColor();
     clearInterval(TimesExtColor);
     clearInterval(TimesColor);
     clearInterval(Times_3);
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
+    }
     if (this.checked) {
         TimesColor = setInterval(function () {
             randomHands(), setFont(), setColor(),
                 randomLetters()
-        }, set);
+        }, interTime);
+        
     } else {
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, interTime);
     }
 })
 
@@ -379,13 +392,18 @@ colorExtra.addEventListener("click", function () {
     clearInterval(TimesExtColor);
     clearInterval(TimesColor);
     clearInterval(Times_3);
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
+    }
     if (this.checked) {
         TimesExtColor = setInterval(function () {
             randomHands(), setFont(),
                 randomLetters(), setColorAlf(), setColorHand()
-        }, set);
+        }, interTime);
     } else {
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
     }
 })
 
@@ -461,7 +479,7 @@ function setFont() {
 //  Размер Шрифта
 
 function setSise() {
-    const SHRIFT = document.getElementById("fill").value;
+    SHRIFT = document.getElementById("fill").value;
     console.log(SHRIFT)
     ERROR = document.querySelector("#Error2").style.display =  "none";
     if ( SHRIFT > 150){
@@ -528,325 +546,12 @@ function clear() {
     clearInterval(TimesExtColor);
     clearInterval(Times_3);
 }
-
-// Экстро
-
-function startApp() {
-    clear();
-    const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () {
-                    randomHands(), setFont(), randomLetters(),
-                        extra(), setColorAlf(), setColorHand()
-                }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(),
-                        extra(), setColorAlf(), setColorHand()
-                }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-                
-            };
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-                
-            };
-        }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-                
-            };
-
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-                
-            };
-        }
-
-    })
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-    } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        if(ALF == ALFheb) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 22;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } if (ALF == ALFeng) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 26;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } else {
-            clearInterval(Times_Alf)
-            NewAlfHOLD = HOLD * 27;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        }return Times_Alf
-        
-    };
-}
-
-var SUPER = document.getElementById("super").value;
-
-function resetSuperExtr() {
-    document.getElementById("super").checked = false;
-}
-
-function superExtra() {
-    clear();
-    const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(), superExtraLet(),
-                    superExtraHan(), setColorAlf(), setColorHand()
-                }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(), superExtraLet(),
-                    superExtraHan(), setColorAlf(), setColorHand()
-                }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-            }
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }  return Times_Alf
-            }
-        }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }           return Times_Alf    
-            }
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }         return Times_Alf     
-            }
-        }
-    })
-    if (HOLD == Times_3) {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-    } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        if(ALF == ALFheb) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 22;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } if (ALF == ALFeng) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 26;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } else{
-            clearInterval(Times_Alf)
-            NewAlfHOLD = HOLD * 27;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        }return Times_Alf
-        
-    }
-}
-
-function superExtraLet() {
-    const SISE = Math.floor((Math.random() * 70) + 36);
-    document.getElementById("alfavit").style.fontSize = SISE + 'px';
-
-}
-
-function superExtraHan() {
-    const SISE = Math.floor((Math.random() * 70) + 36);
-    document.getElementById("hand").style.fontSize = SISE + 'px';
-}
-
-function extra() {
-    const SISE = Math.floor((Math.random() * 70) + 36);
-    document.getElementById("alfavit").style.fontSize = SISE + 'px';
-    document.getElementById("hand").style.fontSize = SISE + 'px';
-    console.log(SISE)
-}
-
-function resetExtra() {
-    document.getElementById("On").checked = false;
-}
+resetColor();
+resetExtColor();
 
 function setTime() {
     clear();
-    setSise();
-    setFont()
-    const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
+    HOLD = document.getElementById("speed").value;
     document.querySelector("#Error").style.display =  "none";
     document.querySelector("#block").style.display = "block";
     if (HOLD < 500){
@@ -870,77 +575,58 @@ function setTime() {
         document.querySelector("#Error").style.color = "red";
         document.querySelector("#block").style.display = "none";
     }else{
-        
         document.querySelector("#time").innerText = HOLD;
+         if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
     }
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, set);
+    } 
+    colorSimle.addEventListener("click", function(){ 
+    if (colorSimle.checked) {
+        clear();
+        TimesColor = setInterval(function () {
+            randomHands(), setFont(), setColor(),
+                randomLetters()
+        }, interTime);
+    } else if (colorExtra.checked) {
+        clear();
+        TimesExtColor = setInterval(function () {
+            randomHands(), setFont(),
+                randomLetters(), setColorAlf(), setColorHand()
+        }, interTime);
+    } else {
+        if (HOLD == Times_3) {
+            clear();
+            setInterval(function () { randomHands(), setFont(), randomLetters()}, set);
             } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                      clearInterval(Times_Alf)
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()}, HOLD);
+            clearInterval(Times_1)
+            NewHOLD = HOLD * 3;
+            Times_1 = setInterval(function () { newHands() }, NewHOLD);
+            if(ALF == ALFheb) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 22;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } if (ALF == ALFeng) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 26;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } else {
+                clearInterval(Times_Alf)
                 NewAlfHOLD = HOLD * 27;
                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-            }
-
-        } else {
-            resetExtColor();
+            }return Times_Alf     
         }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                if(ALF == ALFheb) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 22;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } if (ALF == ALFeng) {
-                    clearInterval(Times_Alf);
-                    NewAlfHOLD = HOLD * 26;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                } else {
-                    clearInterval(Times_Alf)
-                    NewAlfHOLD = HOLD * 27;
-                    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-                }return Times_Alf
-               
-            }
-
-        } else {
-            resetColor();
-        }
-    })
-   
+    }
+})
     if (HOLD == Times_3) {
         clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    } else {
+        setInterval(function () { randomHands(), setFont(), randomLetters()}, set);
+        } else {
         clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()}, HOLD);
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
         Times_1 = setInterval(function () { newHands() }, NewHOLD);
@@ -953,15 +639,584 @@ function setTime() {
             NewAlfHOLD = HOLD * 26;
             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
         } else {
-             clearInterval(Times_Alf)
-             NewAlfHOLD = HOLD * 27;
-             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        }return Times_Alf
-       
+            clearInterval(Times_Alf)
+            NewAlfHOLD = HOLD * 27;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        }return Times_Alf     
+        }
     }
-    
+
+
+function startApp() {
+    // clear();
+    HOLD = document.getElementById("speed").value;
+    document.querySelector("#time").innerText = HOLD;
+    colorSimle.addEventListener("click", function(){      
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
+    }
+    if (colorSimle.checked) {
+        clear();
+        TimesColor = setInterval(function () {
+            randomHands(), setFont(), setColor(), extra(),
+                randomLetters()
+        }, interTime);
+    }  else {
+        if (HOLD == Times_3) {
+            clear();
+            setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
+        } else {
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
+            clearInterval(Times_1)
+            NewHOLD = HOLD * 3;
+            Times_1 = setInterval(function () { newHands() }, NewHOLD);
+            if(ALF == ALFheb) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 22;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } if (ALF == ALFeng) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 26;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } else {
+                clearInterval(Times_Alf)
+                NewAlfHOLD = HOLD * 27;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            }return Times_Alf 
+        };
+    }    
+});
+    colorExtra.addEventListener("click", function(){
+        if (colorExtra.checked) {
+        clear();
+        TimesExtColor = setInterval(function () {
+            randomHands(), setFont(), extra(),
+                randomLetters(), setColorAlf(), setColorHand()
+        }, interTime);
+        } else{
+        if (HOLD == Times_3) {
+        clear();
+        setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
+    } else {
+        clear();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
+        clearInterval(Times_1)
+        NewHOLD = HOLD * 3;
+        Times_1 = setInterval(function () { newHands() }, NewHOLD);
+        if(ALF == ALFheb) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 22;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } if (ALF == ALFeng) {
+            clearInterval(Times_Alf);
+            NewAlfHOLD = HOLD * 26;
+            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+        } else {
+            clearInterval(Times_Alf)
+            NewAlfHOLD = HOLD * 27;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    }return Times_Alf 
+};
+}
+})
+if (HOLD == Times_3) {
+    clear();
+    setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
+} else {
+    clear();
+    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
+    clearInterval(Times_1)
+    NewHOLD = HOLD * 3;
+    Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    if(ALF == ALFheb) {
+        clearInterval(Times_Alf);
+        NewAlfHOLD = HOLD * 22;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    } if (ALF == ALFeng) {
+        clearInterval(Times_Alf);
+        NewAlfHOLD = HOLD * 26;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    } else {
+        clearInterval(Times_Alf)
+        NewAlfHOLD = HOLD * 27;
+    Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+}return Times_Alf 
+};
+}
+
+
+function superExtra() {
+    // clear();
+    HOLD = document.getElementById("speed").value;
+    document.querySelector("#time").innerText = HOLD;
+    colorSimle.addEventListener("click", function(){  
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
+    }
+    if (colorSimle.checked) {
+        clear();
+        TimesColor = setInterval(function () {
+            randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
+                randomLetters()
+        }, interTime);
+    } else {
+        if (HOLD == Times_3) {
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
+        } else {
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+            clearInterval(Times_1)
+            NewHOLD = HOLD * 3;
+            Times_1 = setInterval(function () { newHands() }, NewHOLD);
+            if(ALF == ALFheb) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 22;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } if (ALF == ALFeng) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 26;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } else{
+                clearInterval(Times_Alf)
+                NewAlfHOLD = HOLD * 27;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            }return Times_Alf        
+        }
+    }
+})
+colorExtra.addEventListener("click", function(){
+    if (colorExtra.checked) {
+        clear();
+        TimesExtColor = setInterval(function () {
+            randomHands(), setFont(),superExtraLet(), superExtraHan(),
+                randomLetters(), setColorAlf(), setColorHand()
+        }, interTime);
+    } else{
+        if (HOLD == Times_3) {
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
+        } else {
+            clear();
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+            clearInterval(Times_1)
+            NewHOLD = HOLD * 3;
+            Times_1 = setInterval(function () { newHands() }, NewHOLD);
+            if(ALF == ALFheb) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 22;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } if (ALF == ALFeng) {
+                clearInterval(Times_Alf);
+                NewAlfHOLD = HOLD * 26;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            } else{
+                clearInterval(Times_Alf)
+                NewAlfHOLD = HOLD * 27;
+                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+            }return Times_Alf        
+        }
+    }
+})
+if (HOLD == Times_3) {
+    clear();
+    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
+} else {
+    clear();
+    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+    clearInterval(Times_1)
+    NewHOLD = HOLD * 3;
+    Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    if(ALF == ALFheb) {
+        clearInterval(Times_Alf);
+        NewAlfHOLD = HOLD * 22;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    } if (ALF == ALFeng) {
+        clearInterval(Times_Alf);
+        NewAlfHOLD = HOLD * 26;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    } else{
+        clearInterval(Times_Alf)
+        NewAlfHOLD = HOLD * 27;
+        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    }return Times_Alf        
+}
+}
+
+  // colorExtra.addEventListener("click", function () {
+    //     if (this.checked) {
+    //         if (HOLD == Times_3) {
+    //             clear();     
+    //             setInterval(function () {
+    //                 randomHands(), setFont(), randomLetters(),
+    //                     extra(), setColorAlf(), setColorHand()
+    //             }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () {
+    //                 randomHands(), setFont(), randomLetters(),
+    //                     extra(), setColorAlf(), setColorHand()
+    //             }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+                
+    //         };
+    //     } else {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+                
+    //         };
+    //     }
+    // })
+    // TimesColor = colorSimle.addEventListener("click", function () {
+    //     if (this.checked) {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+                
+    //         };
+
+    //     } else {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+                
+    //         };
+    //     }
+
+    // })
+
+var SUPER = document.getElementById("super").value;
+
+// function resetSuperExtr() {
+//     document.getElementById("super").checked = false;
+// }
+
+
+
+ // colorExtra.addEventListener("click", function () {
+    //     if (this.checked) {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             Times_3 = setInterval(function () {
+    //                 randomHands(), setFont(), randomLetters(), superExtraLet(),
+    //                 superExtraHan(), setColorAlf(), setColorHand()
+    //             }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () {
+    //                 randomHands(), setFont(), randomLetters(), superExtraLet(),
+    //                 superExtraHan(), setColorAlf(), setColorHand()
+    //             }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+    //         }
+    //     } else {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }  return Times_Alf
+    //         }
+    //     }
+    // })
+    // TimesColor = colorSimle.addEventListener("click", function () {
+    //     if (this.checked) {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), 
+    //                 superExtraLet(), superExtraHan() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), 
+    //                 superExtraLet(), superExtraHan() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }           return Times_Alf    
+    //         }
+    //     } else {
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }         return Times_Alf     
+    //         }
+    //     }
+    // })
+
+function superExtraLet() {
+    const SISE = Math.floor((Math.random() * 70) + 36);
+    document.getElementById("alfavit").style.fontSize = SISE + 'px';
 
 }
+
+function superExtraHan() {
+    const SISE = Math.floor((Math.random() * 70) + 36);
+    document.getElementById("hand").style.fontSize = SISE + 'px';
+}
+
+function extra() {
+    SISE = Math.floor((Math.random() * 70) + 36);
+    document.getElementById("alfavit").style.fontSize = SISE + 'px';
+    document.getElementById("hand").style.fontSize = SISE + 'px';
+    console.log(SISE);
+}
+
+function resetExtra() {
+    document.getElementById("On").checked = false;
+}
+
+
+    // colorExtra.addEventListener("click", function () {
+    //     if (this.checked) {         
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, set);
+    //         } else {
+    //             clear();
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                   clearInterval(Times_Alf)
+    //             NewAlfHOLD = HOLD * 27;
+    //             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+    //         }
+
+    //     } else {
+    //         resetExtColor();
+    //         clear();
+    //         resetColor();
+    //     if (HOLD == Times_3) {
+    //     clear();
+    //     setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+    // } else {
+    //     clear();
+    //     Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
+    //     clearInterval(Times_1)
+    //     NewHOLD = HOLD * 3;
+    //     Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //     if(ALF == ALFheb) {
+    //         clearInterval(Times_Alf);
+    //         NewAlfHOLD = HOLD * 22;
+    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     } if (ALF == ALFeng) {
+    //         clearInterval(Times_Alf);
+    //         NewAlfHOLD = HOLD * 26;
+    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     } else {
+    //          clearInterval(Times_Alf)
+    //          NewAlfHOLD = HOLD * 27;
+    //          Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     }return Times_Alf
+       
+    // }
+    //     }
+    // })
+    // TimesColor = colorSimle.addEventListener("click", function () {
+    //     if (this.checked) {          
+    //         if (HOLD == Times_3) {
+    //             clear();
+    //             setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, set);
+    //         } else {
+    //             clear(); 
+    //             Times_3 = setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, HOLD);
+    //             clearInterval(Times_1)
+    //             NewHOLD = HOLD * 3;
+    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //             if(ALF == ALFheb) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 22;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } if (ALF == ALFeng) {
+    //                 clearInterval(Times_Alf);
+    //                 NewAlfHOLD = HOLD * 26;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             } else {
+    //                 clearInterval(Times_Alf)
+    //                 NewAlfHOLD = HOLD * 27;
+    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //             }return Times_Alf
+               
+    //         }
+
+    //     } else {
+    //         clear();
+    //         resetColor();
+    //     if (HOLD == Times_3) {
+    //     clear();
+    //     setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+    // } else {
+    //     clear();
+    //     Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
+    //     clearInterval(Times_1)
+    //     NewHOLD = HOLD * 3;
+    //     Times_1 = setInterval(function () { newHands() }, NewHOLD);
+    //     if(ALF == ALFheb) {
+    //         clearInterval(Times_Alf);
+    //         NewAlfHOLD = HOLD * 22;
+    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     } if (ALF == ALFeng) {
+    //         clearInterval(Times_Alf);
+    //         NewAlfHOLD = HOLD * 26;
+    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     } else {
+    //          clearInterval(Times_Alf)
+    //          NewAlfHOLD = HOLD * 27;
+    //          Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
+    //     }return Times_Alf
+       
+    // }
+    //     }
+
 
 // Полный экран
 
