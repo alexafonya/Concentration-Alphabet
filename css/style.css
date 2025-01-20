@@ -315,6 +315,27 @@ body #top #top2 #f4 #f4_1 #su {
   accent-color: rgb(120, 255, 120);
   justify-self: start;
 }
+body #top #top2 #f4 #f4_1 #su input {
+  width: 60px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.764);
+  border: none;
+  color: rgba(0, 0, 0, 0.671);
+  letter-spacing: 0.3em;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body #top #top2 #f4 #f4_1 #su input:hover {
+  background-color: hsl(0, 0%, 40%);
+  color: rgba(255, 255, 255, 0.764);
+  transition: 0.5s;
+}
+body #top #top2 #f4 #f4_1 #su input:active {
+  background-color: black;
+}
 body #top #top2 #f4 #f4_1 #O {
   grid-column: 1;
   grid-row: 1;
@@ -322,6 +343,27 @@ body #top #top2 #f4 #f4_1 #O {
   justify-self: start;
   padding-right: 10%;
   align-self: end;
+}
+body #top #top2 #f4 #f4_1 #O input {
+  width: 60px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.764);
+  border: none;
+  color: rgba(0, 0, 0, 0.671);
+  letter-spacing: 0.3em;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body #top #top2 #f4 #f4_1 #O input:hover {
+  background-color: hsl(0, 0%, 40%);
+  color: rgba(255, 255, 255, 0.764);
+  transition: 0.5s;
+}
+body #top #top2 #f4 #f4_1 #O input:active {
+  background-color: black;
 }
 body #top #top2 #f4 #f4_1 #co {
   grid-row: 1;
