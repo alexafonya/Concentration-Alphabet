@@ -38,11 +38,11 @@
                             <div> | </div>
                         </div>
                         <div id="numb">
-                            <div>1min.</div>
-                            <div>5min.</div>
-                            <div>10min.</div>
-                            <div>15min.</div>
-                            <div>20min.</div>
+                            <div id="1">1min.</div>
+                            <div id="2">5min.</div>
+                            <div id="3">10min.</div>
+                            <div id="4">15min.</div>
+                            <div id="5">20min.</div>
                         </div>
                     </span>
                 </div>
@@ -61,7 +61,8 @@
                 <div id="f3_1">
 
                     <div id="f3_1_2"> <!--f2-->
-                        <input type="number" name="number" class="form" id="speed" min="500" max="5000" value="1600"
+                        <input type="number" name="number" class="form" id="speed" 
+                        oninput="this.value = this.value.slice(0, 4)" min="500" max="5000" value="1600"
                             step="100">
                     </div>
 
@@ -80,7 +81,8 @@
                 <!-- font sise control  -->
                 <div id="f3_2"> <!--shrift-->
                     <div id="f3_2_1">
-                        <input type="number" name="letters" class="form" id="fill" min="10" max="150" value="60"
+                        <input type="number" name="letters" class="form" 
+                        oninput="this.value = this.value.slice(0, 3)" id="fill" min="10" max="150" value="60"
                             step="10">
                     </div>
 
@@ -94,7 +96,7 @@
                        
                     </div>
                     <div id="O">
-                        <input onclick="startApp(); setTimer()" type="submit" id="On" value="Extra">
+                        <input onclick="startApp()" type="submit" id="On" value="Extra">
                        
                     </div>
                     <div id="co">
@@ -115,7 +117,7 @@
                 </div>
                 <div id="the">
                     <input type="checkbox" id="theme" name="ChangeColor" value="just">
-                    <label id="theme" for="theme">Dark</label>
+                    <label id="theme" for="theme">Dark screen</label>
                 </div>
                 <div id="open">
                     <button id="openModal">Help!</button>
@@ -150,11 +152,11 @@
                                 </p>
 
                                 <p>
-                                    В верней части экрана, ты найдешь меню настроек.
+                                    В верней части экрана, вы найдете меню настроек.
                                     Где можно увеличить или уменьшить скорость появления букв,
                                     а так же их величину.
                                     В левой части меню находится таймер. В правой части есть разные способы
-                                    изменения сложности, где ты можешь менять цвета букв, хаотичный размер
+                                    изменения сложности, где вы можете менять цвета букв, хаотичный размер
                                     шрифта, а так же поменять фон с белого на черный. И возможность выбора
                                     языка: Рус/Анг/Ивр.
                                 </p>
@@ -199,12 +201,11 @@
                                 </p>
 
                                 <p>
-                                    There is a timer on the right side of the menu. There are different ways
-                                    difficulty changes on the left side, where you can change letter colors, chaotic
-                                    size
-                                    font, and also change the background from white to black. And the opportunity to
-                                    choose
-                                    Languages: Russian/English/Hebrew.
+                                    There is a timer on the left side of the menu. On the right side there are different 
+                                    ways to change the difficulty, 
+                                    where you can change letter colors, chaotic size font, and also 
+                                    change the background from white to black. And the opportunity to
+                                    choose Languages: Russian/English/Hebrew.
                                 </p>
 
 
