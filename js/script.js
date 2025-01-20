@@ -82,7 +82,7 @@ var ALFeng = [
  let modal2 = document.querySelector('#modal');
  
 const changeLengRus = () =>{
-    document.getElementById("fullScr").value = "Весь экран "
+    document.getElementById("fullScr").value = " Весь экран "
     document.getElementById("time").value = " Скор./Масш. "
     document.getElementById("sise").value = "    Сброс    "
     document.getElementById("On").value =  "Супер"
@@ -93,8 +93,47 @@ const changeLengRus = () =>{
     document.getElementById("en").textContent = "Анг"
     document.getElementById("he").textContent = "Ивр"
     document.querySelector("#the>label").textContent = "ЧерныйЭкран"
-
-
+    document.getElementById("1").innerText = "1мин"
+    document.getElementById("2").innerText = "5мин"
+    document.getElementById("3").innerText = "10мин"
+    document.getElementById("4").innerText = "15мин"
+    document.getElementById("5").innerText = "20мин"
+}
+const changeLengEng = () =>{
+    document.getElementById("fullScr").value = " Full screen "
+    document.getElementById("time").value = " Speed / Sise "
+    document.getElementById("sise").value = "   Reset   "
+    document.getElementById("On").value =  "Extra"
+    document.getElementById("super").value = "ExMix"
+    document.querySelector("#co>label").textContent = "Color"
+    document.querySelector("#CoEx>label").textContent = "CoMix"
+    document.getElementById("ru").textContent = "Ru"
+    document.getElementById("en").textContent = "En"
+    document.getElementById("he").textContent = "He"
+    document.querySelector("#the>label").textContent = "Dark screen"
+    document.getElementById("1").innerText = "1min"
+    document.getElementById("2").innerText = "5min"
+    document.getElementById("3").innerText = "10min"
+    document.getElementById("4").innerText = "15min"
+    document.getElementById("5").innerText = "20min"
+}
+const changeLengHeb = () =>{
+    document.getElementById("fullScr").value = " מסך מלא "
+    document.getElementById("time").value = " מְהִירוּת / גוֹדֶל "
+    document.getElementById("sise").value = "   אִתחוּל   "
+    document.getElementById("On").value =  "תוֹסֶפֶת"
+    document.getElementById("super").value = "מיקס"
+    document.querySelector("#co>label").textContent = "צֶבַע"
+    document.querySelector("#CoEx>label").textContent = "צֶבַע מיקס"
+    document.getElementById("ru").textContent = "רוס"
+    document.getElementById("en").textContent = "אנג"
+    document.getElementById("he").textContent = "עִברִ"
+    document.querySelector("#the>label").textContent = "רקע כהה"
+    document.getElementById("1").innerText = "1 דק"
+    document.getElementById("2").innerText = "5 דק"
+    document.getElementById("3").innerText = "10 דק"
+    document.getElementById("4").innerText = "15 דק"
+    document.getElementById("5").innerText = "20 דק"
 }
 
  addEventListener("DOMContentLoaded", function() {
@@ -103,6 +142,7 @@ const changeLengRus = () =>{
     HAND = HANDeng;
     
     he.addEventListener("click", function () {
+        changeLengHeb();
         close.onclick() 
         modal = modal3;
         if (alfIndex > 21){
@@ -122,7 +162,6 @@ const changeLengRus = () =>{
         document.getElementById("ru").style.transition = "0.7s";
     
      })
-
     en.addEventListener("click", function () {  
         // setTime();      
         error = document.getElementById('time');
@@ -134,17 +173,18 @@ const changeLengRus = () =>{
             } if (document.getElementById("speed").value > 5000){
                 document.querySelector("#Error").innerHTML =  `Too slow!  The interval should not be greater than "5000"!`;
                 document.querySelector("#Error").style.left = "16%";
-                document.querySelector("#Error").style.top = "15%";
+                document.querySelector("#Error").style.top = "45%";
             }
             if ( document.getElementById("fill").value > 150){
                 document.querySelector("#Error2").innerHTML =  `The  size  of  letters  should  not  exceed   '150' !`;
             } if(document.getElementById("fill").value < 20){
                 document.querySelector("#Error2").innerHTML =  `The size of the letters should not be less than "20"!`;
                 document.querySelector("#Error2").style.left = "20%";
-        document.querySelector("#Error2").style.top = "25%";
+        document.querySelector("#Error2").style.top = "45%";
             } 
         
         })
+        changeLengEng();
         close.onclick() 
         modal = modal1;   
         if (alfIndex > 25){
@@ -382,6 +422,7 @@ colorSimle.addEventListener("click", function () {
         }, interTime);
         Speed.addEventListener("click", function(){
             clear();
+            console.log("Color - Проверка")
             TimesColor = setInterval(function () {
                 randomHands(), setFont(), setColor(),
                     randomLetters()
@@ -389,6 +430,7 @@ colorSimle.addEventListener("click", function () {
         })
         Ex.addEventListener("click", function(){
             clear();
+            console.log("Color - Проверка")
             TimesColor = setInterval(function () {
                 randomHands(), setFont(), extra(), setColor(),
                     randomLetters()
@@ -396,8 +438,10 @@ colorSimle.addEventListener("click", function () {
         })
         ExMix.addEventListener("click", function(){
             clear();
+            console.log("Color - Проверка")
             TimesColor = setInterval(function () {
-                randomHands(), setFont(), superExtra(), setColor(),
+                console.log("Color - Проверка")
+                randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
                     randomLetters()
             }, interTime);
         })
@@ -429,6 +473,7 @@ colorExtra.addEventListener("click", function () {
         Ex.addEventListener("click", function(){
             clear();
             TimesColor = setInterval(function () {
+                console.log("ColorEx - Проверка")
                 randomHands(), setFont(), extra(), setColorAlf(), setColorHand(),
                     randomLetters()
             }, interTime);
@@ -436,6 +481,7 @@ colorExtra.addEventListener("click", function () {
         ExMix.addEventListener("click", function(){
             clear();
             TimesColor = setInterval(function () {
+                console.log("ColorEx - Проверка")
                 randomHands(), setFont(), superExtra(), setColorAlf(), setColorHand(),
                     randomLetters()
             }, interTime);
@@ -449,11 +495,6 @@ colorExtra.addEventListener("click", function () {
 
 window.addEventListener("load", () => { newLetters() });
 
-
-// function newLetters() {
-//     NEWLETT = ALF.sort(function () { return 0.5 - Math.random() })
-//     console.log(`NEWAlfavit : ${ALF}`);
-// }
 
 function newLetters() {
     for (let i = ALF.length - 1; i > 0; i--) {
@@ -556,13 +597,13 @@ function reset() {
     ERROR = document.querySelector("#Error2").style.display =  "none";
     document.querySelector("#block").style.display = "block";
     setTimer();
-    resetSuperExtr();
-    resetExtra();
     resetExtColor();
-    resetColor();
+    resetColor()
     setTheme();
     closeTheme();
     clear();
+    // removeEventListener(colorSimle);
+    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
     document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
     document.getElementById('hand').style.fontSize = SHRIFT + 'px';
     document.getElementById('alfavit').style.fontSize = Speed;
@@ -570,7 +611,7 @@ function reset() {
     document.getElementById("dublicate").value = "01 : 00";
     document.getElementById("start").value = "60";
     clearInterval(INTERVAL1);
-    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+    // Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
     Play.style.backgroundColor = "rgb(230, 230, 230)"
     Stop.style.backgroundColor = "rgb(230, 230, 230)"
     Play.style.width = "30px";
@@ -584,8 +625,6 @@ function clear() {
     clearInterval(TimesExtColor);
     clearInterval(Times_3);
 }
-resetColor();
-resetExtColor();
 
 let setTimeReal = ()=>{
     if (HOLD == Times_3) {
@@ -612,6 +651,32 @@ let setTimeReal = ()=>{
         }return Times_Alf     
     }
 }
+
+// Speed.addEventListener('click', event => {
+//     event.target.style.backgroundColor = "black"
+//     event.target.style.color = "white"
+//     event.target.style.border = "solid 1.5px white"
+//   })
+
+//   Ex.addEventListener('click', event => {
+//     event.target.style.backgroundColor = "black"
+//     event.target.style.color = "white"
+//     event.target.style.border = "solid 1.5px white"
+//     Speed.style.backgroundColor = " hsl(0, 0%, 40%)";
+//     Speed.style.color = " rgba(255, 255, 255, 0.768)";
+//     Speed.style.border = " none";
+//     Speed.addEventListener("mousemove",function(){
+//         Speed.style.backgroundColor = "hsl(0, 2%, 75%)"
+//         Speed.style.color= " rgba(0, 0, 0, 0.671)"
+//         Speed.style.transition = "0.5s"               
+//     })
+    
+//     Speed.addEventListener("mouseleave",function(){
+//         Speed.style.backgroundColor = " hsl(0, 0%, 40%)";
+//         Speed.style.color = " rgba(255, 255, 255, 0.768)";
+//         Speed.style.border = " none";
+//     }) 
+//   })
 
 function setTime() {
     clear();
@@ -646,7 +711,6 @@ function setTime() {
         interTime = HOLD;
     }
     } 
-    
     if (colorSimle.checked) {
         clear();
         TimesColor = setInterval(function () {
@@ -662,6 +726,31 @@ function setTime() {
     } else {
         setTimeReal();
     }
+    colorSimle.addEventListener("click", function (){
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                console.log("Экстро - Проверка внутри")
+                randomHands(), setFont(), setColor(),
+                    randomLetters()
+            }, interTime);
+        }  else {
+            startAppReal();
+        }
+    })
+    colorExtra.addEventListener("click", function (){
+        if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                console.log("Экстро - Проверка внутри")
+                randomHands(), setFont(),
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+        } else {
+            startAppReal();
+        }
+    })
+    
 }
 
 let startAppReal = ()=>{
@@ -707,6 +796,7 @@ function startApp() {
         if (colorSimle.checked) {
             clear();
             TimesColor = setInterval(function () {
+                console.log("Экстро - Проверка внутри")
                 randomHands(), setFont(), setColor(), extra(),
                     randomLetters()
             }, interTime);
@@ -718,6 +808,7 @@ function startApp() {
         if (colorExtra.checked) {
             clear();
             TimesExtColor = setInterval(function () {
+                console.log("Экстро - Проверка внутри")
                 randomHands(), setFont(),
                     randomLetters(), extra(), setColorAlf(), setColorHand()
             }, interTime);
@@ -728,12 +819,14 @@ function startApp() {
     if (colorSimle.checked) {
         clear();
         TimesColor = setInterval(function () {
+            console.log("Экстро(cS) - Проверка вне")
             randomHands(), setFont(), setColor(), extra(),
                 randomLetters()
         }, interTime);
     } else if (colorExtra.checked) {
         clear();
         TimesExtColor = setInterval(function () {
+            console.log("Экстро(TEC) - Проверка вне")
             randomHands(), setFont(),
                 randomLetters(), extra(), setColorAlf(), setColorHand()
         }, interTime);
@@ -781,6 +874,7 @@ function superExtra() {
         if (colorSimle.checked) {
             clear();
             TimesColor = setInterval(function () {
+                console.log("СуперЭкстро -Проверка внутри")
                 randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
                     randomLetters()
             }, interTime);
@@ -791,6 +885,7 @@ function superExtra() {
     colorExtra.addEventListener("click", function (){
         if (colorExtra.checked) {
             clear();
+            console.log("СуперЭкстро - Проверка внутри")
             TimesExtColor = setInterval(function () {
                 randomHands(), setFont(),superExtraLet(), superExtraHan(),
                     randomLetters(), setColorAlf(), setColorHand()
@@ -802,12 +897,14 @@ function superExtra() {
     if (colorSimle.checked) {
         clear();
         TimesColor = setInterval(function () {
-            randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
+            console.log("СуперЭкстро(cS)  - Проверка вне")
+            randomHands(), setFont(), setColorAlf(), setColorHand(), superExtraLet(), superExtraHan(),
                 randomLetters()
         }, interTime);
     }  if (colorExtra.checked) {
         clear();
         TimesExtColor = setInterval(function () {
+            console.log("СуперЭкстро(TEC) - Проверка вне")
             randomHands(), setFont(),superExtraLet(), superExtraHan(),
                 randomLetters(), setColorAlf(), setColorHand()
         }, interTime);
@@ -817,12 +914,8 @@ function superExtra() {
     
 }
 
-
 var SUPER = document.getElementById("super").value;
 
-// function resetSuperExtr() {
-//     document.getElementById("super").checked = false;
-// }
 
 function superExtraLet() {
     const SISE = Math.floor((Math.random() * 70) + 36);
@@ -845,123 +938,6 @@ function extra() {
 function resetExtra() {
     document.getElementById("On").checked = false;
 }
-
-
-    // colorExtra.addEventListener("click", function () {
-    //     if (this.checked) {         
-    //         if (HOLD == Times_3) {
-    //             clear();
-    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, set);
-    //         } else {
-    //             clear();
-    //             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, HOLD);
-    //             clearInterval(Times_1)
-    //             NewHOLD = HOLD * 3;
-    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
-    //             if(ALF == ALFheb) {
-    //                 clearInterval(Times_Alf);
-    //                 NewAlfHOLD = HOLD * 22;
-    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             } if (ALF == ALFeng) {
-    //                 clearInterval(Times_Alf);
-    //                 NewAlfHOLD = HOLD * 26;
-    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             } else {
-    //                   clearInterval(Times_Alf)
-    //             NewAlfHOLD = HOLD * 27;
-    //             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             }return Times_Alf
-    //         }
-
-    //     } else {
-    //         resetExtColor();
-    //         clear();
-    //         resetColor();
-    //     if (HOLD == Times_3) {
-    //     clear();
-    //     setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    // } else {
-    //     clear();
-    //     Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
-    //     clearInterval(Times_1)
-    //     NewHOLD = HOLD * 3;
-    //     Times_1 = setInterval(function () { newHands() }, NewHOLD);
-    //     if(ALF == ALFheb) {
-    //         clearInterval(Times_Alf);
-    //         NewAlfHOLD = HOLD * 22;
-    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     } if (ALF == ALFeng) {
-    //         clearInterval(Times_Alf);
-    //         NewAlfHOLD = HOLD * 26;
-    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     } else {
-    //          clearInterval(Times_Alf)
-    //          NewAlfHOLD = HOLD * 27;
-    //          Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     }return Times_Alf
-       
-    // }
-    //     }
-    // })
-    // TimesColor = colorSimle.addEventListener("click", function () {
-    //     if (this.checked) {          
-    //         if (HOLD == Times_3) {
-    //             clear();
-    //             setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, set);
-    //         } else {
-    //             clear(); 
-    //             Times_3 = setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, HOLD);
-    //             clearInterval(Times_1)
-    //             NewHOLD = HOLD * 3;
-    //             Times_1 = setInterval(function () { newHands() }, NewHOLD);
-    //             if(ALF == ALFheb) {
-    //                 clearInterval(Times_Alf);
-    //                 NewAlfHOLD = HOLD * 22;
-    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             } if (ALF == ALFeng) {
-    //                 clearInterval(Times_Alf);
-    //                 NewAlfHOLD = HOLD * 26;
-    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             } else {
-    //                 clearInterval(Times_Alf)
-    //                 NewAlfHOLD = HOLD * 27;
-    //                 Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //             }return Times_Alf
-               
-    //         }
-
-    //     } else {
-    //         clear();
-    //         resetColor();
-    //     if (HOLD == Times_3) {
-    //     clear();
-    //     setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    // } else {
-    //     clear();
-    //     Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
-    //     clearInterval(Times_1)
-    //     NewHOLD = HOLD * 3;
-    //     Times_1 = setInterval(function () { newHands() }, NewHOLD);
-    //     if(ALF == ALFheb) {
-    //         clearInterval(Times_Alf);
-    //         NewAlfHOLD = HOLD * 22;
-    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     } if (ALF == ALFeng) {
-    //         clearInterval(Times_Alf);
-    //         NewAlfHOLD = HOLD * 26;
-    //         Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     } else {
-    //          clearInterval(Times_Alf)
-    //          NewAlfHOLD = HOLD * 27;
-    //          Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    //     }return Times_Alf
-       
-    // }
-    //     }
-
-
-// Полный экран
-
 
 var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
@@ -1023,7 +999,7 @@ function setColor() {
     var color = Math.floor(Math.random() * 8);
     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
     newColor2 = document.getElementById("hand").style.color = COLORS[color];
-
+    console.log("SetColor - Проверка")
 }
 
 function setColorAlf() {
@@ -1080,14 +1056,6 @@ const btn = document.querySelector('#openModal');
 const close = document.querySelector('.close');
 
 
-// const close1 = document.querySelector('.close1');
-// const modal1 = document.querySelector("#modalEn");
-// const leng1 = document.querySelector("#ru");
-// const leng2 = document.querySelector("#en");
-// const leng3 = document.querySelector("#he");
-
-
-
 btn.onclick = function () {
     modal.style.display = 'block';
     modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
@@ -1100,36 +1068,9 @@ close.onclick = function () {
   modal.style.display = 'none';
 };
 
-
-
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = 'none';
   } 
 };
-// window.onclick = function (event) {
-//     if (event.target == modal1){
-//         modal1.style.display = 'none';
-//       }
-// };
 
-
-// function setThemeColor() {
-//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
-//     var color = Math.floor(Math.random() * 9);
-//     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
-//     newColor2 = document.getElementById("hand").style.color = COLORS[color];
-    
-// }
-
-// function setThemeColorHand() {
-//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
-//     var color = Math.floor(Math.random() * 9);
-//     newColor2 = document.getElementById("hand").style.color = COLORS[color];
-// }
-
-// function setThemeColorAlf() {
-//     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'WHITE', 'GRAY'];
-//     var color = Math.floor(Math.random() * 9);
-//     newColor1 = document.getElementById("alfavit").style.color = COLORS[color];
-// }
