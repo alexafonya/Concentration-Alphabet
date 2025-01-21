@@ -358,6 +358,25 @@ body {
                     align-items: center;
                     gap: 10px;
 
+                    #f3_2_1{
+                        &>div{
+                            background-color: white;
+                            height: 50px;
+                            width: 100px;
+                            padding-top: 12px;
+                            text-align: center;
+                            font-size: 20px;
+                            box-sizing: border-box;
+                            padding-right: 5px;
+                            display: none;
+                            pointer-events: none;
+                        }
+
+                        #fill{
+
+                           
+                        }
+                    }
 
                 }
 

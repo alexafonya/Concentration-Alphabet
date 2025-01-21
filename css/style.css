@@ -276,6 +276,18 @@ body #top #top2 #f3 #f3_2 {
   align-items: center;
   gap: 10px;
 }
+body #top #top2 #f3 #f3_2 #f3_2_1 > div {
+  background-color: white;
+  height: 50px;
+  width: 100px;
+  padding-top: 12px;
+  text-align: center;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding-right: 5px;
+  display: none;
+  pointer-events: none;
+}
 body #top #top2 #f3 .form {
   height: 45px;
   width: 100px;
