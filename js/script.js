@@ -140,7 +140,6 @@ const changeLengHeb = () =>{
     modal = modal1;
     ALF = ALFeng;
     HAND = HANDeng;
-    
     he.addEventListener("click", function () {
         changeLengHeb();
         close.onclick() 
@@ -160,7 +159,6 @@ const changeLengHeb = () =>{
         document.getElementById("en").style.transition = "0.7s";
         document.getElementById("ru").style.fontSize = "14px"
         document.getElementById("ru").style.transition = "0.7s";
-    
      })
     en.addEventListener("click", function () {  
         // setTime();      
@@ -182,7 +180,6 @@ const changeLengHeb = () =>{
                 document.querySelector("#Error2").style.left = "20%";
         document.querySelector("#Error2").style.top = "45%";
             } 
-        
         })
         changeLengEng();
         close.onclick() 
@@ -590,34 +587,35 @@ function setSise() {
 
 }
 function reset() {
-    const SHRIFT = document.getElementById("fill").value = "60";
-    const Speed = document.getElementById("speed").value = "1600";
-    console.log(SHRIFT)
-    ERROR = document.querySelector("#Error").style.display =  "none";
-    ERROR = document.querySelector("#Error2").style.display =  "none";
-    document.querySelector("#block").style.display = "block";
-    setTimer();
-    resetExtColor();
-    resetColor()
-    setTheme();
-    closeTheme();
-    clear();
-    // removeEventListener(colorSimle);
-    Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
-    document.getElementById('hand').style.fontSize = SHRIFT + 'px';
-    document.getElementById('alfavit').style.fontSize = Speed;
-    document.getElementById('hand').style.fontSize = Speed;
-    document.getElementById("dublicate").value = "01 : 00";
-    document.getElementById("start").value = "60";
-    clearInterval(INTERVAL1);
+    location.reload()
+    // const SHRIFT = document.getElementById("fill").value = "60";
+    // const Speed = document.getElementById("speed").value = "1600";
+    // console.log(SHRIFT)
+    // ERROR = document.querySelector("#Error").style.display =  "none";
+    // ERROR = document.querySelector("#Error2").style.display =  "none";
+    // document.querySelector("#block").style.display = "block";
+    // setTimer();
+    // resetExtColor();
+    // resetColor()
+    // setTheme();
+    // closeTheme();
+    // clear();
+    // // removeEventListener(colorSimle);
     // Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    Play.style.backgroundColor = "rgb(230, 230, 230)"
-    Stop.style.backgroundColor = "rgb(230, 230, 230)"
-    Play.style.width = "30px";
-    Play.style.height = "30px";
-    Stop.style.width = "30px";
-    Stop.style.height = "30px";
+    // document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
+    // document.getElementById('hand').style.fontSize = SHRIFT + 'px';
+    // document.getElementById('alfavit').style.fontSize = Speed;
+    // document.getElementById('hand').style.fontSize = Speed;
+    // document.getElementById("dublicate").value = "01 : 00";
+    // document.getElementById("start").value = "60";
+    // clearInterval(INTERVAL1);
+    // // Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+    // Play.style.backgroundColor = "rgb(230, 230, 230)"
+    // Stop.style.backgroundColor = "rgb(230, 230, 230)"
+    // Play.style.width = "30px";
+    // Play.style.height = "30px";
+    // Stop.style.width = "30px";
+    // Stop.style.height = "30px";
 }
 
 function clear() {
