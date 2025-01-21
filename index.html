@@ -71,7 +71,7 @@
                     <div id="f3_1_1">
                         <label for="time"></label>
                         <input onclick="setTime();setSise(); newLetters (); setTimer()"
-                            type="submit" id="time" value=" Speed / Sise ">
+                            type="submit" id="time" value=" Speed / Sise " >
                     </div>
                     <div id="f3_2_2">
                         <label for="sise"></label>
@@ -81,9 +81,11 @@
                 <!-- font sise control  -->
                 <div id="f3_2"> <!--shrift-->
                     <div id="f3_2_1">
-                        <input type="text" name="letters" class="form" 
-                        oninput="this.value = this.value.slice(0, 10)" id="fill" min="20" max="150" value="60"
-                            step="10">
+                        <div id="Mix">M I X</div>
+                            <input type="number" name="letters" class="form"
+                            oninput="this.value = this.value.slice(0, 3)" id="fill" min="20" max="150" placeholder="" value="60"
+                                step="10" re>
+                        
                     </div>
 
                 </div>
