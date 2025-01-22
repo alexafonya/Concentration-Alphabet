@@ -11,7 +11,7 @@ var HANDru = ['Л', 'П', 'О'];
 let ERROR;
 var HAND;
 var ALF;
-let set = 1600;
+let set = 1200;
 let currentIndex = 0;
 let alfIndex = 0;
 let SETH = 0;
@@ -429,7 +429,7 @@ colorExtra.addEventListener("click", function () {
 
 // Перемешивание
 
-window.addEventListener("load", () => { newLetters() });
+window.addEventListener("load", () => { newLetters(),setSise() });
 
 function newLetters() {
     for (let i = ALF.length - 1; i > 0; i--) {
@@ -474,7 +474,52 @@ colorExtra.addEventListener("click", function () {
 
 // Расположение Букв
 
-function setFont() {
+let setfontFullScr =()=>{
+    console.log("NEW")
+    SHRIFT = document.getElementById("fill").value;
+    let TOP;
+    let LEFT;
+    if (SHRIFT <= 40) {
+        console.log("20-40")
+        LEFT = Math.floor(Math.random() * 100);
+        TOP = Math.floor(Math.random() * 100);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    }else if(SHRIFT <= 60){
+        console.log("40-60")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 85);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 80){
+        console.log("60-80")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 79);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 100){
+        console.log("80-100")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 74);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 120){
+        console.log("100-120")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 69);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 150){
+        console.log("120-150")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 61);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    }
+
+}
+
+let setFont =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
@@ -505,13 +550,13 @@ function setFont() {
     } else if(SHRIFT <= 120){
         console.log("100-120")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 58);
+        TOP = Math.floor(Math.random() * 56);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 150){
         console.log("120-150")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 48);
+        TOP = Math.floor(Math.random() * 45);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
@@ -520,10 +565,10 @@ function setFont() {
 
 //  Размер Шрифта
 
-let MixBack = () =>{
-    document.getElementById("fill").setAttribute('type', 'number');
-    document.getElementById("fill").value = 60;
-}
+// let MixBack = () =>{
+//     document.getElementById("fill").setAttribute('type', 'number');
+//     document.getElementById("fill").value = 60;
+// }
 
 function setSise() {
     SHRIFT = document.getElementById("fill").value;
@@ -1140,6 +1185,7 @@ var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
 
 fullSreen.addEventListener("click", function () {
+    HOLD = document.getElementById("speed").value;
         dropDownMenu.style.display = "none";       
         document.getElementById("window").style.height = "100vh"; 
         if (elem.requestFullscreen) {
@@ -1154,7 +1200,9 @@ fullSreen.addEventListener("click", function () {
         } else if (elem.msRequestFullscreen) { /* IE/Edge */
             elem.msRequestFullscreen();
             document.getElementById("window").style.height = "100vh";
-        }    
+        } 
+        clear();
+       Times_3 = setInterval(function () { randomHands(), setfontFullScr(), randomLetters() },HOLD);
     this.removeEventListener("click",function(){})
 })
 
@@ -1174,6 +1222,8 @@ fullSreen.addEventListener("click", function () {
             document.msExitFullscreen();
             document.getElementById("window").style.height = "83vh";
         }
+        clear();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
         this.removeEventListener("click",function(){})
 });
 
