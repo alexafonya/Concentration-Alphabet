@@ -402,7 +402,6 @@ colorSimle.addEventListener("click", function () {
         }, interTime);
    
     } else {
-        // document.getElementById("color").checked = false;
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, interTime); 
     }
 })
@@ -422,7 +421,6 @@ colorExtra.addEventListener("click", function () {
         }, interTime);
     
     } else {
-        // document.getElementById("color").checked = false;
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
     }
 })
@@ -472,6 +470,8 @@ colorExtra.addEventListener("click", function () {
     }
 })
 
+
+
 // Расположение Букв
 
 let setfontFullScr =()=>{
@@ -479,40 +479,40 @@ let setfontFullScr =()=>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    if (SHRIFT <= 40) {
-        console.log("20-40")
+    if (SHRIFT <= 50) {
+        console.log("20-50")
         LEFT = Math.floor(Math.random() * 100);
         TOP = Math.floor(Math.random() * 100);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 60){
-        console.log("40-60")
+    }else if(SHRIFT <= 70){
+        console.log("50-70")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 85);
+        TOP = Math.floor(Math.random() * 85 );
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 80){
-        console.log("60-80")
+    } else if(SHRIFT <= 90){
+        console.log("70-90")
         LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 79);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 100){
-        console.log("80-100")
+    } else if(SHRIFT <= 110){
+        console.log("90-110")
         LEFT = Math.floor(Math.random() * 90);
         TOP = Math.floor(Math.random() * 74);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 120){
-        console.log("100-120")
+    } else if(SHRIFT <= 130){
+        console.log("110-130")
         LEFT = Math.floor(Math.random() * 90);
         TOP = Math.floor(Math.random() * 69);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 150){
-        console.log("120-150")
+        console.log("130-150")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 61);
+        TOP = Math.floor(Math.random() * 62);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
@@ -523,40 +523,40 @@ let setFont =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    if (SHRIFT <= 40) {
-        console.log("20-40")
+    if (SHRIFT <= 50) {
+        console.log("20-50")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 86);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 60){
-        console.log("40-60")
+    }else if(SHRIFT <= 70){
+        console.log("50-70")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 80);
+        TOP = Math.floor(Math.random() * 78);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 80){
-        console.log("60-80")
+    } else if(SHRIFT <= 90){
+        console.log("70-90")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 75);
+        TOP = Math.floor(Math.random() * 71);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 100){
-        console.log("80-100")
+    } else if(SHRIFT <= 110){
+        console.log("90-110")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 65);
+        TOP = Math.floor(Math.random() * 63);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 120){
-        console.log("100-120")
+    } else if(SHRIFT <= 130){
+        console.log("110-130")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 56);
+        TOP = Math.floor(Math.random() * 55);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 150){
-        console.log("120-150")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 45);
+        console.log("130-150")
+        LEFT = Math.floor(Math.random() * 90);      
+        TOP = Math.floor(Math.random() * 46);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
@@ -565,10 +565,14 @@ let setFont =() =>{
 
 //  Размер Шрифта
 
-// let MixBack = () =>{
-//     document.getElementById("fill").setAttribute('type', 'number');
-//     document.getElementById("fill").value = 60;
-// }
+// $('.minus').click(function(){
+//       $(this).siblings('input')[0].stepDown();
+//       setSise()
+//   })
+//   $('.plus').click(function(){  
+//       $(this).siblings('input')[0].stepUp(); 
+//       setSise()
+//     })
 
 function setSise() {
     SHRIFT = document.getElementById("fill").value;
@@ -772,7 +776,7 @@ function setTime() {
     document.getElementById("Mix").style.display = "none";
     document.getElementById("fill").style.display = "block";
     const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
+    // document.querySelector("#time").innerText = HOLD;
     colorExtra.addEventListener("click", function () {
         if (this.checked) {
             if (HOLD == Times_3) {
@@ -1152,13 +1156,6 @@ function superExtraLet() {
   
 }
 
-//   function addElement() {
-//      newDiv = document.createElement("div")
-//      document.createTextNode("M I X");
-//      newDiv.style.height = "40px"
-//      newDiv.style.width = "40px"
-//      newDiv.style.backgroundColor = "blue"
-//     }
 
 function superExtraHan() {
     let SISE = Math.floor((Math.random() * 100) + 30);
@@ -1201,8 +1198,7 @@ fullSreen.addEventListener("click", function () {
             elem.msRequestFullscreen();
             document.getElementById("window").style.height = "100vh";
         } 
-        clear();
-       Times_3 = setInterval(function () { randomHands(), setfontFullScr(), randomLetters() },HOLD);
+
     this.removeEventListener("click",function(){})
 })
 
@@ -1222,8 +1218,7 @@ fullSreen.addEventListener("click", function () {
             document.msExitFullscreen();
             document.getElementById("window").style.height = "83vh";
         }
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
+ 
         this.removeEventListener("click",function(){})
 });
 
