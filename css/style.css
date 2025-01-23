@@ -9,10 +9,10 @@ body #top {
 body #top #top2 {
   display: grid;
   background-color: gray;
-  grid-template-columns: 2fr 1fr 3fr 2fr;
+  grid-template-columns: 1.5fr 0.5fr 1.5fr 1fr;
   height: 120px;
   align-items: center;
-  width: 75%;
+  max-width: 80%;
   margin: 0 auto;
 }
 body #top #top2 #timer {
@@ -20,7 +20,7 @@ body #top #top2 #timer {
 }
 body #top #top2 #f2 {
   justify-self: end;
-  width: 90%;
+  width: 75%;
 }
 body #top #top2 #f2 #fullScr {
   width: 90%;
@@ -42,7 +42,7 @@ body #top #top2 #f2 #fullScr:hover {
 }
 body #top #top2 #f1 {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   gap: 20px;
 }
@@ -207,12 +207,12 @@ body #top #top2 #f3 {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
-  gap: 5px;
 }
 body #top #top2 #f3 #f3_1 {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+  justify-self: end;
 }
 body #top #top2 #f3 #f3_1 #f3_1_1 {
   justify-self: end;
@@ -275,6 +275,7 @@ body #top #top2 #f3 #f3_2 {
   grid-template-columns: 1fr;
   align-items: center;
   gap: 10px;
+  justify-self: start;
 }
 body #top #top2 #f3 #f3_2 #f3_2_1 > div {
   background-color: white;
@@ -296,7 +297,7 @@ body #top #top2 #f3 .form {
 }
 body #top #top2 #f4 {
   display: grid;
-  grid-template-columns: 4fr 1.5fr;
+  grid-template-columns: 3fr 1.5fr;
   grid-template-rows: 3fr 1fr;
 }
 body #top #top2 #f4 .input {

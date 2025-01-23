@@ -14,12 +14,12 @@ body {
 
             display: grid;
             background-color: gray;
-            grid-template-columns: 2fr 1fr 2fr 2fr;
+            grid-template-columns: 1.5fr 0.5fr 1.5fr 1fr;
             height: 120px;
             align-items: center;
-            width: 75%;
+            max-width: 80%;
             margin: 0 auto;
-            gap: 30px;
+
 
 
             #timer {
@@ -29,9 +29,11 @@ body {
             #f2 {
 
                 justify-self: end;
-                width: 90%;
+                width: 75%;
+
 
                 #fullScr {
+
                     width: 90%;
                     height: 30px;
                     background-color: transparent;
@@ -57,7 +59,7 @@ body {
 
             #f1 {
                 display: grid;
-                grid-template-columns: 2fr 1fr 1fr;
+                grid-template-columns: 1fr 2fr 1fr;
                 align-items: center;
                 gap: 20px;
 
@@ -274,12 +276,13 @@ body {
                 grid-template-columns: 1fr 1fr 1fr;
                 align-items: center;
                 justify-items: center;
-                gap: 5px;
+
 
                 #f3_1 {
                     display: grid;
                     grid-template-columns: 1fr;
                     align-items: center;
+                    justify-self: end;
 
 
                     #f3_1_1 {
@@ -357,9 +360,11 @@ body {
                     grid-template-columns: 1fr;
                     align-items: center;
                     gap: 10px;
+                    justify-self: start;
 
-                    #f3_2_1{
-                        &>div{
+
+                    #f3_2_1 {
+                        &>div {
                             background-color: white;
                             height: 50px;
                             width: 100px;
@@ -372,10 +377,16 @@ body {
                             pointer-events: none;
                         }
 
-                        #fill{
+                       
+                            // #fill::-webkit-outer-spin-button, 
+                            // ::-webkit-inner-spin-button {
+                            //     -webkit-appearance: none;
+                            //     margin: 0;
+                            // }
+                        
 
-                           
-                        }
+
+
                     }
 
                 }
@@ -392,7 +403,7 @@ body {
 
             #f4 {
                 display: grid;
-                grid-template-columns: 2fr 1.5fr;
+                grid-template-columns: 3fr 1.5fr;
                 grid-template-rows: 3fr 1fr;
                 // gap: 7px;
 
@@ -429,7 +440,7 @@ body {
                         accent-color: rgb(120, 255, 120);
                         justify-self: start;
 
-                       input{
+                        input {
                             width: 60px;
                             height: 25px;
                             background-color: rgba(255, 255, 255, 0.764);
@@ -464,12 +475,14 @@ body {
                         justify-self: start;
                         padding-right: 10%;
                         align-self: end;
-                        input{
+
+                        input {
                             width: 60px;
                             height: 25px;
-                            background-color:rgba(255, 255, 255, 0.764);
+                            background-color: rgba(255, 255, 255, 0.764);
                             border: none;
-                            color: rgba(0, 0, 0, 0.671);;
+                            color: rgba(0, 0, 0, 0.671);
+                            ;
                             letter-spacing: 0.3em;
                             font-size: 14px;
                             letter-spacing: 1px;
@@ -497,10 +510,10 @@ body {
                         accent-color: rgb(105, 115, 255);
                         justify-self: start;
                         align-self: end;
-                        
+
                     }
-                        
-                    
+
+
 
                     #CoEx {
                         grid-row: 2;
@@ -531,6 +544,7 @@ body {
 
                         height: 30px;
                         width: 50px;
+
                         #he {
                             height: 100%;
                             width: 100%;
@@ -549,50 +563,50 @@ body {
                     }
 
 
-                    #R{
+                    #R {
                         height: 30px;
                         width: 50px;
 
                         #ru {
-                        font-size: 14px;
-                        color: rgb(4, 0, 218);
-                        border: none;
-                        background-color: transparent;
-                        height: 100%;
-                        width: 100%;
+                            font-size: 14px;
+                            color: rgb(4, 0, 218);
+                            border: none;
+                            background-color: transparent;
+                            height: 100%;
+                            width: 100%;
 
+                        }
+
+                        #ru:hover {
+                            cursor: pointer;
+                            text-decoration: underline solid rgb(4, 0, 218);
+                        }
                     }
 
-                    #ru:hover {
-                        cursor: pointer;
-                        text-decoration: underline solid rgb(4, 0, 218);
-                    } 
+
+
+                    #E {
+
+                        height: 30px;
+                        width: 50px;
+
+
+                        #en {
+                            font-size: 20px;
+                            color: rgb(218, 3, 3);
+                            border: none;
+                            background-color: transparent;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+                        #en:hover {
+                            cursor: pointer;
+                            text-decoration: underline solid rgb(218, 3, 3);
+                        }
                     }
 
 
-
-                   #E{
-
-                    height: 30px;
-                    width: 50px;
-
-
-                    #en {
-                        font-size: 20px;
-                        color: rgb(218, 3, 3);
-                        border: none;
-                        background-color: transparent;
-                        height: 100%;
-                        width: 100%;
-                    }
-
-                    #en:hover {
-                        cursor: pointer;
-                        text-decoration: underline solid rgb(218, 3, 3);
-                    }
-                   }
-
-                    
 
                     #lang {
                         -webkit-appearance: none;
@@ -727,7 +741,7 @@ body {
     }
 
     // Буквы
-    
+
     #window {
 
         width: 100%;
@@ -736,7 +750,7 @@ body {
         position: absolute;
         // display: block;
 
-       
+
         #Error {
             display: none;
         }
@@ -755,7 +769,7 @@ body {
             border: none;
             margin: 0 auto;
             padding: 0;
-           
+
 
         }
 
@@ -774,13 +788,14 @@ body {
                 color: black;
                 font-family: Times;
                 font-weight: bold;
-                
+
             }
         }
     }
+
     #window::after {
         content: "";
         display: block;
         clear: both;
-      }
+    }
 }
