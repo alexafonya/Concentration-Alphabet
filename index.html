@@ -62,18 +62,16 @@
                 <div id="f3_1">
 
                     <div id="f3_1_2"> <!--f2-->
-                        <input type="number" name="number" class="form" id="speed" onclick =""
-                        oninput="this.value = this.value.slice(0, 4)" min="500" max="5000" value="1200"
-                            step="100">
+                        <button id="plus" class="time" onclick="setTime1()" > Speed - </button>
+                        <label for="speed"></label>
+                        <input type="number" name="number" class="form" id="speed" 
+                        oninput="this.value = this.value.slice(0, 4)" min="500" max="3000" value="1200"
+                            step="100" readonly>
+                        <button id="minus" class="time" onclick="setTime1()">Speed +</button>
                     </div>
 
                 </div>
                 <div id="startReset">
-                    <div id="f3_1_1">
-                        <label for="time"></label>
-                        <input onclick="setTime();setSise(); newLetters (); setTimer()"
-                            type="submit" id="time" value=" Speed / Sise " >
-                    </div>
                     <div id="f3_2_2">
                         <label for="sise"></label>
                         <input onclick="reset()" type="submit" id="sise" value="    Reset    ">
@@ -82,12 +80,16 @@
                 <!-- font sise control  -->
                 <div id="f3_2"> <!--shrift-->
                     <div id="f3_2_1">
-                        <div id="Mix">M I X</div>
-                        <!-- <button class="plus">+</button> -->
+                        
+                        <button id="plu" class="sise">Sise +</button>   
+                        <div id="Mix"></div>
+                        <div id="MixPsevdo1"></div>
+                        <div id="MixPsevdo2"></div>
+
                             <input type="number" name="letters" class="form" onclick="setSise()"
                             oninput="this.value = this.value.slice(0, 3)" id="fill" min="20" max="150" placeholder="" value="100"
-                                step="10" re>
-                        <!-- <button class="minus">-</button> -->
+                                step="10" readonly>
+                        <button id="min" class="sise">Sise -</button>
                     </div>
 
                 </div>
@@ -96,12 +98,12 @@
             <div id="f4"> <!--f3-->
                 <div id="f4_1">
                     <div id="su">
-                        <input type="submit" id="super" onclick="superExtra()" value="ExMix">
-                       
+                        <input type="checkbox" id="super" onclick="startSuperExtra()" value="ExMix">
+                        <label class="input" for="super">ExMix</label>
                     </div>
                     <div id="O">
-                        <input onclick="startApp()" type="submit" id="On" value="Extra">
-                       
+                        <input onclick="startExtra()" type="checkbox" id="On" value="Extra">  
+                        <label class="input" for="On">Extra</label>
                     </div>
                     <div id="co">
                         <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
@@ -164,7 +166,10 @@
                                     шрифта, а так же поменять фон с белого на черный. И возможность выбора
                                     языка: Рус/Анг/Ивр.
                                 </p>
-
+                                <p> "Супер" - Рандомное изменение размера букв (буквы одинакового размера) </p>
+                                <p>"С.Микс" - Рандомное изменение размера букв (буквы разного размера)</p>
+                                <p>"Цвет" - Рандомное изменение цвета букв (буквы одинакового цвета) </p>
+                                <p>"Ц.Микс" - Рандомное изменение цвета букв (буквы разного цвета)</p>
                             </div>
                         </div>
                         <div id="modalEn" class="modal">
@@ -211,7 +216,10 @@
                                     change the background from white to black. And the opportunity to
                                     choose Languages: Russian/English/Hebrew.
                                 </p>
-
+                                <p>"Extra" - Random change in the size of the letters (letters of the same size)</p>
+                                <p>"ExMix" - Random change in the size of the letters (letters of different sizes)</p>
+                                <p>"Color - Random change in the color of the letters (letters of the same color)</p>
+                                <p>"CoMix" - Random change in letters color (letters of different colors)</p>
 
                             </div>
                         </div>
@@ -260,6 +268,10 @@
                                     שפות: רוסית/אנגלית/עברית.
 
                                 </p>
+                                <p>תוֹסֶפֶת" - שינוי אקראי בגודל האותיות (אותיות באותו גודל)"</p>
+                                <p>מיקס" - שינוי אקראי בגודל האותיות (אותיות בגדלים שונים)"</p>
+                                <p>צֶבַע" - שינוי אקראי בצבע האותיות (אותיות באותו צבע)"</p>
+                                <p>צֶבַע מיקס" - שינוי אקראי בצבע אותיות (אותיות של צבעים שונים)"</p>
 
                             </div>
                         </div>
@@ -271,7 +283,7 @@
     </div>
 
 
-    <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio>
+    <!-- <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio> -->
 
 
 
@@ -279,8 +291,8 @@
 
     <div id="Win">
         <div id="window">
-            <div id="Error"></div>
-            <div id="Error2"></div>
+            <div id="Finish">Amazing!
+                You finished the exercise</div>
             <input id="clean" type="submit" class="butt" value="скрыть панель">
             <div id="block">
                 <p id="alfavit"></p>
