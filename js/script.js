@@ -20,6 +20,8 @@ var TimesColor;
 var TimesExtColor;
 var colorSimle = document.getElementById("color");
 var colorExtra = document.getElementById("ColorExt");
+var Extra = document.getElementById("On");
+var SuperExtra = document.getElementById("super");
 var Theme = document.getElementById("theme");
 var SUPER = document.getElementById("super").value;
 
@@ -35,6 +37,8 @@ let HOLD = document.getElementById("speed").value;
 let SHRIFT;
 let SISE;
 let SISE_1;
+let SISE2;
+let SISE3;
 
 var RED = document.getElementById("alfavit").style.color = "red";
 var ORANGE = document.getElementById("alfavit").style.color = "orange";
@@ -77,11 +81,15 @@ var ALFeng = [
  let modal2 = document.querySelector('#modal');
  
 const changeLengRus = () =>{
+    document.getElementById("Finish").innerText = "Превосходно! Упражнение выполнено!"
+    document.getElementById("min").textContent = " Размер -"
+    document.getElementById("plu").textContent = " Размер +"
     document.getElementById("fullScr").value = " Весь экран "
-    document.getElementById("time").value = " Скор./Масш. "
+    document.getElementById("minus").textContent = " Скорость -"
+    document.getElementById("plus").textContent = " Скорость +"
     document.getElementById("sise").value = "    Сброс    "
-    document.getElementById("On").value =  "Супер"
-    document.getElementById("super").value = "С.Микс"
+    document.querySelector("#O>label").textContent =  "Супер"
+    document.querySelector("#su>label").textContent = "С.Микс"
     document.querySelector("#co>label").textContent = "Цвет"
     document.querySelector("#CoEx>label").textContent = "Ц.Микс"
     document.getElementById("ru").textContent = "Рус"
@@ -95,11 +103,15 @@ const changeLengRus = () =>{
     document.getElementById("5").innerText = "20мин"
 }
 const changeLengEng = () =>{
+     document.getElementById("Finish").innerText = "Perfect! The exercise is done!"
+     document.getElementById("min").textContent = " Sise -"
+    document.getElementById("plu").textContent = " Sise +"
     document.getElementById("fullScr").value = " Full screen "
-    document.getElementById("time").value = " Speed / Sise "
+     document.getElementById("minus").textContent = " Speed +"
+    document.getElementById("plus").textContent = " Speed -"
     document.getElementById("sise").value = "   Reset   "
-    document.getElementById("On").value =  "Extra"
-    document.getElementById("super").value = "ExMix"
+    document.querySelector("#O>label").textContent =  "Extra"
+    document.querySelector("#su>label").textContent = "ExMix"
     document.querySelector("#co>label").textContent = "Color"
     document.querySelector("#CoEx>label").textContent = "CoMix"
     document.getElementById("ru").textContent = "Ru"
@@ -113,11 +125,15 @@ const changeLengEng = () =>{
     document.getElementById("5").innerText = "20min"
 }
 const changeLengHeb = () =>{
+     document.getElementById("Finish").innerText = "!מוּשׁלָם!  התרגיל נעשה"
+    document.getElementById("min").textContent = "- גוֹדֶל "
+    document.getElementById("plu").textContent = "+ גוֹדֶל "
     document.getElementById("fullScr").value = " מסך מלא "
-    document.getElementById("time").value = " מְהִירוּת / גוֹדֶל "
+    document.getElementById("minus").textContent = "+  מְהִירוּת "
+    document.getElementById("plus").textContent = "-  מְהִירוּת "
     document.getElementById("sise").value = "   אִתחוּל   "
-    document.getElementById("On").value =  "תוֹסֶפֶת"
-    document.getElementById("super").value = "מיקס"
+    document.querySelector("#O>label").textContent =  "תוֹסֶפֶת"
+    document.querySelector("#su>label").textContent = "מיקס"
     document.querySelector("#co>label").textContent = "צֶבַע"
     document.querySelector("#CoEx>label").textContent = "צֶבַע מיקס"
     document.getElementById("ru").textContent = "רוס"
@@ -157,25 +173,6 @@ const changeLengHeb = () =>{
      })
     en.addEventListener("click", function () {  
         // setTime();      
-        error = document.getElementById('time');
-        error.addEventListener("click", function(){
-            if (document.getElementById("speed").value < 500){
-                document.querySelector("#Error").innerHTML =  `Too fast!  The interval should not be less than "500"!`;
-                document.querySelector("#Error").style.left = "20%";
-                document.querySelector("#Error").style.top = "15%";
-            } if (document.getElementById("speed").value > 5000){
-                document.querySelector("#Error").innerHTML =  `Too slow!  The interval should not be greater than "5000"!`;
-                document.querySelector("#Error").style.left = "16%";
-                document.querySelector("#Error").style.top = "45%";
-            }
-            if ( document.getElementById("fill").value > 150){
-                document.querySelector("#Error2").innerHTML =  `The  size  of  letters  should  not  exceed   '150' !`;
-            } if(document.getElementById("fill").value < 20){
-                document.querySelector("#Error2").innerHTML =  `The size of the letters should not be less than "20"!`;
-                document.querySelector("#Error2").style.left = "20%";
-        document.querySelector("#Error2").style.top = "45%";
-            } 
-        })
         changeLengEng();
         close.onclick() 
         modal = modal1;   
@@ -193,28 +190,9 @@ const changeLengHeb = () =>{
         document.getElementById("ru").style.fontSize = "14px"
         document.getElementById("ru").style.transition = "0.7s";
         document.getElementById("he").style.fontSize = "14px"
-        document.getElementById("he").style.transition = "0.7s";
-    
+        document.getElementById("he").style.transition = "0.7s"; 
      })
     ru.addEventListener("click", function () {
-        error = document.getElementById('time');
-        error.addEventListener("click", function(){
-            if (document.getElementById("speed").value < 500){
-                document.querySelector("#Error").innerHTML =  `Слишком быстро!  Интервал не должен быть меньше "500" !`;
-                document.querySelector("#Error").style.left ="13%"
-            } if (document.getElementById("speed").value > 5000){
-                document.querySelector("#Error").innerHTML =  `Слишком медленно!  Интервал не должен быть больше "5000" !`;
-                 document.querySelector("#Error").style.left ="10%"
-            }
-            if ( document.getElementById("fill").value > 150){
-                document.querySelector("#Error2").innerHTML =  `Размер букв не должен превышать "150" !`;
-               
-            } if(document.getElementById("fill").value < 20){
-                document.querySelector("#Error2").innerHTML =  `Размер букв не должен быть меньше "20" !`;
-                 document.querySelector("#Error2").style.left = "25% "
-            } 
-        
-        })
         changeLengRus();
         close.onclick() 
         modal = modal2;            
@@ -230,17 +208,14 @@ const changeLengHeb = () =>{
         document.getElementById("en").style.transition = "0.7s";
         document.getElementById("he").style.fontSize = "14px"
         document.getElementById("he").style.transition = "0.7s";
-
      })
-
-
  })
 
  var Play = document.getElementById("playTime");
  var Stop = document.getElementById("stopTime");
  var resTim = document.getElementById("start");
 
-  resTim.addEventListener("click", function () {
+resTim.addEventListener("click", function () {
     Play.addEventListener("mousemove",function(){
         Play.style.backgroundColor = " rgb(100, 121, 255)"  
          Play.style.transition = "0.5s"
@@ -248,13 +223,11 @@ const changeLengHeb = () =>{
     Play.addEventListener("mouseleave",function(){
         Play.style.backgroundColor = "rgb(230, 230, 230)"
          Play.style.transition = "0.5s"
-    })
-    
+    })  
     Stop.addEventListener("mousemove",function(){
         Stop.style.backgroundColor = "rgb(255, 121, 121)"
         Stop.style.transition = "0.5s"
-    })
-    
+    }) 
     Stop.addEventListener("mouseleave",function(){
         Stop.style.backgroundColor = "rgb(230, 230, 230)"
         Stop.style.transition = "0.5s"
@@ -266,7 +239,6 @@ const changeLengHeb = () =>{
     Play.style.backgroundColor = "rgb(230, 230, 230)"
     Play.style.width = "30px";
     Play.style.height = "30px";
-
  })
 
 Play.addEventListener("click", function() {  
@@ -274,15 +246,12 @@ Play.addEventListener("click", function() {
     Stop.addEventListener("mousemove",function(){
         Stop.style.backgroundColor = "rgb(255, 121, 121)"
     })
-    
     Stop.addEventListener("mouseleave",function(){
         Stop.style.backgroundColor = " rgb(158, 158, 158)"
     })
-
     Play.addEventListener("mouseleave",function(){
         Play.style.backgroundColor = "rgb(0, 4, 213)"
-    })
-    
+    })    
     Play.style.backgroundColor = " rgb(0, 4, 213)"
     Play.style.transition = "0.5s"
     Play.style.width = "40px";
@@ -293,13 +262,13 @@ Play.addEventListener("click", function() {
     Stop.style.height = "30px";    
     clearInterval(INTERVAL1); 
     INTERVAL1 = setInterval(function () { newCountDown() }, 1000) 
-    // this.removeEventListener("mouseleave",function(){})
  })
 
  Play.addEventListener("mousemove",function(){
     Play.style.backgroundColor = "rgb(100, 121, 255)"  
      Play.style.transition = "0.5s"
 })
+
 Play.addEventListener("mouseleave",function(){
     Play.style.backgroundColor = "rgb(230, 230, 230)"
      Play.style.transition = "0.5s"
@@ -357,13 +326,29 @@ setTimes.addEventListener("click", function() {
     let DUBLE = countDownEl.innerHTML = `${minutes} : ${seconds}`;
     document.getElementById("dublicate").value = DUBLE;
     TIME--;
-    if (TIME == 10) {
-        var Audio = document.getElementById("final")
-        Audio.play()
-    } if (TIME == 0) {
-        stopAudio()
-        
-        clearInterval(INTERVAL1)
+    if (TIME < 0) {
+        clear();
+        document.getElementById("block").style.display = "none"
+        document.getElementById("block").style.transition = "2s."
+        document.getElementById("Finish").style.display = "block"
+        document.getElementById("window").style.height = "70vh"
+        menuItem.addEventListener("click", function () {
+            dropDownMenu.style.display = "grid";
+             document.getElementById("window").style.height = "70vh";  
+             if (document.exitFullscreen) {
+                 document.exitFullscreen();
+                 document.getElementById("window").style.height = "70vh";
+             } else if (document.mozCancelFullScreen) {
+                 document.mozCancelFullScreen();
+                 document.getElementById("window").style.height = "70vh";
+             } else if (document.webkitExitFullscreen) {
+                 document.webkitExitFullscreen();
+                 document.getElementById("window").style.height = "70vh";
+             } else if (document.msExitFullscreen) {
+                 document.msExitFullscreen();
+                 document.getElementById("window").style.height = "70vh";
+             }
+     });
     }
     break
 }  
@@ -381,11 +366,12 @@ var Times_Alf = setInterval(function () { newLetters() }, set4)
 
 var Times_1 = setInterval(function () { newHands() }, set2)
 
-var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
+var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+
 
 ExMix = document.getElementById("super");
 Ex = document.getElementById("On");
-Speed = document.getElementById("time");
+Speed = document.getElementById("speed");
 
 colorSimle.addEventListener("click", function () {
     resetExtColor();
@@ -396,13 +382,42 @@ colorSimle.addEventListener("click", function () {
         interTime = HOLD;
     }
     if (colorSimle.checked) {
-        TimesColor = setInterval(function () {
-            randomHands(), setFont(), setColor(),
-                randomLetters()
-        }, interTime);
-   
+        if (Extra.checked) {      
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(), randomLetters(), extra(), setColor()
+            },interTime);
+        } else if (SuperExtra.checked) {
+                clear();
+                TimesColor = setInterval(function () {
+                    setFontEx(), randomHands(), superExtraLet(), superExtraHan(), 
+                    setColor(), randomLetters()
+                }, interTime);     
+            } else{
+                
+            TimesColor = setInterval(function () {
+                randomHands(), setFont(), setColor(),
+                    randomLetters()
+            }, interTime);
+        } 
     } else {
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, interTime); 
+        if (Extra.checked) {      
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(), randomLetters(), extra()
+            },interTime);       
+        } else if (SuperExtra.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                setFontEx(), randomHands(), superExtraLet(),  
+                superExtraHan(), randomLetters()
+            }, interTime);
+        }  else{
+            clear()
+        // document.getElementById("fill").value = 100;
+        // setSise();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
+        }
     }
 })
 
@@ -414,14 +429,41 @@ colorExtra.addEventListener("click", function () {
     } else{
         interTime = HOLD;
     }
-    if (this.checked) {
-        TimesExtColor = setInterval(function () {
-            randomHands(), setFont(),
+    if (colorExtra.checked) {
+        if (Extra.checked) {      
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(), randomLetters(), extra(), 
+                setColorAlf(), setColorHand()
+            },interTime);
+            }else if (SuperExtra.checked) {
+                clear();
+                TimesColor = setInterval(function () {
+                    setFontEx(), randomHands(), superExtraLet(), superExtraHan(), 
+                    setColorAlf(), setColorHand(), randomLetters()
+                }, interTime);      
+             } else{
+                 TimesExtColor = setInterval(function () {
+                randomHands(), setFont(),
                 randomLetters(), setColorAlf(), setColorHand()
-        }, interTime);
-    
+                }, interTime);
+            }      
     } else {
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
+        if (Extra.checked) {      
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(), randomLetters(), extra() 
+            },interTime);
+        } else if (SuperExtra.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                setFontEx(), randomHands(), superExtraLet(),  
+                superExtraHan(), randomLetters()
+            }, interTime);      
+         } else{
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
+        }    
+        
     }
 })
 
@@ -443,7 +485,6 @@ function newHands() {
         let j = Math.floor(Math.random() * (i + 1));
         [HAND[i], HAND[j]] = [HAND[j], HAND[i]];
         console.log(`NEWHAND = ${HAND}`)
-
     }
 }
 
@@ -451,7 +492,6 @@ function randomLetters() {
     document.getElementById("alfavit").innerText = ALF[alfIndex];
     alfIndex = (alfIndex + 1) % ALF.length;
     console.log(alfIndex)
-
 }
 
 const randomHands = () => {
@@ -469,8 +509,6 @@ colorExtra.addEventListener("click", function () {
 
     }
 })
-
-
 
 // Расположение Букв
 
@@ -519,44 +557,91 @@ let setfontFullScr =()=>{
 
 }
 
+let setFontEx =() =>{
+    SHRIFT = document.getElementById("fill").value;
+    let TOP;
+    let LEFT;
+    console.log("30-40")
+    LEFT = Math.floor(Math.random() * 90);
+    TOP = Math.floor(Math.random() * 45);
+    document.getElementById("block").style.left = LEFT + '%';
+    document.getElementById("block").style.top = TOP + '%'; 
+}
+
 let setFont =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    if (SHRIFT <= 50) {
-        console.log("20-50")
+    if (SHRIFT <= 40) {
+        console.log("30-40")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 89);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    }else if(SHRIFT <= 50){
+        console.log("40-50")
         LEFT = Math.floor(Math.random() * 90);
         TOP = Math.floor(Math.random() * 86);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
+    }else if(SHRIFT <= 60){
+        console.log("50-60")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 82);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
     }else if(SHRIFT <= 70){
-        console.log("50-70")
+        console.log("60-70")
         LEFT = Math.floor(Math.random() * 90);
         TOP = Math.floor(Math.random() * 78);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 90){
-        console.log("70-90")
+    }else if(SHRIFT <= 80){
+        console.log("70-80")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 71);
+        TOP = Math.floor(Math.random() * 74);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 110){
-        console.log("90-110")
+    }else if(SHRIFT <= 90){
+        console.log("80-90")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 63);
+        TOP = Math.floor(Math.random() * 70);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    }else if(SHRIFT <= 100){
+        console.log("90-100")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 64);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    }else if(SHRIFT <= 110){
+        console.log("100-110")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 62);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 120){
+        console.log("110-120")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 59);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 130){
-        console.log("110-130")
+        console.log("120-130")
         LEFT = Math.floor(Math.random() * 90);
         TOP = Math.floor(Math.random() * 55);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
+    } else if(SHRIFT <= 140){
+        console.log("130-140")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 51);
+        document.getElementById("block").style.left = LEFT + '%';
+        document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 150){
-        console.log("130-150")
+        console.log("Еу 140-150")
         LEFT = Math.floor(Math.random() * 90);      
-        TOP = Math.floor(Math.random() * 46);
+        TOP = Math.floor(Math.random() * 45);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
@@ -565,41 +650,28 @@ let setFont =() =>{
 
 //  Размер Шрифта
 
-// $('.minus').click(function(){
-//       $(this).siblings('input')[0].stepDown();
-//       setSise()
-//   })
-//   $('.plus').click(function(){  
-//       $(this).siblings('input')[0].stepUp(); 
-//       setSise()
-//     })
+$('#min').click(function(){
+      $(this).siblings('input')[0].stepDown();
+      setSise()
+  })
+  $('#plu').click(function(){  
+      $(this).siblings('input')[0].stepUp(); 
+      setSise()
+    })
+$('#minus').click(function(){
+      $(this).siblings('input')[0].stepDown();
+      setSise()
+  })
+  $('#plus').click(function(){  
+      $(this).siblings('input')[0].stepUp(); 
+      setSise()
+    })
 
 function setSise() {
     SHRIFT = document.getElementById("fill").value;
     console.log(SHRIFT)
-    ERROR = document.querySelector("#Error2").style.display =  "none";
-    if ( SHRIFT > 150){
-        ERROR = document.querySelector("#Error2").style.display =  "block";
-        document.querySelector("#Error2").innerHTML =  `The  size  of  letters  should  not  exceed   '150' !`;
-        document.querySelector("#Error2").style.position = "reletive";
-        document.querySelector("#Error2").style.left = "25%";
-        document.querySelector("#Error2").style.top = "45%";
-        document.querySelector("#Error2").style.fontSize = "45px";   
-        document.querySelector("#Error2").style.color = "red";
-        document.querySelector("#block").style.display = "none";
-    } if(SHRIFT < 20){
-        ERROR = document.querySelector("#Error2").style.display =  "block";
-        document.querySelector("#Error2").innerHTML =  `The size of the letters should not be less than "20"!`;
-        document.querySelector("#Error2").style.position = "reletive";
-        document.querySelector("#Error2").style.left = "20%";
-        document.querySelector("#Error2").style.top = "45%";
-        document.querySelector("#Error2").style.fontSize = "45px";   
-        document.querySelector("#Error2").style.color = "red";
-        document.querySelector("#block").style.display = "none";
-    } else{   
     document.getElementById('alfavit').style.fontSize = SHRIFT + 'px';
     document.getElementById('hand').style.fontSize = SHRIFT + 'px';
-    }
 }
 
 function reset() {
@@ -612,13 +684,7 @@ function clear() {
     clearInterval(Times_3);
 }
 
-let setTimeReal = ()=>{
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters()}, set);
-        } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()}, HOLD);
+let setTimeReal = ()=>{  
         clearInterval(Times_1)
         NewHOLD = HOLD * 3;
         Times_1 = setInterval(function () { newHands() }, NewHOLD);
@@ -635,536 +701,236 @@ let setTimeReal = ()=>{
             NewAlfHOLD = HOLD * 27;
             Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
         }return Times_Alf     
-    }
 }
 
-let startAppReal = ()=>{
+let setTime1 =()=>{
+    // clear()
+    HOLD = document.getElementById("speed").value
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
+    } 
+    if (Extra.checked) {
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                    setFontEx(), randomHands(), extra(), setColor(),
+                    randomLetters()
+            }, interTime);  
+            setTimeReal();
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                    setFontEx(), randomHands(), extra(),
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+            setTimeReal();
+        } else {
+            clear()
+        Times_3 = setInterval(function () {
+            setFontEx(), randomHands(), randomLetters(), extra()
+        },interTime);
+        setTimeReal();
+        }   
+    } else if (SuperExtra.checked) {
+            if (colorSimle.checked) {
+                clear();
+                TimesColor = setInterval(function () {
+                    setFontEx(), randomHands(), superExtraLet(), superExtraHan(), 
+                    setColor(), randomLetters()
+                }, interTime);
+                setTimeReal();  
+            } else if (colorExtra.checked) {
+                clear();
+                TimesExtColor = setInterval(function () {
+                        setFontEx(), randomHands(), superExtraLet(), superExtraHan(),
+                        randomLetters(), setColorAlf(), setColorHand()
+                }, interTime);
+                setTimeReal();
+            } else {
+                clear()
+                Times_3 = setInterval(function () {
+                    setFontEx(), randomHands(), randomLetters(), superExtraLet(), superExtraHan()
+            },interTime);
+            setTimeReal();
+            }   
+        } else{
+        if (colorSimle.checked) {
+            clear();
+            console.log("Simple in setTime1()")
+            TimesColor = setInterval(function () {
+                randomHands(), setFont(), setColor(),
+                    randomLetters()
+            }, interTime); 
+            setTimeReal();
+            console.log("Simple in setTime1()2")  
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                randomHands(), setFont(),
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+            setTimeReal();     
+        } else {
+            clear()
+            // document.getElementById("fill").value = 100;
+            // setSise();
+            console.log("else in setTime1()")
+            Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
+            setTimeReal();
+        }      
+    } 
+}
+     
+startExtra = ()=>{
+    document.getElementById("plu").style.display = "none"
+    document.getElementById("min").style.display = "none"
+    document.getElementById("MixPsevdo1").style.display = "none"
+    document.getElementById("MixPsevdo2").style.display = "none"
+    document.getElementById("fill").style.display = "block"
+    document.getElementById("super").checked = false;
+    HOLD = document.getElementById("speed").value
+    setTimeReal();
     if(HOLD == set){
         interTime = set;
     } else{
         interTime = HOLD;
     }
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters(), extra()}, set);
+    if (Extra.checked) {
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                    setFontEx(),  randomHands(),  extra(), setColor(),
+                    randomLetters()
+            }, interTime);  
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                    setFontEx(),  randomHands(),  extra(),
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+
         } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra()}, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        if(ALF == ALFheb) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 22;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } if (ALF == ALFeng) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 26;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } else {
-            clearInterval(Times_Alf)
-            NewAlfHOLD = HOLD * 27;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        }return Times_Alf     
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(),  randomLetters(), extra()
+        },interTime);
+        }   
+    }else{ 
+        document.getElementById("plu").style.display = "block"
+        document.getElementById("min").style.display = "block"  
+        document.getElementById("fill").value = 100;
+        setSise();
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                    setFont(), randomHands(), setColor(),
+                    randomLetters()
+            }, interTime);  
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                    setFont(), randomHands(), 
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+        } else{
+            document.getElementById("plu").style.display = "block"
+            document.getElementById("min").style.display = "block"
+            clear()
+            Times_3 = setInterval(function () { setFont(), randomHands(),  randomLetters()},interTime);
+        }
     }
 }
 
-let superExtraReal = ()=>{
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan()}, set);
-        } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan()}, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        if(ALF == ALFheb) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 22;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } if (ALF == ALFeng) {
-            clearInterval(Times_Alf);
-            NewAlfHOLD = HOLD * 26;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        } else {
-            clearInterval(Times_Alf)
-            NewAlfHOLD = HOLD * 27;
-            Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-        }return Times_Alf     
+let startSuperExtra = ()=>{
+    document.getElementById("fill").style.display = "none"
+    document.getElementById("plu").style.display = "none"
+    document.getElementById("min").style.display = "none"
+    document.getElementById("MixPsevdo1").style.display = "block"
+    document.getElementById("MixPsevdo2").style.display = "block"
+    // document.getElementById("Mix").innerText = `${SISE2} - ${SISE3}`
+    document.getElementById("On").checked = false;
+    HOLD = document.getElementById("speed").value
+    setTimeReal();
+    if(HOLD == set){
+        interTime = set;
+    } else{
+        interTime = HOLD;
     }
-}
-
-// function setTime() {
-//     clear();
-//     resetColor();
-//     resetExtColor();
-//     setSise();
-//     document.getElementById("On").removeAttribute('disabled')
-//     document.getElementById("super").removeAttribute('disabled')
-//     if (document.getElementById("fill").value = "Mix"){
-//         document.getElementById("fill").value = 60;
-//     } else {
-        
-//     }
-//     document.getElementById("fill").setAttribute('type', 'number');
-//     setSise();
-//     HOLD = document.getElementById("speed").value;
-//     document.querySelector("#Error").style.display =  "none";
-//     document.querySelector("#block").style.display = "block";
-//     if (HOLD < 500){
-//         document.querySelector("#Error").style.display =  "block";
-//         document.querySelector("#Error").innerHTML =  `Too fast!  The interval should not be less than "500"!`;
-//         document.querySelector("#Error").style.position = "reletive";
-//         console.log("lskdjfhv")
-//         document.querySelector("#Error").style.left = "20%";
-//         document.querySelector("#Error").style.top = "15%";
-//         document.querySelector("#Error").style.fontSize = "45px";
-//         document.querySelector("#Error").style.color = "red";
-//         document.querySelector("#block").style.display = "none";
-//     } if (HOLD > 5000){
-//         document.querySelector("#Error").style.display =  "block";
-//         document.querySelector("#Error").innerHTML =  `Too slow!  The interval should not be greater than "5000"!`;
-//         document.querySelector("#Error").style.position = "reletive";
-//         console.log("lskdjfhv")
-//         document.querySelector("#Error").style.left = "16%";
-//         document.querySelector("#Error").style.top = "15%";
-//         document.querySelector("#Error").style.fontSize = "45px";
-//         document.querySelector("#Error").style.color = "red";
-//         document.querySelector("#block").style.display = "none";
-//     }else{
-//         document.querySelector("#time").innerText = HOLD;
-//          if(HOLD == set){
-//         interTime = set;
-//     } else{
-//         interTime = HOLD;
-//     } 
-//     setTimeReal();
-//     colorSimle.addEventListener("click", function (){
-//         if (colorSimle.checked) {
-//             clear();
-//             TimesColor = setInterval(function () {
-//                 console.log("Speed - Проверка внутри")
-//                 randomHands(), setFont(), setColor(),
-//                     randomLetters()
-//             }, interTime);
-//         }  else {
-//             setTimeReal();
-//         }
-//     })
-//     colorExtra.addEventListener("click", function (){
-//         if (colorExtra.checked) {
-//             clear();
-//             TimesExtColor = setInterval(function () {
-//                 console.log("Speed - Проверка внутри")
-//                 randomHands(), setFont(),
-//                     randomLetters(), setColorAlf(), setColorHand()
-//             }, interTime);
-//         } else {
-//             setTimeReal();
-//         }
-//     }) 
-// }
-    
-// }
-
-function setTime() {
-    clear();
-    setSise();
-    resetColor();
-    resetExtColor();
-    document.getElementById("Mix").style.display = "none";
-    document.getElementById("fill").style.display = "block";
-    const HOLD = document.getElementById("speed").value;
-    // document.querySelector("#time").innerText = HOLD;
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColorAlf(), setColorHand() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
-
+    if (SuperExtra.checked) {
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                setFontEx(), randomHands(), superExtraLet(), superExtraHan(), 
+                setColor(), randomLetters()
+            }, interTime);  
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                    setFontEx(), randomHands(), superExtraLet(), superExtraHan(),
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
         } else {
-            resetExtColor();
+            clear()
+            Times_3 = setInterval(function () {
+                setFontEx(), randomHands(), randomLetters(), superExtraLet(), superExtraHan()
+        },interTime);
+        }   
+    }else{  
+        document.getElementById("fill").style.display = "block"
+            document.getElementById("plu").style.display = "block"
+            document.getElementById("min").style.display = "block"
+            document.getElementById("MixPsevdo1").style.display = "none"
+            document.getElementById("MixPsevdo2").style.display = "none" 
+        document.getElementById("fill").value = 100;
+        setSise();
+        if (colorSimle.checked) {
+            clear();
+            TimesColor = setInterval(function () {
+                    setFont(), randomHands(), setColor(),
+                    randomLetters()
+            }, interTime);  
+        } else if (colorExtra.checked) {
+            clear();
+            TimesExtColor = setInterval(function () {
+                    setFont(), randomHands(), 
+                    randomLetters(), setColorAlf(), setColorHand()
+            }, interTime);
+        } else{
+            document.getElementById("fill").style.display = "block"
+            document.getElementById("plu").style.display = "block"
+            document.getElementById("min").style.display = "block"
+            document.getElementById("MixPsevdo1").style.display = "none"
+            document.getElementById("MixPsevdo2").style.display = "none"
+            clear()
+            Times_3 = setInterval(function () { setFont(), randomHands(), randomLetters()},interTime);
         }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), setColor(), randomLetters() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
-
-        } else {
-            resetColor();
-        }
-    })
-   
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters() }, set);
-    } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters() }, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
     }
 
-
 }
-
-function superExtra() {
-    clear();
-    resetColor();
-    resetExtColor();
-    const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(), superExtraLet(),
-                    superExtraHan(), setColorAlf(), setColorHand()
-                }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(), superExtraLet(),
-                    superExtraHan(), setColorAlf(), setColorHand()
-                }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
-            }
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
-        }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-
-            }
-        } else {
-
-            if (HOLD == Times_3) {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            }
-        }
-    })
-    if (HOLD == Times_3) {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, set);
-    } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), superExtraLet(), superExtraHan() }, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    }
-}
-
-function startApp() {
-    clear();
-    resetColor();
-    resetExtColor();
-    document.getElementById("Mix").style.display = "none";
-    document.getElementById("fill").style.display = "block";
-    const HOLD = document.getElementById("speed").value;
-    document.querySelector("#time").innerText = HOLD;
-    colorExtra.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () {
-                    randomHands(), setFont(), randomLetters(),
-                        extra(), setColorAlf(), setColorHand()
-                }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () {
-                    randomHands(), setFont(), randomLetters(),
-                        extra(), setColorAlf(), setColorHand()
-                }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            };
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            };
-        }
-    })
-    TimesColor = colorSimle.addEventListener("click", function () {
-        if (this.checked) {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), setColor(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            };
-
-        } else {
-            if (HOLD == Times_3) {
-                clear();
-                setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-            } else {
-                clear();
-                Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-                clearInterval(Times_1)
-                NewHOLD = HOLD * 3;
-                Times_1 = setInterval(function () { newHands() }, NewHOLD);
-                clearInterval(Times_Alf)
-                NewAlfHOLD = HOLD * 27;
-                Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-            };
-        }
-
-    })
-    if (HOLD == Times_3) {
-        clear();
-        setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, set);
-    } else {
-        clear();
-        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters(), extra() }, HOLD);
-        clearInterval(Times_1)
-        NewHOLD = HOLD * 3;
-        Times_1 = setInterval(function () { newHands() }, NewHOLD);
-        clearInterval(Times_Alf)
-        NewAlfHOLD = HOLD * 27;
-        Times_Alf = setInterval(function () { newLetters() }, NewAlfHOLD)
-    };
-}
-
-// function startApp() {
-//     // clear();
-//     // document.getElementById("On").setAttribute('disabled', '')
-//     // document.getElementById("super").removeAttribute('disabled')
-//     resetColor();
-//     resetExtColor();
-//     HOLD = document.getElementById("speed").value;
-//     document.querySelector("#time").innerText = HOLD;       
-//     if(HOLD == set){
-//         interTime = set;
-//     } else{
-//         interTime = HOLD;
-//     }
-//     colorSimle.addEventListener("click", function (){
-//         if (colorSimle.checked) {
-//             clear();
-//             TimesColor = setInterval(function () {
-//                 console.log("Экстро - Проверка внутри")
-//                 randomHands(), setFont(), setColor(), extra(),
-//                     randomLetters()
-//             }, interTime);
-//         }  else {
-//             startAppReal();
-//         }
-//     })
-//     colorExtra.addEventListener("click", function (){
-//         if (colorExtra.checked) {
-//             clear();
-//             TimesExtColor = setInterval(function () {
-//                 console.log("Экстро - Проверка внутри")
-//                 randomHands(), setFont(),
-//                     randomLetters(), extra(), setColorAlf(), setColorHand()
-//             }, interTime);
-//         } else {
-//             startAppReal();
-//         }
-//     })
-//     startAppReal();
-//     // if (colorSimle.checked) {
-//     //     // clear();
-//     //     TimesColor = setInterval(function () {
-//     //         console.log("Экстро(cS) - Проверка вне")
-//     //         randomHands(), setFont(), setColor(), extra(),
-//     //             randomLetters()
-//     //     }, interTime);
-//     // } else if (colorExtra.checked) {
-//     //     // clear();
-//     //     TimesExtColor = setInterval(function () {
-//     //         console.log("Экстро(TEC) - Проверка вне")
-//     //         randomHands(), setFont(),
-//     //             randomLetters(), extra(), setColorAlf(), setColorHand()
-//     //     }, interTime);
-//     // } else {
-//     //     // resetColor();
-//     //     // resetExtColor();
-//     //     startAppReal();
-//     // }
-// }
-
-// function superExtra() {
-//     clear();
-//     resetColor();
-//     resetExtColor();
-//     // document.getElementById("super").setAttribute('disabled', '')
-//     // document.getElementById("On").removeAttribute('disabled')
-//     HOLD = document.getElementById("speed").value;
-//     document.querySelector("#time").innerText = HOLD; 
-//     console.log("here1")
-//     if(HOLD == set){
-//         interTime = set;
-//     } else{
-//         interTime = HOLD;
-//     }
-//     //   if (colorSimle.checked) {
-//     //     TimesColor = setInterval(function () {
-//     //         console.log("СуперЭкстро(cS) - Проверка вне")
-//     //         randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
-//     //             randomLetters()
-//     //     }, interTime);
-//     // }  else {
-//     //     console.log("here2")
-//     //     superExtraReal();
-//     // }
-//     // console.log("here3")
-//     // if (colorExtra.checked) {
-//     //     TimesExtColor = setInterval(function () {
-//     //         console.log("СуперЭкстро(TEC) - Проверка вне")
-//     //         randomHands(), setFont(),superExtraLet(), superExtraHan(),
-//     //             randomLetters(), setColorAlf(), setColorHand()
-//     //     }, interTime);
-//     // } else {
-//     //     superExtraReal();
-//     // }
-//     colorSimle.addEventListener("click", function (){
-//         clear();
-//         if (colorSimle.checked) {
-//             TimesColor = setInterval(function () {
-//                 console.log("СуперЭкстро -Проверка внутри")
-//                 randomHands(), setFont(), setColor(), superExtraLet(), superExtraHan(),
-//                     randomLetters()
-//             }, interTime);
-//         } else {
-//             console.log("here4")
-//             superExtraReal();
-//         }
-//     })
-//     console.log("here5")
-//     colorExtra.addEventListener("click", function (){
-//         clear();
-//         if (colorExtra.checked) {
-//             console.log("СуперЭкстро - Проверка внутри")
-//             TimesExtColor = setInterval(function () {
-//                 randomHands(), setFont(),superExtraLet(), superExtraHan(),
-//                     randomLetters(), setColorAlf(), setColorHand()
-//             }, interTime);
-//         } else {
-//             superExtraReal();
-//         }
-//     })
-//     superExtraReal();
-//     console.log("here6")
-// }
 
 function superExtraLet() {
-    let SISE = Math.floor((Math.random() * 100) + 30);
-    document.getElementById("alfavit").style.fontSize = SISE + 'px';
+    SISE3 = Math.floor((Math.random() * 100) + 30);
+    document.getElementById("alfavit").style.fontSize = SISE3 + 'px';
     LEFT = Math.floor(Math.random() * 90);
     TOP = Math.floor(Math.random() * 60);
     document.getElementById("block").style.left = LEFT + '%';
     document.getElementById("block").style.top = TOP + '%';
-    document.getElementById("Mix").style.display = "block";
-    document.getElementById("fill").style.display = "none";
-    
+    document.getElementById("MixPsevdo1").innerText = SISE3
+  
   
 }
 
-
 function superExtraHan() {
-    let SISE = Math.floor((Math.random() * 100) + 30);
-    asd = document.getElementById("hand").style.fontSize = SISE + 'px';
+    SISE2 = Math.floor((Math.random() * 100) + 30);
+    asd = document.getElementById("hand").style.fontSize = SISE2 + 'px';
     console.log(asd)
     LEFT = Math.floor(Math.random() * 90);
     TOP = Math.floor(Math.random() * 60);
     document.getElementById("block").style.left = LEFT + '%';
     document.getElementById("block").style.top = TOP + '%';
+    document.getElementById("MixPsevdo2").innerText = SISE2
 }
 
 function extra() {
@@ -1173,10 +939,16 @@ function extra() {
     document.getElementById("fill").value = SISE;
     document.getElementById("alfavit").style.fontSize = SISE + 'px';
     document.getElementById("hand").style.fontSize = SISE + 'px';
+    // document.getElementsByClassName("sise").innerText = "Extra"
+
     console.log(SISE);
-    setFont()
+    // setFont()
 
 }
+
+blockTime = document.getElementById("dublicate")
+
+
 
 var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
@@ -1198,9 +970,25 @@ fullSreen.addEventListener("click", function () {
             elem.msRequestFullscreen();
             document.getElementById("window").style.height = "100vh";
         } 
-
+ 
     this.removeEventListener("click",function(){})
 })
+
+// if(document.getElementById("window").style.height = "100vh"){
+//     addEventListener('mousemove', function mousemove() {
+//         clearTimeout(mousemove.timeout);    
+//         dropDownMenu.style.display = 'block'; 
+//         document.getElementById("window").style.height = "83vh" 
+//         mousemove.timeout = setTimeout(() => {
+//         dropDownMenu.style.display = 'none';
+//         document.getElementById("window").style.height = "100vh"
+//         }, 3000); 
+//       });
+// } else {
+//     clearTimeout(mousemove.timeout);
+//     vwe.removeEventListener('mousemove', mousemove());
+// }
+   
 
  menuItem.addEventListener("click", function () {
        dropDownMenu.style.display = "grid";
@@ -1218,8 +1006,8 @@ fullSreen.addEventListener("click", function () {
             document.msExitFullscreen();
             document.getElementById("window").style.height = "83vh";
         }
- 
-        this.removeEventListener("click",function(){})
+    //    vwe.removeEventListener('mousemove', mousemove());
+        
 });
 
 function resetColor() {
@@ -1235,8 +1023,6 @@ function resetColor() {
         document.getElementById("hand").style.color = "black";
     }   
 }
-
-
 
 function setColor() {
     const COLORS = ['RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'INDIGO', 'VIOLET', 'GRAY'];
