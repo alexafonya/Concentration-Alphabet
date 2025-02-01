@@ -2,6 +2,10 @@ body {
   margin: 0 auto;
   height: 100vh;
 }
+body :active, body :hover, body :focus {
+  outline: 0;
+  outline-offset: 0;
+}
 body #top {
   width: 100%;
   margin: 0 auto;
@@ -23,6 +27,7 @@ body #top #top2 #f2 {
   width: 75%;
 }
 body #top #top2 #f2 #fullScr {
+  border-radius: 5px;
   width: 90%;
   height: 30px;
   background-color: transparent;
@@ -53,6 +58,7 @@ body #top #top2 #f1 #countdown {
   display: none;
 }
 body #top #top2 #f1 #dublicate {
+  pointer-events: none;
   font-size: 20px;
   height: 35px;
   width: 100px;
@@ -204,7 +210,7 @@ body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(5) {
 }
 body #top #top2 #f3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0.7fr 1fr;
   align-items: center;
   justify-items: center;
 }
@@ -214,23 +220,48 @@ body #top #top2 #f3 #f3_1 {
   align-items: center;
   justify-self: end;
 }
+body #top #top2 #f3 #f3_1 #f3_1_2 {
+  justify-self: end;
+  display: grid;
+}
+body #top #top2 #f3 #f3_1 #f3_1_2 .time {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.764);
+  border: none;
+  color: rgba(0, 0, 0, 0.671);
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  justify-self: center;
+}
+body #top #top2 #f3 #f3_1 #f3_1_2 .time:hover {
+  background-color: hsl(0, 0%, 40%);
+  color: rgba(255, 255, 255, 0.764);
+  transition: 0.5s;
+}
+body #top #top2 #f3 #f3_1 #f3_1_2 .time:active {
+  background-color: white;
+  color: black;
+}
 body #top #top2 #f3 #f3_1 #f3_1_1 {
   justify-self: end;
   width: 100%;
 }
 body #top #top2 #f3 #startReset {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
 }
 body #top #top2 #f3 #startReset #f3_2_2 {
   justify-self: start;
   width: 100%;
 }
 body #top #top2 #f3 #startReset #f3_2_2 #sise {
+  align-self: center;
   width: 100%;
   height: 40px;
-  background-color: hsl(0, 0%, 40%);
+  border-radius: 10px;
+  background-color: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.764);
   letter-spacing: 0.3em;
@@ -270,6 +301,11 @@ body #top #top2 #f3 #startReset #time:active {
   background-color: rgb(255, 255, 255);
   transition: 0.5s;
 }
+body #top #top2 #f3 #speed::-webkit-outer-spin-button,
+body #top #top2 #f3 ::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 body #top #top2 #f3 #f3_2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -277,23 +313,81 @@ body #top #top2 #f3 #f3_2 {
   gap: 10px;
   justify-self: start;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 > div {
+body #top #top2 #f3 #f3_2 #f3_2_1 {
+  display: grid;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 #Mix {
   background-color: white;
-  height: 50px;
-  width: 100px;
-  padding-top: 12px;
+  height: 28px;
+  width: 115px;
   text-align: center;
   font-size: 20px;
-  box-sizing: border-box;
-  padding-right: 5px;
-  display: none;
+  margin: 10px 0;
   pointer-events: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 3px;
+  display: none;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo2 {
+  background-color: white;
+  height: 28px;
+  width: 115px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+  pointer-events: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 3px;
+  display: none;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo1 {
+  background-color: white;
+  height: 28px;
+  width: 115px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+  pointer-events: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 3px;
+  display: none;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 #fill::-webkit-outer-spin-button,
+body #top #top2 #f3 #f3_2 #f3_2_1 ::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 .sise {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.764);
+  border: none;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.671);
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  justify-self: center;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 .sise:hover {
+  background-color: hsl(0, 0%, 40%);
+  color: rgba(255, 255, 255, 0.764);
+  transition: 0.5s;
+}
+body #top #top2 #f3 #f3_2 #f3_2_1 .sise:active {
+  background-color: white;
+  color: black;
 }
 body #top #top2 #f3 .form {
-  height: 45px;
-  width: 100px;
+  height: 25px;
+  width: 110px;
   text-align: center;
   font-size: 20px;
+  margin: 10px 0;
+  pointer-events: none;
 }
 body #top #top2 #f4 {
   display: grid;
@@ -325,29 +419,8 @@ body #top #top2 #f4 #f4_1 {
 body #top #top2 #f4 #f4_1 #su {
   grid-column: 1;
   grid-row: 2;
-  accent-color: rgb(120, 255, 120);
+  accent-color: rgb(116, 255, 116);
   justify-self: start;
-}
-body #top #top2 #f4 #f4_1 #su input {
-  width: 60px;
-  height: 25px;
-  background-color: rgba(255, 255, 255, 0.764);
-  border: none;
-  color: rgba(0, 0, 0, 0.671);
-  letter-spacing: 0.3em;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 0;
-  cursor: pointer;
-  transition: 0.5s;
-}
-body #top #top2 #f4 #f4_1 #su input:hover {
-  background-color: hsl(0, 0%, 40%);
-  color: rgba(255, 255, 255, 0.764);
-  transition: 0.5s;
-}
-body #top #top2 #f4 #f4_1 #su input:active {
-  background-color: black;
 }
 body #top #top2 #f4 #f4_1 #O {
   grid-column: 1;
@@ -356,27 +429,6 @@ body #top #top2 #f4 #f4_1 #O {
   justify-self: start;
   padding-right: 10%;
   align-self: end;
-}
-body #top #top2 #f4 #f4_1 #O input {
-  width: 60px;
-  height: 25px;
-  background-color: rgba(255, 255, 255, 0.764);
-  border: none;
-  color: rgba(0, 0, 0, 0.671);
-  letter-spacing: 0.3em;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 0;
-  cursor: pointer;
-  transition: 0.5s;
-}
-body #top #top2 #f4 #f4_1 #O input:hover {
-  background-color: hsl(0, 0%, 40%);
-  color: rgba(255, 255, 255, 0.764);
-  transition: 0.5s;
-}
-body #top #top2 #f4 #f4_1 #O input:active {
-  background-color: black;
 }
 body #top #top2 #f4 #f4_1 #co {
   grid-row: 1;
@@ -552,11 +604,12 @@ body #window {
   height: 80vh;
   position: absolute;
 }
-body #window #Error {
+body #window #Finish {
   display: none;
-}
-body #window #Error2 {
-  display: none;
+  position: relative;
+  font-size: 56px;
+  top: 200px;
+  color: aqua;
 }
 body #window #clean {
   height: 100%;
