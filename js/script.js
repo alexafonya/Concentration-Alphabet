@@ -54,6 +54,7 @@ var colorNow = document.getElementById("color").value;
 
 var menuItem = document.querySelector("#window>input");
 var dropDownMenu = document.querySelector("#top");
+var dropDownMenu2 = document.getElementById("scrDown");
 
 // Иврит
 
@@ -85,8 +86,8 @@ const changeLengRus = () =>{
     document.getElementById("min").textContent = " Размер -"
     document.getElementById("plu").textContent = " Размер +"
     document.getElementById("fullScr").value = " Весь экран "
-    document.getElementById("minus").textContent = " Скорость +"
-    document.getElementById("plus").textContent = " Скорость -"
+    document.getElementById("minus").textContent = " Скорость -"
+    document.getElementById("plus").textContent = " Скорость +"
     document.getElementById("sise").value = "    Сброс    "
     document.querySelector("#O>label").textContent =  "Супер"
     document.querySelector("#su>label").textContent = "С.Микс"
@@ -948,65 +949,77 @@ function extra() {
 
 blockTime = document.getElementById("dublicate")
 
-
-
 var fullSreen = document.getElementById("fullScr");
 var elem = document.documentElement;
 
-fullSreen.addEventListener("click", function () {
-    HOLD = document.getElementById("speed").value;
-        dropDownMenu.style.display = "none";       
-        document.getElementById("window").style.height = "100vh"; 
+    fullSreen.addEventListener("click", function () {
+        HOLD = document.getElementById("speed").value;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-            document.getElementById("window").style.height = "100vh";
         } else if (elem.mozRequestFullScreen) { /* Firefox */
             elem.mozRequestFullScreen();  
-            document.getElementById("window").style.height = "100vh";
         } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
             elem.webkitRequestFullscreen();        
-            document.getElementById("window").style.height = "100vh";
         } else if (elem.msRequestFullscreen) { /* IE/Edge */
             elem.msRequestFullscreen();
-            document.getElementById("window").style.height = "100vh";
         } 
- 
-    this.removeEventListener("click",function(){})
+   
 })
 
-// if(document.getElementById("window").style.height = "100vh"){
-//     addEventListener('mousemove', function mousemove() {
-//         clearTimeout(mousemove.timeout);    
-//         dropDownMenu.style.display = 'block'; 
-//         document.getElementById("window").style.height = "83vh" 
-//         mousemove.timeout = setTimeout(() => {
-//         dropDownMenu.style.display = 'none';
-//         document.getElementById("window").style.height = "100vh"
-//         }, 3000); 
-//       });
-// } else {
-//     clearTimeout(mousemove.timeout);
-//     vwe.removeEventListener('mousemove', mousemove());
-// }
+let to = 5000, ts = 0; 
+
+let timeout;
+
+addEventListener('mousemove', () => {
+  ts = Date.now();
+  clean.style.cursor = "default";
+  dropDownMenu.style.display = "grid";
+});
+
+setInterval(() => {
+  if (Date.now() - ts > to)
+    clean.style.cursor = "none";
+}, 99)
+
+
+menuItem.addEventListener("mousemove", function(){
+    clearTimeout(timeout);
+    dropDownMenu.style.display = "grid";
+    timeout = setTimeout(() => {
+        console.log("inFull1")
+        dropDownMenu.style.display = 'none';
+        }, 5000);
+})
+dropDownMenu.addEventListener("mouseleave", function(){
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        console.log("inFull2")
+        dropDownMenu.style.display = 'none';
+        }, 5000);
+        if(modal.style.display == 'block')
+            clean.style.cursor = "default"; 
+        if(dropDownMenu.style.display = "grid")
+            clean.style.cursor = "default";   
+})    
+ 
    
 
  menuItem.addEventListener("click", function () {
+        clearTimeout(timeout);
        dropDownMenu.style.display = "grid";
-        document.getElementById("window").style.height = "83vh";  
         if (document.exitFullscreen) {
             document.exitFullscreen();
-            document.getElementById("window").style.height = "83vh";
+            clearTimeout(timeout);         
         } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
-            document.getElementById("window").style.height = "83vh";
+            clearTimeout(timeout);           
         } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
-            document.getElementById("window").style.height = "83vh";
+            clearTimeout(timeout);          
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
-            document.getElementById("window").style.height = "83vh";
+            clearTimeout(timeout);        
         }
-    //    vwe.removeEventListener('mousemove', mousemove());
         
 });
 
