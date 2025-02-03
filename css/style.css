@@ -63,6 +63,8 @@ body #top #top2 #f1 #dublicate {
   height: 35px;
   width: 100px;
   text-align: center;
+  background-color: white;
+  border: none;
 }
 body #top #top2 #f1 #TimeOnOff {
   display: grid;
@@ -620,8 +622,8 @@ body #window #Finish {
   display: none;
   position: relative;
   font-size: 56px;
-  top: 200px;
-  color: aqua;
+  top: 250px;
+  color: rgb(0, 195, 195);
 }
 body #window #clean {
   height: 100%;
