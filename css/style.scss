@@ -16,6 +16,8 @@ body {
     #top {
         width: 100%;
         margin: 0 auto;
+        pointer-events: none;
+        opacity: 0.5;
 
         #top2 {
 
@@ -740,29 +742,353 @@ body {
                     .modal {
                         display: none;
                         position: fixed;
-                        z-index: 1;
+                       z-index: 1;
                         left: 0;
                         top: 0;
-                        width: 80%;
-                        height: 80%;
+                        width: 90vw;
+                        height: 85vh;
                         overflow: auto;
                         background-color: rgba(0, 0, 0, 0.4);
+
+                        #langueges1{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            justify-items: center;
+                        }
+                        #langueges2{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            justify-items: center;
+                        }
+                        #langueges3{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            justify-items: center;
+                        }
+
+                        #langE1{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: red;
+                            grid-column: 6;
+                            justify-self: start;
+                        }
+                        #langR1{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: blue;
+                            grid-column: 5;
+                        }
+                        #langH1{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color:rgb(0, 198, 0);
+                            grid-column: 4;
+                            grid-row: 1;
+                            justify-self: end;
+                        }
+                        #langE2{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: red;
+                            grid-column: 6;
+                            justify-self: start;
+                        }
+                        #langR2{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: blue;
+                            grid-column: 5;
+                        }
+                        #langH2{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color:rgb(0, 198, 0);
+                            grid-column: 4;
+                            grid-row: 1;
+                            justify-self: end;
+                        }
+                        #langE3{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: red;
+                            grid-column: 6;
+                            justify-self: start;
+                        }
+                        #langR3{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color: blue;
+                            grid-column: 5;
+                        }
+                        #langH3{
+                            display: none;
+                            height: 30px;
+                            width: 40px;
+                            background-color:rgb(0, 198, 0);
+                            grid-column: 4;
+                            grid-row: 1;
+                            justify-self: end;
+                        }
                     }
 
                     .modal-content {
                         color: rgb(0, 0, 0);
                         font-size: 24px;
                         padding: 50px 70px;
-                        pointer-events: none;
+                        // pointer-events: none;
                     }
 
                     .close {
-                        /* some rules */
+                       height: 30px;
+                       width: 60px;
+                       margin: 20px;
+                    }
+
+                    #backEn{
+                        height: 40px;
+                        display: none;
+                        background-color: rgb(23, 194, 0);
+                    }
+                    #backRu{
+                        height: 40px;
+                        display: none;
+                        background-color: rgb(23, 194, 0);
+                    }
+                    #backHe{
+                        height: 40px;
+                        display: none;
+                        background-color: rgb(23, 194, 0);
                     }
                 }
             }
         }
     }
+
+   
+
+    #scrDownEn{
+        width: 80vw;
+        height: 80vh; 
+        background-color: blue;
+        margin: 0 auto;
+        padding: 30px 100px;
+        position: relative;
+        bottom: 70px;
+        box-sizing: border-box;
+
+        h2{
+            margin: 0;
+            font-size: 56px;
+            margin-left: 150px;
+        }
+        h2:nth-of-type(2){
+            // margin-left: 250px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #blockBtn{
+            margin: auto;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            padding-top: 50px;
+            align-items: center;
+            
+
+           h3{
+            font-size: 32px;
+            margin: 0;
+            justify-self: start;
+        }
+
+        #instruction{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+
+            #btnInst{
+                height: 50px;
+                width: 200px;
+                background-color: red;
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        }
+        #exersise{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+
+            #btnStart{
+                height: 50px;
+                width: 200px;
+                background-color: rgb(0, 229, 0);
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        } 
+        }
+
+        
+
+    }
+    #scrDownRu{
+        width: 80vw;
+        height: 80vh; 
+        background-color: blue;
+        margin: 0 auto;
+        padding: 30px 100px;
+        position: relative;
+        bottom: 70px;
+        display: none;
+        box-sizing: border-box;
+
+        h2{
+            margin: 0;
+            font-size: 56px;
+            margin-left: 150px;
+        }
+        h2:nth-of-type(2){
+            // margin-left: 250px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #blockBtn{
+            margin: auto;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            padding-top: 50px;
+            align-items: center;
+            
+
+           h3{
+            font-size: 32px;
+            margin: 0;
+            justify-self: start;
+        }
+
+        #instruction{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+
+            #btnInst2{
+                height: 50px;
+                width: 200px;
+                background-color: red;
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        }
+        #exersise{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+
+            #btnStart2{
+                height: 50px;
+                width: 200px;
+                background-color: rgb(0, 229, 0);
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        } 
+        }
+
+        
+
+    }
+    #scrDownHe{
+        width: 80vw;
+        height: 80vh; 
+        background-color: blue;
+        margin: 0 auto;
+        padding: 30px 150px;
+        position: relative;
+        bottom: 70px;
+        display: none;
+        box-sizing: border-box;
+
+        h2{
+            margin: 0;
+            font-size: 56px;
+            margin-left: 150px;
+        }
+        h2:nth-of-type(2){
+            // margin-left: 250px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #blockBtn{
+            margin: auto;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            padding-top: 200px;
+            align-items: center;
+            
+
+           h3{
+            font-size: 32px;
+            margin: 0;
+            justify-self: start;
+        }
+
+        #instruction{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+
+            #btnInst1{
+                height: 50px;
+                width: 200px;
+                background-color: red;
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        }
+        #exersise{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+
+            #btnStart1{
+                height: 50px;
+                width: 200px;
+                background-color: rgb(0, 229, 0);
+                border-radius: 10px;
+                font-size: 28px;
+                color: white;
+            }
+        } 
+        }
+
+        
+
+    }
+
+   
 
     // Буквы
 
@@ -770,20 +1096,18 @@ body {
         width: 100%;
         height: 80vh;
         position: absolute;
+        display: none;
 
         
 
-        #scrDown{
-            width: 100%;
-            height: 120px;
-    
-        }
+
 
         #Finish {
             display: none;
             position: relative;
             font-size: 56px;
             top: 250px; 
+            left: 400px;
             color: rgb(0, 195, 195);
         }
 
@@ -795,10 +1119,11 @@ body {
             border: none;
             margin: 0 auto;
             padding: 0;
-            overflow:hidden
+            overflow:hidden;
+            
         }
 
-        &>div {
+        #block {
             position: absolute;
             text-align: center;
             pointer-events: none;

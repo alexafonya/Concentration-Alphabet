@@ -9,6 +9,8 @@ body :active, body :hover, body :focus {
 body #top {
   width: 100%;
   margin: 0 auto;
+  pointer-events: none;
+  opacity: 0.5;
 }
 body #top #top2 {
   display: grid;
@@ -595,34 +597,314 @@ body #top #top2 #help #btnHelp .modal {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 80%;
-  height: 80%;
+  width: 90vw;
+  height: 85vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+}
+body #top #top2 #help #btnHelp .modal #langueges1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+body #top #top2 #help #btnHelp .modal #langueges2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+body #top #top2 #help #btnHelp .modal #langueges3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+body #top #top2 #help #btnHelp .modal #langE1 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: red;
+  grid-column: 6;
+  justify-self: start;
+}
+body #top #top2 #help #btnHelp .modal #langR1 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: blue;
+  grid-column: 5;
+}
+body #top #top2 #help #btnHelp .modal #langH1 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: rgb(0, 198, 0);
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+}
+body #top #top2 #help #btnHelp .modal #langE2 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: red;
+  grid-column: 6;
+  justify-self: start;
+}
+body #top #top2 #help #btnHelp .modal #langR2 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: blue;
+  grid-column: 5;
+}
+body #top #top2 #help #btnHelp .modal #langH2 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: rgb(0, 198, 0);
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+}
+body #top #top2 #help #btnHelp .modal #langE3 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: red;
+  grid-column: 6;
+  justify-self: start;
+}
+body #top #top2 #help #btnHelp .modal #langR3 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: blue;
+  grid-column: 5;
+}
+body #top #top2 #help #btnHelp .modal #langH3 {
+  display: none;
+  height: 30px;
+  width: 40px;
+  background-color: rgb(0, 198, 0);
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
 }
 body #top #top2 #help #btnHelp .modal-content {
   color: rgb(0, 0, 0);
   font-size: 24px;
   padding: 50px 70px;
-  pointer-events: none;
 }
 body #top #top2 #help #btnHelp .close {
-  /* some rules */
+  height: 30px;
+  width: 60px;
+  margin: 20px;
+}
+body #top #top2 #help #btnHelp #backEn {
+  height: 40px;
+  display: none;
+  background-color: rgb(23, 194, 0);
+}
+body #top #top2 #help #btnHelp #backRu {
+  height: 40px;
+  display: none;
+  background-color: rgb(23, 194, 0);
+}
+body #top #top2 #help #btnHelp #backHe {
+  height: 40px;
+  display: none;
+  background-color: rgb(23, 194, 0);
+}
+body #scrDownEn {
+  width: 80vw;
+  height: 80vh;
+  background-color: blue;
+  margin: 0 auto;
+  padding: 30px 100px;
+  position: relative;
+  bottom: 70px;
+  box-sizing: border-box;
+}
+body #scrDownEn h2 {
+  margin: 0;
+  font-size: 56px;
+  margin-left: 150px;
+}
+body #scrDownEn h2:nth-of-type(2) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body #scrDownEn #blockBtn {
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding-top: 50px;
+  align-items: center;
+}
+body #scrDownEn #blockBtn h3 {
+  font-size: 32px;
+  margin: 0;
+  justify-self: start;
+}
+body #scrDownEn #blockBtn #instruction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+body #scrDownEn #blockBtn #instruction #btnInst {
+  height: 50px;
+  width: 200px;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
+}
+body #scrDownEn #blockBtn #exersise {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+body #scrDownEn #blockBtn #exersise #btnStart {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(0, 229, 0);
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
+}
+body #scrDownRu {
+  width: 80vw;
+  height: 80vh;
+  background-color: blue;
+  margin: 0 auto;
+  padding: 30px 100px;
+  position: relative;
+  bottom: 70px;
+  display: none;
+  box-sizing: border-box;
+}
+body #scrDownRu h2 {
+  margin: 0;
+  font-size: 56px;
+  margin-left: 150px;
+}
+body #scrDownRu h2:nth-of-type(2) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body #scrDownRu #blockBtn {
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding-top: 50px;
+  align-items: center;
+}
+body #scrDownRu #blockBtn h3 {
+  font-size: 32px;
+  margin: 0;
+  justify-self: start;
+}
+body #scrDownRu #blockBtn #instruction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+body #scrDownRu #blockBtn #instruction #btnInst2 {
+  height: 50px;
+  width: 200px;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
+}
+body #scrDownRu #blockBtn #exersise {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+body #scrDownRu #blockBtn #exersise #btnStart2 {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(0, 229, 0);
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
+}
+body #scrDownHe {
+  width: 80vw;
+  height: 80vh;
+  background-color: blue;
+  margin: 0 auto;
+  padding: 30px 150px;
+  position: relative;
+  bottom: 70px;
+  display: none;
+  box-sizing: border-box;
+}
+body #scrDownHe h2 {
+  margin: 0;
+  font-size: 56px;
+  margin-left: 150px;
+}
+body #scrDownHe h2:nth-of-type(2) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body #scrDownHe #blockBtn {
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding-top: 200px;
+  align-items: center;
+}
+body #scrDownHe #blockBtn h3 {
+  font-size: 32px;
+  margin: 0;
+  justify-self: start;
+}
+body #scrDownHe #blockBtn #instruction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+body #scrDownHe #blockBtn #instruction #btnInst1 {
+  height: 50px;
+  width: 200px;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
+}
+body #scrDownHe #blockBtn #exersise {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+body #scrDownHe #blockBtn #exersise #btnStart1 {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(0, 229, 0);
+  border-radius: 10px;
+  font-size: 28px;
+  color: white;
 }
 body #window {
   width: 100%;
   height: 80vh;
   position: absolute;
-}
-body #window #scrDown {
-  width: 100%;
-  height: 120px;
+  display: none;
 }
 body #window #Finish {
   display: none;
   position: relative;
   font-size: 56px;
   top: 250px;
+  left: 400px;
   color: rgb(0, 195, 195);
 }
 body #window #clean {
@@ -635,12 +917,12 @@ body #window #clean {
   padding: 0;
   overflow: hidden;
 }
-body #window > div {
+body #window #block {
   position: absolute;
   text-align: center;
   pointer-events: none;
 }
-body #window > div p {
+body #window #block p {
   font-size: 60px;
   margin: 0;
   color: black;
