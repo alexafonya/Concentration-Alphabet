@@ -25,6 +25,12 @@ var SuperExtra = document.getElementById("super");
 var Theme = document.getElementById("theme");
 var SUPER = document.getElementById("super").value;
 
+let modal1 = document.querySelector('#modalEn');
+let modal3 = document.querySelector('#modalHe');
+let btn = document.querySelector('#openModal');
+let close = document.querySelector('.close');
+
+
 let set2 = (set * 3) + 100;
 let set3 = set * 27;
 let set4 = set * 26;
@@ -55,6 +61,7 @@ var colorNow = document.getElementById("color").value;
 var menuItem = document.querySelector("#window>input");
 var dropDownMenu = document.querySelector("#top");
 var dropDownMenu2 = document.getElementById("scrDown");
+fullSreen = document.getElementById("fullScr");
 
 // Иврит
 
@@ -80,9 +87,14 @@ var ALFeng = [
 
  let modal;
  let modal2 = document.querySelector('#modal');
+
  
 const changeLengRus = () =>{
+    modal.style.display = "none"
+    modal = modal2
+    modal.style.pointerEvents = "visible";
     document.getElementById("Finish").innerText = "Превосходно! Упражнение выполнено!"
+    document.getElementById("Finish").style.left = "300px"
     document.getElementById("min").textContent = " Размер -"
     document.getElementById("plu").textContent = " Размер +"
     document.getElementById("fullScr").value = " Весь экран "
@@ -104,9 +116,13 @@ const changeLengRus = () =>{
     document.getElementById("5").innerText = "20мин"
 }
 const changeLengEng = () =>{
+    modal.style.display = "none"
+    modal = modal1;
+    modal.style.pointerEvents = "visible";
      document.getElementById("Finish").innerText = "Perfect! The exercise is done!"
-     document.getElementById("min").textContent = " Sise -"
-    document.getElementById("plu").textContent = " Sise +"
+     document.getElementById("Finish").style.left = "400px"
+     document.getElementById("min").textContent = " Size -"
+    document.getElementById("plu").textContent = " Size +"
     document.getElementById("fullScr").value = " Full screen "
      document.getElementById("minus").textContent = " Speed +"
     document.getElementById("plus").textContent = " Speed -"
@@ -126,7 +142,11 @@ const changeLengEng = () =>{
     document.getElementById("5").innerText = "20min"
 }
 const changeLengHeb = () =>{
+    modal.style.display = "none"
+    modal = modal3;
+    modal.style.pointerEvents = "visible";  
      document.getElementById("Finish").innerText = "!מוּשׁלָם!  התרגיל נעשה"
+     document.getElementById("Finish").style.left = "500px"
     document.getElementById("min").textContent = "- גוֹדֶל "
     document.getElementById("plu").textContent = "+ גוֹדֶל "
     document.getElementById("fullScr").value = " מסך מלא "
@@ -148,14 +168,126 @@ const changeLengHeb = () =>{
     document.getElementById("5").innerText = "20 דק"
 }
 
+let btnCloseE=()=>{
+    document.getElementById("backEn").style.display = "block"
+    document.getElementById("closeEn").style.display = "none"
+    closeWinE = document.getElementById("backEn")
+    console.log("Back close")
+    closeWinE.addEventListener("click", function(){
+        modal.style.display = "none"
+        document.getElementById("scrDownEn").style.display = "block"
+        document.getElementById("backEn").style.display = "none"
+        document.getElementById("closeEn").style.display = "block"
+    })
+}
+let btnCloseR=()=>{
+    document.getElementById("backRu").style.display = "block"
+    document.getElementById("closeRu").style.display = "none"
+    closeWinR = document.getElementById("backRu")
+    closeWinR.addEventListener("click", function(){
+        modal.style.display = "none"
+        document.getElementById("scrDownRu").style.display = "block"
+    document.getElementById("backRu").style.display = "none"
+    document.getElementById("closeRu").style.display = "block"
+    })
+}
+let btnCloseH=()=>{
+    document.getElementById("backHe").style.display = "block"
+    document.getElementById("closeHe").style.display = "none"
+    closeWinR = document.getElementById("backHe")
+    closeWinR.addEventListener("click", function(){
+    modal.style.display = "none"
+    document.getElementById("scrDownHe").style.display = "block"
+    document.getElementById("backHe").style.display = "none"
+    document.getElementById("closeHe").style.display = "block"
+    })
+}
+
+let changeEng=()=>{
+    document.getElementById("scrDownRu").style.display = "none"
+    document.getElementById("scrDownHe").style.display = "none"
+    document.getElementById("scrDownEn").style.display = "block"
+}
+let changeRus=()=>{
+    document.getElementById("scrDownEn").style.display = "none"
+    document.getElementById("scrDownHe").style.display = "none"
+    document.getElementById("scrDownRu").style.display = "block"
+}
+let changeHeb=()=>{
+    document.getElementById("scrDownRu").style.display = "none"
+    document.getElementById("scrDownHe").style.display = "block"
+    document.getElementById("scrDownEn").style.display = "none"
+}
+
+let openLeng=()=>{
+    document.getElementById("langR1").style.display = "block"
+    document.getElementById("langR2").style.display = "block"
+    document.getElementById("langR3").style.display = "block"
+    document.getElementById("langE1").style.display = "block"
+    document.getElementById("langE2").style.display = "block"
+    document.getElementById("langE3").style.display = "block"
+    document.getElementById("langH1").style.display = "block"
+    document.getElementById("langH2").style.display = "block"
+    document.getElementById("langH3").style.display = "block"
+}
+
  addEventListener("DOMContentLoaded", function() {
+    clear();
+     btnInst.addEventListener("click", function(){
+        console.log("na meste")
+     document.getElementById("scrDownEn").style.display = "none"       
+        modalWin();     
+        document.getElementById("top").style.opacity = "1";        
+        modal.style.pointerEvents = "visible";
+        btnCloseE();
+    })
+    btnStart.addEventListener("click",function (){
+        document.getElementById("top").style.pointerEvents = "visible";
+        document.getElementById("top").style.opacity = "1";
+        document.getElementById("scrDownEn").style.display = "none"
+        document.getElementById("window").style.display = "block"
+        fullSreenStart();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+    })
+     btnInst1.addEventListener("click", function(){
+     document.getElementById("scrDownHe").style.display = "none"    
+        modalWin();
+        document.getElementById("top").style.opacity = "1";        
+        modal.style.pointerEvents = "visible";
+        btnCloseH();
+        document.getElementById("scrDownHe").style.display = "none"
+    })
+    btnStart1.addEventListener("click",function (){
+        document.getElementById("top").style.pointerEvents = "visible";
+        document.getElementById("top").style.opacity = "1";
+        document.getElementById("scrDownHe").style.display = "none"
+        document.getElementById("window").style.display = "block"
+        fullSreenStart();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+    })
+     btnInst2.addEventListener("click", function(){
+     document.getElementById("scrDownRu").style.display = "none"    
+        modalWin();
+
+        document.getElementById("top").style.opacity = "1";        
+        modal.style.pointerEvents = "visible";
+        btnCloseR();
+        document.querySelector(".lang")
+    })
+    btnStart2.addEventListener("click",function (){
+        document.getElementById("top").style.pointerEvents = "visible";
+        document.getElementById("top").style.opacity = "1";
+        document.getElementById("scrDownRu").style.display = "none"
+        document.getElementById("window").style.display = "block"
+        fullSreenStart();
+        Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+    })
     modal = modal1;
     ALF = ALFeng;
     HAND = HANDeng;
     he.addEventListener("click", function () {
         changeLengHeb();
-        close.onclick() 
-        modal = modal3;
+        // modal = modal3;
         if (alfIndex > 21){
             alfIndex -= 5;
         } 
@@ -175,8 +307,7 @@ const changeLengHeb = () =>{
     en.addEventListener("click", function () {  
         // setTime();      
         changeLengEng();
-        close.onclick() 
-        modal = modal1;   
+        // modal = modal1;   
         if (alfIndex > 25){
             alfIndex -= 1;
         } 
@@ -195,8 +326,7 @@ const changeLengHeb = () =>{
      })
     ru.addEventListener("click", function () {
         changeLengRus();
-        close.onclick() 
-        modal = modal2;            
+        // modal = modal2;            
         ALF = ALFru;
         HAND = HANDru;            
         newLetters();
@@ -210,6 +340,7 @@ const changeLengHeb = () =>{
         document.getElementById("he").style.fontSize = "14px"
         document.getElementById("he").style.transition = "0.7s";
      })
+     
  })
 
  var Play = document.getElementById("playTime");
@@ -367,7 +498,7 @@ var Times_Alf = setInterval(function () { newLetters() }, set4)
 
 var Times_1 = setInterval(function () { newHands() }, set2)
 
-var Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+var Times_3 // = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
 
 
 ExMix = document.getElementById("super");
@@ -705,7 +836,6 @@ let setTimeReal = ()=>{
 }
 
 let setTime1 =()=>{
-    // clear()
     HOLD = document.getElementById("speed").value
     if(HOLD == set){
         interTime = set;
@@ -785,6 +915,7 @@ let setTime1 =()=>{
 }
      
 startExtra = ()=>{
+    clear()
     document.getElementById("plu").style.display = "none"
     document.getElementById("min").style.display = "none"
     document.getElementById("MixPsevdo1").style.display = "none"
@@ -845,6 +976,7 @@ startExtra = ()=>{
 }
 
 let startSuperExtra = ()=>{
+    clear();
     document.getElementById("fill").style.display = "none"
     document.getElementById("plu").style.display = "none"
     document.getElementById("min").style.display = "none"
@@ -949,10 +1081,9 @@ function extra() {
 
 blockTime = document.getElementById("dublicate")
 
-var fullSreen = document.getElementById("fullScr");
-var elem = document.documentElement;
 
-    fullSreen.addEventListener("click", function () {
+var elem = document.documentElement;
+     let fullSreenStart = () => {
         HOLD = document.getElementById("speed").value;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
@@ -963,8 +1094,28 @@ var elem = document.documentElement;
         } else if (elem.msRequestFullscreen) { /* IE/Edge */
             elem.msRequestFullscreen();
         } 
-   
-})
+
+        menuItem.addEventListener("mousemove", function(){
+            clearTimeout(timeout);
+            dropDownMenu.style.display = "grid";
+            timeout = setTimeout(() => {
+                console.log("inFull1")
+                dropDownMenu.style.display = 'none';
+                }, 5000);
+        })
+        dropDownMenu.addEventListener("mouseleave", function(){
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                console.log("inFull2")
+                dropDownMenu.style.display = 'none';
+                }, 5000);
+                if(modal.style.display == 'block')
+                    clean.style.cursor = "default"; 
+                if(dropDownMenu.style.display = "grid")
+                    clean.style.cursor = "default";   
+        })  
+
+}
 
 let to = 5000, ts = 0; 
 
@@ -982,25 +1133,25 @@ setInterval(() => {
 }, 99)
 
 
-menuItem.addEventListener("mousemove", function(){
-    clearTimeout(timeout);
-    dropDownMenu.style.display = "grid";
-    timeout = setTimeout(() => {
-        console.log("inFull1")
-        dropDownMenu.style.display = 'none';
-        }, 5000);
-})
-dropDownMenu.addEventListener("mouseleave", function(){
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-        console.log("inFull2")
-        dropDownMenu.style.display = 'none';
-        }, 5000);
-        if(modal.style.display == 'block')
-            clean.style.cursor = "default"; 
-        if(dropDownMenu.style.display = "grid")
-            clean.style.cursor = "default";   
-})    
+// menuItem.addEventListener("mousemove", function(){
+//     clearTimeout(timeout);
+//     dropDownMenu.style.display = "grid";
+//     timeout = setTimeout(() => {
+//         console.log("inFull1")
+//         dropDownMenu.style.display = 'none';
+//         }, 5000);
+// })
+// dropDownMenu.addEventListener("mouseleave", function(){
+//     clearTimeout(timeout);
+//     timeout = setTimeout(() => {
+//         console.log("inFull2")
+//         dropDownMenu.style.display = 'none';
+//         }, 5000);
+//         if(modal.style.display == 'block')
+//             clean.style.cursor = "default"; 
+//         if(dropDownMenu.style.display = "grid")
+//             clean.style.cursor = "default";   
+// })    
  
    
 
@@ -1092,25 +1243,30 @@ Theme.addEventListener("click", function () {
 
 // Инструкция
 
-let modal1 = document.querySelector('#modalEn');
-let modal3 = document.querySelector('#modalHe');
-const btn = document.querySelector('#openModal');
-const close = document.querySelector('.close');
-
-btn.onclick = function () {
+let modalWin = () =>{
     modal.style.display = 'block';
     modal.style.backgroundColor = 'rgba(211, 210, 210, 0.94)';
-    modal.style.top = '17%';
-    modal.style.left = '10%';
-};
+    modal.style.top = '8%';
+    modal.style.left = '6%';
+}
 
-close.onclick = function () {
+
+btn.addEventListener("click",function () {
+   modalWin();
+   openLeng();
+   clearTimeout(timeout);
+   document.getElementById("top").style.pointerEvents = "none";
+   modal.style.pointerEvents = "visible";
+})
+
+stopModal=() => {
+    console.log("just close")
   modal.style.display = 'none';
+  document.getElementById("top").style.pointerEvents = "visible";
 };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  } 
-};
+// window.onclick = function () {
+//     modal.style.display = 'none';
+   
+// };
 
