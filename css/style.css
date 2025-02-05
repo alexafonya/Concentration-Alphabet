@@ -723,17 +723,21 @@ body #top #top2 #help #btnHelp #backHe {
 body #scrDownEn {
   width: 90vw;
   height: 90vh;
-  background-color: blue;
+  background-color: rgb(181, 181, 181);
   margin: 0 auto;
-  padding: 30px 150px;
+  padding: 3vh 7vw;
   position: relative;
   bottom: 5vw;
   box-sizing: border-box;
+  color: rgb(45, 153, 21);
 }
 body #scrDownEn h2 {
+  padding: 1vh 8vw;
+  border-radius: 10px;
   margin: 0;
   font-size: 56px;
-  margin-left: 150px;
+  margin-left: 10vw;
+  background-color: rgb(229, 229, 229);
 }
 body #scrDownEn h2:nth-of-type(2) {
   margin-top: 0;
@@ -743,13 +747,16 @@ body #scrDownEn #blockBtn {
   margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  padding-top: 80px;
+  padding-top: 4vh;
   align-items: center;
 }
 body #scrDownEn #blockBtn h3 {
+  background-color: rgb(229, 229, 229);
   font-size: 32px;
   margin: 0;
+  border-radius: 10px;
+  padding: 4vh 6vw;
+  color: black;
   justify-self: start;
 }
 body #scrDownEn #blockBtn #instruction {
@@ -761,19 +768,22 @@ body #scrDownEn #blockBtn #instruction {
 body #scrDownEn #blockBtn #instruction #btnInst {
   height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(255, 0, 0);
-  justify-self: end;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(209, 57, 57);
+  justify-self: center;
   border: none;
-  transition: 0.7s;
+  transition: 0.5s;
   cursor: pointer;
 }
 body #scrDownEn #blockBtn #instruction #btnInst:hover {
-  background-color: rgb(255, 0, 0);
-  color: white;
-  transition: 0.7s;
+  background-color: rgb(209, 57, 57);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
+  transition: 0.5s;
 }
 body #scrDownEn #blockBtn #instruction #btnInst:active {
   background-color: white;
@@ -787,18 +797,22 @@ body #scrDownEn #blockBtn #exersise {
 body #scrDownEn #blockBtn #exersise #btnStart {
   height: 50px;
   width: 200px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(0, 229, 0);
-  justify-self: end;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(75, 163, 75);
+  justify-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
+  align-self: center;
 }
 body #scrDownEn #blockBtn #exersise #btnStart:hover {
-  background-color: rgb(0, 229, 0);
-  color: white;
+  background-color: rgb(75, 163, 75);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
   transition: 0.7s;
 }
 body #scrDownEn #blockBtn #exersise #btnStart:active {
@@ -808,18 +822,22 @@ body #scrDownEn #blockBtn #exersise #btnStart:active {
 body #scrDownRu {
   width: 90vw;
   height: 90vh;
-  background-color: blue;
+  background-color: rgb(181, 181, 181);
   margin: 0 auto;
-  padding: 30px 150px;
+  padding: 3vh 7vw;
   position: relative;
   bottom: 5vw;
-  display: none;
   box-sizing: border-box;
+  color: rgb(45, 153, 21);
+  display: none;
 }
 body #scrDownRu h2 {
+  padding: 1vh 5vw;
+  border-radius: 10px;
   margin: 0;
   font-size: 56px;
   margin-left: 150px;
+  background-color: rgb(229, 229, 229);
 }
 body #scrDownRu h2:nth-of-type(2) {
   margin-top: 0;
@@ -829,13 +847,16 @@ body #scrDownRu #blockBtn {
   margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  padding-top: 80px;
+  padding-top: 4vh;
   align-items: center;
 }
 body #scrDownRu #blockBtn h3 {
+  background-color: rgb(229, 229, 229);
   font-size: 32px;
   margin: 0;
+  border-radius: 10px;
+  padding: 4vh 4vw;
+  color: black;
   justify-self: start;
 }
 body #scrDownRu #blockBtn #instruction {
@@ -847,19 +868,22 @@ body #scrDownRu #blockBtn #instruction {
 body #scrDownRu #blockBtn #instruction #btnInst2 {
   height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(255, 0, 0);
-  justify-self: end;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(209, 57, 57);
+  justify-self: center;
   border: none;
-  transition: 0.7s;
+  transition: 0.5s;
   cursor: pointer;
 }
 body #scrDownRu #blockBtn #instruction #btnInst2:hover {
-  background-color: rgb(255, 0, 0);
-  color: white;
-  transition: 0.7s;
+  background-color: rgb(209, 57, 57);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
+  transition: 0.5s;
 }
 body #scrDownRu #blockBtn #instruction #btnInst2:active {
   background-color: white;
@@ -873,18 +897,22 @@ body #scrDownRu #blockBtn #exersise {
 body #scrDownRu #blockBtn #exersise #btnStart2 {
   height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(0, 229, 0);
-  justify-self: end;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(75, 163, 75);
+  justify-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
+  align-self: center;
 }
 body #scrDownRu #blockBtn #exersise #btnStart2:hover {
-  background-color: rgb(0, 229, 0);
-  color: white;
+  background-color: rgb(75, 163, 75);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
   transition: 0.7s;
 }
 body #scrDownRu #blockBtn #exersise #btnStart2:active {
@@ -894,19 +922,23 @@ body #scrDownRu #blockBtn #exersise #btnStart2:active {
 body #scrDownHe {
   width: 90vw;
   height: 90vh;
-  background-color: blue;
+  background-color: rgb(181, 181, 181);
   margin: 0 auto;
-  padding: 30px 150px;
+  padding: 3vh 7vw;
   position: relative;
   bottom: 5vw;
-  display: none;
   box-sizing: border-box;
+  color: rgb(45, 153, 21);
+  display: none;
 }
 body #scrDownHe h2 {
+  width: 50%;
+  padding: 4vh 10vw;
+  border-radius: 10px;
   margin: 0;
   font-size: 56px;
   margin-left: 150px;
-  line-height: 100px;
+  background-color: rgb(229, 229, 229);
 }
 body #scrDownHe h2:nth-of-type(2) {
   margin-top: 0;
@@ -916,36 +948,44 @@ body #scrDownHe #blockBtn {
   margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 50px;
-  padding-top: 100px;
+  padding-top: 7vh;
+  gap: 5vh;
   align-items: center;
 }
 body #scrDownHe #blockBtn h3 {
+  background-color: rgb(229, 229, 229);
   font-size: 32px;
   margin: 0;
-  justify-self: end;
+  border-radius: 10px;
+  padding: 4vh 4vw;
+  color: black;
+  justify-self: start;
 }
 body #scrDownHe #blockBtn #instruction {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
 body #scrDownHe #blockBtn #instruction #btnInst1 {
   height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(255, 0, 0);
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(209, 57, 57);
+  justify-self: center;
   border: none;
-  transition: 0.7s;
+  transition: 0.5s;
   cursor: pointer;
 }
 body #scrDownHe #blockBtn #instruction #btnInst1:hover {
-  background-color: rgb(255, 0, 0);
-  color: white;
-  transition: 0.7s;
+  background-color: rgb(209, 57, 57);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
+  transition: 0.5s;
 }
 body #scrDownHe #blockBtn #instruction #btnInst1:active {
   background-color: white;
@@ -953,23 +993,28 @@ body #scrDownHe #blockBtn #instruction #btnInst1:active {
 }
 body #scrDownHe #blockBtn #exersise {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
 }
 body #scrDownHe #blockBtn #exersise #btnStart1 {
   height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(181, 181, 181);
   border-radius: 10px;
   font-size: 28px;
-  color: rgb(0, 229, 0);
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(75, 163, 75);
+  justify-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
+  align-self: center;
 }
 body #scrDownHe #blockBtn #exersise #btnStart1:hover {
-  background-color: rgb(0, 229, 0);
-  color: white;
+  background-color: rgb(75, 163, 75);
+  font-weight: 300;
+  color: rgb(215, 214, 214);
   transition: 0.7s;
 }
 body #scrDownHe #blockBtn #exersise #btnStart1:active {
