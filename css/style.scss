@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     height: 100vh;
+    background-color: gray;
     
 
     :active, :hover, :focus {
@@ -17,18 +18,19 @@ body {
         width: 100%;
         margin: 0 auto;
         pointer-events: none;
-        opacity: 0.5;
+        opacity: 0;
 
         #top2 {
 
 
             display: grid;
             background-color: gray;
-            grid-template-columns: 1.5fr 0.5fr 1.5fr 1fr;
-            height: 120px;
+            grid-template-columns: 1.5fr  1.5fr 1fr;
+            height: 15vh;
             align-items: center;
             width: 80%;
             margin: 0 auto;
+            gap: 50px;
 
 
 
@@ -43,12 +45,17 @@ body {
 
 
                 #fullScr {
-                    border-radius: 5px;
-                    width: 90%;
+                    background-image: url(../img/icons8-up\ \(1\).gif);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 10px;
+                    width: 100%;
                     height: 30px;
                     background-color: transparent;
                     border: none;
-                    color: rgba(255, 255, 255, 0.759);
+
+                    color: transparent;
                     letter-spacing: 0.3em;
                     font-size: 14px;
                     letter-spacing: 1px;
@@ -58,7 +65,7 @@ body {
                 }
 
                 #fullScr:hover {
-                    background-color: hsl(0, 2%, 75%);
+                    background-color: rgb(206, 205, 205);
                     color: rgba(0, 0, 0, 0.671);
                     transition: 0.5s;
                 }
@@ -67,9 +74,9 @@ body {
 
             #f1 {
                 display: grid;
-                grid-template-columns: 1fr 2fr 1fr;
+                grid-template-columns: 0.5fr 2fr 1fr;
                 align-items: center;
-                gap: 20px;
+                // gap: 20px;
 
                 #timeCount {
                     justify-self: center;
@@ -131,7 +138,7 @@ body {
                 #f2_2 {
                     display: grid;
                     grid-template-rows: 1fr 1fr;
-                    justify-self: end;
+                    justify-self: center;
                     cursor: pointer;
 
                     &>div {
@@ -752,17 +759,17 @@ body {
 
                         #langueges1{
                             display: grid;
-                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                             justify-items: center;
                         }
                         #langueges2{
                             display: grid;
-                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                             justify-items: center;
                         }
                         #langueges3{
                             display: grid;
-                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                             justify-items: center;
                         }
 
@@ -770,23 +777,23 @@ body {
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: red;
-                            grid-column: 6;
+                            background-color: rgb(224, 142, 142);
+                            grid-column: 7;
                             justify-self: start;
                         }
                         #langR1{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: blue;
-                            grid-column: 5;
+                            background-color: rgb(126, 126, 246);
+                            grid-column: 6;
                         }
                         #langH1{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color:rgb(0, 198, 0);
-                            grid-column: 4;
+                            background-color:rgb(133, 206, 133);
+                            grid-column: 5;
                             grid-row: 1;
                             justify-self: end;
                         }
@@ -794,23 +801,23 @@ body {
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: red;
-                            grid-column: 6;
+                            background-color: rgb(224, 142, 142);
+                            grid-column: 7;
                             justify-self: start;
                         }
                         #langR2{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: blue;
-                            grid-column: 5;
+                            background-color: rgb(126, 126, 246);
+                            grid-column: 6;
                         }
                         #langH2{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color:rgb(0, 198, 0);
-                            grid-column: 4;
+                            background-color:rgb(133, 206, 133);
+                            grid-column: 5;
                             grid-row: 1;
                             justify-self: end;
                         }
@@ -818,23 +825,23 @@ body {
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: red;
-                            grid-column: 6;
+                            background-color: rgb(224, 142, 142);
+                            grid-column: 7;
                             justify-self: start;
                         }
                         #langR3{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color: blue;
-                            grid-column: 5;
+                            background-color: rgb(126, 126, 246);
+                            grid-column: 6;
                         }
                         #langH3{
                             display: none;
                             height: 30px;
                             width: 40px;
-                            background-color:rgb(0, 198, 0);
-                            grid-column: 4;
+                            background-color:rgb(133, 206, 133);
+                            grid-column: 5;
                             grid-row: 1;
                             justify-self: end;
                         }
@@ -851,6 +858,7 @@ body {
                        height: 30px;
                        width: 60px;
                        margin: 20px;
+                       background-color: rgb(237, 251, 178);
                     }
 
                     #backEn{
@@ -873,16 +881,14 @@ body {
         }
     }
 
-   
-
     #scrDownEn{
-        width: 80vw;
-        height: 80vh; 
+        width: 90vw;
+        height: 90vh; 
         background-color: blue;
         margin: 0 auto;
-        padding: 30px 100px;
+        padding: 30px 150px;
         position: relative;
-        bottom: 70px;
+        bottom: 5vw;
         box-sizing: border-box;
 
         h2{
@@ -900,8 +906,8 @@ body {
             margin: auto;
             display: grid;
             grid-template-rows: 1fr 1fr;
-            gap: 20px;
-            padding-top: 50px;
+            gap: 30px;
+            padding-top: 80px;
             align-items: center;
             
 
@@ -920,10 +926,26 @@ body {
             #btnInst{
                 height: 50px;
                 width: 200px;
-                background-color: red;
+                background-color: white;
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color:   rgb(255, 0, 0);
+                justify-self: end;
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
+            }
+
+            #btnInst:hover {
+                background-color: rgb(255, 0, 0);
+                color:  white ;
+                transition: 0.7s;
+        
+            }
+        
+            #btnInst:active {
+                background-color:  white;
+                color: red;
             }
         }
         #exersise{
@@ -934,10 +956,25 @@ body {
             #btnStart{
                 height: 50px;
                 width: 200px;
-                background-color: rgb(0, 229, 0);
+                background-color:rgb(255, 255, 255);
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color:  rgb(0, 229, 0);
+                justify-self: end;
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
+            }
+            #btnStart:hover {
+                background-color:rgb(0, 229, 0);
+                color:     white;
+                transition: 0.7s;
+        
+            }
+        
+            #btnStart:active {
+                background-color: white;
+                color: rgb(0, 229, 0);
             }
         } 
         }
@@ -946,13 +983,13 @@ body {
 
     }
     #scrDownRu{
-        width: 80vw;
-        height: 80vh; 
+        width: 90vw;
+        height: 90vh; 
         background-color: blue;
         margin: 0 auto;
-        padding: 30px 100px;
+        padding: 30px 150px;
         position: relative;
-        bottom: 70px;
+        bottom: 5vw;
         display: none;
         box-sizing: border-box;
 
@@ -971,8 +1008,8 @@ body {
             margin: auto;
             display: grid;
             grid-template-rows: 1fr 1fr;
-            gap: 20px;
-            padding-top: 50px;
+            gap: 30px;
+            padding-top: 80px;
             align-items: center;
             
 
@@ -991,10 +1028,26 @@ body {
             #btnInst2{
                 height: 50px;
                 width: 200px;
-                background-color: red;
+                background-color: white;
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color:  rgb(255, 0, 0);
+                justify-self: end;
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
+            }
+
+            #btnInst2:hover {
+                background-color: rgb(255, 0, 0);
+                color:  white ;
+                transition: 0.7s;
+        
+            }
+        
+            #btnInst2:active {
+                background-color:  white;
+                color: red;
             }
         }
         #exersise{
@@ -1005,10 +1058,26 @@ body {
             #btnStart2{
                 height: 50px;
                 width: 200px;
-                background-color: rgb(0, 229, 0);
+                background-color: white;
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color:  rgb(0, 229, 0);
+                justify-self: end;
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
+            }
+
+            #btnStart2:hover {
+                background-color:rgb(0, 229, 0);
+                color:     white;
+                transition: 0.7s;
+        
+            }
+        
+            #btnStart2:active {
+                background-color: white;
+                color: rgb(0, 229, 0);
             }
         } 
         }
@@ -1017,13 +1086,13 @@ body {
 
     }
     #scrDownHe{
-        width: 80vw;
-        height: 80vh; 
+        width: 90vw;
+        height: 90vh; 
         background-color: blue;
         margin: 0 auto;
         padding: 30px 150px;
         position: relative;
-        bottom: 70px;
+        bottom: 5vw;
         display: none;
         box-sizing: border-box;
 
@@ -1031,6 +1100,7 @@ body {
             margin: 0;
             font-size: 56px;
             margin-left: 150px;
+            line-height: 100px;
         }
         h2:nth-of-type(2){
             // margin-left: 250px;
@@ -1042,44 +1112,73 @@ body {
             margin: auto;
             display: grid;
             grid-template-rows: 1fr 1fr;
-            gap: 20px;
-            padding-top: 200px;
+            gap: 50px;
+            padding-top: 100px;
             align-items: center;
             
 
            h3{
             font-size: 32px;
             margin: 0;
-            justify-self: start;
+            justify-self: end;
         }
 
         #instruction{
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.5fr 1fr;
             align-items: center;
             justify-items: center;
 
             #btnInst1{
                 height: 50px;
                 width: 200px;
-                background-color: red;
+                background-color: white;
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color: rgb(255, 0, 0);
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
             }
+            #btnInst1:hover {
+                background-color: rgb(255, 0, 0);
+                color:  white ;
+                transition: 0.7s;
+        
+            }
+        
+            #btnInst1:active {
+                background-color:  white;
+                color: red;
+            }
+
         }
         #exersise{
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.5fr 1fr;
             justify-items: center;
 
             #btnStart1{
                 height: 50px;
                 width: 200px;
-                background-color: rgb(0, 229, 0);
+                background-color: white;
                 border-radius: 10px;
                 font-size: 28px;
-                color: white;
+                color:  rgb(0, 229, 0);
+                border: none;
+                transition: 0.7s;
+                cursor: pointer;
+            }
+            #btnStart1:hover {
+                background-color:rgb(0, 229, 0);
+                color:     white;
+                transition: 0.7s;
+        
+            }
+        
+            #btnStart1:active {
+                background-color: white;
+                color: rgb(0, 229, 0);
             }
         } 
         }
@@ -1088,28 +1187,56 @@ body {
 
     }
 
-   
+    #FinRes{
+        display: none;
+        background-color: rgb(0, 199, 0);
+        padding: 15px;
+        border: none;
+        letter-spacing: 2px;
+        font-size: 28px;
+        z-index: 1;
+        border-radius: 15px;
+        color: white;
+        transition: 0.7s;
+        // margin-left: 100px;
+    }
 
+    #FinRes:hover {
+        background-color: white;
+        color:  rgb(0, 199, 0);
+        transition: 0.7s;
+
+    }
+
+    #FinRes:active {
+        background-color:  rgb(0, 199, 0);
+        color:white;
+    }
+
+    #Finish {
+        // text-align: center;
+        display: none;
+        position: relative;
+        font-size: 56px;
+        top: 25vh; 
+        left: 26vw;
+        width: 70vw;
+        color: rgb(0, 195, 195);
+    }
+ 
+#background{
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: none;
+}
     // Буквы
 
     #window {
         width: 100%;
-        height: 80vh;
+        height: 78vh;
         position: absolute;
         display: none;
-
-        
-
-
-
-        #Finish {
-            display: none;
-            position: relative;
-            font-size: 56px;
-            top: 250px; 
-            left: 400px;
-            color: rgb(0, 195, 195);
-        }
 
         #clean {
             height: 100%;
