@@ -349,7 +349,6 @@ let openLeng=()=>{
      
  })
 
-
  var Play = document.getElementById("playTime");
  var Stop = document.getElementById("stopTime");
  var resTim = document.getElementById("start");
@@ -657,147 +656,195 @@ colorExtra.addEventListener("click", function () {
 
 // Расположение Букв
 
-let setfontFullScr =()=>{
-    console.log("NEW")
+
+
+let setFontEx1 =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    if (SHRIFT <= 50) {
-        console.log("20-50")
-        LEFT = Math.floor(Math.random() * 100);
-        TOP = Math.floor(Math.random() * 100);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 70){
-        console.log("50-70")
-        LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 85 );
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 90){
-        console.log("70-90")
-        LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 79);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 110){
-        console.log("90-110")
+        console.log("New - Ex")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 74);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 130){
-        console.log("110-130")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 69);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    } else if(SHRIFT <= 150){
-        console.log("130-150")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 62);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-
+        TOP = Math.floor(Math.random() * 45);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';  
 }
-
-let setFontEx =() =>{
+let setFontExFull1 =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    console.log("30-40")
+    console.log("New + New-Ex")
     LEFT = Math.floor(Math.random() * 90);
-    TOP = Math.floor(Math.random() * 45);
-    document.getElementById("block").style.left = LEFT + '%';
-    document.getElementById("block").style.top = TOP + '%'; 
+    TOP = Math.floor(Math.random() * 60);
+    document.getElementById("block").style.left = LEFT + 'vw';
+    document.getElementById("block").style.top = TOP + 'vh';  
+}
+let setFontEx =() =>{
+ 
 }
 
-let setFont =() =>{
+let setfontFullScr =()=>{
+    console.log("New + New")
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
      if(SHRIFT <= 40){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 87);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-     else if(SHRIFT <= 50){
+        TOP = Math.floor(Math.random() * 89);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if(SHRIFT <= 50){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 86);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 60){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 84);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-     else if(SHRIFT <= 60){
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if(SHRIFT <= 70){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 81);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-     else if(SHRIFT <= 70){
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 80){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 78);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-     else if(SHRIFT <= 80){
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 90){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 74);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-     else if(SHRIFT <= 90){
-        console.log("140-150")
-        LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 71);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
-    }
-    else if (SHRIFT <= 100) {
+        TOP = Math.floor(Math.random() * 76);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if (SHRIFT <= 100) {
         console.log("20-50")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 68);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 73);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     }else if(SHRIFT <= 110){
         console.log("50-70")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 65 );
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 70);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 120){
         console.log("70-90")
         LEFT = Math.floor(Math.random() * 95);
-        TOP = Math.floor(Math.random() * 62);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 68);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 130){
         console.log("120-130")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 59);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 65);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 140){
         console.log("130-140")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 56);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 62);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 150){
         console.log("140-150")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 52);
-        document.getElementById("block").style.left = LEFT + '%';
-        document.getElementById("block").style.top = TOP + '%';
+        TOP = Math.floor(Math.random() * 60);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }
+
+}
+let setFont1 =() =>{
+    console.log("New")
+    SHRIFT = document.getElementById("fill").value;
+    let TOP;
+    let LEFT;
+     if(SHRIFT <= 40){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 74);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if(SHRIFT <= 50){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 71);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 60){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 69);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if(SHRIFT <= 70){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 66);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 80){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 63);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 90){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 61);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if (SHRIFT <= 100) {
+        console.log("20-50")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 58);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    }else if(SHRIFT <= 110){
+        console.log("50-70")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 55 );
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 120){
+        console.log("70-90")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 53);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 130){
+        console.log("120-130")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 50);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 140){
+        console.log("130-140")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 47);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
+    } else if(SHRIFT <= 150){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 45);
+        document.getElementById("block").style.left = LEFT + 'vw';
+        document.getElementById("block").style.top = TOP + 'vh';
     }
     
 
+}
+let setFont =() =>{
+   
 }
 
 //  Размер Шрифта
@@ -925,8 +972,6 @@ let setTime1 =()=>{
             setTimeReal();     
         } else {
             clear()
-            // document.getElementById("fill").value = 100;
-            // setSise();
             console.log("else in setTime1()")
             Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},interTime);
             setTimeReal();
@@ -1100,20 +1145,9 @@ function extra() {
 }
 
 blockTime = document.getElementById("dublicate")
-// height = document.getElementById("window").style.height
-// fullScr.addEventListener("click", function(){
-//     if(height > parseInt("78vh")){
-//         console.log("Open") 
-//         document.getElementById("window").style.display = "none"
-//     } else{
-//         console.log("close")
-//         document.getElementById("window").style.display = "block"
-//     }
-// })
 
 var elem = document.documentElement;
-     let fullSreenStart = () => { 
-                          
+     let fullSreenStart = () => {                       
         HOLD = document.getElementById("speed").value;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
@@ -1133,10 +1167,15 @@ var elem = document.documentElement;
       menuItem.addEventListener("mousemove", function (){
             clearTimeout(timeout);
             dropDownMenu.style.display = "grid";
+            setFont = setFont1
+            setFontEx = setFontEx1
             timeout = setTimeout(() => {
                 console.log("inFull1")
                 dropDownMenu.style.display = 'none';
+                setFont = setfontFullScr
+                setFontEx = setFontExFull1
                 }, 5000);
+                
         })
         dropDownMenu.addEventListener("mouseleave", function(){
             clearTimeout(timeout);
@@ -1144,12 +1183,17 @@ var elem = document.documentElement;
                 console.log("inFull2")
                 dropDownMenu.style.display = 'none';
                 }, 5000);
+                setFont = setfontFullScr
+                setFontEx = setFontExFull1
                 if(modal.style.display == 'block')
-                    clean.style.cursor = "default"; 
+                    clean.style.cursor = "default";
+                    setFont = setFont1 
+                    setFontEx = setFontEx1
                 if(dropDownMenu.style.display = "grid")
-                    clean.style.cursor = "default";   
+                    clean.style.cursor = "default";
+                    setFont = setFont1
+                    setFontEx = setFontEx1   
         })  
-
 }
 
 let to = 5000, ts = 0; 
@@ -1166,48 +1210,6 @@ setInterval(() => {
   if (Date.now() - ts > to)
     clean.style.cursor = "none";
 }, 99)
-
-
-// menuItem.addEventListener("mousemove", function(){
-//     clearTimeout(timeout);
-//     dropDownMenu.style.display = "grid";
-//     timeout = setTimeout(() => {
-//         console.log("inFull1")
-//         dropDownMenu.style.display = 'none';
-//         }, 5000);
-// })
-// dropDownMenu.addEventListener("mouseleave", function(){
-//     clearTimeout(timeout);
-//     timeout = setTimeout(() => {
-//         console.log("inFull2")
-//         dropDownMenu.style.display = 'none';
-//         }, 5000);
-//         if(modal.style.display == 'block')
-//             clean.style.cursor = "default"; 
-//         if(dropDownMenu.style.display = "grid")
-//             clean.style.cursor = "default";   
-// })    
- 
-   
-
-// fullScr.addEventListener("click", function () {
-//         clearTimeout(timeout);
-        
-//         // document.getElementById("window").style.display = "none"
-//        dropDownMenu.style.display = "grid";
-//          if (document.mozCancelFullScreen) {
-//             document.mozCancelFullScreen();
-//             clearTimeout(timeout);         
-//         } else if (document.webkitExitFullscreen) {
-//             document.webkitExitFullscreen();
-//             document.getElementById("window").style.height = "83vh"
-//             clearTimeout(timeout);       
-//         } else if (document.msExitFullscreen) {
-//             document.msExitFullscreen();
-//             clearTimeout(timeout);     
-//         }
-        
-// });
 
 function resetColor() {
     document.getElementById("color").checked = false; 
