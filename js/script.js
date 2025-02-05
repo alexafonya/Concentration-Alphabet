@@ -92,12 +92,25 @@ var ALFeng = [
 const changeLengRus = () =>{
     modal.style.display = "none"
     modal = modal2
+    ALF = ALFru;
+    HAND = HANDru;            
+    newLetters();
+    newHands();
+    randomLetters();
+    randomHands();
+    document.getElementById("ru").style.fontSize = "20px"
+    document.getElementById("ru").style.transition = "0.7s";
+    document.getElementById("en").style.fontSize = "14px"
+    document.getElementById("en").style.transition = "0.7s";
+    document.getElementById("he").style.fontSize = "14px"
+    document.getElementById("he").style.transition = "0.7s";
     modal.style.pointerEvents = "visible";
+    document.getElementById("FinRes").textContent = " ВЫХОД <=> EЩЁ ХОЧУ !!!";
     document.getElementById("Finish").innerText = "Превосходно! Упражнение выполнено!"
-    document.getElementById("Finish").style.left = "300px"
+    document.getElementById("Finish").style.left = "20vw"
+    document.getElementById("Finish").style.width = "70vw"
     document.getElementById("min").textContent = " Размер -"
     document.getElementById("plu").textContent = " Размер +"
-    document.getElementById("fullScr").value = " Весь экран "
     document.getElementById("minus").textContent = " Скорость -"
     document.getElementById("plus").textContent = " Скорость +"
     document.getElementById("sise").value = "    Сброс    "
@@ -118,12 +131,27 @@ const changeLengRus = () =>{
 const changeLengEng = () =>{
     modal.style.display = "none"
     modal = modal1;
+    if (alfIndex > 25){
+        alfIndex -= 1;
+    } 
+    ALF = ALFeng;
+    HAND = HANDeng;     
+    newLetters();
+    newHands();
+    randomLetters();
+    randomHands();
+    document.getElementById("en").style.fontSize = "20px"
+    document.getElementById("en").style.transition = "0.7s";
+    document.getElementById("ru").style.fontSize = "14px"
+    document.getElementById("ru").style.transition = "0.7s";
+    document.getElementById("he").style.fontSize = "14px"
+    document.getElementById("he").style.transition = "0.7s"; 
     modal.style.pointerEvents = "visible";
+    document.getElementById("FinRes").textContent = " EXIT <=> I WANT MORE !!!";
      document.getElementById("Finish").innerText = "Perfect! The exercise is done!"
-     document.getElementById("Finish").style.left = "400px"
+     document.getElementById("Finish").style.left = "26vw";
      document.getElementById("min").textContent = " Size -"
     document.getElementById("plu").textContent = " Size +"
-    document.getElementById("fullScr").value = " Full screen "
      document.getElementById("minus").textContent = " Speed +"
     document.getElementById("plus").textContent = " Speed -"
     document.getElementById("sise").value = "   Reset   "
@@ -140,16 +168,33 @@ const changeLengEng = () =>{
     document.getElementById("3").innerText = "10min"
     document.getElementById("4").innerText = "15min"
     document.getElementById("5").innerText = "20min"
+ 
 }
 const changeLengHeb = () =>{
     modal.style.display = "none"
     modal = modal3;
+    if (alfIndex > 21){
+        alfIndex -= 5;
+    } 
+    ALF = ALFheb;
+    HAND = HANDheb;       
+    newLetters();
+    newHands();
+    randomLetters();
+    randomHands();
+    document.getElementById("he").style.fontSize = "20px"
+    document.getElementById("he").style.transition = "0.7s";
+    document.getElementById("en").style.fontSize = "14px"
+    document.getElementById("en").style.transition = "0.7s";
+    document.getElementById("ru").style.fontSize = "14px"
+    document.getElementById("ru").style.transition = "0.7s";
     modal.style.pointerEvents = "visible";  
+    document.getElementById("FinRes").textContent = " !!! יציאה <=> אני רוצה פעם ";
      document.getElementById("Finish").innerText = "!מוּשׁלָם!  התרגיל נעשה"
-     document.getElementById("Finish").style.left = "500px"
+     document.getElementById("Finish").style.left = "34vw"
+     document.getElementById("Finish").style.width = "50vw"
     document.getElementById("min").textContent = "- גוֹדֶל "
     document.getElementById("plu").textContent = "+ גוֹדֶל "
-    document.getElementById("fullScr").value = " מסך מלא "
     document.getElementById("minus").textContent = "+  מְהִירוּת "
     document.getElementById("plus").textContent = "-  מְהִירוּת "
     document.getElementById("sise").value = "   אִתחוּל   "
@@ -166,6 +211,7 @@ const changeLengHeb = () =>{
     document.getElementById("3").innerText = "10 דק"
     document.getElementById("4").innerText = "15 דק"
     document.getElementById("5").innerText = "20 דק"
+
 }
 
 let btnCloseE=()=>{
@@ -176,6 +222,7 @@ let btnCloseE=()=>{
     closeWinE.addEventListener("click", function(){
         modal.style.display = "none"
         document.getElementById("scrDownEn").style.display = "block"
+        document.getElementById("top").style.opacity = "0";
         document.getElementById("backEn").style.display = "none"
         document.getElementById("closeEn").style.display = "block"
     })
@@ -186,9 +233,10 @@ let btnCloseR=()=>{
     closeWinR = document.getElementById("backRu")
     closeWinR.addEventListener("click", function(){
         modal.style.display = "none"
+        document.getElementById("top").style.opacity = "0";
         document.getElementById("scrDownRu").style.display = "block"
-    document.getElementById("backRu").style.display = "none"
-    document.getElementById("closeRu").style.display = "block"
+        document.getElementById("backRu").style.display = "none"
+        document.getElementById("closeRu").style.display = "block"
     })
 }
 let btnCloseH=()=>{
@@ -197,6 +245,7 @@ let btnCloseH=()=>{
     closeWinR = document.getElementById("backHe")
     closeWinR.addEventListener("click", function(){
     modal.style.display = "none"
+    document.getElementById("top").style.opacity = "0";
     document.getElementById("scrDownHe").style.display = "block"
     document.getElementById("backHe").style.display = "none"
     document.getElementById("closeHe").style.display = "block"
@@ -242,12 +291,14 @@ let openLeng=()=>{
         btnCloseE();
     })
     btnStart.addEventListener("click",function (){
+        document.querySelector("body").style.backgroundColor = "transparent"
         document.getElementById("top").style.pointerEvents = "visible";
         document.getElementById("top").style.opacity = "1";
         document.getElementById("scrDownEn").style.display = "none"
         document.getElementById("window").style.display = "block"
         fullSreenStart();
         Times_3 = setInterval(function () { randomHands(), setFont(), randomLetters()},HOLD);
+        
     })
      btnInst1.addEventListener("click", function(){
      document.getElementById("scrDownHe").style.display = "none"    
@@ -258,6 +309,7 @@ let openLeng=()=>{
         document.getElementById("scrDownHe").style.display = "none"
     })
     btnStart1.addEventListener("click",function (){
+        document.querySelector("body").style.backgroundColor = "transparent"
         document.getElementById("top").style.pointerEvents = "visible";
         document.getElementById("top").style.opacity = "1";
         document.getElementById("scrDownHe").style.display = "none"
@@ -268,13 +320,13 @@ let openLeng=()=>{
      btnInst2.addEventListener("click", function(){
      document.getElementById("scrDownRu").style.display = "none"    
         modalWin();
-
         document.getElementById("top").style.opacity = "1";        
         modal.style.pointerEvents = "visible";
         btnCloseR();
         document.querySelector(".lang")
     })
     btnStart2.addEventListener("click",function (){
+        document.querySelector("body").style.backgroundColor = "transparent"
         document.getElementById("top").style.pointerEvents = "visible";
         document.getElementById("top").style.opacity = "1";
         document.getElementById("scrDownRu").style.display = "none"
@@ -286,62 +338,17 @@ let openLeng=()=>{
     ALF = ALFeng;
     HAND = HANDeng;
     he.addEventListener("click", function () {
-        changeLengHeb();
-        // modal = modal3;
-        if (alfIndex > 21){
-            alfIndex -= 5;
-        } 
-        ALF = ALFheb;
-        HAND = HANDheb;       
-        newLetters();
-        newHands();
-        randomLetters();
-        randomHands();
-        document.getElementById("he").style.fontSize = "20px"
-        document.getElementById("he").style.transition = "0.7s";
-        document.getElementById("en").style.fontSize = "14px"
-        document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("ru").style.fontSize = "14px"
-        document.getElementById("ru").style.transition = "0.7s";
+        changeLengHeb();   
      })
-    en.addEventListener("click", function () {  
-        // setTime();      
+    en.addEventListener("click", function () {      
         changeLengEng();
-        // modal = modal1;   
-        if (alfIndex > 25){
-            alfIndex -= 1;
-        } 
-        ALF = ALFeng;
-        HAND = HANDeng;     
-        newLetters();
-        newHands();
-        randomLetters();
-        randomHands();
-        document.getElementById("en").style.fontSize = "20px"
-        document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("ru").style.fontSize = "14px"
-        document.getElementById("ru").style.transition = "0.7s";
-        document.getElementById("he").style.fontSize = "14px"
-        document.getElementById("he").style.transition = "0.7s"; 
      })
     ru.addEventListener("click", function () {
         changeLengRus();
-        // modal = modal2;            
-        ALF = ALFru;
-        HAND = HANDru;            
-        newLetters();
-        newHands();
-        randomLetters();
-        randomHands();
-        document.getElementById("ru").style.fontSize = "20px"
-        document.getElementById("ru").style.transition = "0.7s";
-        document.getElementById("en").style.fontSize = "14px"
-        document.getElementById("en").style.transition = "0.7s";
-        document.getElementById("he").style.fontSize = "14px"
-        document.getElementById("he").style.transition = "0.7s";
      })
      
  })
+
 
  var Play = document.getElementById("playTime");
  var Stop = document.getElementById("stopTime");
@@ -459,26 +466,32 @@ setTimes.addEventListener("click", function() {
     document.getElementById("dublicate").value = DUBLE;
     TIME--;
     if (TIME < 0) {
-        clear();
+        clear(); 
+        document.getElementById("top").style.display = "block";
+        document.getElementById("window").style.display = "none";  
+        document.getElementById("clean").style.display = "none";  
+        document.getElementById("top").style.pointerEvents = "none";
+        document.getElementById("top").style.opacity = "0.15"; 
+        document.getElementById("FinRes").style.display = "block";
+        // document.getElementById("FinRes").value = "I WANT MORE";
+        document.getElementById("FinRes").style.display = "block";
+        document.getElementById("FinRes").style.position = "relative";
+        document.getElementById("FinRes").style.top = "28vw";
+        document.getElementById("FinRes").style.left = "37vw";
+        document.getElementById("FinRes").style.zIndex = "1";
         document.getElementById("block").style.display = "none"
         document.getElementById("block").style.transition = "2s."
         document.getElementById("Finish").style.display = "block"
-        document.getElementById("window").style.height = "70vh"
         menuItem.addEventListener("click", function () {
-            dropDownMenu.style.display = "grid";
-             document.getElementById("window").style.height = "70vh";  
+            dropDownMenu.style.display = "grid";  
              if (document.exitFullscreen) {
                  document.exitFullscreen();
-                 document.getElementById("window").style.height = "70vh";
              } else if (document.mozCancelFullScreen) {
                  document.mozCancelFullScreen();
-                 document.getElementById("window").style.height = "70vh";
              } else if (document.webkitExitFullscreen) {
                  document.webkitExitFullscreen();
-                 document.getElementById("window").style.height = "70vh";
              } else if (document.msExitFullscreen) {
                  document.msExitFullscreen();
-                 document.getElementById("window").style.height = "70vh";
              }
      });
     }
@@ -704,79 +717,86 @@ let setFont =() =>{
     SHRIFT = document.getElementById("fill").value;
     let TOP;
     let LEFT;
-    if (SHRIFT <= 40) {
-        console.log("30-40")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 89);
+     if(SHRIFT <= 40){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 87);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 50){
-        console.log("40-50")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 86);
+    }
+     else if(SHRIFT <= 50){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 84);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 60){
-        console.log("50-60")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 82);
+    }
+     else if(SHRIFT <= 60){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 81);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 70){
-        console.log("60-70")
-        LEFT = Math.floor(Math.random() * 90);
+    }
+     else if(SHRIFT <= 70){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 78);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 80){
-        console.log("70-80")
-        LEFT = Math.floor(Math.random() * 90);
+    }
+     else if(SHRIFT <= 80){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
         TOP = Math.floor(Math.random() * 74);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 90){
-        console.log("80-90")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 70);
+    }
+     else if(SHRIFT <= 90){
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 71);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
-    }else if(SHRIFT <= 100){
-        console.log("90-100")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 64);
+    }
+    else if (SHRIFT <= 100) {
+        console.log("20-50")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 68);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }else if(SHRIFT <= 110){
-        console.log("100-110")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 62);
+        console.log("50-70")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 65 );
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 120){
-        console.log("110-120")
-        LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 59);
+        console.log("70-90")
+        LEFT = Math.floor(Math.random() * 95);
+        TOP = Math.floor(Math.random() * 62);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 130){
         console.log("120-130")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 55);
+        TOP = Math.floor(Math.random() * 59);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 140){
         console.log("130-140")
         LEFT = Math.floor(Math.random() * 90);
-        TOP = Math.floor(Math.random() * 51);
+        TOP = Math.floor(Math.random() * 56);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     } else if(SHRIFT <= 150){
-        console.log("Еу 140-150")
-        LEFT = Math.floor(Math.random() * 90);      
-        TOP = Math.floor(Math.random() * 45);
+        console.log("140-150")
+        LEFT = Math.floor(Math.random() * 90);
+        TOP = Math.floor(Math.random() * 52);
         document.getElementById("block").style.left = LEFT + '%';
         document.getElementById("block").style.top = TOP + '%';
     }
+    
 
 }
 
@@ -1080,22 +1100,37 @@ function extra() {
 }
 
 blockTime = document.getElementById("dublicate")
-
+// height = document.getElementById("window").style.height
+// fullScr.addEventListener("click", function(){
+//     if(height > parseInt("78vh")){
+//         console.log("Open") 
+//         document.getElementById("window").style.display = "none"
+//     } else{
+//         console.log("close")
+//         document.getElementById("window").style.display = "block"
+//     }
+// })
 
 var elem = document.documentElement;
-     let fullSreenStart = () => {
+     let fullSreenStart = () => { 
+                          
         HOLD = document.getElementById("speed").value;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
+            document.getElementById("window").style.display = "block"
+            document.getElementById("window").style.height = "85vh"
         } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();  
+            elem.mozRequestFullScreen(); 
+            document.getElementById("window").style.display = "block"
         } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();        
+            elem.webkitRequestFullscreen();  
+            document.getElementById("window").style.display = "block"      
         } else if (elem.msRequestFullscreen) { /* IE/Edge */
             elem.msRequestFullscreen();
+            document.getElementById("window").style.display = "block"
         } 
 
-        menuItem.addEventListener("mousemove", function(){
+      menuItem.addEventListener("mousemove", function (){
             clearTimeout(timeout);
             dropDownMenu.style.display = "grid";
             timeout = setTimeout(() => {
@@ -1155,24 +1190,24 @@ setInterval(() => {
  
    
 
- menuItem.addEventListener("click", function () {
-        clearTimeout(timeout);
-       dropDownMenu.style.display = "grid";
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-            clearTimeout(timeout);         
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-            clearTimeout(timeout);           
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-            clearTimeout(timeout);          
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-            clearTimeout(timeout);        
-        }
+// fullScr.addEventListener("click", function () {
+//         clearTimeout(timeout);
         
-});
+//         // document.getElementById("window").style.display = "none"
+//        dropDownMenu.style.display = "grid";
+//          if (document.mozCancelFullScreen) {
+//             document.mozCancelFullScreen();
+//             clearTimeout(timeout);         
+//         } else if (document.webkitExitFullscreen) {
+//             document.webkitExitFullscreen();
+//             document.getElementById("window").style.height = "83vh"
+//             clearTimeout(timeout);       
+//         } else if (document.msExitFullscreen) {
+//             document.msExitFullscreen();
+//             clearTimeout(timeout);     
+//         }
+        
+// });
 
 function resetColor() {
     document.getElementById("color").checked = false; 
