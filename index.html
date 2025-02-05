@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    
     <div id="top">
         <!-- Timer  -->
         <div id="top2">
@@ -49,11 +50,11 @@
                 </div>
             </div>
             <!-- Start -->
-            <div id="f2"> <!--screen-->
+            <!-- <div id="f2"> 
                 <label for="fullScr"></label>
-                <input id="fullScr" type="submit" onclick="fullSreenStart()" class="scr" value="Full Screen">
-                <!-- <input type="submit" onclick="getWidth()"> -->
-            </div>
+                <input id="fullScr" type="submit" onclick="fullSreenStart()" class="scr" value="   FullScreen  ">
+           
+            </div> -->
             <div id="f3">
                 <div id="f3_1">
 
@@ -293,10 +294,10 @@
         </div>
 
     </div>
-
+    
     <div id="scrDownEn">
         <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus()">Ru</button>
+            <button class="lang" onclick="changeLengRus();changeRus();changing()">Ru</button>
             <button class="lang" onclick="changeLengEng();changeEng()">En</button>
             <button class="lang" onclick="changeLengHeb();changeHeb()">He</button>
         </div>
@@ -316,12 +317,12 @@
     </div>
     <div id="scrDownHe">
         <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus()">Ru</button>
+            <button class="lang" onclick="changeLengRus();changeRus();changing()">Ru</button>
             <button class="lang" onclick="changeLengEng();changeEng()">En</button>
             <button class="lang" onclick="changeLengHeb();changeHeb()">He</button>
         </div>
-        <h2> ! ידידי היקר<br>
-            ברכות ביישום "אלף -בית ריכוז"</h2>
+        <h2> ! ידידי היקר
+           ברכות ביישום  <br> "אלף -בית ריכוז"</h2>
       
         <div id="blockBtn">
             <div id="instruction">
@@ -338,7 +339,7 @@
     </div>
     <div id="scrDownRu">
         <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus()">Рус</button>
+            <button class="lang" onclick="changeLengRus();changeRus();changing()">Рус</button>
             <button class="lang" onclick="changeLengEng();changeEng()">Анг</button>
             <button class="lang" onclick="changeLengHeb();changeHeb()">Ивр</button>
         </div>
@@ -357,14 +358,14 @@
         </div>`
     </div>
     <!-- <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio> -->
-
-
+    <div id="background"></div>
+    <button id="FinRes" onclick="reset()"> EXIT <=> I WANT MORE</button>
+    <div id="Finish">Perfect! The exercise is done!</div>
 
     <!-- буквы -->
 
     <div id="Win">
         <div id="window">
-            <div id="Finish">Perfect! The exercise is done!</div>
             <input id="clean" type="submit" class="butt" value="скрыть панель">
             <div id="block">
                 <p id="alfavit"></p>
