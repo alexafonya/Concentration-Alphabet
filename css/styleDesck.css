@@ -21,10 +21,6 @@
     grid-column: 3;
     grid-row: 2;
   }
-  #Titullist {
-    width: 100vw;
-    height: 100vh;
-  }
 }
 @media all and (max-width: 600px) {
   #top {
@@ -49,8 +45,5 @@
   #f4 {
     grid-column: 2/3;
     grid-row: 4;
-  }
-  #Titullist {
-    width: 600px;
   }
 }/*# sourceMappingURL=styleDesck.css.map */
