@@ -7,63 +7,132 @@
     <meta name="google" content="notranslate">
     <title>Concentration Alphabet</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="js/scriptEng.js" defer></script> -->
+    <link rel="stylesheet" href="css/styleDesck.css">
     <script src="js/script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <div id="background">
+        <div id="Finish">
+            <h2>Perfect! The exercise is done!</h2>
+            <button id="FinRes" onclick="reset()">EXIT <=> I WANT MORE !!!</button>
+        </div>
+    </div>
     
-    <div id="top">
-        <!-- Timer  -->
-        <div id="top2">
-            <div id="f1"> <!--f1-->
+    <div id="TitulList">
+        <div id="scrDownEn">
+            <div id="lengw">
+                <button id="l1" class="lang" onclick="changeLengRus();changeRus()">Ru</button>
+                <button id="l2" class="lang" onclick="changeLengEng();changeEng()">En</button>
+                <button id="l3" class="lang" onclick="changeLengHeb();changeHeb()">He</button>
+            </div>
+            <div id="greetings">
+                <h2>My dear friend! <br>
+                     in the application 
+                    <br>"Alphabet of concentration"</h2>
+            </div>
+            <div id="blockBtn">
+                <div id="instruction">
+                    <h3>If you are not familiar with the application yet, click on the "Instruction" button</h3>
+                    <button id="btnInst">Instruction</button>
+                </div>
+                <div id="exersise">
+                    <h3>To start exercise click "Start"</h3>
+                    <button id="btnStart">Start</button>
+                </div>
+            </div>
+        </div>
+        <div id="scrDownHe">
+            <div id="lengw">
+                <button id="l1" class="lang" onclick="changeLengRus();changeRus()">Ru</button>
+                <button id="l2" class="lang" onclick="changeLengEng();changeEng()">En</button>
+                <button id="l3" class="lang" onclick="changeLengHeb();changeHeb()">He</button>
+            </div>
+            <div id="greetings">
+                <h2> ! ידידי היקר
+                    ברכות ביישום <br> "אלף -בית ריכוז"
+                    </h2>
+            </div>
+            <div id="blockBtn">
+                <div id="instruction">
+                    <button id="btnInst1">הוראות</button>
+                    <h3> "אם אינך מכיר עדיין את היישום, לחץ על כפתור    "הוראות</h3>
+                </div>
+                <div id="exersise">
+                    <button id="btnStart1">התחל</button>
+                    <h3>"כדי להתחיל את התרגיל לחץ על    "התחל</h3>
+                </div>
+            </div>
+        </div>
+        <div id="scrDownRu">
+            <div id="lengw">
+                <button id="l1" class="lang" onclick="changeLengRus();changeRus()">Рус</button>
+                <button id="l2" class="lang" onclick="changeLengEng();changeEng()">Анг</button>
+                <button id="l3" class="lang" onclick="changeLengHeb();changeHeb()">Ивр</button>
+            </div>
+            <div id="greetings">
+                <h2>Мой дорогой друг! <br>
+                    Приветствую тебя в приложении <br>"Алфавит Концентрации"</h2>
+            </div>
+            <div id="blockBtn">
+                <div id="instruction">
+                    <h3>Если ты еще не знаком с приложением, нажми на кнопку "Инструкция"</h3>
+                    <button id="btnInst2">Инструкция</button>
+                </div>
+                <div id="exersise">
+                    <h3>Чтобы начать упражнение жми "Старт"</h3>
+                    <button id="btnStart2">Старт</button>
+                </div>
+            </div>`
+        </div>
+    </div>
+    <div id="window">
+        <div id="top">
+            <div id="f1" class="container"> <!--Timer-->
                 <div id="TimeOnOff">
                     <button id="playTime" class="play"></button>
                     <button id="stopTime" class="play"></button>
                 </div>
-                <!-- <span class="slider round"></span> -->
-                <div id="f2_2"> <!--timer2-->
-                    <div>
-                        <input type="range" id="start" min="60" max="1200" step="60" value="60">
+                <!-- Щётчик -->
+                <div id="blockCount">
+                    <div id="timeCount">
+                        <p id="countdown"></p>
+                        <input class="form" type="text" id="dublicate" value="01 : 00" readonly>
                     </div>
-                    <span id="line">
-                        <div id="shpic">
-                            <div> | </div>
-                            <div> | </div>
-                            <div> | </div>
-                            <div> | </div>
-                            <div> | </div>
+
+                    <div id="f2_2"> <!--Шкала-->
+                        <div>
+                            <input type="range" id="start" onchange="" min="60" max="1200" step="60" value="60">
                         </div>
-                        <div id="numb">
-                            <div id="1">1min.</div>
-                            <div id="2">5min.</div>
-                            <div id="3">10min.</div>
-                            <div id="4">15min.</div>
-                            <div id="5">20min.</div>
-                        </div>
-                    </span>
-                </div>
-                <div id="timeCount">
-                    <p id="countdown"></p>
-                    <input class="form" type="text" id="dublicate" value="01 : 00" readonly>
+                        <span id="line">
+                            <div id="shpic">
+                                <div> | </div>
+                                <div> | </div>
+                                <div> | </div>
+                                <div> | </div>
+                                <div> | </div>
+                            </div>
+                            <div id="numb">
+                                <div id="1">1min.</div>
+                                <div id="2">5min.</div>
+                                <div id="3">10min.</div>
+                                <div id="4">15min.</div>
+                                <div id="5">20min.</div>
+                            </div>
+                        </span>
+                    </div>
                 </div>
             </div>
-            <!-- Start -->
-            <!-- <div id="f2"> 
-                <label for="fullScr"></label>
-                <input id="fullScr" type="submit" onclick="fullSreenStart()" class="scr" value="   FullScreen  ">
-           
-            </div> -->
-            <div id="f3">
+            <div id="f3" class="container">
                 <div id="f3_1">
-
                     <div id="f3_1_2"> <!--f2-->
-                        <button id="plus" class="time" onclick="setTime1()" > Speed - </button>
+                        <button id="plus" class="time" onclick="setTime1()"> Speed - </button>
                         <label for="speed"></label>
-                        <input type="number" name="number" class="form" id="speed" 
-                        oninput="this.value = this.value.slice(0, 4)" min="500" max="3000" value="1200"
-                            step="100" readonly>
+                        <input type="number" name="number" class="form" id="speed"
+                            oninput="this.value = this.value.slice(0, 4)" min="500" max="3000" value="1200" step="100"
+                            readonly>
                         <button id="minus" class="time" onclick="setTime1()">Speed +</button>
                     </div>
 
@@ -74,32 +143,35 @@
                         <input onclick="reset()" type="submit" id="sise" value="    Reset    ">
                     </div>
                 </div>
-                <!-- font sise control  -->
+            </div>
+            <div id="f2" class="container"> <!-- font sise control  -->
                 <div id="f3_2"> <!--shrift-->
-                    <div id="f3_2_1">                       
-                        <button id="plu" class="sise">Sise +</button>   
+                    <div id="f3_2_1">
+                        <button id="plu" class="sise">Sise +</button>
                         <div id="Mix"></div>
                         <div id="MixPsevdo1"></div>
                         <div id="MixPsevdo2"></div>
-                            <input type="number" name="letters" class="form" onclick="setSise()"
-                            oninput="this.value = this.value.slice(0, 3)" id="fill" min="20" max="150" placeholder="" value="100"
-                                step="10" readonly>
+                        <input type="number" name="letters" class="form" onclick="setSise()"
+                            oninput="this.value = this.value.slice(0, 3)" id="fill" min="20" max="150" placeholder=""
+                            value="100" step="10" readonly>
                         <button id="min" class="sise">Sise -</button>
                     </div>
 
                 </div>
                 <!-- Extro -->
-            </div>
-            <div id="f4"> <!--f3-->
-                <div id="f4_1">
+                <div id="randomSize">
                     <div id="su">
                         <input type="checkbox" id="super" onclick="startSuperExtra()" value="ExMix">
                         <label class="input" for="super">ExMix</label>
                     </div>
                     <div id="O">
-                        <input onclick="startExtra()" type="checkbox" id="On" value="Extra">  
+                        <input onclick="startExtra()" type="checkbox" id="On" value="Extra">
                         <label class="input" for="On">Extra</label>
                     </div>
+                </div>
+            </div>
+            <div id="f4" class="container"> <!--f3-->
+                <div id="f4_1">
                     <div id="co">
                         <input type="checkbox" onclick=" " id="color" name="ChangeColor" value="just">
                         <label class="input" for="color">Color</label>
@@ -108,13 +180,11 @@
                         <input type="checkbox" onclick="" id="ColorExt" name="ChangeColor" value="Ext">
                         <label class="input" for="ColorExt">CoMix</label>
                     </div>
-
                 </div>
-
                 <div id="language">
-                    <div id="R"><button  id="ru">Ru</button></div>              
-                    <div id="E"><button  id="en">En</button></div>
-                    <div id="H"><button  id="he">He</button></div>
+                    <div id="R"><button id="ru">Ru</button></div>
+                    <div id="E"><button id="en">En</button></div>
+                    <div id="H"><button id="he">He</button></div>
                 </div>
                 <div id="the">
                     <input type="checkbox" id="theme" name="ChangeColor" value="just">
@@ -123,168 +193,176 @@
                 <div id="open">
                     <button id="openModal">Help!</button>
                 </div>
-               
-                <div id="help">            
+
+                <div id="help">
                     <div id="btnHelp">
                         <div id="modal" class="modal">
                             <div class="modal-content">
-                                <button id="backRu" class="close" onclick=""><= Back</button>
-                                <button id="closeRu" class="close" onclick="stopModal()">close</button>
-                                <div id="langueges1">
-                                    <button id="langR1" onclick="changeLengRus();modalWin();">Рус</button>
-                                    <button id="langE1" onclick="changeLengEng();modalWin();">Анг</button>
-                                    <button id="langH1" onclick="changeLengHeb();modalWin();">Ивр</button>
-                                </div>
-                                <h2>Приложение "Алфавит концентрации"</h2>
-                                <p> Цель этого приложения развивать скорость и гибкость мышления!</p>
-                                <p>
-                                    Всего 5 - 10 минут в день, в разы увеличат мозговую активность,
-                                    а КПД вашего мозга повысится на 15% - 30%.
-                                </p>
-                                <p>Как это работает:</p>
-                                <p>
-                                    Перед вами на пустом экране, в хаотичном порядке
-                                    появляются две буквы.Верхняя буква, это любая буква алфавита от "А" до "Я".
-                                    Нижняя буква одна из трех букв:
-                                </p>
-                                <p>
-                                    "Л" - левая рука. <br>
-                                    "П" - правая рука. <br>
-                                    "О" - обе руки.
-                                </p>
-                                <p>
-                                    Ваша задача назвать верхнюю букву (любая буква алфавита) вслух!
-                                    И одновременно поднять вверх руку. (Левую, правую или обе руки.)
-                                    Ту, которую показывает нижняя буква.
-                                </p>
+                                <button id="backRu" class="close" onclick="">
+                                    <= Back</button>
+                                        <button id="closeRu" class="close" onclick="stopModal()">close</button>
+                                        <div id="langueges1">
+                                            <button id="langR1" onclick="changeLengRus();modalWin();">Рус</button>
+                                            <button id="langE1" onclick="changeLengEng();modalWin();">Анг</button>
+                                            <button id="langH1" onclick="changeLengHeb();modalWin();">Ивр</button>
+                                        </div>
+                                        <h2>Приложение "Алфавит концентрации"</h2>
+                                        <p> Цель этого приложения развивать скорость и гибкость мышления!</p>
+                                        <p>
+                                            Всего 5 - 10 минут в день, в разы увеличат мозговую активность,
+                                            а КПД вашего мозга повысится на 15% - 30%.
+                                        </p>
+                                        <p>Как это работает:</p>
+                                        <p>
+                                            Перед вами на пустом экране, в хаотичном порядке
+                                            появляются две буквы.Верхняя буква, это любая буква алфавита от "А" до "Я".
+                                            Нижняя буква одна из трех букв:
+                                        </p>
+                                        <p>
+                                            "Л" - левая рука. <br>
+                                            "П" - правая рука. <br>
+                                            "О" - обе руки.
+                                        </p>
+                                        <p>
+                                            Ваша задача назвать верхнюю букву (любая буква алфавита) вслух!
+                                            И одновременно поднять вверх руку. (Левую, правую или обе руки.)
+                                            Ту, которую показывает нижняя буква.
+                                        </p>
 
-                                <p>
-                                    В верней части экрана, вы найдете меню настроек.
-                                    Где можно увеличить или уменьшить скорость появления букв,
-                                    а так же их величину.
-                                    В левой части меню находится таймер. В правой части есть разные способы
-                                    изменения сложности, где вы можете менять цвета букв, хаотичный размер
-                                    шрифта, а так же поменять фон с белого на черный. И возможность выбора
-                                    языка: Рус/Анг/Ивр.
-                                </p>
-                                <p> "Супер" - Рандомное изменение размера букв (буквы одинакового размера) </p>
-                                <p>"С.Микс" - Рандомное изменение размера букв (буквы разного размера)</p>
-                                <p>"Цвет" - Рандомное изменение цвета букв (буквы одинакового цвета) </p>
-                                <p>"Ц.Микс" - Рандомное изменение цвета букв (буквы разного цвета)</p>
+                                        <p>
+                                            В верней части экрана, вы найдете меню настроек.
+                                            Где можно увеличить или уменьшить скорость появления букв,
+                                            а так же их величину.
+                                            В левой части меню находится таймер. В правой части есть разные способы
+                                            изменения сложности, где вы можете менять цвета букв, хаотичный размер
+                                            шрифта, а так же поменять фон с белого на черный. И возможность выбора
+                                            языка: Рус/Анг/Ивр.
+                                        </p>
+                                        <p> "Супер" - Рандомное изменение размера букв (буквы одинакового размера) </p>
+                                        <p>"С.Микс" - Рандомное изменение размера букв (буквы разного размера)</p>
+                                        <p>"Цвет" - Рандомное изменение цвета букв (буквы одинакового цвета) </p>
+                                        <p>"Ц.Микс" - Рандомное изменение цвета букв (буквы разного цвета)</p>
                             </div>
                         </div>
                         <div id="modalEn" class="modal">
                             <div class="modal-content">
-                                <button id="backEn" class="close" onclick=""><= Back</button>
-                                <button id="closeEn" class="close" onclick="stopModal()">close</button>
-                                <div id="langueges2">
-                                    <button id="langR2" onclick="changeLengRus();modalWin();">Рус</button>
-                                    <button id="langE2" onclick="changeLengEng();modalWin();">Анг</button>
-                                    <button id="langH2" onclick="changeLengHeb();modalWin();">Ивр</button>
-                                </div>
-                                <h2>Application "Concentration Alphabet"</h2>
-                                <p>
-                                    The purpose of this application is to develop speed and flexibility of thinking!
-                                </p>
+                                <button id="backEn" class="close" onclick="">
+                                    <= Back</button>
+                                        <button id="closeEn" class="close" onclick="stopModal()">close</button>
+                                        <div id="langueges2">
+                                            <button id="langR2" onclick="changeLengRus();modalWin();">Рус</button>
+                                            <button id="langE2" onclick="changeLengEng();modalWin();">Анг</button>
+                                            <button id="langH2" onclick="changeLengHeb();modalWin();">Ивр</button>
+                                        </div>
+                                        <h2>Application "Concentration Alphabet"</h2>
+                                        <p>
+                                            The purpose of this application is to develop speed and flexibility of
+                                            thinking!
+                                        </p>
 
-                                <p>
-                                    Just 5 - 10 minutes a day will significantly increase brain activity,
-                                    and the efficiency of your brain will increase by 15% - 30%.
-                                </p>
+                                        <p>
+                                            Just 5 - 10 minutes a day will significantly increase brain activity,
+                                            and the efficiency of your brain will increase by 15% - 30%.
+                                        </p>
 
-                                <p>How does this work:</p>
-                                <p>
-                                    In front of you on a blank screen, in a chaotic order
-                                    two letters appear.
-                                    The top letter is any letter of the alphabet from “A” to “Z”.
-                                    The lower letter is one of three letters:
-                                </p>
-                                <p>
-                                    "L" - left hand. <br>
-                                    "R" - right hand. <br>
-                                    "B" - both hands.
-                                </p>
-                                <p>
-                                    Your task is to name the top letter (any letter of the alphabet) out loud!
-                                    And at the same time raise your hand up. (Left, right or both hands.)
-                                    The one shown by the lower letter.
-                                </p>
+                                        <p>How does this work:</p>
+                                        <p>
+                                            In front of you on a blank screen, in a chaotic order
+                                            two letters appear.
+                                            The top letter is any letter of the alphabet from “A” to “Z”.
+                                            The lower letter is one of three letters:
+                                        </p>
+                                        <p>
+                                            "L" - left hand. <br>
+                                            "R" - right hand. <br>
+                                            "B" - both hands.
+                                        </p>
+                                        <p>
+                                            Your task is to name the top letter (any letter of the alphabet) out loud!
+                                            And at the same time raise your hand up. (Left, right or both hands.)
+                                            The one shown by the lower letter.
+                                        </p>
 
-                                <p>
-                                    At the top of the screen, you will find the settings menu.
-                                    Where you can increase or decrease the speed at which letters appear,
-                                    as well as their size.
-                                </p>
+                                        <p>
+                                            At the top of the screen, you will find the settings menu.
+                                            Where you can increase or decrease the speed at which letters appear,
+                                            as well as their size.
+                                        </p>
 
-                                <p>
-                                    There is a timer on the left side of the menu. On the right side there are different 
-                                    ways to change the difficulty, 
-                                    where you can change letter colors, chaotic size font, and also 
-                                    change the background from white to black. And the opportunity to
-                                    choose Languages: Russian/English/Hebrew.
-                                </p>
-                                <p>"Extra" - Random change in the size of the letters (letters of the same size)</p>
-                                <p>"ExMix" - Random change in the size of the letters (letters of different sizes)</p>
-                                <p>"Color - Random change in the color of the letters (letters of the same color)</p>
-                                <p>"CoMix" - Random change in letters color (letters of different colors)</p>
+                                        <p>
+                                            There is a timer on the left side of the menu. On the right side there are
+                                            different
+                                            ways to change the difficulty,
+                                            where you can change letter colors, chaotic size font, and also
+                                            change the background from white to black. And the opportunity to
+                                            choose Languages: Russian/English/Hebrew.
+                                        </p>
+                                        <p>"Extra" - Random change in the size of the letters (letters of the same size)
+                                        </p>
+                                        <p>"ExMix" - Random change in the size of the letters (letters of different
+                                            sizes)</p>
+                                        <p>"Color - Random change in the color of the letters (letters of the same
+                                            color)</p>
+                                        <p>"CoMix" - Random change in letters color (letters of different colors)</p>
 
                             </div>
                         </div>
                         <div id="modalHe" class="modal">
                             <div class="modal-content">
-                                <button id="backHe" class="close" onclick=""><= Back</button>
-                                <button id="closeHe" class="close" onclick="stopModal()">close</button>
-                                <div id="langueges3">
-                                    <button id="langR3" onclick="changeLengRus();modalWin();">Рус</button>
-                                    <button id="langE3" onclick="changeLengEng();modalWin();">Анг</button>
-                                    <button id="langH3" onclick="changeLengHeb();modalWin();">Ивр</button>
-                                </div>
-                                <h2>"יישום "אלפבית של ריכוז</h2>
+                                <button id="backHe" class="close" onclick="">
+                                    <= Back</button>
+                                        <button id="closeHe" class="close" onclick="stopModal()">close</button>
+                                        <div id="langueges3">
+                                            <button id="langR3" onclick="changeLengRus();modalWin();">Рус</button>
+                                            <button id="langE3" onclick="changeLengEng();modalWin();">Анг</button>
+                                            <button id="langH3" onclick="changeLengHeb();modalWin();">Ивр</button>
+                                        </div>
+                                        <h2>"יישום "אלפבית של ריכוז</h2>
 
 
-                                <p>!מטרת אפליקציה זו היא לפתח מהירות וגמישות חשיבה</p>
+                                        <p>!מטרת אפליקציה זו היא לפתח מהירות וגמישות חשיבה</p>
 
-                                <p>
-                                    רק 5 - 10 דקות ביום יגדילו משמעותית את פעילות המוח,
-                                    והיעילות של המוח שלך תגדל ב-15% - 30%.
-                                </p>
+                                        <p>
+                                            רק 5 - 10 דקות ביום יגדילו משמעותית את פעילות המוח,
+                                            והיעילות של המוח שלך תגדל ב-15% - 30%.
+                                        </p>
 
-                                <p>איך זה עובד:</p>
-                                <p>
-                                    מולך על מסך ריק, בסדר כאוטי
-                                    מופיעות שתי אותיות.
-                                    האות העליונה היא כל אות באלפבית מ-"א" עד
-                                    "ב"
-                                    האות התחתונה היא אחת משלוש אותיות:
-                                </p>
-                                <p>
-                                    שמ" - יד שמאל" <br>
-                                    ימ" - יד ימין" <br>
-                                    יח" - שתי הידיים"
-                                </p>
-                                <p>
-                                    המשימה שלך היא לתת שם לאות העליונה (כל אות באלפבית) בקול רם!
-                                    ובאותו הזמן להרים את היד למעלה. (שמאל, ימין או שתי הידיים.)
-                                    זה שמוצג באות התחתונה.
-                                </p>
+                                        <p>איך זה עובד:</p>
+                                        <p>
+                                            מולך על מסך ריק, בסדר כאוטי
+                                            מופיעות שתי אותיות.
+                                            האות העליונה היא כל אות באלפבית מ-"א" עד
+                                            "ב"
+                                            האות התחתונה היא אחת משלוש אותיות:
+                                        </p>
+                                        <p>
+                                            שמ" - יד שמאל" <br>
+                                            ימ" - יד ימין" <br>
+                                            יח" - שתי הידיים"
+                                        </p>
+                                        <p>
+                                            המשימה שלך היא לתת שם לאות העליונה (כל אות באלפבית) בקול רם!
+                                            ובאותו הזמן להרים את היד למעלה. (שמאל, ימין או שתי הידיים.)
+                                            זה שמוצג באות התחתונה.
+                                        </p>
 
-                                <p>
-                                    בחלק העליון של המסך, תמצאו את תפריט ההגדרות.
-                                    איפה אתה יכול להגדיל או להקטין את המהירות שבה מופיעות אותיות,
-                                    כמו גם הגודל שלהם.
-                                </p>
+                                        <p>
+                                            בחלק העליון של המסך, תמצאו את תפריט ההגדרות.
+                                            איפה אתה יכול להגדיל או להקטין את המהירות שבה מופיעות אותיות,
+                                            כמו גם הגודל שלהם.
+                                        </p>
 
-                                <p>
-                                    יש טיימר בצד ימין של התפריט. יש דרכים שונות
-                                    קושי משתנה בצד שמאל, שבו אתה יכול לשנות צבעי אותיות, גודל כאוטי
-                                    גופן, וגם לשנות את הרקע מלבן לשחור. וההזדמנות לבחור
-                                    שפות: רוסית/אנגלית/עברית.
+                                        <p>
+                                            יש טיימר בצד ימין של התפריט. יש דרכים שונות
+                                            קושי משתנה בצד שמאל, שבו אתה יכול לשנות צבעי אותיות, גודל כאוטי
+                                            גופן, וגם לשנות את הרקע מלבן לשחור. וההזדמנות לבחור
+                                            שפות: רוסית/אנגלית/עברית.
 
-                                </p>
-                                <p>תוֹסֶפֶת" - שינוי אקראי בגודל האותיות (אותיות באותו גודל)"</p>
-                                <p>מיקס" - שינוי אקראי בגודל האותיות (אותיות בגדלים שונים)"</p>
-                                <p>צֶבַע" - שינוי אקראי בצבע האותיות (אותיות באותו צבע)"</p>
-                                <p>צֶבַע מיקס" - שינוי אקראי בצבע אותיות (אותיות של צבעים שונים)"</p>
+                                        </p>
+                                        <p>תוֹסֶפֶת" - שינוי אקראי בגודל האותיות (אותיות באותו גודל)"</p>
+                                        <p>מיקס" - שינוי אקראי בגודל האותיות (אותיות בגדלים שונים)"</p>
+                                        <p>צֶבַע" - שינוי אקראי בצבע האותיות (אותיות באותו צבע)"</p>
+                                        <p>צֶבַע מיקס" - שינוי אקראי בצבע אותיות (אותיות של צבעים שונים)"</p>
 
                             </div>
                         </div>
@@ -293,86 +371,21 @@
             </div>
         </div>
 
-    </div>
-    
-    <div id="scrDownEn">
-        <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus();changing()">Ru</button>
-            <button class="lang" onclick="changeLengEng();changeEng()">En</button>
-            <button class="lang" onclick="changeLengHeb();changeHeb()">He</button>
-        </div>
-        <h2>My dear friend! <br>
-          Greetings in the application <br> "Alphabet of concentration"</h2>
-      
-        <div id="blockBtn">
-            <div id="instruction">
-                <h3>If you are not familiar with the application yet, click on the "Instruction"  button</h3>
-                <button id="btnInst">Instruction</button>
-            </div>
-            <div id="exersise">
-                <h3>To start exercise click "Start"</h3>
-                <button id="btnStart">Start</button>
-            </div>
-        </div>
-    </div>
-    <div id="scrDownHe">
-        <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus();changing()">Ru</button>
-            <button class="lang" onclick="changeLengEng();changeEng()">En</button>
-            <button class="lang" onclick="changeLengHeb();changeHeb()">He</button>
-        </div>
-        <h2> ! ידידי היקר
-           ברכות ביישום  <br> "אלף -בית ריכוז"</h2>
-      
-        <div id="blockBtn">
-            <div id="instruction">
-                <button id="btnInst1">הוראות</button>
-                <h3>  "אם אינך מכיר עדיין את היישום, לחץ על כפתור "הוראות</h3>
-                
-            </div>
-            <div id="exersise">
-                <button id="btnStart1">התחל</button>
-                <h3>"כדי להתחיל את התרגיל לחץ על "התחל</h3>
-                
-            </div>
-        </div>
-    </div>
-    <div id="scrDownRu">
-        <div id="lengw">
-            <button class="lang" onclick="changeLengRus();changeRus();changing()">Рус</button>
-            <button class="lang" onclick="changeLengEng();changeEng()">Анг</button>
-            <button class="lang" onclick="changeLengHeb();changeHeb()">Ивр</button>
-        </div>
-        <h2>Мой дорогой друг! <br>
-            Приветствую тебя в приложении <br> "Алфавит Концентрации"</h2>
-      
-        <div id="blockBtn">
-            <div id="instruction">
-                <h3>Если ты еще не знаком с приложением, нажми на кнопку "Инструкция"</h3>
-                <button id="btnInst2">Инструкция</button>
-            </div>
-            <div id="exersise">
-                <h3>Чтобы начать упражнение жми "Старт"</h3>
-                <button id="btnStart2">Старт</button>
-            </div>
-        </div>`
-    </div>
-    <!-- <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio> -->
-    <div id="background"></div>
-    <button id="FinRes" onclick="reset()"> EXIT <=> I WANT MORE</button>
-    <div id="Finish">Perfect! The exercise is done!</div>
 
-    <!-- буквы -->
+        <!-- <audio id="final" style="display: none;" controls src="audio/obratnyiy-otschet-jenschina.mp3"></audio> -->
 
-    <div id="Win">
-        <div id="window">
-            <input id="clean" type="submit" class="butt" value="скрыть панель">
-            <div id="block">
-                <p id="alfavit"></p>
-                <p id="hand"></p>
-            </div>
+
+        <!-- буквы -->
+
+
+
+        <!-- <input id="clean" type="submit" class="butt" value="скрыть панель"> -->
+        <div id="block">
+            <p id="alfavit"></p>
+            <p id="hand"></p>
         </div>
     </div>
+
 
 </body>
 
