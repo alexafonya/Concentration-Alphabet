@@ -2,87 +2,94 @@ body {
   margin: 0 auto;
   height: 100vh;
   background-color: gray;
+  display: block;
 }
-body :active, body :hover, body :focus {
+body :active,
+body :hover,
+body :focus {
   outline: 0;
   outline-offset: 0;
 }
-body #top {
-  width: 100%;
-  margin: 0 auto;
-  pointer-events: none;
-  opacity: 0;
-}
-body #top #top2 {
-  display: grid;
-  background-color: gray;
-  grid-template-columns: 1.5fr 1.5fr 1fr;
-  height: 15vh;
+body #background {
+  display: none;
   align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  gap: 50px;
-}
-body #top #top2 #timer {
-  width: 70px;
-}
-body #top #top2 #f2 {
-  justify-self: end;
-  width: 75%;
-}
-body #top #top2 #f2 #fullScr {
-  background-image: url(../img/icons8-up\ \(1\).gif);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 10px;
+  justify-items: center;
   width: 100%;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  color: transparent;
-  letter-spacing: 0.3em;
-  font-size: 14px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.5s;
+  height: 100%;
+}
+body #background #Finish {
+  text-align: center;
+  color: rgb(0, 195, 195);
+}
+body #background #Finish h2 {
+  font-size: calc(2rem + 3vw);
   padding: 0;
+  margin: 0;
+  padding-bottom: 50px;
 }
-body #top #top2 #f2 #fullScr:hover {
-  background-color: rgb(206, 205, 205);
-  color: rgba(0, 0, 0, 0.671);
-  transition: 0.5s;
+body #background #Finish #FinRes {
+  background-color: rgb(0, 199, 0);
+  padding: 15px;
+  border: none;
+  letter-spacing: 2px;
+  font-size: calc(1rem + 1.23vw);
+  z-index: 1;
+  border-radius: 15px;
+  color: white;
+  transition: 0.7s;
+  cursor: pointer;
 }
-body #top #top2 #f1 {
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr;
-  align-items: center;
+body #background #Finish #FinRes:hover {
+  background-color: white;
+  color: rgb(0, 199, 0);
+  transition: 0.7s;
 }
-body #top #top2 #f1 #timeCount {
-  justify-self: center;
+body #background #Finish #FinRes:active {
+  background-color: rgb(0, 199, 0);
+  color: white;
 }
-body #top #top2 #f1 #countdown {
+body #window {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   display: none;
 }
-body #top #top2 #f1 #dublicate {
+body #window #top {
+  padding: 20px 0;
+  opacity: 0;
   pointer-events: none;
-  font-size: 20px;
-  height: 35px;
-  width: 100px;
-  text-align: center;
-  background-color: white;
-  border: none;
-}
-body #top #top2 #f1 #TimeOnOff {
+  position: sticky;
+  z-index: 1000;
   display: grid;
-  justify-self: end;
+  grid-template-columns: 1.1fr 1fr 1fr 0.8fr;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+body #window #top .container {
+  background-color: gray;
+  height: 125px;
+  padding: 20px 0 20px 20px;
+}
+body #window #top #timer {
+  width: 70px;
+}
+body #window #top #f1 {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  align-items: center;
+  gap: 10px;
+  padding-right: 0.8em;
+}
+body #window #top #f1 #TimeOnOff {
+  display: grid;
+  justify-self: center;
   grid-template-rows: 1fr 1fr;
   height: 80px;
-  width: 40px;
+  min-width: 60px;
   justify-items: center;
-  margin-left: 15px;
 }
-body #top #top2 #f1 #TimeOnOff #playTime {
+body #window #top #f1 #TimeOnOff #playTime {
   cursor: pointer;
   border-radius: 20%;
   background-image: url(../img/Play_B.png);
@@ -94,7 +101,7 @@ body #top #top2 #f1 #TimeOnOff #playTime {
   align-self: center;
   width: 30px;
 }
-body #top #top2 #f1 #TimeOnOff #stopTime {
+body #window #top #f1 #TimeOnOff #stopTime {
   cursor: pointer;
   border-radius: 20%;
   background-image: url(../img/Pause_B.png);
@@ -106,16 +113,35 @@ body #top #top2 #f1 #TimeOnOff #stopTime {
   border: none;
   align-self: center;
 }
-body #top #top2 #f1 #f2_2 {
+body #window #top #f1 #blockCount {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+body #window #top #f1 #blockCount #timeCount {
+  justify-self: center;
+  align-self: start;
+  padding-bottom: 0.8em;
+}
+body #window #top #f1 #blockCount #countdown {
+  display: none;
+}
+body #window #top #f1 #blockCount #dublicate {
+  margin: 0;
+  pointer-events: none;
+  font-size: 20px;
+  height: 35px;
+  width: 100px;
+  text-align: center;
+  background-color: white;
+  border: none;
+}
+body #window #top #f1 #f2_2 {
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-self: center;
   cursor: pointer;
 }
-body #top #top2 #f1 #f2_2 > div {
-  justify-self: center;
-}
-body #top #top2 #f1 #f2_2 > div #start {
+body #window #top #f1 #f2_2 > div #start {
   cursor: pointer;
   align-self: last baseline;
   -webkit-appearance: none;
@@ -126,118 +152,115 @@ body #top #top2 #f1 #f2_2 > div #start {
   width: 200px;
   background-color: rgb(206, 205, 205);
 }
-body #top #top2 #f1 #f2_2 > div #start::-webkit-slider-thumb {
+body #window #top #f1 #f2_2 > div #start::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 18px;
   width: 10px;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
 }
-body #top #top2 #f1 #f2_2 #line {
+body #window #top #f1 #f2_2 #line {
   display: grid;
   width: 200px;
   height: 5px;
   justify-self: center;
 }
-body #top #top2 #f1 #f2_2 #line #numb {
+body #window #top #f1 #f2_2 #line #numb {
   translate: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-size: 12px;
   color: rgb(255, 255, 255);
 }
-body #top #top2 #f1 #f2_2 #line #numb > div {
+body #window #top #f1 #f2_2 #line #numb > div {
   translate: none;
 }
-body #top #top2 #f1 #f2_2 #line #numb :nth-of-type(1) {
+body #window #top #f1 #f2_2 #line #numb :nth-of-type(1) {
   position: relative;
   right: 5px;
   bottom: 10px;
 }
-body #top #top2 #f1 #f2_2 #line #numb :nth-of-type(2) {
+body #window #top #f1 #f2_2 #line #numb :nth-of-type(2) {
   position: relative;
   right: 5px;
   bottom: 6px;
 }
-body #top #top2 #f1 #f2_2 #line #numb :nth-of-type(3) {
+body #window #top #f1 #f2_2 #line #numb :nth-of-type(3) {
   position: relative;
   right: 5px;
   bottom: 2px;
 }
-body #top #top2 #f1 #f2_2 #line #numb :nth-of-type(4) {
+body #window #top #f1 #f2_2 #line #numb :nth-of-type(4) {
   position: relative;
   left: 5px;
   bottom: 6px;
 }
-body #top #top2 #f1 #f2_2 #line #numb :nth-of-type(5) {
+body #window #top #f1 #f2_2 #line #numb :nth-of-type(5) {
   position: relative;
   left: 15px;
   bottom: 10px;
 }
-body #top #top2 #f1 #f2_2 #line #shpic {
+body #window #top #f1 #f2_2 #line #shpic {
   pointer-events: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-size: 16px;
   color: rgb(255, 255, 255);
 }
-body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(1) {
+body #window #top #f1 #f2_2 #line #shpic :nth-last-of-type(1) {
   justify-self: end;
   position: relative;
   right: 4px;
   bottom: 9px;
   translate: "no";
 }
-body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(2) {
+body #window #top #f1 #f2_2 #line #shpic :nth-last-of-type(2) {
   justify-self: center;
   position: relative;
   left: 5px;
   bottom: 6px;
   translate: "no";
 }
-body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(3) {
+body #window #top #f1 #f2_2 #line #shpic :nth-last-of-type(3) {
   justify-self: center;
   position: relative;
   right: 5px;
   bottom: 2px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
-body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(4) {
+body #window #top #f1 #f2_2 #line #shpic :nth-last-of-type(4) {
   position: relative;
   left: 4px;
   bottom: 6px;
 }
-body #top #top2 #f1 #f2_2 #line #shpic :nth-last-of-type(5) {
+body #window #top #f1 #f2_2 #line #shpic :nth-last-of-type(5) {
   position: relative;
   left: 3px;
   bottom: 9px;
 }
-body #top #top2 #f3 {
+body #window #top #f3 {
+  gap: 1.5em;
+  padding-right: 0.5em;
+  padding-left: 1em;
   display: grid;
-  grid-template-columns: 1fr 0.7fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
-body #top #top2 #f3 #f3_1 {
+body #window #top #f3 #f3_1 {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-self: end;
 }
-body #top #top2 #f3 #f3_1 #f3_1_2 {
+body #window #top #f3 #f3_1 #f3_1_2 {
   justify-self: end;
   display: grid;
 }
-body #top #top2 #f3 #f3_1 #f3_1_2 #speed {
+body #window #top #f3 #f3_1 #f3_1_2 #speed {
   background-color: white;
   border: none;
 }
-body #top #top2 #f3 #f3_1 #f3_1_2 .time {
+body #window #top #f3 #f3_1 #f3_1_2 .time {
   width: 80%;
   background-color: rgba(255, 255, 255, 0.764);
   border: none;
@@ -249,27 +272,23 @@ body #top #top2 #f3 #f3_1 #f3_1_2 .time {
   transition: 0.5s;
   justify-self: center;
 }
-body #top #top2 #f3 #f3_1 #f3_1_2 .time:hover {
+body #window #top #f3 #f3_1 #f3_1_2 .time:hover {
   background-color: hsl(0, 0%, 40%);
   color: rgba(255, 255, 255, 0.764);
   transition: 0.5s;
 }
-body #top #top2 #f3 #f3_1 #f3_1_2 .time:active {
+body #window #top #f3 #f3_1 #f3_1_2 .time:active {
   background-color: white;
   color: black;
 }
-body #top #top2 #f3 #f3_1 #f3_1_1 {
-  justify-self: end;
-  width: 100%;
-}
-body #top #top2 #f3 #startReset {
+body #window #top #f3 #startReset {
   display: grid;
 }
-body #top #top2 #f3 #startReset #f3_2_2 {
+body #window #top #f3 #startReset #f3_2_2 {
   justify-self: start;
   width: 100%;
 }
-body #top #top2 #f3 #startReset #f3_2_2 #sise {
+body #window #top #f3 #startReset #f3_2_2 #sise {
   align-self: center;
   width: 100%;
   height: 40px;
@@ -284,15 +303,15 @@ body #top #top2 #f3 #startReset #f3_2_2 #sise {
   cursor: pointer;
   transition: 0.5s;
 }
-body #top #top2 #f3 #startReset #f3_2_2 #sise:hover {
+body #window #top #f3 #startReset #f3_2_2 #sise:hover {
   background-color: hsl(0, 2%, 75%);
   color: rgba(0, 0, 0, 0.671);
   transition: 0.5s;
 }
-body #top #top2 #f3 #startReset #f3_2_2 #sise:active {
+body #window #top #f3 #startReset #f3_2_2 #sise:active {
   background-color: white;
 }
-body #top #top2 #f3 #startReset #time {
+body #window #top #f3 #startReset #time {
   width: 100%;
   height: 40px;
   background-color: hsl(0, 0%, 40%);
@@ -305,35 +324,46 @@ body #top #top2 #f3 #startReset #time {
   cursor: pointer;
   transition: 0.5s;
 }
-body #top #top2 #f3 #startReset #time:hover {
+body #window #top #f3 #startReset #time:hover {
   transition: 0.5s;
   background-color: hsl(0, 2%, 75%);
   color: rgba(0, 0, 0, 0.671);
 }
-body #top #top2 #f3 #startReset #time:active {
+body #window #top #f3 #startReset #time:active {
   background-color: rgb(255, 255, 255);
   transition: 0.5s;
 }
-body #top #top2 #f3 #speed::-webkit-outer-spin-button,
-body #top #top2 #f3 ::-webkit-inner-spin-button {
+body #window #top #f3 #speed::-webkit-outer-spin-button,
+body #window #top #f3 ::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body #top #top2 #f3 #f3_2 {
+body #window #top .form {
+  height: 25px;
+  width: 110px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+  pointer-events: none;
+}
+body #window #top #f2 {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+body #window #top #f2 #f3_2 {
+  display: grid;
   align-items: center;
   gap: 10px;
   justify-self: start;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 {
+body #window #top #f2 #f3_2 #f3_2_1 {
   display: grid;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 #fill {
+body #window #top #f2 #f3_2 #f3_2_1 #fill {
   background-color: white;
   border: none;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 #Mix {
+body #window #top #f2 #f3_2 #f3_2_1 #Mix {
   background-color: white;
   height: 28px;
   width: 115px;
@@ -346,7 +376,7 @@ body #top #top2 #f3 #f3_2 #f3_2_1 #Mix {
   padding-top: 3px;
   display: none;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo2 {
+body #window #top #f2 #f3_2 #f3_2_1 #MixPsevdo2 {
   background-color: white;
   height: 28px;
   width: 115px;
@@ -359,7 +389,7 @@ body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo2 {
   padding-top: 3px;
   display: none;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo1 {
+body #window #top #f2 #f3_2 #f3_2_1 #MixPsevdo1 {
   background-color: white;
   height: 28px;
   width: 115px;
@@ -372,12 +402,12 @@ body #top #top2 #f3 #f3_2 #f3_2_1 #MixPsevdo1 {
   padding-top: 3px;
   display: none;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 #fill::-webkit-outer-spin-button,
-body #top #top2 #f3 #f3_2 #f3_2_1 ::-webkit-inner-spin-button {
+body #window #top #f2 #f3_2 #f3_2_1 #fill::-webkit-outer-spin-button,
+body #window #top #f2 #f3_2 #f3_2_1 ::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 .sise {
+body #window #top #f2 #f3_2 #f3_2_1 .sise {
   width: 80%;
   background-color: rgba(255, 255, 255, 0.764);
   border: none;
@@ -389,33 +419,45 @@ body #top #top2 #f3 #f3_2 #f3_2_1 .sise {
   transition: 0.5s;
   justify-self: center;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 .sise:hover {
+body #window #top #f2 #f3_2 #f3_2_1 .sise:hover {
   background-color: hsl(0, 0%, 40%);
   color: rgba(255, 255, 255, 0.764);
   transition: 0.5s;
 }
-body #top #top2 #f3 #f3_2 #f3_2_1 .sise:active {
+body #window #top #f2 #f3_2 #f3_2_1 .sise:active {
   background-color: white;
   color: black;
 }
-body #top #top2 #f3 .form {
-  height: 25px;
-  width: 110px;
-  text-align: center;
-  font-size: 20px;
-  margin: 10px 0;
-  pointer-events: none;
-}
-body #top #top2 #f4 {
+body #window #top #f2 #randomSize {
   display: grid;
-  grid-template-columns: 3fr 1.5fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  min-width: 80px;
+  padding-left: 1.5vw;
+  align-items: start;
 }
-body #top #top2 #f4 .input {
+body #window #top #f2 #randomSize #su {
+  accent-color: rgb(116, 255, 116);
+  justify-self: start;
+  margin-bottom: 1em;
+  align-self: end;
+}
+body #window #top #f2 #randomSize #su input {
+  margin: 0;
+}
+body #window #top #f2 #randomSize #O {
+  accent-color: rgb(116, 255, 116);
+  justify-self: start;
+  padding-right: 10%;
+  align-self: start;
+}
+body #window #top #f2 #randomSize #O input {
+  margin: 0;
+}
+body #window #top .input {
   color: rgb(236, 233, 233);
   margin: 0 auto;
 }
-body #top #top2 #f4 .input:hover {
+body #window #top .input:hover {
   font-size: 18px;
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(255, 255, 255);
@@ -424,58 +466,43 @@ body #top #top2 #f4 .input:hover {
   color: white;
   box-sizing: content-box;
 }
-body #top #top2 #f4 #f4_1 {
+body #window #top #f4 {
+  min-width: 215px;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  grid-template-rows: 3fr 1fr;
+}
+body #window #top #f4 #f4_1 {
+  justify-self: start;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: end;
-  width: 90%;
-  justify-self: end;
 }
-body #top #top2 #f4 #f4_1 #su {
-  grid-column: 1;
-  grid-row: 2;
-  accent-color: rgb(116, 255, 116);
-  justify-self: start;
-}
-body #top #top2 #f4 #f4_1 #O {
-  grid-column: 1;
-  grid-row: 1;
-  accent-color: rgb(116, 255, 116);
-  justify-self: start;
-  padding-right: 10%;
+body #window #top #f4 #f4_1 #co {
+  accent-color: rgb(105, 115, 255);
   align-self: end;
 }
-body #top #top2 #f4 #f4_1 #co {
-  grid-row: 1;
-  grid-column: 2;
+body #window #top #f4 #f4_1 #CoEx {
   accent-color: rgb(105, 115, 255);
-  justify-self: start;
-  align-self: end;
+  align-self: center;
+  justify-self: center;
 }
-body #top #top2 #f4 #f4_1 #CoEx {
-  grid-row: 2;
-  grid-column: 2;
-  accent-color: rgb(105, 115, 255);
-  justify-self: start;
-}
-body #top #top2 #f4 #f4_1 div > input {
+body #window #top #f4 #f4_1 div > input {
   margin: 0;
 }
-body #top #top2 #f4 #language {
-  justify-self: center;
+body #window #top #f4 #language {
+  justify-self: start;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
 }
-body #top #top2 #f4 #language span {
+body #window #top #f4 #language span {
   font-size: 24px;
 }
-body #top #top2 #f4 #language #H {
+body #window #top #f4 #language #H {
   height: 30px;
   width: 50px;
 }
-body #top #top2 #f4 #language #H #he {
+body #window #top #f4 #language #H #he {
   height: 100%;
   width: 100%;
   font-size: 14px;
@@ -483,16 +510,16 @@ body #top #top2 #f4 #language #H #he {
   border: none;
   background-color: transparent;
 }
-body #top #top2 #f4 #language #H #he:hover {
+body #window #top #f4 #language #H #he:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(0, 234, 0);
           text-decoration: underline solid rgb(0, 234, 0);
 }
-body #top #top2 #f4 #language #R {
+body #window #top #f4 #language #R {
   height: 30px;
   width: 50px;
 }
-body #top #top2 #f4 #language #R #ru {
+body #window #top #f4 #language #R #ru {
   font-size: 14px;
   color: rgb(4, 0, 218);
   border: none;
@@ -500,16 +527,16 @@ body #top #top2 #f4 #language #R #ru {
   height: 100%;
   width: 100%;
 }
-body #top #top2 #f4 #language #R #ru:hover {
+body #window #top #f4 #language #R #ru:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(4, 0, 218);
           text-decoration: underline solid rgb(4, 0, 218);
 }
-body #top #top2 #f4 #language #E {
+body #window #top #f4 #language #E {
   height: 30px;
   width: 50px;
 }
-body #top #top2 #f4 #language #E #en {
+body #window #top #f4 #language #E #en {
   font-size: 20px;
   color: rgb(218, 3, 3);
   border: none;
@@ -517,12 +544,12 @@ body #top #top2 #f4 #language #E #en {
   height: 100%;
   width: 100%;
 }
-body #top #top2 #f4 #language #E #en:hover {
+body #window #top #f4 #language #E #en:hover {
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(218, 3, 3);
           text-decoration: underline solid rgb(218, 3, 3);
 }
-body #top #top2 #f4 #language #lang {
+body #window #top #f4 #language #lang {
   -webkit-appearance: none;
   width: 15px;
   height: 20px;
@@ -532,7 +559,7 @@ body #top #top2 #f4 #language #lang {
   background: rgb(206, 205, 205);
   transition: 5ms;
 }
-body #top #top2 #f4 #language #lang::-webkit-slider-thumb {
+body #window #top #f4 #language #lang::-webkit-slider-thumb {
   -webkit-transition: 10ms;
   transition: 10ms;
   -webkit-appearance: none;
@@ -541,20 +568,20 @@ body #top #top2 #f4 #language #lang::-webkit-slider-thumb {
   border-radius: 50%;
   background-color: white;
 }
-body #top #top2 #f4 #the {
-  justify-self: center;
+body #window #top #f4 #the {
   align-self: end;
 }
-body #top #top2 #f4 #the input {
+body #window #top #f4 #the input {
   background-color: black;
   accent-color: #000000;
   content: "rgb(0, 0, 0)";
 }
-body #top #top2 #f4 #the #theme {
+body #window #top #f4 #the #theme {
   margin: 0;
   color: black;
+  transition: 0.5s;
 }
-body #top #top2 #f4 #the #theme:hover {
+body #window #top #f4 #the #theme:hover {
   font-size: 18px;
   cursor: pointer;
   -webkit-text-decoration: underline solid rgb(0, 0, 0);
@@ -562,13 +589,13 @@ body #top #top2 #f4 #the #theme:hover {
   transition: 0.5s;
   color: black;
 }
-body #top #top2 #open {
+body #window #top #open {
   justify-self: end;
   align-self: end;
   grid-column: 2;
   grid-row: 2;
 }
-body #top #top2 #open #openModal {
+body #window #top #open #openModal {
   border: none;
   background: none;
   font-family: math;
@@ -580,7 +607,7 @@ body #top #top2 #open #openModal {
   transition: 0.5s;
   padding: 0;
 }
-body #top #top2 #open #openModal:hover {
+body #window #top #open #openModal:hover {
   font-size: 16px;
   background-color: gray;
   text-decoration: none;
@@ -592,37 +619,37 @@ body #top #top2 #open #openModal:hover {
   transition: 0.5s;
   padding: 3px 5px;
 }
-body #top #top2 #help #btnHelp {
+body #window #top #help #btnHelp {
   margin: 0;
   position: relative;
 }
-body #top #top2 #help #btnHelp .modal {
+body #window #top #help #btnHelp .modal {
   display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 90vw;
-  height: 85vh;
+  height: 90vh;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: "rgba(211, 210, 210, 0.9)";
 }
-body #top #top2 #help #btnHelp .modal #langueges1 {
+body #window #top #help #btnHelp .modal #langueges1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
-body #top #top2 #help #btnHelp .modal #langueges2 {
+body #window #top #help #btnHelp .modal #langueges2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
-body #top #top2 #help #btnHelp .modal #langueges3 {
+body #window #top #help #btnHelp .modal #langueges3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
-body #top #top2 #help #btnHelp .modal #langE1 {
+body #window #top #help #btnHelp .modal #langE1 {
   display: none;
   height: 30px;
   width: 40px;
@@ -630,14 +657,14 @@ body #top #top2 #help #btnHelp .modal #langE1 {
   grid-column: 7;
   justify-self: start;
 }
-body #top #top2 #help #btnHelp .modal #langR1 {
+body #window #top #help #btnHelp .modal #langR1 {
   display: none;
   height: 30px;
   width: 40px;
   background-color: rgb(126, 126, 246);
   grid-column: 6;
 }
-body #top #top2 #help #btnHelp .modal #langH1 {
+body #window #top #help #btnHelp .modal #langH1 {
   display: none;
   height: 30px;
   width: 40px;
@@ -646,7 +673,7 @@ body #top #top2 #help #btnHelp .modal #langH1 {
   grid-row: 1;
   justify-self: end;
 }
-body #top #top2 #help #btnHelp .modal #langE2 {
+body #window #top #help #btnHelp .modal #langE2 {
   display: none;
   height: 30px;
   width: 40px;
@@ -654,14 +681,14 @@ body #top #top2 #help #btnHelp .modal #langE2 {
   grid-column: 7;
   justify-self: start;
 }
-body #top #top2 #help #btnHelp .modal #langR2 {
+body #window #top #help #btnHelp .modal #langR2 {
   display: none;
   height: 30px;
   width: 40px;
   background-color: rgb(126, 126, 246);
   grid-column: 6;
 }
-body #top #top2 #help #btnHelp .modal #langH2 {
+body #window #top #help #btnHelp .modal #langH2 {
   display: none;
   height: 30px;
   width: 40px;
@@ -670,7 +697,7 @@ body #top #top2 #help #btnHelp .modal #langH2 {
   grid-row: 1;
   justify-self: end;
 }
-body #top #top2 #help #btnHelp .modal #langE3 {
+body #window #top #help #btnHelp .modal #langE3 {
   display: none;
   height: 30px;
   width: 40px;
@@ -678,14 +705,14 @@ body #top #top2 #help #btnHelp .modal #langE3 {
   grid-column: 7;
   justify-self: start;
 }
-body #top #top2 #help #btnHelp .modal #langR3 {
+body #window #top #help #btnHelp .modal #langR3 {
   display: none;
   height: 30px;
   width: 40px;
   background-color: rgb(126, 126, 246);
   grid-column: 6;
 }
-body #top #top2 #help #btnHelp .modal #langH3 {
+body #window #top #help #btnHelp .modal #langH3 {
   display: none;
   height: 30px;
   width: 40px;
@@ -694,86 +721,171 @@ body #top #top2 #help #btnHelp .modal #langH3 {
   grid-row: 1;
   justify-self: end;
 }
-body #top #top2 #help #btnHelp .modal-content {
+@media all and (min-width: 450px) {
+  body #window #top #help #btnHelp .modal-content {
+    padding: 50px 70px;
+  }
+}
+@media all and (max-width: 449px) {
+  body #window #top #help #btnHelp .modal-content {
+    padding: 50px 20px;
+  }
+}
+body #window #top #help #btnHelp .modal-content {
   color: rgb(0, 0, 0);
-  font-size: 24px;
-  padding: 50px 70px;
+  font-size: calc(0.8rem + 1vw);
 }
-body #top #top2 #help #btnHelp .close {
+body #window #top #help #btnHelp .close {
   height: 30px;
   width: 60px;
   margin: 20px;
   background-color: rgb(237, 251, 178);
 }
-body #top #top2 #help #btnHelp #backEn {
+body #window #top #help #btnHelp #backEn {
   height: 40px;
   display: none;
   background-color: rgb(23, 194, 0);
 }
-body #top #top2 #help #btnHelp #backRu {
+body #window #top #help #btnHelp #backRu {
   height: 40px;
   display: none;
   background-color: rgb(23, 194, 0);
 }
-body #top #top2 #help #btnHelp #backHe {
+body #window #top #help #btnHelp #backHe {
   height: 40px;
   display: none;
   background-color: rgb(23, 194, 0);
+}
+body #window #block {
+  display: none;
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+body #window #block p {
+  font-size: 60px;
+  margin: 0;
+  color: black;
+  font-family: Times;
+  font-weight: bold;
+}
+body #TitulList {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  width: 100vw;
+  min-width: 300px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  box-sizing: border-box;
 }
 body #scrDownEn {
-  width: 90vw;
-  height: 90vh;
+  align-self: center;
   background-color: rgb(181, 181, 181);
-  margin: 0 auto;
-  padding: 3vh 7vw;
-  position: relative;
-  bottom: 5vw;
-  box-sizing: border-box;
+  padding: 0 0 3vh 0;
+  box-sizing: content-box;
   color: rgb(45, 153, 21);
+  display: grid;
+  gap: 5vh;
 }
-body #scrDownEn h2 {
-  padding: 1vh 8vw;
-  border-radius: 10px;
-  margin: 0;
-  font-size: 56px;
-  margin-left: 10vw;
+body #scrDownEn #lengw {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 200px;
+}
+body #scrDownEn #l1 {
+  background-color: rgba(158, 158, 241, 0.704);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body #scrDownEn #l1:hover {
+  background-color: rgba(0, 0, 255, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownEn #l1:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 255, 0.704);
+}
+body #scrDownEn #l2 {
+  background-color: rgba(255, 158, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownEn #l2:hover {
+  background-color: rgba(255, 0, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownEn #l2:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(255, 0, 0, 0.704);
+}
+body #scrDownEn #l3 {
+  background-color: rgba(168, 255, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownEn #l3:hover {
+  background-color: rgba(26, 255, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownEn #l3:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(26, 255, 0, 0.704);
+}
+body #scrDownEn #greetings {
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  display: grid;
   background-color: rgb(229, 229, 229);
+  border-radius: 50px 50px 10px 10px;
+}
+body #scrDownEn #greetings h2 {
+  line-height: 7vh;
+  margin: 0;
 }
 body #scrDownEn h2:nth-of-type(2) {
   margin-top: 0;
   margin-bottom: 0;
 }
 body #scrDownEn #blockBtn {
-  margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  padding-top: 4vh;
-  align-items: center;
-}
-body #scrDownEn #blockBtn h3 {
-  background-color: rgb(229, 229, 229);
-  font-size: 32px;
-  margin: 0;
-  border-radius: 10px;
-  padding: 4vh 6vw;
-  color: black;
-  justify-self: start;
+  gap: 3vh;
+  font-size: calc(1rem + 1vw);
 }
 body #scrDownEn #blockBtn #instruction {
+  background-color: rgb(229, 229, 229);
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownEn #blockBtn #instruction > h3 {
+  padding: 0 4vw;
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  margin: 0;
+  color: black;
 }
 body #scrDownEn #blockBtn #instruction #btnInst {
+  padding: 0 4vw;
   height: 50px;
-  width: 200px;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(209, 57, 57);
+  align-self: center;
   justify-self: center;
   border: none;
   transition: 0.5s;
@@ -781,7 +893,6 @@ body #scrDownEn #blockBtn #instruction #btnInst {
 }
 body #scrDownEn #blockBtn #instruction #btnInst:hover {
   background-color: rgb(209, 57, 57);
-  font-weight: 300;
   color: rgb(215, 214, 214);
   transition: 0.5s;
 }
@@ -791,19 +902,30 @@ body #scrDownEn #blockBtn #instruction #btnInst:active {
 }
 body #scrDownEn #blockBtn #exersise {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownEn #blockBtn #exersise > h3 {
+  padding: 0 4vw;
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  margin: 0;
+  color: black;
 }
 body #scrDownEn #blockBtn #exersise #btnStart {
   height: 50px;
-  width: 200px;
+  padding: 0 4vw;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1.5vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(75, 163, 75);
   justify-self: center;
+  align-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
@@ -820,63 +942,115 @@ body #scrDownEn #blockBtn #exersise #btnStart:active {
   color: rgb(0, 229, 0);
 }
 body #scrDownRu {
-  width: 90vw;
-  height: 90vh;
+  align-self: center;
   background-color: rgb(181, 181, 181);
-  margin: 0 auto;
-  padding: 3vh 7vw;
-  position: relative;
-  bottom: 5vw;
-  box-sizing: border-box;
+  padding: 0 0 2vh 0;
+  box-sizing: content-box;
   color: rgb(45, 153, 21);
+  gap: 5vh;
   display: none;
 }
-body #scrDownRu h2 {
-  padding: 1vh 5vw;
-  border-radius: 10px;
-  margin: 0;
-  font-size: 56px;
-  margin-left: 150px;
+body #scrDownRu #lengw {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 200px;
+}
+body #scrDownRu #l1 {
+  background-color: rgba(158, 158, 241, 0.704);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body #scrDownRu #l1:hover {
+  background-color: rgba(0, 0, 255, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownRu #l1:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 255, 0.704);
+}
+body #scrDownRu #l2 {
+  background-color: rgba(255, 158, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownRu #l2:hover {
+  background-color: rgba(255, 0, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownRu #l2:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(255, 0, 0, 0.704);
+}
+body #scrDownRu #l3 {
+  background-color: rgba(168, 255, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownRu #l3:hover {
+  background-color: rgba(26, 255, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownRu #l3:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(26, 255, 0, 0.704);
+}
+body #scrDownRu #greetings {
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  display: grid;
   background-color: rgb(229, 229, 229);
+  border-radius: 50px 50px 10px 10px;
+}
+body #scrDownRu #greetings h2 {
+  line-height: 7vh;
+  margin: 0;
 }
 body #scrDownRu h2:nth-of-type(2) {
   margin-top: 0;
   margin-bottom: 0;
 }
 body #scrDownRu #blockBtn {
-  margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  padding-top: 4vh;
-  align-items: center;
-}
-body #scrDownRu #blockBtn h3 {
-  background-color: rgb(229, 229, 229);
-  font-size: 32px;
-  margin: 0;
-  border-radius: 10px;
-  padding: 4vh 4vw;
-  color: black;
-  justify-self: start;
+  gap: 3vh;
+  font-size: calc(1rem + 1vw);
 }
 body #scrDownRu #blockBtn #instruction {
+  background-color: rgb(229, 229, 229);
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownRu #blockBtn #instruction > h3 {
+  font-size: calc(1rem + 1vw);
+  padding: 0 4vw;
+  text-align: center;
+  margin: 0;
+  color: black;
 }
 body #scrDownRu #blockBtn #instruction #btnInst2 {
   height: 50px;
-  width: 200px;
+  padding: 0 4vw;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(209, 57, 57);
   justify-self: center;
   border: none;
   transition: 0.5s;
+  align-self: center;
   cursor: pointer;
 }
 body #scrDownRu #blockBtn #instruction #btnInst2:hover {
@@ -891,19 +1065,30 @@ body #scrDownRu #blockBtn #instruction #btnInst2:active {
 }
 body #scrDownRu #blockBtn #exersise {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownRu #blockBtn #exersise > h3 {
+  font-size: calc(1rem + 1vw);
+  margin: 0;
+  padding: 0 4vw;
+  text-align: center;
+  color: black;
 }
 body #scrDownRu #blockBtn #exersise #btnStart2 {
   height: 50px;
-  width: 200px;
+  padding: 0 4vw;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(75, 163, 75);
   justify-self: center;
+  align-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
@@ -915,68 +1100,119 @@ body #scrDownRu #blockBtn #exersise #btnStart2:hover {
   color: rgb(215, 214, 214);
   transition: 0.7s;
 }
-body #scrDownRu #blockBtn #exersise #btnStart2:active {
+body #scrDownRu #blockBtn #exersise #btnStart1:active {
   background-color: white;
   color: rgb(0, 229, 0);
 }
 body #scrDownHe {
-  width: 90vw;
-  height: 90vh;
+  align-self: center;
   background-color: rgb(181, 181, 181);
-  margin: 0 auto;
-  padding: 3vh 7vw;
-  position: relative;
-  bottom: 5vw;
-  box-sizing: border-box;
+  padding: 0 0 3vh 0;
+  box-sizing: content-box;
+  display: grid;
   color: rgb(45, 153, 21);
   display: none;
+  gap: 5vh;
 }
-body #scrDownHe h2 {
-  width: 50%;
-  padding: 4vh 10vw;
-  border-radius: 10px;
-  margin: 0;
-  font-size: 56px;
-  margin-left: 150px;
+body #scrDownHe #lengw {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 200px;
+}
+body #scrDownHe #l1 {
+  background-color: rgba(158, 158, 241, 0.704);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body #scrDownHe #l1:hover {
+  background-color: rgba(0, 0, 255, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownHe #l1:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 255, 0.704);
+}
+body #scrDownHe #l2 {
+  background-color: rgba(255, 158, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownHe #l2:hover {
+  background-color: rgba(255, 0, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownHe #l2:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(255, 0, 0, 0.704);
+}
+body #scrDownHe #l3 {
+  background-color: rgba(168, 255, 158, 0.704);
+  border: none;
+  cursor: pointer;
+}
+body #scrDownHe #l3:hover {
+  background-color: rgba(26, 255, 0, 0.704);
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+body #scrDownHe #l3:active {
+  background-color: rgb(255, 255, 255);
+  color: rgba(26, 255, 0, 0.704);
+}
+body #scrDownHe #greetings {
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  display: grid;
   background-color: rgb(229, 229, 229);
+  padding: 3vh 6vw;
+  border-radius: 50px 50px 10px 10px;
+}
+body #scrDownHe #greetings h2 {
+  margin: 0;
+  line-height: 60px;
 }
 body #scrDownHe h2:nth-of-type(2) {
   margin-top: 0;
   margin-bottom: 0;
 }
 body #scrDownHe #blockBtn {
-  margin: auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  padding-top: 7vh;
-  gap: 5vh;
-  align-items: center;
-}
-body #scrDownHe #blockBtn h3 {
-  background-color: rgb(229, 229, 229);
-  font-size: 32px;
-  margin: 0;
-  border-radius: 10px;
-  padding: 4vh 4vw;
-  color: black;
-  justify-self: start;
+  gap: 3vh;
+  font-size: calc(1rem + 1vw);
 }
 body #scrDownHe #blockBtn #instruction {
+  background-color: rgb(229, 229, 229);
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownHe #blockBtn #instruction > h3 {
+  padding: 0 4vw;
+  text-align: center;
+  margin: 0;
+  color: black;
 }
 body #scrDownHe #blockBtn #instruction #btnInst1 {
   height: 50px;
-  width: 200px;
+  padding: 0 4vw;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1.5vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(209, 57, 57);
   justify-self: center;
+  align-self: center;
   border: none;
   transition: 0.5s;
   cursor: pointer;
@@ -993,19 +1229,29 @@ body #scrDownHe #blockBtn #instruction #btnInst1:active {
 }
 body #scrDownHe #blockBtn #exersise {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 10px;
+  padding: 2vh 6vw;
+}
+body #scrDownHe #blockBtn #exersise > h3 {
+  padding: 0 4vw;
+  text-align: center;
+  margin: 0;
+  color: black;
 }
 body #scrDownHe #blockBtn #exersise #btnStart1 {
   height: 50px;
-  width: 200px;
+  padding: 0 4vw;
   background-color: rgb(181, 181, 181);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: calc(1rem + 1.5vw);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   color: rgb(75, 163, 75);
   justify-self: center;
+  align-self: center;
   border: none;
   transition: 0.7s;
   cursor: pointer;
@@ -1020,73 +1266,4 @@ body #scrDownHe #blockBtn #exersise #btnStart1:hover {
 body #scrDownHe #blockBtn #exersise #btnStart1:active {
   background-color: white;
   color: rgb(0, 229, 0);
-}
-body #FinRes {
-  display: none;
-  background-color: rgb(0, 199, 0);
-  padding: 15px;
-  border: none;
-  letter-spacing: 2px;
-  font-size: 28px;
-  z-index: 1;
-  border-radius: 15px;
-  color: white;
-  transition: 0.7s;
-}
-body #FinRes:hover {
-  background-color: white;
-  color: rgb(0, 199, 0);
-  transition: 0.7s;
-}
-body #FinRes:active {
-  background-color: rgb(0, 199, 0);
-  color: white;
-}
-body #Finish {
-  display: none;
-  position: relative;
-  font-size: 56px;
-  top: 25vh;
-  left: 26vw;
-  width: 70vw;
-  color: rgb(0, 195, 195);
-}
-body #background {
-  width: 100vw;
-  height: 100vh;
-  background-color: gray;
-  display: none;
-}
-body #window {
-  width: 100%;
-  height: 78vh;
-  position: absolute;
-  display: none;
-}
-body #window #clean {
-  height: 100%;
-  width: 100%;
-  background: none;
-  color: transparent;
-  border: none;
-  margin: 0 auto;
-  padding: 0;
-  overflow: hidden;
-}
-body #window #block {
-  position: absolute;
-  text-align: center;
-  pointer-events: none;
-}
-body #window #block p {
-  font-size: 60px;
-  margin: 0;
-  color: black;
-  font-family: Times;
-  font-weight: bold;
-}
-body #window::after {
-  content: "";
-  display: block;
-  clear: both;
 }/*# sourceMappingURL=style.css.map */
