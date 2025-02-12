@@ -21,6 +21,10 @@
     grid-column: 3;
     grid-row: 2;
   }
+  #Titullist {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 @media all and (max-width: 600px) {
   #top {
@@ -45,5 +49,33 @@
   #f4 {
     grid-column: 2/3;
     grid-row: 4;
+  }
+  #Titullist {
+    width: 600px;
+  }
+}
+@media all and (min-width: 450px) {
+  #scrDownEn {
+    padding: 3vh 3vw;
+  }
+  #scrDownRu {
+    padding: 3vh 3vw;
+  }
+  #scrDownHe {
+    padding: 3vh 3vw;
+  }
+}
+@media all and (max-width: 449px) {
+  #scrDownEn {
+    padding: 1.5vh 1.5vw;
+  }
+  #scrDownRu {
+    padding: 1.5vh 1.5vw;
+  }
+  #scrDownHe {
+    padding: 1.5vh 1.5vw;
+  }
+  #TitulList {
+    width: 100vw;
   }
 }/*# sourceMappingURL=styleDesck.css.map */
