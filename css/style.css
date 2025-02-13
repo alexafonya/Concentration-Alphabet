@@ -782,7 +782,6 @@ body #scrDownEn {
   box-sizing: content-box;
   color: rgb(45, 153, 21);
   display: grid;
-  gap: 5vh;
 }
 body #scrDownEn #lengw {
   display: grid;
@@ -838,11 +837,11 @@ body #scrDownEn #l3:active {
 }
 body #scrDownEn #greetings {
   text-align: center;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
   display: grid;
   background-color: rgb(229, 229, 229);
   border-radius: 70px;
-  padding: 1.5vw 1.5vh;
+  padding: 1vh 1vw;
 }
 body #scrDownEn #greetings h2 {
   margin: 0;
@@ -854,7 +853,6 @@ body #scrDownEn h2:nth-of-type(2) {
 body #scrDownEn #blockBtn {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 3vh;
 }
 body #scrDownEn #blockBtn #instruction {
   background-color: rgb(229, 229, 229);
@@ -867,7 +865,7 @@ body #scrDownEn #blockBtn #instruction {
 body #scrDownEn #blockBtn #instruction > h3 {
   padding: 0 4vw;
   text-align: center;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.9rem + 1vw);
   margin: 0;
   color: black;
 }
@@ -901,12 +899,12 @@ body #scrDownEn #blockBtn #exersise {
   grid-template-columns: 1fr 1fr;
   background-color: rgb(229, 229, 229);
   border-radius: 50%;
-  padding: 2vh 6vw;
+  padding: 0vh 0vw;
 }
 body #scrDownEn #blockBtn #exersise > h3 {
   padding: 0 4vw;
   text-align: center;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.9rem + 1vw);
   margin: 0;
   color: black;
 }
@@ -942,7 +940,6 @@ body #scrDownRu {
   padding: 3vh 3vw;
   box-sizing: content-box;
   color: rgb(45, 153, 21);
-  gap: 5vh;
   display: grid;
   display: none;
 }
@@ -1000,11 +997,11 @@ body #scrDownRu #l3:active {
 }
 body #scrDownRu #greetings {
   text-align: center;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
   display: grid;
   background-color: rgb(229, 229, 229);
   border-radius: 70px;
-  padding: 20px 1.5vh;
+  padding: 1vh 1vw;
 }
 body #scrDownRu #greetings h2 {
   margin: 0;
@@ -1016,7 +1013,6 @@ body #scrDownRu h2:nth-of-type(2) {
 body #scrDownRu #blockBtn {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 3vh;
 }
 body #scrDownRu #blockBtn #instruction {
   background-color: rgb(229, 229, 229);
@@ -1027,7 +1023,7 @@ body #scrDownRu #blockBtn #instruction {
   padding: 6vh 6vw;
 }
 body #scrDownRu #blockBtn #instruction > h3 {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.9rem + 1vw);
   text-align: center;
   margin: 0;
   color: black;
@@ -1063,10 +1059,10 @@ body #scrDownRu #blockBtn #exersise {
   grid-template-columns: 1fr 1fr;
   background-color: rgb(229, 229, 229);
   border-radius: 50%;
-  padding: 2vh 6vw;
+  padding: 2vh 2vw;
 }
 body #scrDownRu #blockBtn #exersise > h3 {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.9rem + 1vw);
   margin: 0;
   padding: 0 4vw;
   text-align: center;
@@ -1105,7 +1101,6 @@ body #scrDownHe {
   display: grid;
   color: rgb(45, 153, 21);
   display: none;
-  gap: 5vh;
 }
 body #scrDownHe #lengw {
   display: grid;
@@ -1164,12 +1159,12 @@ body #scrDownHe #greetings {
   font-size: calc(1rem + 1vw);
   display: grid;
   background-color: rgb(229, 229, 229);
-  padding: 2.5vw 1.5vh;
+  padding: 1vw 1vh;
   border-radius: 70px;
 }
 body #scrDownHe #greetings h2 {
   margin: 0;
-  line-height: 60px;
+  line-height: 50px;
 }
 body #scrDownHe h2:nth-of-type(2) {
   margin-top: 0;
@@ -1178,7 +1173,6 @@ body #scrDownHe h2:nth-of-type(2) {
 body #scrDownHe #blockBtn {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 3vh;
 }
 body #scrDownHe #blockBtn #instruction {
   background-color: rgb(229, 229, 229);
@@ -1226,7 +1220,7 @@ body #scrDownHe #blockBtn #exersise {
   grid-template-columns: 1fr 1fr;
   background-color: rgb(229, 229, 229);
   border-radius: 50%;
-  padding: 6vh 6vw;
+  padding: 2vh 6vw;
 }
 body #scrDownHe #blockBtn #exersise > h3 {
   padding: 0 4vw;

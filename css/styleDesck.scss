@@ -35,7 +35,7 @@
   }
   @media all and (max-width: 600px) {
     #top { 
-      padding: 0 0 0 0;
+    //   padding: 0 0 0 0;
       margin: 0 auto;  
       grid-template-rows: 1fr 1fr 1fr 1fr; 
       grid-template-columns: 1fr;
@@ -73,30 +73,43 @@
    
 }
 
-@media all and (min-width: 450px){
+@media all and (min-width: 500px){
     #scrDownEn {
         padding: 3vh 3vw;
+        gap: 5vh;
     }
     #scrDownRu {
         padding: 3vh 3vw;
+        gap: 5vh;
     }
     #scrDownHe {
         padding: 3vh 3vw;
+        gap: 5vh;
     }
-}
+    #blockBtn {
+        gap: 3vh;
+        gap: 5vh;
+    }
+
+}  
+
 @media all and (max-width: 449px){
     #scrDownEn {
         padding: 1.5vh 1.5vw;
+        gap: 3vh;
     }
     #scrDownRu {
         padding: 1.5vh 1.5vw;
+        gap: 3vh;
     }
     #scrDownHe {
         padding: 1.5vh 1.5vw;
+        gap: 3vh;
     }
-    #TitulList{
-    width: 100vw;
-}
+    #blockBtn {
+        gap: 0;
+    }
+
 
 }
 
