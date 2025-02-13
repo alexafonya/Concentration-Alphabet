@@ -801,9 +801,22 @@ let setfontFullScr =() =>{
     console.log("New")
     SHRIFT = document.getElementById("fill").value;
     width = window.innerWidth
+    height = window.innerHeight
     let TOP;
     let LEFT;
     if(SHRIFT <= 40){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 85
         }else if(width < 1000){
@@ -819,6 +832,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     }else if(SHRIFT <= 50){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 80
         }else if(width < 1200){
@@ -834,6 +859,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 60){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 78
         }else if(width < 1000){
@@ -849,6 +886,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     }else if(SHRIFT <= 70){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 86
         } else if (width < 1000){ 
@@ -865,6 +914,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.top = TOP + 'vh';
         
     } else if(SHRIFT <= 80){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 76
         }else if(width < 1000){
@@ -881,6 +942,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.top = TOP + 'vh';
         
     } else if(SHRIFT <= 90){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 74
         }else if(width < 1000){
@@ -896,6 +969,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     }else if (SHRIFT <= 100) {
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 74
         }else if(width < 1200){
@@ -912,6 +997,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.top = TOP + 'vh';
         
     }else if(SHRIFT <= 110){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 73
         }else if(width < 1000){
@@ -927,6 +1024,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 120){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 70
         }else if(width < 1000){
@@ -942,6 +1051,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 130){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 68
         }else if(width < 1000){
@@ -957,6 +1078,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 140){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        } 
         if(width < 600){
             z = 66
         }else if(width < 1000){
@@ -972,6 +1105,18 @@ let setfontFullScr =() =>{
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     } else if(SHRIFT <= 150){
+        x = 65
+        if(height < 400){
+            x = 35
+        }else if(height <600){
+            x = 40
+        } else if(height <800){
+            x = 47
+        }  else if(height < 1000){
+            x = 60
+        }  else if(height < 1200){
+            x = 65
+        }        
         if(width < 600){
             z = 64
         } else if(width < 1000){
@@ -982,8 +1127,9 @@ let setfontFullScr =() =>{
             z = 89
         }
         console.log("min-z = " + z)
+        console.log("min-x = " + x)
         LEFT = Math.floor(Math.random() * z);
-        TOP = Math.floor(Math.random() * 60);
+        TOP = Math.floor(Math.random() * x);
         document.getElementById("block").style.left = LEFT + 'vw';
         document.getElementById("block").style.top = TOP + 'vh';
     }
